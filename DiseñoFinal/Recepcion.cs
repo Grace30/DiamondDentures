@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DiseñoFinal
+{
+    public partial class Recepcion : Form
+    {
+        InterfaceUsuario ItUs;
+        string UsuarioEnCurso = "";
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        bool admin = false;
+        public Recepcion(string Usuario)
+        {
+            InitializeComponent();
+            ItUs = new InterfaceUsuario(this);
+            UsuarioEnCurso = Usuario;
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (UsuarioEnCurso != "Admin")
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuPrincipal))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+            else
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuGeneral))
+                    {
+                        frm.Show();
+                    }
+                }
+        }
+
+        private void pBPedido_Click(object sender, EventArgs e)
+        {
+            ItUs.enviarEvento("NuevoPedido", new string[0]);
+        }
+
+        private void pBPedidos_Click(object sender, EventArgs e)
+        {
+            ItUs.enviarEvento("Pedidos", new string[0]);
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pBSalir1_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("¿Desea cerrar la aplicación?", "Cerrar la aplicación", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+                Application.Exit();
+        }
+
+
+
+        private void pbxSemaforo_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { UsuarioEnCurso };
+            ItUs.enviarEvento("PantallaSemaforo", Datos);
+        }
+
+        private void Recepcion_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

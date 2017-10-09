@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>28</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAVFYAAAEACABoJAAAFgAAACgAAABUAAAArAAAAAEACAAAAAAAOBwAAMIOAADCDgAAAAEAAAAB
+        AADt2WoA7dluAO3ZcADt2nEA7tpyAO7bdQDv23cA79x5APbkawD35WkA9eNvAPbjbQD25G0A+OVpAPjm
+        aAD552gA/u1oAPXjcAD25n8A9uaBAPbmhgDz5ooA9eePAPXokQD26JIA9+mTAPfqlQDz558A+OuZAPjs
+        mgD57JsA9OihAPXpowD26aQA9uqmAPfrpwD47KgA+/S+APLqzQDz684A9OzPAPz2wQD99sMA/vfDAP74
+        xAD9+dsA/vrcAPr46AD9++sA/vzsAPf39wD4+PgA+fn5APr6+gD7+/sA/Pz8AP39/QD+/v4A////AAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk4NjM2OTo6Ojo6Ojo6Ojo6Ojk5NzM2OTk5
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk1
+        NTg5Ojo6Ojo6Ojo6Ojo6Ojo5OTc0NTg5Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo5OTM1ODo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk5NTM4OTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojg3MzY5OTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojk5OTU0Nzk5Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        OjEkBwcHBwUFBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBQUHBwcHBwcHBwcHBwcHBwcHByQxOjo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjkxIQkQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAJIjE4OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjAYEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBwwOTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6OiMQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAjOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OgcQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAHOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OgUQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAC
+        OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OgQQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAAOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo5OQMQEBAQEBARBwcHBwcH
+        BwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBQYHBwcHBxEQEBAQEBAAOTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo3NAIQEBAQEBAsOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTk5ODU0
+        ODk5OSsQEBAQEBAAOTo6Ojo6Ojo6Ojo6Ojo6Ojo6OjgzNgQQEBAQEBAsOjo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTk6OTg2Mzg5OisQEBAQEBAAOTo6Ojo6Ojo6Ojo6Ojk6Ojk4NjM3OQQQ
+        EBAQEBAqODo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6NzM3OSwQEBAQEBAA
+        OTo6Ojo6Ojo6Ojo6Ojk5OTg1NDg5OQQQEBAQEBAqODo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6OTc0NSsQEBAQEBAAOTo6Ojo6Ojo6Ojo6Ojo5NzM2OTk5OQQQEBAQEBArODo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTk4Nh8QEBAQEBAAOTo6Ojo6Ojo6Ojk5
+        OTg3Mzc5OTo6OigHBwcHByQxOjk5OTk5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OQYQEBAQEBAAOTo6Ojo6Ojo6Ojk5ODU0Nzk6Ojo6Ojo6Ojo6Ojo6Ojk5OTk5OTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OSMQEBAQEBAAOTo6Ojo6Ojo6Ojo4MzU5OTo5OTo6Ojo6
+        OjEsJAcHBwUDAgUHBwckLDE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OisQEBAQEBAA
+        OTo6Ojo6Ojk5ODc0Njk6Ojo6Ojk4OTEjBg4QEBAQEBAQEBAQEBAQEA4FIzA5OTo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojk5NTQ3OTk6Ojo6OjkxIxEQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBEjMTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAPMTk5Ojo6Ojk0NDg5
+        Ojo6Ojo6OjEcEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQHTE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAQJTk5OTo6NzQ0ODk6Ojo6OjkwIw4QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEA8i
+        MDo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAOLzQ3OTk5NDcwKjE6Ojo6OjAcEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQHDE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        ODczNjk5OTEcEAwjMTk5MRwQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBoxOTo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTk4MzY4OisQEBAQCyMuGRAQEBAQEBAQEBAQEBAQEBAPDhAQ
+        EBAQEBAQEBAQEBAQEBAWMTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6ODU1OSsQEBAQ
+        EBASEBAQEBAQEBAQEBAQDgUjKisxMSsrIwUNEBAQEBAQEBAQEBAQHDE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6OTg2OisQEBAQEBAQEBAQEBAQEBAQEBEjMTk5OTk5OTk5OTkxIxEQEBAQEBAQ
+        EBAQEBwxOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojk5OisQEBAQEBAQEBAQEBAQEBAJ
+        IzE6Ojo6Ojo6Ojo6Ojo6OjEjDBAQEBAQEBAQEBAjODo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6OisQEBAQEBAQEBAQEBAQEBgwOTo6Ojo6Ojo6Ojo6Ojo6Ojg4MBkQEBAQEBAQEBAIMTo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OiwQEBAQEBAQEBAQEBAQEy05OTo6Ojo6Ojo6Ojo6
+        Ojo6Ojg5OTEdEBAQEBAQEBAQIzo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OiwQEBAQ
+        EBAQEBAQEBAQEBwwODo6Ojo6Ojo6Ojo6Ojo6Ojo6OjoxHhAQEBAQEBAQCDE6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6Ojo6OisQEBAQEBAQEBAQEBAQEBAMIzE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6MQsQ
+        EBAQEBAQECw6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OiwQEBAQEBAQEBAQEBAQEBAQ
+        ECQ6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiMQEBAQEBAQECw6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6OiMQEBAQEBAQEBAQEBAQEBAQEAc6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjEcEBAQEBAQECw6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQEBAQEBAQEBAQEBAQDCg6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6OjgwCxAQEBAQHDE6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQ
+        EBAQEBAQEBAQEBAdMDo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk4JwsQEBAaMTo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQEBAQEBAQEBAQDCMxOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        OjEsLCwxOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQEBAQEBAQEBEjMDk6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6OgcQEBAQEBAQEBARIzA5OTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTk5OTk5
+        OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQEBAQCSMxOjo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTErKjA4ODo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBAQ
+        EAwjMTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjoxIwoQECI4OTo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6Ojo6OgcQEBANIzE5OTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        OTk5MSMREBAQEAE5OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6OicAACAxOjo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OTkxHBAQEBAQEAE5OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6Ojg5OTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6MSAIEBAQEBAQEAI5
+        OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojk5OTk6Ojk5OTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojk5OTEjCRAQEBAQEBAQEAQ5OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6Ojo6
+        Ojk5OTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjgxIwwQEBAQEBAQEBAQEAU5Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6Ojo6MSspKSsxOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6MSMLEBAQ
+        EBAQEBAQEBAQEAU5OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OjknCBAQEBAdMTk6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OjEjERAQEBAQEBAQEBAQEBAQEAc5OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6Ojo6OjkFEBAQEBAQIzk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiMQEBAQEBAQEBAQEBAQEBAQEAc5
+        OTo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OjEJEBAQEBAQCzE6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OgYQEBAQEBAQEBAQEBAQEBAQEAc5Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OisQ
+        EBAQEBAQEBwxOTk6Ojo6Ojo6Ojo6Ojo6Ojo6OicOEBAQEBAQEBAQEBAQEBAQEAc6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OjAIEBAQEBAQEBAdMDk6Ojo6Ojo6Ojo6Ojo6Ojo6OjkwGhAQEBAQ
+        EBAQEBAQEBAQEAc6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OjkFEBAQEBAQEBAQHDE6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojg4MCMMEBAQEBAQEBAQEBAQEAc6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAA
+        OTo6Ojo6Ojo6OjkjEBAQEBAQEBAQECM5ODo6Ojo6Ojo6Ojo6Ojo6Ojg5OCcLEBAQEBAQEBAQEBAQEAc6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6OjkxHBAQEBAQEBAQEA0jMDo6Ojo6Ojo6Ojo6
+        Ojo6OjkxIw4QEBAQEBAQEBAQEBAQEAc6Ojo6Ojo6Ojo6Ojo6Ojo6OiwQEBAQEBAAOTo6Ojo6Ojo6Ojk5
+        MAsQEBAQEBAQEBAQDCQxOjo6Ojo6Ojo6Ojo6OjEaEBAQEBAQEBAQEBAQEBAQECQ6Ojo6OjEsLCwsLCws
+        LCwsLB4QEBAQEBAAOTo6Ojo6Ojo6Ojk5OSMQEBAQEBAQEBAQEBARIzE5OTk4OTk5OTkxIwgQEBAQEBAQ
+        EBAQEBAQEBAQECw6OTkxIwkQEBAQEBAQEBAQEBAQEBAQEBAAOTo6Ojo6Ojo6Ojo6OjEcEBAQEBAQEBAQ
+        EBAQEBEHIysrKysrIwcIEBAQEBAQEBAQEBAQFBEQEBAQECw6OTAdEBAQEBAQEBAQEBAQEBAQEBAQEBAA
+        OTo6Ojo6Ojo6Ojo6OjgwHBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAaMDAjDRAQECw6
+        MRoQEBAQEBAQEBAQEBAQEBAQEBAQEBAAOTo6Ojo6Ojo6Ojo6Ojk5MRwQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBwxOTk5MR8AGzE6KxAQEBAQEBAQEBAQEBAQEBAQEBAQEBADOTo6Ojo6Ojo6Ojo6
+        Ojo6OjEcEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQHDE6Ojo6Ojo6Ojo6KxAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAHOTo6Ojo6Ojo6Ojo6Ojo6OjgwIxEQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAsj
+        MTo6Ojo6Ojo6Ojo6KxAQEBAQEBAQEBAQEBAQEBAQEBAQEBAjOTo6Ojo6OTk6Ojo6Ojo6Ojk5OTEjCRAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAOIzE5OTo6Ojo6Ojo6Ojo6KxAQEBAQEBAQEBAQEBAQEBAQEBAQEAkw
+        OTo6OTk4ODk6Ojo6Ojo6Ojo6Ojo6MSMKEBAQEBAQEBAQEBAQEBAQEBAQCiMwOTo6Ojo6Ojo6Ojo6Ojo6
+        LBAQEBAQEBAQEBAQEBAQEBAQEBAQEAc5OTo6OTczNDg5Ojo6Ojo6Ojo6Ojo6OjkxIwcOEBAQEBAQEBAQ
+        EBAQEBEjMTk5OTo6Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQEBAQEBAQEBAQECM5OTk5NjM3NjQ3OTk6
+        Ojo6Ojo6Ojo6Ojk5OTkxKyMFAwEBAQEDBSMrKzE5OTk5OTo6Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQGjE5OTk1NDg5OTg0Njk5Ojo6Ojo6Ojo6OjArKiwsLDA4ODo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQEBAQEBAQEBARMTk5OTU0OTk5OTk5NTQ4OTk6Ojo6Ojo6OiEQ
+        EBAQEBUxOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQEBAQEBAQEAsnOTk4
+        NDU4OTk5Ojo6OTcyNzk5OTk6Ojo6OgQQEBAQEBArOTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        LBAQEBAQEBAQEBAQEBAQEBAQDDE5OTkzNzk5OTk5Ojo6Ojk4NDY5Ojo6Ojo6OgQQEBAQEBAsOjo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQEBAQEBANJzk5NzM3OTo6Ojo6Ojo6Ojk5
+        ODU0ODk6Ojo6OgQQEBAQEBAsOjo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6LBAQEBAQEBAQEBAQ
+        EBAQEAsmOTk2NDc5OTo6Ojo6Ojo6Ojo5OTk3Mzg5OTk6OgQQEBAQEBArOTo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6KxAQEBAQEBAQEBAQEBAQCjE5OTU0OTk5OTo6Ojo6Ojo6Ojo6Ojk5NzQ2ODk6OgQQ
+        EBAQEBAcKisrKysrKysrKysrKysrKysrKysrKysrKysrKysrHRAQEBAQEBAQEBAQEBARJzk4NDQ5Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojk5Ojg1NTk6OgQQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBcxOTg0Njg6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo5NjM4OQQQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQETE5NzI3Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojk5OTc0NwUQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAN
+        Jzk2NDc5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk5OTk3NAUQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEAsnOTU0ODk5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OiAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQHTE4NDQ5OTo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjEaEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ
+        EBAQEBAQEAkjMTg0NTk5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6OjkwIg4QEBAQEBAQEBAQ
+        EBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAIIzE5NzQ2ODk5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6OjElJSorKywsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsKysxOTg2Mzg6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk5NjQ3OTo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6OTk5OTYzNzk5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojk5OTc0NTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk5NTU4OTk5OTo6Ojo6Ojo6Ojo6
+        Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojk4NDQ4ODo5OTo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6
+        Ojo6OTg0NTk6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
+</root>
