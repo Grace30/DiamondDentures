@@ -12,7 +12,6 @@ using Entidad;
 
 namespace DiseñoFinal
 {
-    //HOLAAA
     public partial class Login : Form
     {
         ManejadorPrincipal manp = new ManejadorPrincipal();
