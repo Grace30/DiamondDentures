@@ -9,7 +9,7 @@ using Datos;
 
 namespace Datos
 {
-    public class InterfaceBaseDeDatos
+    public partial class InterfaceBaseDeDatos
     {
         public string[] Instanciaas = { "(local)\\DIAMONDDENTURES", "(local)\\SQLEXPRESS", "(local)\\msqlexpress", "(local)\\", ".", "(local)" };
         public int INSTANCIA;

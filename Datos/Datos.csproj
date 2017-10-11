@@ -40,7 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Daniel.cs" />
+    <Compile Include="Eber.cs" />
     <Compile Include="InterfaceBaseDeDatos.cs" />
+    <Compile Include="Jesús.cs" />
+    <Compile Include="Maribel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
