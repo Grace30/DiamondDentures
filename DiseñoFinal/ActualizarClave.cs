@@ -15,6 +15,7 @@ namespace DiseñoFinal
     {
     //HOLAAA
     //Aqui dejando mi placa joms 
+    //otro cambio a ver que pex
         InterfaceUsuario intusuario;
         ManejadorPrincipal manp = new ManejadorPrincipal();
 
