@@ -14,6 +14,7 @@ namespace DiseñoFinal
     public partial class ActualizarClave : Form
     {
     //HOLAAA
+    //Aqui dejando mi placa joms 
         InterfaceUsuario intusuario;
         ManejadorPrincipal manp = new ManejadorPrincipal();
 
