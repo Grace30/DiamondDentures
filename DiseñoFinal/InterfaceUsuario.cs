@@ -558,7 +558,13 @@ namespace DiseñoFinal
                 desplegarPantalla(md);
                 cerrarPantalla(llamada);
             }
-            if(Evento == "ActualizarDentista")
+            if (Evento == "PantallaVentas")
+            {
+                Ventas vn = new Ventas();
+                desplegarPantalla(vn);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "ActualizarDentista")
             {
                 if (marr.ActualizarDentista(Datos) != 0)
                 {
