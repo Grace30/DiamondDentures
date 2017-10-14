@@ -26,6 +26,16 @@ namespace Entidad
             return IbaseDatos.Departamento(Datos);
         }
 
+        public DataTable ObtenerAsistenciaPorFecha(DateTime fecha)
+        {
+            return IbaseDatos.obtenerAsistenciaPorFecha(fecha);
+        }
+
+        public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)
+        {
+            return IbaseDatos.obtenerAsistenciaPorNombre(Nombres, Apellidos);
+        }
+
         public DataTable ObtenerRegistroUsuario(string[] Datos)
         {
             return IbaseDatos.ObtenerInformacionUsuario(Datos);
@@ -39,6 +49,16 @@ namespace Entidad
         public int RegistrarUsuario(string[] Datos)
         {
             return IbaseDatos.CrearRegistroUsuario(Datos);
+        }
+
+        public DataTable ObtenerRegistroAsistencia(string Loginn , DateTime Date)
+        {
+            return IbaseDatos.ObtenerRegistroAsistencia(Loginn, Date);
+        }
+
+        public DataTable ObtenerAsistenciaPorUsuario(string loginn)
+        {
+            return IbaseDatos.obtenerAsistenciaPorUsuario(loginn);
         }
 
         public int ValidarUsuario(string[] Datos)
@@ -69,6 +89,10 @@ namespace Entidad
             return IbaseDatos.EliminarUsuario(Datos);
         }
 
+        public int RegistrarAsistencia(string Loginn)
+        {
+            return IbaseDatos.RegistrarAsistencia(Loginn);
+        }
 
     }
 }

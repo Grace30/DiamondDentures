@@ -13,6 +13,7 @@ namespace Datos
     {
         public string[] Instanciaas = { "(local)\\DIAMONDDENTURES", "(local)\\SQLEXPRESS", "(local)\\msqlexpress", "(local)\\", ".", "(local)" };
         public int INSTANCIA;
+        public string strConexionAzure = "Server=tcp:rebeater.database.windows.net,1433;Initial Catalog=DiamondDentures;Persist Security Info=False;User ID=Rebeater;Password=Eber123123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         //Ingresar Datos en la tabla
         public DataTable getDatosTabla(string Proc, string[] Parametros, params Object[] DatosParametro)
@@ -20,9 +21,11 @@ namespace Datos
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand();
             Conexion conexion = new Conexion();
-            cmd.Connection = conexion.getConexion(0);
+            //cmd.Connection = conexion.getConexion(0);
+            cmd.Connection = conexion.getAzureConexion();
             cmd.CommandText = Proc;
             cmd.CommandType = CommandType.StoredProcedure;
+            
             if (Proc.Length != 0 && Parametros.Length == DatosParametro.Length)
             {
                 int i = 0;
@@ -46,9 +49,11 @@ namespace Datos
         {
             SqlCommand cmd = new SqlCommand();
             Conexion conexion = new Conexion();
-            cmd.Connection = conexion.getConexion(0);
+            //cmd.Connection = conexion.getConexion(0);
+            cmd.Connection = conexion.getAzureConexion();
             cmd.CommandText = Proc;
             cmd.CommandType = CommandType.StoredProcedure;
+            
             if (Proc.Length != 0 && Parametros.Length == DatosParametro.Length)
             {
                 int i = 0;
@@ -60,6 +65,7 @@ namespace Datos
                 }
                 catch (Exception ms)
                 {
+                    
                     return 0;
                 }
             }

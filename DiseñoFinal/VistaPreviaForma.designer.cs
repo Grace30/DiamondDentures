@@ -35,7 +35,7 @@
             // 
             this.VOficio.ActiveViewIndex = -1;
             this.VOficio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VOficio.CachedPageNumberPerDoc = 10;
+            //this.VOficio.CachedPageNumberPerDoc = 10;
             this.VOficio.Cursor = System.Windows.Forms.Cursors.Default;
             this.VOficio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VOficio.Location = new System.Drawing.Point(0, 0);

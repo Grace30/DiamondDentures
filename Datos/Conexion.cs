@@ -10,9 +10,16 @@ namespace Datos
     class Conexion
     {
         public string[] Instanciaas = { "(local)\\DIAMONDDENTURES", "(local)\\sqlexpress", "(local)\\", "(local)", "." };
+        public string strConexionAzure = "Server=tcp:rebeater.database.windows.net,1433;Initial Catalog=DiamondDentures;Persist Security Info=False;User ID=Rebeater;Password=Eber123123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         private SqlConnection conexion { get; set; }
-       
+
+        public SqlConnection getAzureConexion() {
+            conexion = new SqlConnection(strConexionAzure);
+            conexion.Open();
+            return this.conexion;
+        }
+
         //Método para obtener la conexión
         public SqlConnection getConexion(int INSTANCIA)
         {

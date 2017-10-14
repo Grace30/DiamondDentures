@@ -218,6 +218,12 @@
     <Compile Include="AgregarPieza.Designer.cs">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsistenciaPorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsistenciaPorEmpleado.Designer.cs">
+      <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClaveRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,12 @@
     <Compile Include="Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirmarAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmarAsistencia.Designer.cs">
+      <DependentUpon>FirmarAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaPedido.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,6 +291,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="InterfaceUsuario.cs" />
+    <Compile Include="ListaDeAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaDeAsistencia.Designer.cs">
+      <DependentUpon>ListaDeAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +356,12 @@
     </Compile>
     <Compile Include="ModificarPedido2.Designer.cs">
       <DependentUpon>ModificarPedido2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina.Designer.cs">
+      <DependentUpon>Nomina.cs</DependentUpon>
     </Compile>
     <Compile Include="Nota.cs">
       <SubType>Form</SubType>
@@ -497,6 +521,9 @@
     <EmbeddedResource Include="AgregarPieza.resx">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AsistenciaPorEmpleado.resx">
+      <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClaveRegistro.resx">
       <DependentUpon>ClaveRegistro.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,9 +553,15 @@
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FirmarAsistencia.resx">
+      <DependentUpon>FirmarAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaPedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FormaPedido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaDeAsistencia.resx">
+      <DependentUpon>ListaDeAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -559,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarPedido2.resx">
       <DependentUpon>ModificarPedido2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina.resx">
+      <DependentUpon>Nomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
