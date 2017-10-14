@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pBSalir1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVentas = new System.Windows.Forms.Button();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.pBPedidos = new System.Windows.Forms.PictureBox();
             this.pbxSemaforo = new System.Windows.Forms.PictureBox();
@@ -129,11 +130,22 @@
             // 
             this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.fondo_recepcion;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnVentas);
             this.panel1.Controls.Add(this.pBSalir);
             this.panel1.Location = new System.Drawing.Point(-8, 256);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(371, 142);
             this.panel1.TabIndex = 0;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.Location = new System.Drawing.Point(146, 12);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(75, 23);
+            this.btnVentas.TabIndex = 10;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // pBSalir
             // 
@@ -222,5 +234,6 @@
         private System.Windows.Forms.PictureBox pBPedidos;
         private System.Windows.Forms.PictureBox pbxSemaforo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnVentas;
     }
 }
