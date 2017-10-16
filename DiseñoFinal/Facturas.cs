@@ -46,7 +46,7 @@ namespace DiseñoFinal
             int renglon = 0;
             foreach (DataRow fila in facturas.Rows)
             {
-                dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["Factura"].ToString());
+                dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["NoFactura"].ToString());
                 dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                 dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                 dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
@@ -148,7 +148,7 @@ namespace DiseñoFinal
                 foreach (DataRow fila in Tabla.Rows)
                 {
                   
-                    dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["Factura"].ToString());
+                    dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["NoFactura"].ToString());
                     dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                     dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
@@ -210,7 +210,7 @@ namespace DiseñoFinal
                 foreach (DataRow fila in Tabla.Rows)
                 {
 
-                    dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["Factura"].ToString());
+                    dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["NoFactura"].ToString());
                     dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                     dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());

@@ -439,13 +439,13 @@ namespace Datos
         }
         public int RegistrarDatosFactura(string[] Datos)
         {
-            string[] Parametros = { "@NoPedido", "@FechaEmision", "@Nombre", "@Cedula", "@RFC", "@Direccion", "@Pais", "@Estado", "@Municipio", "@Ciudad", "@Colonia", "@CodPos", "@Telefono" };
-            return Ejecutar("procRegistrarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[4], Datos[3], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12]);
+            string[] Parametros = { "@NoPedido","@Loginn", "@FechaEmision", "@Nombre","@Apellido", "@Cedula", "@RFC", "@Direccion", "@Pais", "@Estado", "@Municipio", "@Ciudad", "@Colonia", "@CodPos", "@Telefono" };
+            return Ejecutar("procRegistrarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[4], Datos[3], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12], Datos[13], Datos[14]);
         }
         public int ModificarDatosFactura(string[] Datos)
         {
-            string[] Parametros = { "@NoPedido", "@FechaEmision", "@Nombre", "@Cedula", "@RFC", "@Direccion", "@Pais", "@Estado", "@Municipio", "@Ciudad", "@Colonia", "@CodPos", "@Telefono" };
-            return Ejecutar("procModificarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12]);
+            string[] Parametros = { "@NoPedido", "@FechaEmision", "@Nombre", "@Apellido", "@Cedula", "@RFC", "@Direccion", "@Pais", "@Estado", "@Municipio", "@Ciudad", "@Colonia", "@CodPos", "@Telefono" };
+            return Ejecutar("procModificarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12], Datos[13]);
         }
         public int RegistrarComentario(string[] Datos)
         {
@@ -893,7 +893,7 @@ namespace Datos
                     FacturaYReportes = new SqlCommand(@"
             create proc procMostrarPedido as 
             begin	
-                select Pedido.IDPedido,Dentista.Nombre, Dentista.Direccion, Dentista.Telefono, Pedido.Estatus  
+                select Pedido.IDPedido,concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', Dentista.Direccion, Dentista.Telefono, Pedido.Estatus  
                 from Dentista, Pedido where Dentista.ID= Pedido.IDDentista 
             end", cnn2);
 
@@ -903,7 +903,7 @@ namespace Datos
                     FacturaYReportes = new SqlCommand(@"
             create proc procFacturar @IDPedido int as 
             begin 
-	            select Pedido.IDPedido,Dentista.Cedula, Dentista.RFC, Dentista.Nombre, 
+	            select Pedido.IDPedido,Dentista.Cedula, Dentista.RFC, concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', 
 		            Dentista.Direccion, Dentista.Pais, Dentista.Estado,Dentista.Municipio, Dentista.Ciudad, 
 		            Dentista.Colonia, Dentista.CodigoPostal, Dentista.Telefono from Dentista, Pedido where  Dentista.ID = Pedido.IDDentista and Pedido.IDPedido = @IDPedido 
             end", cnn2);
@@ -963,7 +963,7 @@ namespace Datos
             create proc procBuscarPorFactura @NoFactura int, @NoPedido int
             as
             begin
-            select IDPedido,Factura, Dentista.Nombre, FechaEmision
+            select IDPedido,Factura, concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', FechaEmision
 	            from Pedido, Dentista, Facturas where Pedido.IDDentista = Dentista.ID and Pedido.IDPedido = Facturas.Pedido and (Facturas.Factura = @NoFactura or Facturas.Pedido = @NoPedido) order by Pedido.IDPedido asc
             end", cnn2);
                     try { FacturaYReportes.ExecuteNonQuery(); }
@@ -971,7 +971,7 @@ namespace Datos
 
                     FacturaYReportes = new SqlCommand(@"
             create proc procVerFacturas as begin
-            select Facturas.Factura,Pedido.IDPedido,Dentista.Nombre, Facturas.FechaEmision from Facturas,Pedido, Dentista
+            select Facturas.Factura,Pedido.IDPedido,concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', Facturas.FechaEmision from Facturas,Pedido, Dentista
 		            where Pedido.IDPedido = Facturas.Pedido and Dentista.ID = Pedido.IDDentista	
             end", cnn2);
                     try { FacturaYReportes.ExecuteNonQuery(); }
@@ -979,7 +979,7 @@ namespace Datos
 
                     FacturaYReportes = new SqlCommand(@"
             create proc procReportes as begin
-            select ProductosPedido.Pedido, ProductosPedido.Producto,Pedido.Estatus, Producto.Nombre, Dentista.Nombre, Dentista.Direccion, Dentista.Telefono
+            select ProductosPedido.Pedido, ProductosPedido.Producto,Pedido.Estatus, Producto.Nombre, concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', Dentista.Direccion, Dentista.Telefono
             from ProductosPedido,Producto, Dentista, Pedido
             where ProductosPedido.Pedido = Pedido.IDPedido and ProductosPedido.Producto = Producto.ID and Dentista.ID=Pedido.IDDentista
             end", cnn2);
@@ -993,7 +993,7 @@ namespace Datos
                     catch (Exception) { };
 
                     FacturaYReportes = new SqlCommand(@" create proc procMostrarDatosNota @IDPedido int as
-            begin select Pedido.IDPedido, Dentista.Nombre, Dentista.RFC, Dentista.Direccion, Dentista.Telefono, Pedido.FechaEntrega, (Select Comentario 
+            begin select Pedido.IDPedido, concat (Dentista.Nombre,' ',Dentista.Apellidos) as 'Nombre', Dentista.RFC, Dentista.Direccion, Dentista.Telefono, Pedido.FechaEntrega, (Select Comentario 
 	            From ComentarioNota Where ComentarioNota.IDPedido = @IDPedido) as 'Comentario' from Pedido, Dentista
 	            Where Pedido.IDDentista = Dentista.ID And Pedido.IDPedido = @IDPedido end", cnn2);
                     try { FacturaYReportes.ExecuteNonQuery(); }

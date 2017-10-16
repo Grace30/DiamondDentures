@@ -16,7 +16,8 @@ namespace DiseñoFinal
     {
         ManejadorFacturas maf = new ManejadorFacturas();
         InterfaceUsuario intusuario;
-        public string Pedido, Cedula, RFC, Nombre, Direccion, Pais, Estado, Municipio, Ciudad, Colonia, Telefono, CodigoPostal;
+        string UsuarioEnCurso = "";
+        public string Pedido,Loginn, Cedula, RFC, Nombre,Apellido, Direccion, Pais, Estado, Municipio, Ciudad, Colonia, Telefono, CodigoPostal;
         public string Codigo, NombreProducto, Material, Cantidad, Precio, SubTotal, Fecha;
 
         bool Cambios { get; set; }
@@ -25,6 +26,7 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
             v = new Validación();
             Cambios = false;
             CambioHecho();
@@ -45,6 +47,7 @@ namespace DiseñoFinal
             txtestado.KeyPress += CambioHecho;
             txtmunicipio.KeyPress += CambioHecho;
             txtnombre.KeyPress += CambioHecho;
+            txtApellido.KeyPress += CambioHecho;
             txtpais.KeyPress += CambioHecho;
             txtrfc.KeyPress += CambioHecho;
             dateTimePicker1.ValueChanged += delegate(object sender, EventArgs e) { this.Cambios = true; };
@@ -57,11 +60,12 @@ namespace DiseñoFinal
 
         private void VerFactura_Load(object sender, EventArgs e)
         {
-
+            lblUsuario.Text = UsuarioEnCurso;
             lblFecha.Text = dateTimePicker1.Text;
             lblNoPedido.Text = ReducirEspaciado(Pedido);
 
             txtnombre.Text = ReducirEspaciado(Nombre);
+            txtApellido.Text = ReducirEspaciado(Apellido);
             txtrfc.Text = ReducirEspaciado(RFC);
             txtcedula.Text = ReducirEspaciado(Cedula);
             txtdireccion.Text = ReducirEspaciado(Direccion);
@@ -74,7 +78,7 @@ namespace DiseñoFinal
             txtpais.Text = ReducirEspaciado(Pais);
             dateTimePicker1.Value = !string.IsNullOrWhiteSpace(Fecha) ? Convert.ToDateTime(Fecha) : DateTime.Now;
             Cambios = false;
-            RellenarTODO();
+            //RellenarTODO();
             int subtotal = 0;
             foreach (DataGridViewRow row in dgvProducto.Rows)
             {
@@ -92,25 +96,25 @@ namespace DiseñoFinal
 
 
         }
-        public void RellenarTODO()
-        {
-            string[] Datos = { lblNoPedido.Text };
-            var datosProductos = new DataTable();
-            datosProductos = maf.ProductosFacturar(Datos);
-            dgvProducto.ColumnCount = datosProductos.Columns.Count;
-            dgvProducto.RowCount = datosProductos.Rows.Count;
-            int renglon = 0;
-            foreach (DataRow fila in datosProductos.Rows)
-            {
-                dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("Codigo")].ToString();
-                dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
-                dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("NombreProducto")].ToString();
-                dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Material")].ToString();
-                dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("Precio")].ToString();
-                dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
-                renglon++;
-            }
-        }
+        //public void RellenarTODO()
+        //{
+        //    string[] Datos = { lblNoPedido.Text };
+        //    var datosProductos = new DataTable();
+        //    datosProductos = maf.ProductosFacturar(Datos);
+        //    dgvProducto.ColumnCount = datosProductos.Columns.Count;
+        //    dgvProducto.RowCount = datosProductos.Rows.Count;
+        //    int renglon = 0;
+        //    foreach (DataRow fila in datosProductos.Rows)
+        //    {
+        //        dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("Codigo")].ToString();
+        //        dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
+        //        dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("NombreProducto")].ToString();
+        //        dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Material")].ToString();
+        //        dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("Precio")].ToString();
+        //        dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
+        //        renglon++;
+        //    }
+        //}
 
        
         private void pBSalir2_Click(object sender, EventArgs e)
@@ -144,14 +148,15 @@ namespace DiseñoFinal
             DataTable RFactura = maf.BuscarFactura(new string[] { lblNoPedido.Text, "" });
             if (Cambios || RFactura.Rows.Count == 0)
             {
-                if (txtcedula.Text != "" && txtrfc.Text != "" && txtnombre.Text != "" && txtcolonia.Text != "" && txtdireccion.Text != "" && txtciudad.Text != ""
+                if (txtcedula.Text != "" && txtrfc.Text != "" && txtnombre.Text != "" && txtApellido.Text !="" && txtcolonia.Text != "" && txtdireccion.Text != "" && txtciudad.Text != ""
                    && txtestado.Text != "" && txtmunicipio.Text != "" && txtpais.Text != "" && txtcp.Text != "" && txtel.Text != "")
                 {
                     if (RFactura.Rows.Count > 0)
                     {
                         if (DialogResult.Yes == MessageBox.Show("Se modificará la factura\n\n¿Continuar?", "", MessageBoxButtons.YesNoCancel))
                         {
-                            string[] Datos = {lblNoPedido.Text, lblFecha.Text,txtnombre.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
+                            string[] Datos = {lblNoPedido.Text, lblFecha.Text,txtnombre.Text, txtApellido.Text
+                                ,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
                     txtestado.Text, txtmunicipio.Text, txtciudad.Text, txtcolonia.Text, txtcp.Text, txtel.Text };
                             intusuario.enviarEvento("Modificar Datos Factura", Datos);
 
@@ -163,7 +168,8 @@ namespace DiseñoFinal
                     {
                         if (DialogResult.Yes == MessageBox.Show("Se registrará la factura\n\n¿Continuar?", "", MessageBoxButtons.YesNoCancel))
                         {
-                            string[] Datos = {lblNoPedido.Text,lblFecha.Text,txtnombre.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
+                            string[] Datos = {lblNoPedido.Text, lblUsuario.Text,lblFecha.Text,txtnombre.Text, txtApellido.Text,
+                                txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
                     txtestado.Text, txtmunicipio.Text, txtciudad.Text, txtcolonia.Text, txtcp.Text, txtel.Text };
                             intusuario.enviarEvento("Registrar Datos Factura", Datos);
 

@@ -16,6 +16,7 @@ namespace DiseñoFinal
     public partial class Facturar : Form
     {
         InterfaceUsuario intusuario;
+     string UsuarioEnCurso = " ";
         bool admin = false;
         ManejadorFacturas maf = new ManejadorFacturas();
         Validación v;
@@ -24,6 +25,7 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
             v = new Validación();
         }
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -33,6 +35,7 @@ namespace DiseñoFinal
 
         private void CrearFactura_Load(object sender, EventArgs e)
         {
+            lblUsuario.Text = UsuarioEnCurso;
             RellenarTODO();
             pBFacturar.Visible = false;
           
@@ -47,14 +50,14 @@ namespace DiseñoFinal
             int renglon = 0;
             foreach (DataRow fila in Pedidos.Rows)
             {
-                if (v.reducirCadena(fila["Estatus"].ToString()) == "FINALIZADO" || v.reducirCadena(fila["Estatus"].ToString()) == "FACTURADO")
+                if (v.reducirCadena(fila["EstatusPedido"].ToString().ToUpper()) == "FINALIZADO" || v.reducirCadena(fila["EstatusPedido"].ToString().ToUpper()) == "FACTURADO")
                 {
                     dgvFPedido.RowCount++;
                     dgvFPedido["NoPedido", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                     dgvFPedido["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFPedido["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                     dgvFPedido["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                     renglon++;
                 }
             }
@@ -114,7 +117,7 @@ namespace DiseñoFinal
 
         private void pBFacturar_Click(object sender, EventArgs e)
         {
-            if (dgvFPedido[4, dgvFPedido.CurrentCell.RowIndex].Value.ToString() == "FINALIZADO")
+            if (dgvFPedido[4, dgvFPedido.CurrentCell.RowIndex].Value.ToString().ToUpper() == "FINALIZADO")
             {
                 string[] Datos = { dgvFPedido[0, dgvFPedido.CurrentCell.RowIndex].Value.ToString() };
                 intusuario.enviarEvento("PantallaElaborarFactura", Datos);
@@ -151,7 +154,7 @@ namespace DiseñoFinal
                     dgvFPedido["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFPedido["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                     dgvFPedido["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                     renglon++;
                 }
             }
@@ -166,7 +169,7 @@ namespace DiseñoFinal
             {
                 DataGridViewCell t = dgvFPedido[4, dgvFPedido.CurrentCell.RowIndex];
                 if (t.Value != null)
-                    if (t.Value.ToString() == "FINALIZADO")
+                    if (t.Value.ToString().ToUpper() == "FINALIZADO")
                         pBFacturar.Visible = true;
             }
         }
@@ -213,7 +216,7 @@ namespace DiseñoFinal
                     dgvFPedido["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFPedido["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                     dgvFPedido["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                    dgvFPedido["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                     renglon++;
                 }
             }
@@ -224,6 +227,11 @@ namespace DiseñoFinal
         private void txtFacturar_TextChanged(object sender, EventArgs e)
         {
             button1.PerformClick();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

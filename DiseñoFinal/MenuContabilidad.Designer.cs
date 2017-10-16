@@ -38,6 +38,7 @@
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.pBAdministrar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -60,6 +61,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pBSalir2);
             this.panel1.Location = new System.Drawing.Point(-3, 2);
@@ -138,6 +140,16 @@
             this.toolTip1.SetToolTip(this.pBAdministrar, "Facturas");
             this.pBAdministrar.Click += new System.EventHandler(this.pBAdministrar_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Location = new System.Drawing.Point(335, 37);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.TabIndex = 214;
+            this.lblUsuario.Text = "label1";
+            // 
             // MenuContabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +170,7 @@
             this.Text = "MenuContabilidad";
             this.Load += new System.EventHandler(this.MenuContabilidad_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBCrearFactura)).EndInit();
@@ -178,5 +191,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

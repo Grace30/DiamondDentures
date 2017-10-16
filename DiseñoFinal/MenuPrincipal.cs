@@ -14,7 +14,7 @@ namespace DiseñoFinal
     public partial class MenuPrincipal : Form
     {
         InterfaceUsuario intusuario;
-        string UsuarioEnCurso;
+        public static string UsuarioEnCurso;
         public MenuPrincipal(string Usuario)
         {
             InitializeComponent();

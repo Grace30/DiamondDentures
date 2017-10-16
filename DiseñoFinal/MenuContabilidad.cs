@@ -15,6 +15,7 @@ namespace DiseñoFinal
     {
         bool admin = false;
         InterfaceUsuario intusuario;
+        string UsuarioEnCurso = "";
         Form pantalla;
         public MenuContabilidad()
         {
@@ -26,6 +27,7 @@ namespace DiseñoFinal
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             this.pantalla = pantalla;
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -74,7 +76,8 @@ namespace DiseñoFinal
 
         private void pBCrearFactura_Click(object sender, EventArgs e)
         {
-            string[] Datos = new string[1];
+             string[] Datos = new string[1];
+           // string[] Datos = { UsuarioEnCurso };
             intusuario.enviarEvento("PantallaFacturar", Datos);
         }
 
@@ -116,7 +119,7 @@ namespace DiseñoFinal
 
         private void MenuContabilidad_Load(object sender, EventArgs e)
         {
-
+            lblUsuario.Text = UsuarioEnCurso;
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)

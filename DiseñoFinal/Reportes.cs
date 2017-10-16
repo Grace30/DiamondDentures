@@ -76,7 +76,7 @@ namespace DiseñoFinal
                 dgvPedidos["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                 dgvPedidos["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                 dgvPedidos["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                 renglon++;
             }
 
@@ -213,7 +213,7 @@ namespace DiseñoFinal
                     dgvPedidos["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvPedidos["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                     dgvPedidos["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                    dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                    dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                     renglon++;
                 }
             }
@@ -363,7 +363,7 @@ namespace DiseñoFinal
                     dgvPedidos["NombreD", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvPedidos["DireccionD", renglon].Value = ReducirEspaciado(fila["Direccion"].ToString());
                     dgvPedidos["TelefonoD", renglon].Value = ReducirEspaciado(fila["Telefono"].ToString());
-                    dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["Estatus"].ToString());
+                    dgvPedidos["EstadoP", renglon].Value = ReducirEspaciado(fila["EstatusPedido"].ToString());
                     renglon++;
                 }
             }
