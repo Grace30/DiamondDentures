@@ -26,9 +26,34 @@ namespace Entidad
             return IbaseDatos.Departamento(Datos);
         }
 
+        public DataTable getBalance(DateTime Desde, DateTime Hasta)
+        {
+            return IbaseDatos.getBalance(Desde, Hasta);
+        }
+
+        public double GetSaldoEnBanco()
+        {
+            return IbaseDatos.GetSaldoEnBanco();
+        }
+
+        public string[] listaDeUsuarios()
+        {
+                return IbaseDatos.ListaUsuarios();
+        }
+
+        public void calcularpagoAEmpleados()
+        {
+            IbaseDatos.calcularPagoAempleados(9);
+        }
+
         public DataTable ObtenerAsistenciaPorFecha(DateTime fecha)
         {
             return IbaseDatos.obtenerAsistenciaPorFecha(fecha);
+        }
+
+        public Salario calcularPagoPorMes(string Loginn, int Mes)
+        {
+            return IbaseDatos.calcularPagoMes(Loginn, Mes);
         }
 
         public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)
