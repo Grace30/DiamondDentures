@@ -85,17 +85,51 @@ namespace DiseñoFinal
             switch (nombre)
             {
                 case "NLEmpleados":
-                    ReporteCompras temp = new ReporteCompras();
+                    ListadoEmpleados temp = new ListadoEmpleados();
+                    temp.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = temp;
                     break;
                 case "NLClientes":
-                    ReporteTicket objReporte = new ReporteTicket();
-                    objReporte.SetParameterValue("@FolioVenta", Folio);
+                    ListadoClientes objReporte = new ListadoClientes();
                     objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = objReporte;
-                    
-
                     break;
+                case "NLPedidos":
+                    ListadoClientes objre = new ListadoClientes();
+                    objre.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = objre;
+                    break;
+                case "NLVentas":
+                    ReporteGeneralVentas tem = new ReporteGeneralVentas();
+                    tem.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = tem;
+                    break;
+                case "NLCatalogo":
+                    ReporteCatalogoProductos temp1 = new ReporteCatalogoProductos();
+                    temp1.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp1;
+                    break;
+                case "NLInventario":
+                    ReporteInventario temp2 = new ReporteInventario();
+                    temp2.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp2;
+                    break;
+                case "NLCompras":
+                    ReporteCompras temp3 = new ReporteCompras();
+                    temp3.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp3;
+                    break;
+                case "NLProveedores":
+                    ReporteProveedores temp4 = new ReporteProveedores();
+                    temp4.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp4;
+                    break;
+                case "NLSalidas":
+                    ReporteSalidas temp5 = new ReporteSalidas();
+                    temp5.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp5;
+                    break;
+
             }
         }
        
