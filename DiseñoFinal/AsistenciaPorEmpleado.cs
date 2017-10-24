@@ -68,10 +68,7 @@ namespace DiseñoFinal
                 dataGridView1.DataSource = null;
                 dataGridView1.RowCount = 0;
                 MessageBox.Show("Sin resultados");
-                
             }
-
-
         }
 
         private void AsistenciaPorEmpleado_Load(object sender, EventArgs e)

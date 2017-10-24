@@ -228,6 +228,12 @@
     <Compile Include="AsistenciaPorEmpleado.Designer.cs">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Balance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Balance.Designer.cs">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClaveRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,12 @@
     <Compile Include="ListaDeAsistencia.Designer.cs">
       <DependentUpon>ListaDeAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadosDeEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadosDeEmpleados.Designer.cs">
+      <DependentUpon>ListadosDeEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +463,12 @@
       <DependentUpon>Oficio de confirmación2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PagoAEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoAEmpleados.Designer.cs">
+      <DependentUpon>PagoAEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +499,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Prueba.cs">
       <SubType>Form</SubType>
@@ -690,6 +714,9 @@
     <EmbeddedResource Include="AsistenciaPorEmpleado.resx">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Balance.resx">
+      <DependentUpon>Balance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClaveRegistro.resx">
       <DependentUpon>ClaveRegistro.cs</DependentUpon>
     </EmbeddedResource>
@@ -773,6 +800,9 @@
     <EmbeddedResource Include="ListaDeAsistencia.resx">
       <DependentUpon>ListaDeAsistencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadosDeEmpleados.resx">
+      <DependentUpon>ListadosDeEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -816,6 +846,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Oficio de confirmación2.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagoAEmpleados.resx">
+      <DependentUpon>PagoAEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pedido.resx">
       <DependentUpon>Pedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,6 +865,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>

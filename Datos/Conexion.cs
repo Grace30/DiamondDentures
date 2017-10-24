@@ -14,7 +14,8 @@ namespace Datos
 
         private SqlConnection conexion { get; set; }
 
-        public SqlConnection getAzureConexion() {
+        public SqlConnection getAzureConexion()
+        {
             conexion = new SqlConnection(strConexionAzure);
             conexion.Open();
             return this.conexion;
