@@ -139,7 +139,10 @@ namespace DiseñoFinal
 
         private void pBReportes_Click(object sender, EventArgs e)
         {
-            Reportes frm = new Reportes(this);
+            //Reportes frm = new Reportes(this);
+            //intusuario.desplegarPantalla(frm);
+            //intusuario.cerrarPantalla(this);
+            MenúReportes frm = new MenúReportes();
             intusuario.desplegarPantalla(frm);
             intusuario.cerrarPantalla(this);
         }
