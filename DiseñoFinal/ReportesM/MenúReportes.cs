@@ -129,6 +129,7 @@ namespace DiseñoFinal
                     temp5.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = temp5;
                     break;
+                    //HOLI
 
             }
         }
