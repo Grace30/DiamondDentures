@@ -72,7 +72,8 @@
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Design.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReportsWeb.13.0.9.1312\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.TemplateEngine.dll</HintPath>
@@ -133,16 +134,19 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReportsWeb.13.0.9.1312\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReportsWeb.13.0.9.1312\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.VSDesigner.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReportsWeb.13.0.9.1312\lib\net40\CrystalDecisions.Web.dll</HintPath>
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.20.2399\lib\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Windows.Forms.dll</HintPath>
@@ -242,10 +246,106 @@
     <Compile Include="ControlPedidos.Designer.cs">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="ReportesM\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ListadoClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ListadoCorteCaja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoCorteCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ListadoEmpleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ListadoNómina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoNómina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ListadoPedidos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoPedidos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteComprasProveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteComprasProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteRequisicion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteRequisicion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteCatalogoProductos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCatalogoProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteInventario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteInventario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteProveedores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteProveedores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteSalidas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteSalidas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteTicket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTicket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteVentasEmpleado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentasEmpleado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteVentasFecha.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentasFecha.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReporteGeneralVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteGeneralVentas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="EditarMaterial.cs">
@@ -266,22 +366,22 @@
     <Compile Include="FabricarProducto.Designer.cs">
       <DependentUpon>FabricarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factura.cs">
+    <Compile Include="ReportesM\Factura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Factura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Facturar.cs">
+    <Compile Include="ReportesM\Facturar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturar.designer.cs">
+    <Compile Include="ReportesM\Facturar.designer.cs">
       <DependentUpon>Facturar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Facturas.cs">
+    <Compile Include="ReportesM\Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturas.Designer.cs">
+    <Compile Include="ReportesM\Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
     <Compile Include="FirmarAsistencia.cs">
@@ -290,7 +390,7 @@
     <Compile Include="FirmarAsistencia.Designer.cs">
       <DependentUpon>FirmarAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormaPedido.cs">
+    <Compile Include="ReportesM\FormaPedido.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FormaPedido.rpt</DependentUpon>
@@ -321,10 +421,10 @@
     <Compile Include="Materiales.Designer.cs">
       <DependentUpon>Materiales.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuContabilidad.cs">
+    <Compile Include="ReportesM\MenuContabilidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuContabilidad.Designer.cs">
+    <Compile Include="ReportesM\MenuContabilidad.Designer.cs">
       <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGeneral.cs">
@@ -351,6 +451,12 @@
     <Compile Include="Menú Admin.Designer.cs">
       <DependentUpon>Menú Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\MenúReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\MenúReportes.Designer.cs">
+      <DependentUpon>MenúReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarDentista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,13 +481,13 @@
     <Compile Include="Nomina.Designer.cs">
       <DependentUpon>Nomina.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nota.cs">
+    <Compile Include="ReportesM\Nota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nota.designer.cs">
+    <Compile Include="ReportesM\Nota.designer.cs">
       <DependentUpon>Nota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Oficio de confirmación2.cs">
+    <Compile Include="ReportesM\Oficio de confirmación2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Oficio de confirmación2.rpt</DependentUpon>
@@ -466,11 +572,95 @@
     <Compile Include="Registro Usuario.Designer.cs">
       <DependentUpon>Registro Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes.cs">
+    <Compile Include="ReportesM\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes.designer.cs">
+    <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\ReportesAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReportesAlmacen.Designer.cs">
+      <DependentUpon>ReportesAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\ReportesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\ReportesVentas.Designer.cs">
+      <DependentUpon>ReportesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\SuperVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\SuperVistaPrevia.Designer.cs">
+      <DependentUpon>SuperVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCata.Designer.cs">
+      <DependentUpon>VistaPreviaCata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCompras.Designer.cs">
+      <DependentUpon>VistaPreviaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaComprasProve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaComprasProve.Designer.cs">
+      <DependentUpon>VistaPreviaComprasProve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaInventario.Designer.cs">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaProveedores.Designer.cs">
+      <DependentUpon>VistaPreviaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaReq.Designer.cs">
+      <DependentUpon>VistaPreviaReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviarpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VistaPreviarpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaSalidas.Designer.cs">
+      <DependentUpon>VistaPreviaSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VIstaPreviaTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VIstaPreviaTicket.Designer.cs">
+      <DependentUpon>VIstaPreviaTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaVentasFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaVentasFecha.Designer.cs">
+      <DependentUpon>VistaPreviaVentasFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaVentasNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaVentasNombre.Designer.cs">
+      <DependentUpon>VistaPreviaVentasNombre.cs</DependentUpon>
     </Compile>
     <Compile Include="Tarjetas RegistradasUser.cs">
       <SubType>Form</SubType>
@@ -497,10 +687,10 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerFactura.cs">
+    <Compile Include="ReportesM\VerFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerFactura.designer.cs">
+    <Compile Include="ReportesM\VerFactura.designer.cs">
       <DependentUpon>VerFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="VerPedido.cs">
@@ -509,28 +699,28 @@
     <Compile Include="VerPedido.Designer.cs">
       <DependentUpon>VerPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="VistaPrevia.cs">
+    <Compile Include="ReportesM\VistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaPrevia.designer.cs">
+    <Compile Include="ReportesM\VistaPrevia.designer.cs">
       <DependentUpon>VistaPrevia.cs</DependentUpon>
     </Compile>
-    <Compile Include="VistaPreviaForma.cs">
+    <Compile Include="ReportesM\VistaPreviaForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaPreviaForma.designer.cs">
+    <Compile Include="ReportesM\VistaPreviaForma.designer.cs">
       <DependentUpon>VistaPreviaForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="VistaPreviaNota.cs">
+    <Compile Include="ReportesM\VistaPreviaNota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaPreviaNota.designer.cs">
+    <Compile Include="ReportesM\VistaPreviaNota.designer.cs">
       <DependentUpon>VistaPreviaNota.cs</DependentUpon>
     </Compile>
-    <Compile Include="VistaPreviaOficio.cs">
+    <Compile Include="ReportesM\VistaPreviaOficio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaPreviaOficio.designer.cs">
+    <Compile Include="ReportesM\VistaPreviaOficio.designer.cs">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ActualizarClave.resx">
@@ -563,9 +753,73 @@
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="ReportesM\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ListadoClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ListadoCorteCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoCorteCaja.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ListadoEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoEmpleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ListadoNómina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoNómina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ListadoPedidos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoPedidos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteComprasProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteComprasProveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteRequisicion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteRequisicion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteCatalogoProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCatalogoProductos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCompras.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteInventario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteProveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteProveedores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteSalidas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteSalidas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteTicket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteTicket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteVentasEmpleado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVentasEmpleado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteVentasFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVentasFecha.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReporteGeneralVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteGeneralVentas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarMaterial.resx">
       <DependentUpon>EditarMaterial.cs</DependentUpon>
@@ -576,20 +830,20 @@
     <EmbeddedResource Include="FabricarProducto.resx">
       <DependentUpon>FabricarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Factura.rpt">
+    <EmbeddedResource Include="ReportesM\Factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Factura.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturar.resx">
+    <EmbeddedResource Include="ReportesM\Facturar.resx">
       <DependentUpon>Facturar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturas.resx">
+    <EmbeddedResource Include="ReportesM\Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirmarAsistencia.resx">
       <DependentUpon>FirmarAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormaPedido.rpt">
+    <EmbeddedResource Include="ReportesM\FormaPedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FormaPedido.cs</LastGenOutput>
     </EmbeddedResource>
@@ -605,7 +859,7 @@
     <EmbeddedResource Include="Materiales.resx">
       <DependentUpon>Materiales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuContabilidad.resx">
+    <EmbeddedResource Include="ReportesM\MenuContabilidad.resx">
       <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGeneral.resx">
@@ -620,6 +874,9 @@
     <EmbeddedResource Include="Menú Admin.resx">
       <DependentUpon>Menú Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\MenúReportes.resx">
+      <DependentUpon>MenúReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarDentista.resx">
       <DependentUpon>ModificarDentista.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,10 +889,10 @@
     <EmbeddedResource Include="Nomina.resx">
       <DependentUpon>Nomina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota.resx">
+    <EmbeddedResource Include="ReportesM\Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Oficio de confirmación2.rpt">
+    <EmbeddedResource Include="ReportesM\Oficio de confirmación2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Oficio de confirmación2.cs</LastGenOutput>
     </EmbeddedResource>
@@ -680,8 +937,48 @@
     <EmbeddedResource Include="Registro Usuario.resx">
       <DependentUpon>Registro Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes.resx">
+    <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReportesAlmacen.resx">
+      <DependentUpon>ReportesAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\ReportesVentas.resx">
+      <DependentUpon>ReportesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\SuperVistaPrevia.resx">
+      <DependentUpon>SuperVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaCata.resx">
+      <DependentUpon>VistaPreviaCata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaCompras.resx">
+      <DependentUpon>VistaPreviaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaProveedores.resx">
+      <DependentUpon>VistaPreviaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaReq.resx">
+      <DependentUpon>VistaPreviaReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviarpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VistaPreviarpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaSalidas.resx">
+      <DependentUpon>VistaPreviaSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VIstaPreviaTicket.resx">
+      <DependentUpon>VIstaPreviaTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaVentasFecha.resx">
+      <DependentUpon>VistaPreviaVentasFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaVentasNombre.resx">
+      <DependentUpon>VistaPreviaVentasNombre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tarjetas RegistradasUser.resx">
       <DependentUpon>Tarjetas RegistradasUser.cs</DependentUpon>
@@ -695,22 +992,22 @@
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerFactura.resx">
+    <EmbeddedResource Include="ReportesM\VerFactura.resx">
       <DependentUpon>VerFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerPedido.resx">
       <DependentUpon>VerPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VistaPrevia.resx">
+    <EmbeddedResource Include="ReportesM\VistaPrevia.resx">
       <DependentUpon>VistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VistaPreviaForma.resx">
+    <EmbeddedResource Include="ReportesM\VistaPreviaForma.resx">
       <DependentUpon>VistaPreviaForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VistaPreviaNota.resx">
+    <EmbeddedResource Include="ReportesM\VistaPreviaNota.resx">
       <DependentUpon>VistaPreviaNota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VistaPreviaOficio.resx">
+    <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -13,6 +13,11 @@ namespace DiseñoFinal
         {
 
         }
+
+        public string FormatoFecha(DateTime Fecha)
+        {
+            return Fecha.Year + "-" + Fecha.Month + "-" + Fecha.Day;
+        }
         public bool ValidaCamposMat(TextBox Codigo, TextBox Nombre, TextBox Tiempo, TextBox Precio)
         {
             if (Codigo.Text != "" && Nombre.Text != "" && Tiempo.Text != "" && Precio.Text != "")

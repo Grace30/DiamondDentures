@@ -179,6 +179,7 @@
     <Compile Include="ManejadorRegistroProveedor.cs" />
     <Compile Include="ManejadorRegistroTarjeta.cs" />
     <Compile Include="ManejadorRegistroUsuario.cs" />
+    <Compile Include="ManejadorReportes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
