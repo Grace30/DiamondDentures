@@ -124,7 +124,7 @@ namespace Datos
             cmd = new SqlCommand(string.Format(" getPagoMensual {0}, {1}",loginn, mes), conexion);
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
-                salario  = new Salario(cmdReader[0].ToString(), cmdReader[1].ToString(), cmdReader[2].ToString(), cmdReader[3].ToString());
+                salario  = new Salario(cmdReader[0].ToString(), cmdReader[1].ToString(), cmdReader[2].ToString(), cmdReader[3].ToString(), cmdReader[4].ToString(), cmdReader[5].ToString());
             cmdReader.Close();
             conexion.Close();
 

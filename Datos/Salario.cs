@@ -8,16 +8,20 @@ namespace Entidad
 {
     public class Salario
     {
+        public string mes;
         public string usuario;
         public string salarioDiario;
         public string dias;
-        public string pago;
-        public Salario(string Usuario, string SalarioDiario, string Dias, string Pago)
+        public string aPagar;
+        public string idPago;
+        public Salario(string Mes, string Usuario, string SalarioDiario, string Dias, string APagar, string IdPago)
         {
+            mes = Mes;
             usuario = Usuario;
             salarioDiario = SalarioDiario;
             dias = Dias;
-            pago = Pago;
+            aPagar = APagar;
+            idPago = IdPago;
     }
         public Salario()
         {

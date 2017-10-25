@@ -21,7 +21,7 @@ namespace DiseñoFinal
 
         private void PagoAEmpleados_Load(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = DateTime.Now.Month - 1;
            
             
 /*
@@ -96,16 +96,19 @@ namespace DiseñoFinal
 
             for (int i = 0; i < listempleados.Count; i++)
             {
-                salarios.Add(manejadorUsuario.calcularPagoPorMes(listempleados[i], Convert.ToInt32(textBox1.Text)));
+                salarios.Add(manejadorUsuario.calcularPagoPorMes(listempleados[i], Convert.ToInt32(comboBox1.SelectedIndex+1)));
             }
             dataGridView1.RowCount = listempleados.Count;
             for (int i = 0; i < listempleados.Count; i++)
             {
-                dataGridView1[0, i].Value = salarios[i].usuario;
-                dataGridView1[1, i].Value = salarios[i].salarioDiario;
-                dataGridView1[2, i].Value = salarios[i].dias;
-                dataGridView1[3, i].Value = salarios[i].pago;
+                dataGridView1[0, i].Value = salarios[i].mes;
+                dataGridView1[1, i].Value = salarios[i].usuario;
+                dataGridView1[2, i].Value = salarios[i].idPago;
+                dataGridView1[3, i].Value = salarios[i].salarioDiario;
+                dataGridView1[4, i].Value = salarios[i].dias;
+                dataGridView1[5, i].Value = salarios[i].aPagar;
 
+                dataGridView1[6 , i].Value = false;
             }
         }
 
@@ -113,8 +116,19 @@ namespace DiseñoFinal
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                dataGridView1[4, i].Value = true;
+                dataGridView1[6, i].Value = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string msg = "";
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if((bool)dataGridView1[4,i].Value == true)
+                    msg += dataGridView1[0, i].Value.ToString() + "\r\n";
+            }
+            MessageBox.Show(msg, "Empleados");
         }
     }
 }
