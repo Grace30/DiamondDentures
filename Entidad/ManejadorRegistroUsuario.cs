@@ -119,5 +119,9 @@ namespace Entidad
             return IbaseDatos.RegistrarAsistencia(Loginn);
         }
 
+        public int PagarAEmpleado(string Loginn, double Sueldo, int Mes)
+        {
+            return IbaseDatos.PagarAEmpleado(Loginn,Sueldo, Mes);
+        }
     }
 }

@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuContabilidad));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pBSalir2 = new System.Windows.Forms.PictureBox();
             this.pBCrearFactura = new System.Windows.Forms.PictureBox();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.pBAdministrar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -69,6 +70,16 @@
             this.panel1.Size = new System.Drawing.Size(412, 75);
             this.panel1.TabIndex = 214;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Location = new System.Drawing.Point(335, 37);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.TabIndex = 214;
+            this.lblUsuario.Text = "label1";
             // 
             // pictureBox3
             // 
@@ -140,15 +151,15 @@
             this.toolTip1.SetToolTip(this.pBAdministrar, "Facturas");
             this.pBAdministrar.Click += new System.EventHandler(this.pBAdministrar_Click);
             // 
-            // lblUsuario
+            // button1
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuario.Location = new System.Drawing.Point(335, 37);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
-            this.lblUsuario.TabIndex = 214;
-            this.lblUsuario.Text = "label1";
+            this.button1.Location = new System.Drawing.Point(12, 342);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 215;
+            this.button1.Text = "Nomina";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuContabilidad
             // 
@@ -158,6 +169,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(406, 377);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pBCrearFactura);
             this.Controls.Add(this.pBSalir);
             this.Controls.Add(this.pBAdministrar);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -12,9 +12,12 @@ namespace Entidad
         public string usuario;
         public string salarioDiario;
         public string dias;
+        public string sueldo;
+        public string tasaISR;
+        public string cuotaISR;
         public string aPagar;
         public string idPago;
-        public Salario(string Mes, string Usuario, string SalarioDiario, string Dias, string APagar, string IdPago)
+        public Salario(string Mes, string Usuario, string SalarioDiario, string Dias, string Sueldo, string TasaISR, string CuotaISR, string APagar, string IdPago)
         {
             mes = Mes;
             usuario = Usuario;
@@ -22,6 +25,10 @@ namespace Entidad
             dias = Dias;
             aPagar = APagar;
             idPago = IdPago;
+            sueldo = Sueldo;
+            tasaISR = TasaISR;
+            cuotaISR = CuotaISR;
+
     }
         public Salario()
         {

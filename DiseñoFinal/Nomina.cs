@@ -69,6 +69,7 @@ namespace DiseñoFinal
         }
 
         private void timerBanco_Tick(object sender, EventArgs e)
+
         {
             timerBanco.Stop();
             lbl_Saldo.BackColor = Color.FromArgb(185, 209, 234);
