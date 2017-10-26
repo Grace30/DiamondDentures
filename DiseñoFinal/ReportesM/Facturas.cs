@@ -48,8 +48,9 @@ namespace DiseñoFinal
             {
                 dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["NoFactura"].ToString());
                 dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
-                dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
+                dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["NombreDentista"].ToString());
                 dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
+                dgvFacturas["Column1", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
 
                 renglon++;
             }

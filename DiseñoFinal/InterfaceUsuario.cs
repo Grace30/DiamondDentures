@@ -681,6 +681,10 @@ namespace DiseñoFinal
 
                 desplegarPantalla(vfac);
             }
+            if (Evento == "PantallaNomina")
+            {
+                new Nomina().ShowDialog();
+            }
 
             if (Evento == "Registrar Datos Factura")
             {

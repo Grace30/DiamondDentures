@@ -105,6 +105,12 @@ namespace Datos
             return 0;*/
         }
 
+        public int PagarAEmpleado(string loginn, double sueldo, int mes)
+        {
+            string[] Parametros = { "@Loginn", "@Sueldo", "@Mes" };
+            return Ejecutar("PagarAEmpleado", Parametros, loginn, sueldo,mes);
+        }
+
         public DataTable obtenerAsistenciaPorFecha(DateTime fecha)
         {
             string[] Parametros = { "@Fecha" };
@@ -124,7 +130,7 @@ namespace Datos
             cmd = new SqlCommand(string.Format(" getPagoMensual {0}, {1}",loginn, mes), conexion);
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
-                salario  = new Salario(cmdReader[0].ToString(), cmdReader[1].ToString(), cmdReader[2].ToString(), cmdReader[3].ToString(), cmdReader[4].ToString(), cmdReader[5].ToString());
+                salario = new Salario(cmdReader[0].ToString(), cmdReader[1].ToString(), cmdReader[2].ToString(), cmdReader[3].ToString(), cmdReader[4].ToString(), cmdReader[5].ToString(), cmdReader[6].ToString(), cmdReader[7].ToString(), cmdReader[8].ToString());
             cmdReader.Close();
             conexion.Close();
 

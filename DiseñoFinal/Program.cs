@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Globalization;
 namespace DiseñoFinal
 {
     static class Program
@@ -16,7 +16,8 @@ namespace DiseñoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("es-MX");
+            Application.Run(new Nomina());
         }
     }
 }
