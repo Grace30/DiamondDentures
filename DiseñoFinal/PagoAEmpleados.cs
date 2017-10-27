@@ -67,52 +67,25 @@ namespace DiseñoFinal
                 tablalista = true;
             else
                 tablalista = false;
-            statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" });
+            statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" }); 
         }
 
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-            List<string> empleadosApagar = new List<string>();
-            List<double> CantidadApagar = new List<double>();
-            string msg = "";
-            double totalAPagar = 0;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (dataGridView1[0, 0].Value.ToString() == comboBox1.Items[DateTime.Now.Month - 1].ToString() && DateTime.Now.Day < DateTime.DaysInMonth(2017,comboBox1.SelectedIndex + 1))
             {
-                if ((bool)dataGridView1["Pagar", i].Value == true)
-                {
-                    msg += dataGridView1["Usuario", i].Value.ToString() + "\r\n";
-
-                    string money = dataGridView1["APagar", i].Value.ToString().Split('$')[1];
-                    totalAPagar += Convert.ToDouble(money);
-                    empleadosApagar.Add(dataGridView1["Usuario", i].Value.ToString().TrimEnd());
-                    CantidadApagar.Add(Convert.ToDouble(money));
-                }
-
+                if (MessageBox.Show("¿Desea pagar antes del fin de mes? \r\nDespués no será posible realizar ningún pago para los empleados seleccionados en este mes.", "Pago antes del día de pago", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    PagarAEmpleados();
             }
-            if (MessageBox.Show(msg + "\r\nTotal a pagar: " + totalAPagar.ToString("C2"), "Empleados", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            else if((comboBox1.SelectedIndex + 1) < DateTime.Now.Month)
             {
-                if (manejadorUsuario.GetSaldoEnBanco() < totalAPagar)
-                    MessageBox.Show("No se puede realizar el pago debido a saldo insuficiente");
-                else
-                {
-                    for (int i = 0; i < empleadosApagar.Count; i++)
-                    {
-                        statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] {"Generando pago para el empleado " + empleadosApagar[i] + "..."});
-                        //Thread newThread = new Thread(CambiarMensaje);
-                        //newThread.Start("Generando pago para el empleado " + empleadosApagar[i] + "...");
-                        manejadorUsuario.PagarAEmpleado(empleadosApagar[i], CantidadApagar[i], comboBox1.SelectedIndex + 1);
-                        //newThread = new Thread(CambiarMensaje);
-                        //newThread.Start("Listo");
-
-                    }
-                    statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" });
-                    MessageBox.Show("Pago realizado");
-                    
-                }
+                PagarAEmpleados();
             }
-            button1.PerformClick();
+            
+            
+            
         }
 
 
@@ -191,6 +164,45 @@ namespace DiseñoFinal
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbl_Mes.Text = comboBox1.Items[comboBox1.SelectedIndex].ToString();
+            button1.PerformClick();
+        }
+
+        private void PagarAEmpleados()
+        {
+            List<string> empleadosApagar = new List<string>();
+            List<double> CantidadApagar = new List<double>();
+            string msg = "";
+            double totalAPagar = 0;
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if ((bool)dataGridView1["Pagar", i].Value == true)
+                {
+                    msg += dataGridView1["Usuario", i].Value.ToString() + "\r\n";
+
+                    string money = dataGridView1["APagar", i].Value.ToString().Split('$')[1];
+                    totalAPagar += Convert.ToDouble(money);
+                    empleadosApagar.Add(dataGridView1["Usuario", i].Value.ToString().TrimEnd());
+                    CantidadApagar.Add(Convert.ToDouble(money));
+                }
+
+            }
+            if (MessageBox.Show(msg + "\r\nTotal a pagar: " + totalAPagar.ToString("C2"), "Empleados", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (manejadorUsuario.GetSaldoEnBanco() < totalAPagar)
+                    MessageBox.Show("No se puede realizar el pago debido a saldo insuficiente");
+                else
+                {
+                    for (int i = 0; i < empleadosApagar.Count; i++)
+                    {
+                        statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Generando pago para el empleado " + empleadosApagar[i] + "..." });
+                        manejadorUsuario.PagarAEmpleado(empleadosApagar[i], CantidadApagar[i], comboBox1.SelectedIndex + 1);
+                    }
+                    statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" });
+                    MessageBox.Show("Pago realizado");
+
+                }
+            }
             button1.PerformClick();
         }
     }
