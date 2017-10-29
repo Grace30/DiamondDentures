@@ -17,7 +17,7 @@ namespace DiseñoFinal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("es-MX");
-            Application.Run(new Nomina());
+            Application.Run(new Login());
         }
     }
 }
