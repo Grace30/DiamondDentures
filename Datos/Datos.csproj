@@ -59,7 +59,9 @@
     <Compile Include="InterfaceBaseDeDatos.cs" />
     <Compile Include="Jesús.cs" />
     <Compile Include="Maribel.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requisicion.cs" />
     <Compile Include="Salario.cs" />
   </ItemGroup>
   <ItemGroup>

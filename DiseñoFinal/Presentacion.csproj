@@ -222,6 +222,12 @@
     <Compile Include="AgregarPieza.Designer.cs">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="AprobarRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AprobarRequisicion.Designer.cs">
+      <DependentUpon>AprobarRequisicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsistenciaPorEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -740,6 +746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarPieza.resx">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AprobarRequisicion.resx">
+      <DependentUpon>AprobarRequisicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AsistenciaPorEmpleado.resx">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>

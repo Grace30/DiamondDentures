@@ -33,7 +33,7 @@ namespace DiseñoFinal
         {
             statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Calculando..." });
             tablalista = false;
-            dataGridView1.RowCount = 1;
+            data1.RowCount = 1;
             List<string> listempleados = manejadorUsuario.listaDeUsuarios().ToList();
 
             List<Salario> salarios = new List<Salario>();
@@ -42,28 +42,28 @@ namespace DiseñoFinal
             {
                 salarios.Add(manejadorUsuario.calcularPagoPorMes(listempleados[i], Convert.ToInt32(comboBox1.SelectedIndex + 1)));
             }
-            dataGridView1.RowCount = listempleados.Count;
+            data1.RowCount = listempleados.Count;
             for (int i = 0; i < listempleados.Count; i++)
             {
-                dataGridView1["Mes", i].Value = salarios[i].mes;
-                dataGridView1["Usuario", i].Value = salarios[i].usuario;
-                dataGridView1["IdPago", i].Value = salarios[i].idPago;
-                dataGridView1["SalarioDiario", i].Value = salarios[i].salarioDiario;
-                dataGridView1["DiasTrabajados", i].Value = salarios[i].dias;
-                dataGridView1["Sueldo", i].Value = salarios[i].sueldo;
-                dataGridView1["TasaISR", i].Value = salarios[i].tasaISR;
-                dataGridView1["CuotaISR", i].Value = salarios[i].cuotaISR;
-                dataGridView1["APagar", i].Value = salarios[i].aPagar;
-                dataGridView1["Pagar", i].Value = false;
+                data1["Mes", i].Value = salarios[i].mes;
+                data1["Usuario", i].Value = salarios[i].usuario;
+                data1["IdPago", i].Value = salarios[i].idPago;
+                data1["SalarioDiario", i].Value = salarios[i].salarioDiario;
+                data1["DiasTrabajados", i].Value = salarios[i].dias;
+                data1["Sueldo", i].Value = salarios[i].sueldo;
+                data1["TasaISR", i].Value = salarios[i].tasaISR;
+                data1["CuotaISR", i].Value = salarios[i].cuotaISR;
+                data1["APagar", i].Value = salarios[i].aPagar;
+                data1["Pagar", i].Value = false;
 
                 if (salarios[i].idPago == "No Pagado ")
-                    dataGridView1["IdPago", i].Style.ForeColor = Color.Red;
+                    data1["IdPago", i].Style.ForeColor = Color.Red;
                 //else
                 //((DataGridViewCheckBoxCell)dataGridView1["Pagar", i].Value).
 
 
             }
-            if (dataGridView1.RowCount > 0)
+            if (data1.RowCount > 0)
                 tablalista = true;
             else
                 tablalista = false;
@@ -74,7 +74,7 @@ namespace DiseñoFinal
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1[0, 0].Value.ToString() == comboBox1.Items[DateTime.Now.Month - 1].ToString() && DateTime.Now.Day < DateTime.DaysInMonth(2017,comboBox1.SelectedIndex + 1))
+            if (data1[0, 0].Value.ToString() == comboBox1.Items[DateTime.Now.Month - 1].ToString() && DateTime.Now.Day < DateTime.DaysInMonth(2017,comboBox1.SelectedIndex + 1))
             {
                 if (MessageBox.Show("¿Desea pagar antes del fin de mes? \r\nDespués no será posible realizar ningún pago para los empleados seleccionados en este mes.", "Pago antes del día de pago", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     PagarAEmpleados();
@@ -94,11 +94,11 @@ namespace DiseñoFinal
             if (tablalista)
                 if (e.ColumnIndex == 9)
                 {
-                    if (dataGridView1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
+                    if (data1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
                     {
                         if (marcarTodo == false)
                             MessageBox.Show("Ya se le pago a este empleado");
-                        dataGridView1["Pagar", e.RowIndex].Value = false;
+                        data1["Pagar", e.RowIndex].Value = false;
                     }
                 }
         }
@@ -107,18 +107,18 @@ namespace DiseñoFinal
         {
             if (e.ColumnIndex == 9)
             {
-                if ((bool)dataGridView1[e.ColumnIndex, e.RowIndex].Value == true)
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = false;
+                if ((bool)data1[e.ColumnIndex, e.RowIndex].Value == true)
+                    data1[e.ColumnIndex, e.RowIndex].Value = false;
                 else
                 {
 
-                    if (dataGridView1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
+                    if (data1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
                     {
                         MessageBox.Show("Ya se le pago a este empleado");
-                        dataGridView1["Pagar", e.RowIndex].Value = false;
+                        data1["Pagar", e.RowIndex].Value = false;
                     }
                     else
-                        dataGridView1[e.ColumnIndex, e.RowIndex].Value = !((bool)dataGridView1[e.ColumnIndex, e.RowIndex].Value);
+                        data1[e.ColumnIndex, e.RowIndex].Value = !((bool)data1[e.ColumnIndex, e.RowIndex].Value);
                 }
             }
         }
@@ -136,9 +136,9 @@ namespace DiseñoFinal
         private void MarcarDesmarcar(bool estado)
         {
             marcarTodo = true;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            for (int i = 0; i < data1.RowCount; i++)
             {
-                dataGridView1["Pagar", i].Value = estado;
+                data1["Pagar", i].Value = estado;
             }
             marcarTodo = false;
         }
@@ -169,21 +169,31 @@ namespace DiseñoFinal
 
         private void PagarAEmpleados()
         {
-            List<string> empleadosApagar = new List<string>();
-            List<double> CantidadApagar = new List<double>();
+           // List<string> empleadosApagar = new List<string>();
+            //List<double> CantidadApagar = new List<double>();
+            List<Salario> Salarios = new List<Salario>();
             string msg = "";
             double totalAPagar = 0;
 
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            for (int i = 0; i < data1.RowCount; i++)
             {
-                if ((bool)dataGridView1["Pagar", i].Value == true)
+                if ((bool)data1["Pagar", i].Value == true)
                 {
-                    msg += dataGridView1["Usuario", i].Value.ToString() + "\r\n";
+                    msg += data1["Usuario", i].Value.ToString() + "\r\n";
 
-                    string money = dataGridView1["APagar", i].Value.ToString().Split('$')[1];
-                    totalAPagar += Convert.ToDouble(money);
-                    empleadosApagar.Add(dataGridView1["Usuario", i].Value.ToString().TrimEnd());
-                    CantidadApagar.Add(Convert.ToDouble(money));
+                    Salarios.Add(new Salario((comboBox1.SelectedIndex+1).ToString(), 
+                        data1["Usuario", i].Value.ToString(),
+                        data1["SalarioDiario", i].Value.ToString(),
+                        data1["DiasTrabajados", i].Value.ToString(),
+                        data1["Sueldo", i].Value.ToString(),
+                        data1["TasaISR", i].Value.ToString(),
+                        data1["CuotaISR", i].Value.ToString(),
+                        data1["APagar", i].Value.ToString(),
+                          data1["IdPago", i].Value.ToString()));
+
+                    totalAPagar += Convert.ToDouble(data1["APagar", i].Value.ToString().Split('$')[1]);
+                   // empleadosApagar.Add(data1["Usuario", i].Value.ToString().TrimEnd());
+                    //CantidadApagar.Add(Convert.ToDouble(money));
                 }
 
             }
@@ -193,10 +203,16 @@ namespace DiseñoFinal
                     MessageBox.Show("No se puede realizar el pago debido a saldo insuficiente");
                 else
                 {
-                    for (int i = 0; i < empleadosApagar.Count; i++)
+                    for (int i = 0; i < Salarios.Count; i++)
                     {
-                        statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Generando pago para el empleado " + empleadosApagar[i] + "..." });
-                        manejadorUsuario.PagarAEmpleado(empleadosApagar[i], CantidadApagar[i], comboBox1.SelectedIndex + 1);
+                        statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Generando pago para el empleado " + Salarios[i].usuario + "..." });
+                        
+                        manejadorUsuario.PagarAEmpleado(Salarios[i].usuario,
+                            Convert.ToDouble(Salarios[i].sueldo.Split('$')[1]),
+                            int.Parse(Salarios[i].mes),
+                            Salarios[i].tasaISR.Split('%')[0],
+                            Salarios[i].cuotaISR.Split('$')[1]
+                            ,Salarios[i].aPagar.Split('$')[1]);
                     }
                     statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" });
                     MessageBox.Show("Pago realizado");

@@ -19,7 +19,31 @@ namespace Datos
             string[] Parametros = { "@Loginn", "@Fecha" };
             return getDatosTabla("ValidarAsistencia", Parametros, loginnn, date);
         }
-        
+
+        public Requisicion getRequisicion(int idRequisicion)
+        {
+            Requisicion requi = new Requisicion();
+            List<Material> items = new List<Material>();
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            double saldo = 0;
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute getDetallesRequisicion " + idRequisicion, conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+            {
+                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToUInt32(cmdReader["CostoBase"])));
+                requi = new Requisicion(Convert.ToInt32(cmdReader["IDRequisicion"]), cmdReader["Departamento"].ToString(), cmdReader["Solicitante"].ToString(),(DateTime)cmdReader["Fecha"], cmdReader["Surtido"].ToString(), cmdReader["Estado"].ToString(), items.ToArray());
+            }
+            cmdReader.Close();
+            conexion.Close();
+
+
+
+
+            return requi;
+        }
 
         public DataTable ObtenerProveedores(object id, object nombre, object correo, object rFC, object contacto, object estatus)
         {
@@ -105,10 +129,15 @@ namespace Datos
             return 0;*/
         }
 
-        public int PagarAEmpleado(string loginn, double sueldo, int mes)
+        public DataTable getRequisicionesPorAprobar()
         {
-            string[] Parametros = { "@Loginn", "@Sueldo", "@Mes" };
-            return Ejecutar("PagarAEmpleado", Parametros, loginn, sueldo,mes);
+            return getDatosTabla("getRequisiscionesPorAprobar", new string[0], new string[0]);
+        }
+
+        public int PagarAEmpleado(string loginn, double sueldo, int mes , string TasaISR, string CuotaISR, string APagar)
+        {
+            string[] Parametros = { "@Loginn", "@Sueldo", "@Mes", "@TasaISR", "@CuotaISR", "@APagar"};
+            return Ejecutar("PagarAEmpleado", Parametros, loginn.TrimEnd(), sueldo,mes, TasaISR, CuotaISR, APagar);
         }
 
         public DataTable obtenerAsistenciaPorFecha(DateTime fecha)
