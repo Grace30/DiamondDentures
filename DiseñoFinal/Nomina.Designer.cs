@@ -47,9 +47,13 @@
             this.lbl_Saldo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timerBanco = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.timerRequisiciones = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,7 +66,7 @@
             this.pagoAEmpleadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(676, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(686, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-3, 136);
+            this.label1.Location = new System.Drawing.Point(-3, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 1;
@@ -113,7 +117,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.menuStrip2);
-            this.panel1.Location = new System.Drawing.Point(0, 152);
+            this.panel1.Location = new System.Drawing.Point(0, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(676, 33);
             this.panel1.TabIndex = 2;
@@ -199,12 +203,45 @@
             this.timerBanco.Interval = 1000;
             this.timerBanco.Tick += new System.EventHandler(this.timerBanco_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Requisiciones (Doble click para abir requisición)";
+            // 
+            // timerRequisiciones
+            // 
+            this.timerRequisiciones.Interval = 1000;
+            this.timerRequisiciones.Tick += new System.EventHandler(this.timerRequisiciones_Tick);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 159);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(373, 256);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
             // Nomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(676, 392);
+            this.ClientSize = new System.Drawing.Size(686, 427);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Saldo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -221,6 +258,7 @@
             this.panel1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +284,8 @@
         private System.Windows.Forms.Label lbl_Saldo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timerBanco;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timerRequisiciones;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

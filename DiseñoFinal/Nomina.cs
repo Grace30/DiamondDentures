@@ -21,6 +21,7 @@ namespace DiseñoFinal
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
             timerBanco.Start();
+            timerRequisiciones.Start();
         }
 
         private void firmarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace DiseñoFinal
         }
 
         private void timerBanco_Tick(object sender, EventArgs e)
+
         {
             timerBanco.Stop();
             lbl_Saldo.BackColor = Color.FromArgb(185, 209, 234);
@@ -85,8 +87,51 @@ namespace DiseñoFinal
 
         private void Nomina_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowCount = 1;
+            dataGridView1.Rows[0].Selected = true;
             lbl_Saldo.Text = string.Format("{0} MXN", manejadorUsuario.GetSaldoEnBanco().ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
 
+        }
+
+        private void timerRequisiciones_Tick(object sender, EventArgs e)
+        {
+            timerRequisiciones.Stop();
+            int rowSelect = 0;
+            if (dataGridView1.RowCount > 0)
+                if (dataGridView1.SelectedRows.Count > 0)
+                    rowSelect = dataGridView1.SelectedRows[0].Index;
+            int rows = dataGridView1.RowCount;
+            DataTable t = manejadorUsuario.getRequisicionesPorAprobar();
+            dataGridView1.DataSource = t;
+            dataGridView1.Columns[0].FillWeight = 1;
+            dataGridView1.Columns[1].FillWeight = 40;
+            dataGridView1.Columns[3].FillWeight = 80;
+            dataGridView1.Columns[4].FillWeight = 70;
+
+            dataGridView1.ClearSelection();
+            if (rows == dataGridView1.RowCount)
+            {
+                if (dataGridView1.RowCount > 0)
+                    dataGridView1.Rows[rowSelect].Selected = true;
+            }
+            else
+            {
+
+                if (Math.Abs((dataGridView1.RowCount - rows)) >= 0 && dataGridView1.RowCount > 0)
+                    if(rowSelect != 0)
+                     dataGridView1.Rows[Math.Abs((dataGridView1.RowCount - rows))].Selected = true;
+                    else
+                        dataGridView1.Rows[0].Selected = true;
+            }
+            timerRequisiciones.Start();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            timerRequisiciones.Stop();
+            if (e.RowIndex > -1)
+                new AprobarRequisicion(Convert.ToInt32(dataGridView1[1, e.RowIndex].Value)).ShowDialog();
+            timerRequisiciones.Start();
         }
     }
 }

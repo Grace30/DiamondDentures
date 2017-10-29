@@ -109,6 +109,11 @@ namespace Entidad
             return IbaseDatos.ActualizarRegistroUsuario(Datos);
         }
 
+        public DataTable getRequisicionesPorAprobar()
+        {
+            return IbaseDatos.getRequisicionesPorAprobar();
+        }
+
         public int EliminarRegistro(string[] Datos)
         {
             return IbaseDatos.EliminarUsuario(Datos);
@@ -119,5 +124,9 @@ namespace Entidad
             return IbaseDatos.RegistrarAsistencia(Loginn);
         }
 
+        public int PagarAEmpleado(string Loginn, double Sueldo, int Mes, string TasaISR,  string CuotaISR , string APagar)
+        {
+            return IbaseDatos.PagarAEmpleado(Loginn,Sueldo, Mes, TasaISR, CuotaISR, APagar);
+        }
     }
 }

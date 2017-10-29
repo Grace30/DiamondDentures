@@ -180,6 +180,8 @@
     <Compile Include="ManejadorRegistroTarjeta.cs" />
     <Compile Include="ManejadorRegistroUsuario.cs" />
     <Compile Include="ManejadorReportes.cs" />
+    <Compile Include="ManejadorRequisicion.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
