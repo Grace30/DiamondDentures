@@ -92,7 +92,7 @@ namespace DiseñoFinal
 
             string idPed = lblNoPedido.Text;
 
-            objForm.IDPedido = idPed;
+            objForm.Folio = idPed;
 
             objForm.ShowDialog();
         }

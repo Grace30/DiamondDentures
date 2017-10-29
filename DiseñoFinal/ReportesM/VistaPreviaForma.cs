@@ -13,7 +13,7 @@ namespace DiseñoFinal
 {
     public partial class VistaPreviaForma : Form
     {
-        public string IDPedido;
+        public string Folio;
         public VistaPreviaForma()
         {
             InitializeComponent();
@@ -22,8 +22,9 @@ namespace DiseñoFinal
         private void VistaPreviaForma_Load(object sender, EventArgs e)
         {
             FormaPedido objReporte = new FormaPedido();
-            objReporte.SetParameterValue("@IDPedido", IDPedido);
-            VOficio.ReportSource = objReporte;
+            objReporte.SetParameterValue("@FolioForma", Folio);
+            objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+            VForma.ReportSource = objReporte;
         }
 
         private void VOficio_Load(object sender, EventArgs e)

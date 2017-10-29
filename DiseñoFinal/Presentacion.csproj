@@ -246,10 +246,16 @@
     <Compile Include="ControlPedidos.Designer.cs">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesM\CrystalReport1.cs">
+    <Compile Include="ReportesM\ListadoEmpleadosDepartamentos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>ListadoEmpleadosDepartamentos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesM\NotaTerminación.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaTerminación.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportesM\ListadoClientes.cs">
@@ -596,6 +602,36 @@
     <Compile Include="ReportesM\SuperVistaPrevia.Designer.cs">
       <DependentUpon>SuperVistaPrevia.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\VerFormasPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VerFormasPedido.Designer.cs">
+      <DependentUpon>VerFormasPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VerNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VerNotas.Designer.cs">
+      <DependentUpon>VerNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VerOficios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VerOficios.Designer.cs">
+      <DependentUpon>VerOficios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VerRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VerRequisicion.Designer.cs">
+      <DependentUpon>VerRequisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VerTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VerTickets.Designer.cs">
+      <DependentUpon>VerTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaCata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -753,9 +789,13 @@
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\CrystalReport1.rpt">
+    <EmbeddedResource Include="ReportesM\ListadoEmpleadosDepartamentos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>ListadoEmpleadosDepartamentos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\NotaTerminación.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaTerminación.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\ListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -948,6 +988,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\SuperVistaPrevia.resx">
       <DependentUpon>SuperVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VerFormasPedido.resx">
+      <DependentUpon>VerFormasPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VerNotas.resx">
+      <DependentUpon>VerNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VerOficios.resx">
+      <DependentUpon>VerOficios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VerRequisicion.resx">
+      <DependentUpon>VerRequisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VerTickets.resx">
+      <DependentUpon>VerTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaCata.resx">
       <DependentUpon>VistaPreviaCata.cs</DependentUpon>

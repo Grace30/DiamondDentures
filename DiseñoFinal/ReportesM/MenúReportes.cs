@@ -89,6 +89,11 @@ namespace DiseñoFinal
                     temp.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = temp;
                     break;
+                case "NLEmpleadosDepartamento":
+                    ListadoEmpleadosDepartamentos temp0 = new ListadoEmpleadosDepartamentos();
+                    temp0.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+                    crystalReportViewer1.ReportSource = temp0;
+                    break;
                 case "NLClientes":
                     ListadoClientes objReporte = new ListadoClientes();
                     objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
@@ -129,7 +134,32 @@ namespace DiseñoFinal
                     temp5.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = temp5;
                     break;
-                    //HOLI
+                case "NRRequi":
+                    VerRequisicion frm = new VerRequisicion();
+                    frm.ShowDialog();
+                    break;
+                case "NRTicket":
+                    VerTickets tic = new VerTickets();
+                    tic.ShowDialog();
+                    break;
+                case "NRForma":
+                    VerFormasPedido form = new VerFormasPedido();
+                    form.ShowDialog();
+                    break;
+                case "NROficio":
+                    VerOficios form3 = new VerOficios();
+                    form3.ShowDialog();
+                    break;
+                case "NRNota":
+                    VerNotas form4 = new VerNotas();
+                    form4.ShowDialog();
+                    break;
+                case "NRFacturas":
+                    Facturas form5 = new Facturas();
+                    form5.ShowDialog();
+                    break;
+               
+
 
             }
         }
@@ -144,6 +174,13 @@ namespace DiseñoFinal
         {
             x = e.Node;
             SeleccionarNodo(x.Name);
+        }
+
+        private void pBSalir_Click_1(object sender, EventArgs e)
+        {
+            ReportesAlmacen frm = new ReportesAlmacen(this);
+            intusuario.desplegarPantalla(frm);
+            intusuario.cerrarPantalla(this);
         }
     }
 }

@@ -16,14 +16,14 @@ namespace DiseñoFinal.ReportesM {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Factura : ReportClass {
+    public class NotaTerminación : ReportClass {
         
-        public Factura() {
+        public NotaTerminación() {
         }
         
         public override string ResourceName {
             get {
-                return "Factura.rpt";
+                return "NotaTerminación.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DiseñoFinal.ReportesM {
         
         public override string FullResourceName {
             get {
-                return "DiseñoFinal.ReportesM.Factura.rpt";
+                return "DiseñoFinal.ReportesM.NotaTerminación.rpt";
             }
             set {
                 // Do nothing
@@ -50,7 +50,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section TSection7 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section1 {
             get {
                 return this.ReportDefinition.Sections[0];
             }
@@ -58,7 +58,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section TSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section TSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section TSection8 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section TSection5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Pedido {
+        public CrystalDecisions.Shared.IParameterField Parameter_FolioNota {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace DiseñoFinal.ReportesM {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFactura : Component, ICachedReport {
+    public class CachedNotaTerminación : Component, ICachedReport {
         
-        public CachedFactura() {
+        public CachedNotaTerminación() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace DiseñoFinal.ReportesM {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Factura rpt = new Factura();
+            NotaTerminación rpt = new NotaTerminación();
             rpt.Site = this.Site;
             return rpt;
         }

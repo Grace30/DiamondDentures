@@ -284,7 +284,7 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.Silver;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.Location = new System.Drawing.Point(617, 453);
+            this.btnTicket.Location = new System.Drawing.Point(452, 453);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(192, 26);
             this.btnTicket.TabIndex = 183;

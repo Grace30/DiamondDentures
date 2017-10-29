@@ -44,10 +44,6 @@
             this.rdNoFac = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
-            this.NoPed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pBVerFactura = new System.Windows.Forms.PictureBox();
@@ -55,6 +51,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.NoPed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -165,6 +166,7 @@
             this.dgvFacturas.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFacturas.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -180,7 +182,8 @@
             this.NoPed,
             this.NoFac,
             this.Nombre,
-            this.Fecha});
+            this.Fecha,
+            this.Empleado});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +192,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFacturas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvFacturas.Location = new System.Drawing.Point(88, 269);
+            this.dgvFacturas.Location = new System.Drawing.Point(8, 268);
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -203,37 +206,9 @@
             this.dgvFacturas.RowHeadersVisible = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             this.dgvFacturas.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvFacturas.Size = new System.Drawing.Size(503, 135);
+            this.dgvFacturas.Size = new System.Drawing.Size(651, 150);
             this.dgvFacturas.TabIndex = 183;
             this.dgvFacturas.CurrentCellChanged += new System.EventHandler(this.dgvFacturas_CurrentCellChanged);
-            // 
-            // NoPed
-            // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.NoPed.DefaultCellStyle = dataGridViewCellStyle3;
-            this.NoPed.HeaderText = "No. Pedido";
-            this.NoPed.Name = "NoPed";
-            this.NoPed.ReadOnly = true;
-            // 
-            // NoFac
-            // 
-            this.NoFac.HeaderText = "No. Factura";
-            this.NoFac.Name = "NoFac";
-            this.NoFac.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre Dentista";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 170;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha Emisión";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 130;
             // 
             // label2
             // 
@@ -307,6 +282,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // NoPed
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.NoPed.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NoPed.HeaderText = "No. Pedido";
+            this.NoPed.Name = "NoPed";
+            this.NoPed.ReadOnly = true;
+            // 
+            // NoFac
+            // 
+            this.NoFac.HeaderText = "No. Factura";
+            this.NoFac.Name = "NoFac";
+            this.NoFac.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre Dentista";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha Emisión";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Empleado
+            // 
+            this.Empleado.HeaderText = "Facturado por :";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
             // Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,13 +368,14 @@
         private System.Windows.Forms.PictureBox pBVerFactura;
         private System.Windows.Forms.RadioButton rdNoFac;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoPed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoFac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.RadioButton rbNoPedido;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoPed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoFac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
     }
 }

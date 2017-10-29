@@ -52,6 +52,18 @@ namespace Entidad
         {
             return IbaseDatos.ObtenerDatosSalidas();
         }
+        public DataTable ObtenerNotas()
+        {
+            return IbaseDatos.ObtenerNotas();
+        }
+        public DataTable ObtenerOficios()
+        {
+            return IbaseDatos.ObtenerOficios();
+        }
+        public DataTable ObtenerFormas()
+        {
+            return IbaseDatos.ObtenerFormas();
+        }
 
 
 

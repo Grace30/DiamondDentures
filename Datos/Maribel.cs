@@ -48,5 +48,17 @@ namespace Datos
         {
             return getDatosTabla("procListaSalidas", new string[0], new string[0]);
         }
+        public DataTable ObtenerNotas()
+        {
+            return getDatosTabla("procMostrarNotas", new string[0], new string[0]);
+        }
+        public DataTable ObtenerOficios()
+        {
+            return getDatosTabla("procMostrarOficios", new string[0], new string[0]);
+        }
+        public DataTable ObtenerFormas()
+        {
+            return getDatosTabla("procMostrarFormas", new string[0], new string[0]);
+        }
     }
 }

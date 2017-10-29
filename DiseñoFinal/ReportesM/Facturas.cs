@@ -48,8 +48,9 @@ namespace DiseñoFinal
             {
                 dgvFacturas["NoFac", renglon].Value = ReducirEspaciado(fila["NoFactura"].ToString());
                 dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
-                dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
+                dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["NombreDentista"].ToString());
                 dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
+                dgvFacturas["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
 
                 renglon++;
             }
@@ -112,8 +113,8 @@ namespace DiseñoFinal
 
             VistaPrevia objForm = new VistaPrevia();
 
-            maf.CrearFactura(new string[] { dgvFacturas.SelectedCells[0].Value.ToString() });
-            int Factura = Convert.ToInt32(maf.BuscarFactura(new string[] { dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString() }).Rows[0].ItemArray[1]);
+            //maf.CrearFactura(new string[] { dgvFacturas.SelectedCells[0].Value.ToString() });
+            //int Factura = Convert.ToInt32(maf.BuscarFactura(new string[] { dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString() }).Rows[0].ItemArray[1]);
 
             string idPed = dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString();
 
@@ -152,6 +153,7 @@ namespace DiseñoFinal
                     dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                     dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
+                    dgvFacturas["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
 
                     renglon++;
                 }
@@ -214,7 +216,7 @@ namespace DiseñoFinal
                     dgvFacturas["NoPed", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
                     dgvFacturas["Nombre", renglon].Value = ReducirEspaciado(fila["Nombre"].ToString());
                     dgvFacturas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmision"].ToString());
-
+                    dgvFacturas["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
                     renglon++;
                 }
 

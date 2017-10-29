@@ -35,7 +35,6 @@
             // 
             this.VOficio.ActiveViewIndex = -1;
             this.VOficio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.VOficio.CachedPageNumberPerDoc = 10;
             this.VOficio.Cursor = System.Windows.Forms.Cursors.Default;
             this.VOficio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VOficio.Location = new System.Drawing.Point(0, 0);
@@ -53,6 +52,7 @@
             this.VOficio.Size = new System.Drawing.Size(782, 506);
             this.VOficio.TabIndex = 1;
             this.VOficio.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.VOficio.Load += new System.EventHandler(this.VOficio_Load);
             // 
             // VistaPreviaOficio
             // 

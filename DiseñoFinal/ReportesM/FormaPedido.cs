@@ -98,7 +98,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_IDPedido {
+        public CrystalDecisions.Shared.IParameterField Parameter_FolioForma {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }

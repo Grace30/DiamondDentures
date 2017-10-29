@@ -16,14 +16,14 @@ namespace DiseñoFinal.ReportesM {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class ListadoEmpleadosDepartamentos : ReportClass {
         
-        public CrystalReport1() {
+        public ListadoEmpleadosDepartamentos() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "ListadoEmpleadosDepartamentos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DiseñoFinal.ReportesM {
         
         public override string FullResourceName {
             get {
-                return "DiseñoFinal.ReportesM.CrystalReport1.rpt";
+                return "DiseñoFinal.ReportesM.ListadoEmpleadosDepartamentos.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,41 +82,17 @@ namespace DiseñoFinal.ReportesM {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_IDPedido {
-            get {
-                return this.DataDefinition.ParameterFields[0];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedListadoEmpleadosDepartamentos : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedListadoEmpleadosDepartamentos() {
         }
         
         [Browsable(false)]
@@ -153,7 +129,7 @@ namespace DiseñoFinal.ReportesM {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            ListadoEmpleadosDepartamentos rpt = new ListadoEmpleadosDepartamentos();
             rpt.Site = this.Site;
             return rpt;
         }

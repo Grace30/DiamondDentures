@@ -13,7 +13,7 @@ namespace DiseñoFinal
 {
     public partial class VistaPreviaNota : Form
     {
-        public string IDPedido;
+        public string Folio;
         public VistaPreviaNota()
         {
             InitializeComponent();
@@ -21,8 +21,8 @@ namespace DiseñoFinal
 
         private void VistaPreviaNota_Load(object sender, EventArgs e)
         {
-            CrystalReport1 objReporte = new CrystalReport1();
-            objReporte.SetParameterValue("@IDPedido", IDPedido);
+            NotaTerminación objReporte = new NotaTerminación();
+            objReporte.SetParameterValue("@FolioNota", Folio);
             VOficio.ReportSource = objReporte;
         }
 
