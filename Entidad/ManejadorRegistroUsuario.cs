@@ -26,6 +26,16 @@ namespace Entidad
             return IbaseDatos.Departamento(Datos);
         }
 
+        public object[] getAñoBalance()
+        {
+            return IbaseDatos.getAñoBalance(); 
+        }
+
+        public object[] getPeriodosBalance(int año)
+        {
+            return IbaseDatos.getPeriodosBalance(año);
+        }
+
         public DataTable getBalance(DateTime Desde, DateTime Hasta)
         {
             return IbaseDatos.getBalance(Desde, Hasta);
@@ -54,6 +64,11 @@ namespace Entidad
         public Salario calcularPagoPorMes(string Loginn, int Mes)
         {
             return IbaseDatos.calcularPagoMes(Loginn, Mes);
+        }
+
+        public double[] getTotalesBalance(DateTime Desde, DateTime Hasta)
+        {
+            return IbaseDatos.GetTotalesBalance(Desde, Hasta);
         }
 
         public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)

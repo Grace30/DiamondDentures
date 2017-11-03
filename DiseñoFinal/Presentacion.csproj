@@ -1869,6 +1869,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\Invisible_20px.png" />
+    <None Include="Resources\Eye_20px.png" />
+    <None Include="Resources\Checkmark_20px.png" />
+    <None Include="Resources\Checkmark_10px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
