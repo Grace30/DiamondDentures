@@ -66,6 +66,8 @@ namespace DiseñoFinal
 
         private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerBanco.Stop();
+            timerRequisiciones.Stop();
             new Balance().ShowDialog();
         }
 
@@ -81,7 +83,7 @@ namespace DiseñoFinal
                 lbl_Saldo.BackColor = Color.Red;
             lbl_Saldo.Text = string.Format("{0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
             saldo = saldonuevo;
-            timerBanco.Start();
+            //timerBanco.Start();
 
         }
 
@@ -90,6 +92,12 @@ namespace DiseñoFinal
             dataGridView1.RowCount = 1;
             dataGridView1.Rows[0].Selected = true;
             lbl_Saldo.Text = string.Format("{0} MXN", manejadorUsuario.GetSaldoEnBanco().ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+
+            /// Prueba 
+            //dataGridView2[3, 0].Value = Properties.Resources.Checkmark_20px;
+            
+
+
 
         }
 
@@ -123,7 +131,7 @@ namespace DiseñoFinal
                     else
                         dataGridView1.Rows[0].Selected = true;
             }
-            timerRequisiciones.Start();
+            //timerRequisiciones.Start();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -131,6 +139,22 @@ namespace DiseñoFinal
             timerRequisiciones.Stop();
             if (e.RowIndex > -1)
                 new AprobarRequisicion(Convert.ToInt32(dataGridView1[1, e.RowIndex].Value)).ShowDialog();
+            timerRequisiciones.Start();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lbl_Saldo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            timerBanco.Start();
             timerRequisiciones.Start();
         }
     }
