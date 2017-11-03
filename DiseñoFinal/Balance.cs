@@ -29,6 +29,9 @@ namespace DiseñoFinal
 
             cbox_Mes.Items.Clear();
             cbox_Mes.Items.AddRange(manejadorUsuario.getPeriodosBalance(Convert.ToInt32(cbox_Año.Items[cbox_Año.SelectedIndex])));
+            if (cbox_Mes.Items.Count > 0)
+                cbox_Mes.SelectedIndex = 0;
+
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
