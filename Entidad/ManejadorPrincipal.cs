@@ -33,7 +33,7 @@ namespace Entidad
 
         public void CrearBase()
         {
-            IbaseDatos.CrearBase();
+            //IbaseDatos.CrearBase();
         }
 
         public bool setClaveRegistro(string[] Datos)

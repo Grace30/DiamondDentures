@@ -196,42 +196,11 @@ namespace DiseñoFinal
 
         }
 
-        private void btnCatalogo_Click(object sender, EventArgs e)
-        {
-            VistaPreviaCata objForm = new VistaPreviaCata();
-            objForm.ShowDialog();
-        }
+      
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            VistaPreviaInventario objForm = new VistaPreviaInventario();
-            objForm.ShowDialog();
-        }
+     
 
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            VistaPreviaProveedores objForm = new VistaPreviaProveedores();
-            objForm.ShowDialog();
-        }
-
-        private void btnCompras_Click(object sender, EventArgs e)
-        {
-            VistaPreviaCompras objForm = new VistaPreviaCompras();
-            objForm.ShowDialog();
-        }
-
-        private void btnreq_Click(object sender, EventArgs e)
-        {
-            VistaPreviaReq objform = new VistaPreviaReq();
-            objform.ShowDialog();
-        }
-
-        private void btnSal_Click(object sender, EventArgs e)
-        {
-            VistaPreviaSalidas objformm = new VistaPreviaSalidas();
-            objformm.ShowDialog();
-        }
-
+    
         private void pBSalir_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiseñoFinal.ReportesM.Reportes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace DiseñoFinal.ReportesM
         private void VistaPreviaVentasNombre_Load(object sender, EventArgs e)
         {
             ReporteVentasEmpleado objReporte = new ReporteVentasEmpleado();
+            objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
             objReporte.SetParameterValue("@Empleado", Empleado);
             VGeneral.ReportSource = objReporte;
         }

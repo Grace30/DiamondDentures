@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiseñoFinal.ReportesM.Reportes;
+using System;
 
 
 namespace DiseñoFinal.ReportesM

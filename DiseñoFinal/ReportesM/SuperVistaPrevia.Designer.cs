@@ -57,7 +57,9 @@
             this.ClientSize = new System.Drawing.Size(987, 447);
             this.Controls.Add(this.VGeneral);
             this.Name = "SuperVistaPrevia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuperVistaPrevia";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SuperVistaPrevia_Load);
             this.ResumeLayout(false);
 

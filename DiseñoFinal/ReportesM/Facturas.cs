@@ -117,9 +117,10 @@ namespace DiseñoFinal
             //int Factura = Convert.ToInt32(maf.BuscarFactura(new string[] { dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString() }).Rows[0].ItemArray[1]);
 
             string idPed = dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString();
+            string NoFac = dgvFacturas[0, dgvFacturas.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.IDPedido = idPed;
-
+            objForm.NoFactura = NoFac;
+            objForm.Pedido = idPed;
             objForm.ShowDialog();
 
         }

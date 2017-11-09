@@ -32,8 +32,8 @@
             // 
             // VGeneral
             // 
-            this.VGeneral.ActiveViewIndex = 0;
             this.VGeneral.Size = new System.Drawing.Size(987, 472);
+            this.VGeneral.Load += new System.EventHandler(this.VGeneral_Load);
             // 
             // VIstaPreviaTicket
             // 

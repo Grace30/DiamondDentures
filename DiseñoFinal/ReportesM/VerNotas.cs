@@ -75,7 +75,9 @@ namespace DiseñoFinal.ReportesM
         {
             VistaPreviaNota objForm = new VistaPreviaNota();
             string Folio = dgvNota[0, dgvNota.CurrentCell.RowIndex].Value.ToString();
+            string Pedido = dgvNota[1, dgvNota.CurrentCell.RowIndex].Value.ToString();
             objForm.Folio = Folio;
+            objForm.Pedido = Pedido;
             objForm.ShowDialog();
         }
 
