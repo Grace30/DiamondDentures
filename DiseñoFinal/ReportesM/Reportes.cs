@@ -289,7 +289,7 @@ namespace DiseñoFinal
         {
             VistaPrevia objForm = new VistaPrevia();
 
-            objForm.IDPedido = IDPedido;
+            objForm.Pedido = IDPedido;
 
             objForm.ShowDialog();
         }

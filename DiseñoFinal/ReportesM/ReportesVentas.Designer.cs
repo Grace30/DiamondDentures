@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rdbEmpleado = new System.Windows.Forms.RadioButton();
             this.rdbFecha = new System.Windows.Forms.RadioButton();
             this.dgvRepoVentas = new System.Windows.Forms.DataGridView();
@@ -49,7 +49,6 @@
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblNombreE = new System.Windows.Forms.Label();
-            this.btnReporteGeneral = new System.Windows.Forms.Button();
             this.btnVentasFecha = new System.Windows.Forms.Button();
             this.btnVentasEmpleado = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
@@ -90,14 +89,14 @@
             this.dgvRepoVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRepoVentas.BackgroundColor = System.Drawing.Color.White;
             this.dgvRepoVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRepoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRepoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRepoVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRepoVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FolioVenta,
@@ -244,18 +243,6 @@
             this.lblNombreE.TabIndex = 179;
             this.lblNombreE.Text = "Nombre Empleado :";
             // 
-            // btnReporteGeneral
-            // 
-            this.btnReporteGeneral.BackColor = System.Drawing.Color.Silver;
-            this.btnReporteGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteGeneral.Location = new System.Drawing.Point(174, 453);
-            this.btnReporteGeneral.Name = "btnReporteGeneral";
-            this.btnReporteGeneral.Size = new System.Drawing.Size(220, 26);
-            this.btnReporteGeneral.TabIndex = 180;
-            this.btnReporteGeneral.Text = "Ver Reporte General de ventas";
-            this.btnReporteGeneral.UseVisualStyleBackColor = false;
-            this.btnReporteGeneral.Click += new System.EventHandler(this.btnReporteGeneral_Click);
-            // 
             // btnVentasFecha
             // 
             this.btnVentasFecha.BackColor = System.Drawing.Color.Silver;
@@ -284,7 +271,7 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.Silver;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.Location = new System.Drawing.Point(452, 453);
+            this.btnTicket.Location = new System.Drawing.Point(366, 462);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(192, 26);
             this.btnTicket.TabIndex = 183;
@@ -326,7 +313,6 @@
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.btnVentasEmpleado);
             this.Controls.Add(this.btnVentasFecha);
-            this.Controls.Add(this.btnReporteGeneral);
             this.Controls.Add(this.lblNombreE);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
@@ -337,6 +323,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvRepoVentas);
             this.Name = "ReportesVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes de Ventas";
             this.Load += new System.EventHandler(this.ReportesVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepoVentas)).EndInit();
@@ -370,7 +357,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaDePago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
-        private System.Windows.Forms.Button btnReporteGeneral;
         private System.Windows.Forms.Button btnVentasFecha;
         private System.Windows.Forms.Button btnVentasEmpleado;
         private System.Windows.Forms.Button btnTicket;

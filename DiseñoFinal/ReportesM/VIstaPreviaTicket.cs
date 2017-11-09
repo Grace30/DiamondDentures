@@ -1,5 +1,6 @@
 ﻿using CrystalDecisions.Shared;
 using CrystalDecisions.Windows.Forms;
+using DiseñoFinal.ReportesM.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,12 @@ namespace DiseñoFinal.ReportesM
             objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
             VGeneral.ReportSource = objReporte;
         }
-      
+
+        private void VGeneral_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //private void SetDBLogonForReport(CrystalDecisions.Shared.ConnectionInfo connectionInfo)
         //{
         //    TableLogOnInfos tableLogOnInfos = VGeneral.LogOnInfo;
@@ -39,6 +45,6 @@ namespace DiseñoFinal.ReportesM
         //    }
 
         //}
-       
+
     }
 }

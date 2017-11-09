@@ -927,7 +927,7 @@ namespace DiseñoFinal
                     {
                         VistaPrevia objForm = new VistaPrevia();
 
-                        objForm.IDPedido = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
+                        objForm.Pedido = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
                         objForm.ShowDialog();
                         RecargarPantalla(sender, e);

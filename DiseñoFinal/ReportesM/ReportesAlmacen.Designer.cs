@@ -145,7 +145,7 @@
             this.btnCatalogo.TabIndex = 1;
             this.btnCatalogo.Text = "Vista Previa Catálogo";
             this.btnCatalogo.UseVisualStyleBackColor = false;
-            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
+    //        this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
             // 
             // dgvCatalogo
             // 
@@ -240,7 +240,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Vista Previa Inventario";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+     //       this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvInvenMat
             // 
@@ -316,7 +316,7 @@
             this.btnProveedores.TabIndex = 1;
             this.btnProveedores.Text = "Vista Previa Proveedores General";
             this.btnProveedores.UseVisualStyleBackColor = false;
-            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+      //      this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // dgvProv
             // 
@@ -501,7 +501,7 @@
             this.btnCompras.TabIndex = 1;
             this.btnCompras.Text = "Vista Previa Compras";
             this.btnCompras.UseVisualStyleBackColor = false;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+         //   this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // tabRequisiciones
             // 
@@ -523,7 +523,7 @@
             this.btnreq.TabIndex = 1;
             this.btnreq.Text = "Ver Requisición";
             this.btnreq.UseVisualStyleBackColor = true;
-            this.btnreq.Click += new System.EventHandler(this.btnreq_Click);
+     //       this.btnreq.Click += new System.EventHandler(this.btnreq_Click);
             // 
             // dgvReq
             // 
@@ -592,7 +592,7 @@
             this.btnSal.TabIndex = 1;
             this.btnSal.Text = "Ver Vista Previa";
             this.btnSal.UseVisualStyleBackColor = false;
-            this.btnSal.Click += new System.EventHandler(this.btnSal_Click);
+      //      this.btnSal.Click += new System.EventHandler(this.btnSal_Click);
             // 
             // dgvSalidas
             // 

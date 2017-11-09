@@ -1,4 +1,5 @@
 ﻿using DiseñoFinal.ReportesM;
+using DiseñoFinal.ReportesM.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace DiseñoFinal
 {
     public partial class VistaPreviaNota : Form
     {
-        public string Folio;
+        public string Folio, Pedido;
         public VistaPreviaNota()
         {
             InitializeComponent();
@@ -22,7 +23,9 @@ namespace DiseñoFinal
         private void VistaPreviaNota_Load(object sender, EventArgs e)
         {
             NotaTerminación objReporte = new NotaTerminación();
+            objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
             objReporte.SetParameterValue("@FolioNota", Folio);
+            objReporte.SetParameterValue("@Pedido", Pedido);
             VOficio.ReportSource = objReporte;
         }
 

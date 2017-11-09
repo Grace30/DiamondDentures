@@ -71,8 +71,15 @@ namespace DiseñoFinal.ReportesM
         {
             VistaPreviaForma objForm = new VistaPreviaForma();
             string Folio = dgvFormas[0, dgvFormas.CurrentCell.RowIndex].Value.ToString();
+            string Pedido = dgvFormas[0, dgvFormas.CurrentCell.RowIndex].Value.ToString();
             objForm.Folio = Folio;
+            objForm.Pedido = Pedido;
             objForm.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
