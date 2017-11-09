@@ -38,11 +38,57 @@ namespace Datos
             }
             cmdReader.Close();
             conexion.Close();
-
-
-
-
             return requi;
+        }
+
+        public object[] getAñoBalance()
+        {
+            List<string> periodos = new List<string>();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader cmdReader;
+            cmd = new SqlCommand("getAñoDeBalance", new Conexion().getAzureConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                periodos.Add(cmdReader[0].ToString());
+
+
+            return periodos.ToArray();
+        }
+
+        public string[] getPeriodosBalance(int año)
+        {
+            List<string> periodos = new List<string>();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader cmdReader;
+            
+            cmd = new SqlCommand("getPeriodosDeBalance", new Conexion().getAzureConexion());
+            cmd.Parameters.AddWithValue("@Año", año);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                periodos.Add(cmdReader[0].ToString());
+
+
+            return periodos.ToArray();
+        }
+
+        public double[] GetTotalesBalance(DateTime desde, DateTime hasta)
+        {
+            double[] totales = new double[3];
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader cmdReader;
+            string[] Parametros = { "@Desde", "@Hasta" };
+            
+            cmd = new SqlCommand(string.Format("getTotalesBalance", desde.Date, hasta.Date), new Conexion().getAzureConexion());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Desde", desde);
+            cmd.Parameters.AddWithValue("@Hasta", hasta);
+            cmdReader = cmd.ExecuteReader();
+
+            while (cmdReader.Read())
+                totales = new double[] { Convert.ToDouble(cmdReader[0]), Convert.ToDouble(cmdReader[1]), Convert.ToDouble(cmdReader[2]) };
+            return totales;
         }
 
         public DataTable ObtenerProveedores(object id, object nombre, object correo, object rFC, object contacto, object estatus)
@@ -65,12 +111,12 @@ namespace Datos
             double saldo = 0;
             conexion = new Conexion().getAzureConexion();
             cmd = new SqlCommand("execute getSaldoBanco", conexion);
-            cmdReader = cmd.ExecuteReader();
-            while (cmdReader.Read())
-                saldo = Convert.ToDouble(cmdReader[0]);
-            cmdReader.Close();
-            conexion.Close();
-
+            
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                    saldo = Convert.ToDouble(cmdReader[0]);
+                cmdReader.Close();
+                conexion.Close();
             return saldo;
 
 

@@ -74,7 +74,7 @@ namespace DiseñoFinal
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (data1[0, 0].Value.ToString() == comboBox1.Items[DateTime.Now.Month - 1].ToString() && DateTime.Now.Day < DateTime.DaysInMonth(2017,comboBox1.SelectedIndex + 1))
+            if (data1[0, 0].Value.ToString() == comboBox1.Items[DateTime.Now.Month - 1].ToString() && DateTime.Now.Day <= DateTime.DaysInMonth(2017,comboBox1.SelectedIndex + 1))
             {
                 if (MessageBox.Show("¿Desea pagar antes del fin de mes? \r\nDespués no será posible realizar ningún pago para los empleados seleccionados en este mes.", "Pago antes del día de pago", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     PagarAEmpleados();
@@ -179,7 +179,7 @@ namespace DiseñoFinal
             {
                 if ((bool)data1["Pagar", i].Value == true)
                 {
-                    msg += data1["Usuario", i].Value.ToString() + "\r\n";
+                    msg += data1["Usuario", i].Value.ToString().TrimEnd() + "\r\n";
 
                     Salarios.Add(new Salario((comboBox1.SelectedIndex+1).ToString(), 
                         data1["Usuario", i].Value.ToString(),

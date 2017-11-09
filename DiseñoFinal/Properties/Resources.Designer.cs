@@ -543,6 +543,26 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Checkmark_10px {
+            get {
+                object obj = ResourceManager.GetObject("Checkmark_10px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Checkmark_20px {
+            get {
+                object obj = ResourceManager.GetObject("Checkmark_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contraseña {
             get {
                 object obj = ResourceManager.GetObject("contraseña", resourceCulture);
@@ -606,6 +626,16 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap eliminar2 {
             get {
                 object obj = ResourceManager.GetObject("eliminar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eye_20px {
+            get {
+                object obj = ResourceManager.GetObject("Eye_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -796,6 +826,16 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap ingresar2 {
             get {
                 object obj = ResourceManager.GetObject("ingresar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Invisible_20px {
+            get {
+                object obj = ResourceManager.GetObject("Invisible_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

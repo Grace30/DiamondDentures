@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Entidad;
 
 namespace DiseñoFinal
@@ -15,10 +16,24 @@ namespace DiseñoFinal
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")] //Médodos para importar librerias necesarias de la interface de usuario
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        private void moverpantalla(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         public FirmarAsistencia()
         {
             InitializeComponent();
         }
+
+
+        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,6 +57,26 @@ namespace DiseñoFinal
             {
                 btn_Continuar.PerformClick();
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txt_Paswordd.UseSystemPasswordChar = !txt_Paswordd.UseSystemPasswordChar;
+            if (txt_Paswordd.UseSystemPasswordChar)
+                button1.BackgroundImage = Properties.Resources.Invisible_20px;
+            else
+                button1.BackgroundImage = Properties.Resources.Eye_20px;
+            Focus();
+        }
+
+        private void pBSalir2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FirmarAsistencia_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
