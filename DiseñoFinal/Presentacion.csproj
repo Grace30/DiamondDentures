@@ -222,6 +222,18 @@
     <Compile Include="AgregarPieza.Designer.cs">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarProveedor.designer.cs">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen.designer.cs">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="AprobarRequisicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,11 +252,23 @@
     <Compile Include="Balance.Designer.cs">
       <DependentUpon>Balance.cs</DependentUpon>
     </Compile>
+    <Compile Include="CatalogoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoProductos.designer.cs">
+      <DependentUpon>CatalogoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClaveRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClaveRegistro.Designer.cs">
       <DependentUpon>ClaveRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComprasProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComprasProveedores.designer.cs">
+      <DependentUpon>ComprasProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlPedidos.cs">
       <SubType>Form</SubType>
@@ -263,13 +287,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EntradaYSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntradaYSalida.designer.cs">
+      <DependentUpon>EntradaYSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialInv.designer.cs">
+      <DependentUpon>HistorialInv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProveedor.designer.cs">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdenesDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdenesDeCompra.Designer.cs">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesM\CrystalReport1.cs">
+    <Compile Include="ProveedoresJesusCrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProveedoresJesusCrack.designer.cs">
+      <DependentUpon>ProveedoresJesusCrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\BalanceGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -917,6 +970,24 @@
     <Compile Include="ReportesM\VistaPreviaVentasNombre.Designer.cs">
       <DependentUpon>VistaPreviaVentasNombre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requisiciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requisiciones.designer.cs">
+      <DependentUpon>Requisiciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequisicionMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequisicionMateriales.designer.cs">
+      <DependentUpon>RequisicionMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurtidoMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurtidoMaterial.designer.cs">
+      <DependentUpon>SurtidoMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tarjetas RegistradasUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -996,6 +1067,12 @@
     <EmbeddedResource Include="AgregarPieza.resx">
       <DependentUpon>AgregarPieza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen.resx">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AprobarRequisicion.resx">
       <DependentUpon>AprobarRequisicion.cs</DependentUpon>
     </EmbeddedResource>
@@ -1005,19 +1082,39 @@
     <EmbeddedResource Include="Balance.resx">
       <DependentUpon>Balance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoProductos.resx">
+      <DependentUpon>CatalogoProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClaveRegistro.resx">
       <DependentUpon>ClaveRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComprasProveedores.resx">
+      <DependentUpon>ComprasProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
-     <EmbeddedResource Include="CorrecionBalance.resx">
+    <EmbeddedResource Include="CorrecionBalance.resx">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntradaYSalida.resx">
+      <DependentUpon>EntradaYSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialInv.resx">
+      <DependentUpon>HistorialInv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProveedor.resx">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesDeCompra.resx">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\CrystalReport1.rpt"
+    <EmbeddedResource Include="ProveedoresJesusCrack.resx">
+      <DependentUpon>ProveedoresJesusCrack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\BalanceGeneral.resx">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1379,6 +1476,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaVentasNombre.resx">
       <DependentUpon>VistaPreviaVentasNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requisiciones.resx">
+      <DependentUpon>Requisiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequisicionMateriales.resx">
+      <DependentUpon>RequisicionMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurtidoMaterial.resx">
+      <DependentUpon>SurtidoMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tarjetas RegistradasUser.resx">
       <DependentUpon>Tarjetas RegistradasUser.cs</DependentUpon>

@@ -81,5 +81,98 @@ namespace Entidad
         {
             return IbaseDatos.Urgente(Datos);
         }
+
+
+        public DataTable ObtenerRequisiciones(string[] Datos)
+        {
+            return IbaseDatos.ObtenerRequisiciones(Datos);
+        }
+        public DataTable TodasRequisicion(string[] Datos)
+        {
+            return IbaseDatos.TodasRequisiciones(Datos);
+        }
+        public DataTable RequisicionesAcep(string[] Datos)
+        {
+            return IbaseDatos.RequisicionesAcep(Datos);
+        }
+        public DataTable ObtenerDatosInsumos(string[] Datos)
+        {
+            return IbaseDatos.ObtenerDatosInsumos(Datos);
+        }
+        public DataTable ObtenerInventarioMateriales(string[] Datos)
+        {
+            return IbaseDatos.ObtenerInventarioMateriales(Datos);
+        }
+        public DataTable ComprasAProveedor(string[] Datos)
+        {
+            return IbaseDatos.ComprasAProveedor(Datos);
+        }
+        public DataTable ObtenerProveedores(string[] Datos)
+        {
+            return IbaseDatos.ObtenerProveedores(Datos);
+        }
+
+        public DataTable ObtenerCatalogo(string[] Datos)
+        {
+            return IbaseDatos.ObtenerCatalogo(Datos);
+        }
+
+        public DataTable ObtenerEntradas(string[] Datos)
+        {
+            return IbaseDatos.ObtenerEntradas(Datos);
+        }
+
+        public DataTable ObtenerSalidas(string[] Datos)
+        {
+            return IbaseDatos.ObtenerSalidas(Datos);
+        }
+
+        public DataTable ObtenerHistorial(string[] Datos)
+        {
+            return IbaseDatos.ObtenerHistorial(Datos);
+        }
+
+        public DataTable ObtenerFaltantes(string[] Datos)
+        {
+            return IbaseDatos.ObtenerFaltantes(Datos);
+        }
+
+        public int SumarMat(string[] Datos)
+        {
+            return IbaseDatos.SumarMat(Datos);
+        }
+
+        public int ActualizarCantidades(string[] Datos)
+        {
+            return IbaseDatos.ActualizarCantidades(Datos);
+        }
+
+        public int BorrardeRequi(string[] Datos)
+        {
+            return IbaseDatos.BorrardeRequi(Datos);
+        }
+        public int HistorialInv(string[] Datos)
+        {
+            return IbaseDatos.HistorialInv(Datos);
+        }
+
+        public int ActualizarExistencia(string[] Datos)
+        {
+            return IbaseDatos.ActualizarExistencia(Datos);
+        }
+
+        public int EstadoRequi(string[] Datos)
+        {
+            return IbaseDatos.EstadoRequi(Datos);
+        }
+        public int InsertarRequisicion(string[] Datos)
+        {
+            return IbaseDatos.InsertarRequisicion(Datos);
+        }
+
+        public int InsertarDetalleRequisicion(string[] Datos)
+        {
+            return IbaseDatos.InsertarDetalleRequisicion(Datos);
+        }
     }
 }
