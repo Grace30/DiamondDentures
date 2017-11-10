@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuLaboratorio));
             this.pbPiezas = new System.Windows.Forms.PictureBox();
             this.pbxFabricarProducto = new System.Windows.Forms.PictureBox();
             this.pbxSemaforo = new System.Windows.Forms.PictureBox();
@@ -38,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPiezas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFabricarProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).BeginInit();
@@ -45,6 +47,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbPiezas
@@ -52,7 +55,7 @@
             this.pbPiezas.BackColor = System.Drawing.Color.Transparent;
             this.pbPiezas.BackgroundImage = global::DiseñoFinal.Properties.Resources.Piezas;
             this.pbPiezas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbPiezas.Location = new System.Drawing.Point(262, 224);
+            this.pbPiezas.Location = new System.Drawing.Point(264, 214);
             this.pbPiezas.Name = "pbPiezas";
             this.pbPiezas.Size = new System.Drawing.Size(70, 80);
             this.pbPiezas.TabIndex = 31;
@@ -65,9 +68,9 @@
             this.pbxFabricarProducto.BackColor = System.Drawing.Color.Transparent;
             this.pbxFabricarProducto.BackgroundImage = global::DiseñoFinal.Properties.Resources.Fabricar1;
             this.pbxFabricarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxFabricarProducto.Location = new System.Drawing.Point(262, 86);
+            this.pbxFabricarProducto.Location = new System.Drawing.Point(83, 214);
             this.pbxFabricarProducto.Name = "pbxFabricarProducto";
-            this.pbxFabricarProducto.Size = new System.Drawing.Size(70, 80);
+            this.pbxFabricarProducto.Size = new System.Drawing.Size(80, 80);
             this.pbxFabricarProducto.TabIndex = 32;
             this.pbxFabricarProducto.TabStop = false;
             this.toolTip1.SetToolTip(this.pbxFabricarProducto, "Fabricar");
@@ -92,7 +95,7 @@
             this.pbMateriales.BackColor = System.Drawing.Color.Transparent;
             this.pbMateriales.BackgroundImage = global::DiseñoFinal.Properties.Resources.Productos;
             this.pbMateriales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbMateriales.Location = new System.Drawing.Point(83, 224);
+            this.pbMateriales.Location = new System.Drawing.Point(83, 332);
             this.pbMateriales.Name = "pbMateriales";
             this.pbMateriales.Size = new System.Drawing.Size(80, 80);
             this.pbMateriales.TabIndex = 34;
@@ -140,7 +143,7 @@
             this.pBSalir.BackColor = System.Drawing.Color.Transparent;
             this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir1;
-            this.pBSalir.Location = new System.Drawing.Point(380, 271);
+            this.pBSalir.Location = new System.Drawing.Point(380, 379);
             this.pBSalir.Name = "pBSalir";
             this.pBSalir.Size = new System.Drawing.Size(37, 33);
             this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,6 +152,17 @@
             this.toolTip1.SetToolTip(this.pBSalir, "Regresar");
             this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(261, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 80);
+            this.pictureBox1.TabIndex = 215;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MenuLaboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,7 +170,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DiseñoFinal.Properties.Resources.Captura3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(429, 351);
+            this.ClientSize = new System.Drawing.Size(429, 424);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pBSalir);
             this.Controls.Add(this.pbPiezas);
             this.Controls.Add(this.pbxFabricarProducto);
@@ -177,6 +192,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +208,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pBSalir;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

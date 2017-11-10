@@ -129,5 +129,11 @@ namespace DiseñoFinal
             intusuario.desplegarPantalla(frm);
             intusuario.cerrarPantalla(this);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { "", "Admin" };
+            intusuario.enviarEvento("PantallaAlmacen", Datos);
+        }
     }
 }
