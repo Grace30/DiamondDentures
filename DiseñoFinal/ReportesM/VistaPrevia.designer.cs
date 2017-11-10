@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Factura1 = new DiseñoFinal.ReportesM.Factura();
-            this.Oficio_de_confirmación21 = new DiseñoFinal.ReportesM.Oficio_de_confirmación2();
+            this.Factura1 = new DiseñoFinal.ReportesM.Reportes.Factura();
+            this.Oficio_de_confirmación21 = new DiseñoFinal.ReportesM.Reportes.Oficio_de_confirmación2();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
@@ -37,7 +37,6 @@
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.crystalReportViewer1.CachedPageNumberPerDoc = 10;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +53,7 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(928, 579);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // VistaPrevia
             // 
@@ -76,9 +76,9 @@
         #endregion
 
         // private FormaPedido FormaPedido1;
-        private DiseñoFinal.ReportesM.Factura Factura1;
+        private ReportesM.Reportes.Factura Factura1;
        // private NotaTerminacion NotaTerminacion1;
-        private DiseñoFinal.ReportesM.Oficio_de_confirmación2 Oficio_de_confirmación21;
+        private DiseñoFinal.ReportesM.Reportes.Oficio_de_confirmación2 Oficio_de_confirmación21;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

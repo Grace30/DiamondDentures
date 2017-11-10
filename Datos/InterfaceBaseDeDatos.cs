@@ -473,8 +473,8 @@ namespace Datos
 
         public DataTable ObtenerDatosMateriales(string[] Datos)
         {
-            string[] Parametros = { "@CodMaterial" };
-            return getDatosTabla("procMateriales", Parametros, "0");
+            string[] Parametros = { "@Name" };
+            return getDatosTabla("procMateriales", Parametros, Datos[0]);
         }
 
         public DataTable EditarPieza(string[] Datos)

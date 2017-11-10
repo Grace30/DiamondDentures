@@ -20,6 +20,9 @@ namespace DiseñoFinal
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             UsuarioEnCurso = Usuario;
+            //También Aquí :B
+            //pBReportes_Click(pBReportes, new EventArgs());
+            //Hide();
         }
 
         public MenuPrincipal()

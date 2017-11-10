@@ -234,7 +234,7 @@ namespace DiseñoFinal
 
             string idPed= dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.IDPedido = idPed;
+            objForm.Folio = idPed;
 
             objForm.ShowDialog();
         }
@@ -247,7 +247,7 @@ namespace DiseñoFinal
 
             string idPed = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.IDPedido = idPed;
+            objForm.Folio = idPed;
 
             objForm.ShowDialog();
         }
@@ -279,7 +279,7 @@ namespace DiseñoFinal
 
             string idPed = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.IDPedido = idPed;
+            objForm.Folio = idPed;
 
             objForm.ShowDialog();
         }
@@ -289,7 +289,7 @@ namespace DiseñoFinal
         {
             VistaPrevia objForm = new VistaPrevia();
 
-            objForm.IDPedido = IDPedido;
+            objForm.Pedido = IDPedido;
 
             objForm.ShowDialog();
         }
@@ -297,7 +297,7 @@ namespace DiseñoFinal
         {
             VistaPreviaForma objForm = new VistaPreviaForma();
 
-            objForm.IDPedido = IDPedido;
+            objForm.Folio = IDPedido;
 
             objForm.ShowDialog();
         }
@@ -305,7 +305,7 @@ namespace DiseñoFinal
         {
             VistaPreviaOficio objForm = new VistaPreviaOficio();
 
-            objForm.IDPedido = IDPedido;
+            objForm.Folio = IDPedido;
 
             objForm.ShowDialog();
         }
@@ -313,7 +313,7 @@ namespace DiseñoFinal
         {
             VistaPreviaNota objForm = new VistaPreviaNota();
 
-            objForm.IDPedido = IDPedido;
+            objForm.Folio = IDPedido;
 
             objForm.ShowDialog();
         }

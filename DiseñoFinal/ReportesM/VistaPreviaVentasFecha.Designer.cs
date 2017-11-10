@@ -30,11 +30,17 @@
         {
             this.SuspendLayout();
             // 
+            // VGeneral
+            // 
+            this.VGeneral.Size = new System.Drawing.Size(970, 360);
+            this.VGeneral.Load += new System.EventHandler(this.VGeneral_Load);
+            // 
             // VistaPreviaVentasFecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 360);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "VistaPreviaVentasFecha";
             this.Text = "VistaPreviaVentasFecha";
             this.Load += new System.EventHandler(this.VistaPreviaVentasFecha_Load);
