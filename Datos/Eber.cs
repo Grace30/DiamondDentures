@@ -41,6 +41,30 @@ namespace Datos
             return requi;
         }
 
+        public int CountRequisicionesPendientes()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            int count = 0;
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute countRequisicionesEnEspera",conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                count = Convert.ToInt32(cmdReader[0]);
+            return count;
+        }
+
+        public void InsertIngreso(double cantidad)
+        {//Venta
+
+        }
+
+        public void InsertRetiro(double cantidad)
+        {//Compra
+
+        }
+
         public object[] getAñoBalance()
         {
             List<string> periodos = new List<string>();

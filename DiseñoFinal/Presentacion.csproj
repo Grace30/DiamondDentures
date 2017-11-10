@@ -252,6 +252,23 @@
     <Compile Include="ControlPedidos.Designer.cs">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CorrecionBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CorrecionBalance.Designer.cs">
+      <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiamondDenturesDataSetEber.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesDeCompra.Designer.cs">
+      <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -762,6 +779,12 @@
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CorrecionBalance.resx">
+      <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesDeCompra.resx">
+      <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -1019,6 +1042,17 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DiamondDenturesDataSetEber.xsc">
+      <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
+    </None>
+    <None Include="DiamondDenturesDataSetEber.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiamondDenturesDataSetEber.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiamondDenturesDataSetEber.xss">
+      <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Presentacion_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
@@ -1814,6 +1848,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\User Male_10px.png" />
+    <None Include="Resources\Print_25px.png" />
+    <None Include="Resources\Search Property_31px.png" />
+    <None Include="Resources\Request0.png" />
+    <None Include="Resources\RequestMoreOf5.png" />
+    <None Include="Resources\Request5.png" />
+    <None Include="Resources\Request4.png" />
+    <None Include="Resources\Request3.png" />
+    <None Include="Resources\Request2.png" />
+    <None Include="Resources\Request1.png" />
     <None Include="Resources\Invisible_20px.png" />
     <None Include="Resources\Eye_20px.png" />
     <None Include="Resources\Checkmark_20px.png" />

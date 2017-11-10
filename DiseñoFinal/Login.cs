@@ -200,5 +200,10 @@ namespace DiseñoFinal
         {
             v.Enter(e,intusuario,txtLogin,txtPassword, this);             
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

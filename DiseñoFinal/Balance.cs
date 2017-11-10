@@ -14,7 +14,7 @@ namespace DiseñoFinal
     public partial class Balance : Form
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
-
+        ManejadorBanco manejadorBanco = new ManejadorBanco();
         public Balance()
         {
             InitializeComponent();
@@ -23,12 +23,12 @@ namespace DiseñoFinal
         private void Balance_Load(object sender, EventArgs e)
         {
             cbox_Año.Items.Clear();
-            cbox_Año.Items.AddRange(manejadorUsuario.getAñoBalance());
+            cbox_Año.Items.AddRange(manejadorBanco.getAñoBalance());
             if (cbox_Año.Items.Count > 0)
                 cbox_Año.SelectedIndex = 0;
 
             cbox_Mes.Items.Clear();
-            cbox_Mes.Items.AddRange(manejadorUsuario.getPeriodosBalance(Convert.ToInt32(cbox_Año.Items[cbox_Año.SelectedIndex])));
+            cbox_Mes.Items.AddRange(manejadorBanco.getPeriodosBalance(Convert.ToInt32(cbox_Año.Items[cbox_Año.SelectedIndex])));
             if (cbox_Mes.Items.Count > 0)
                 cbox_Mes.SelectedIndex = 0;
 
@@ -36,7 +36,7 @@ namespace DiseñoFinal
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            DataTable t = manejadorUsuario.getBalance(dateDesde.Value, dateHasta.Value);
+            DataTable t = manejadorBanco.getBalance(dateDesde.Value, dateHasta.Value);
             dataGridView1.DataSource = t;
             if (t.Rows.Count > 0)
             {
@@ -47,7 +47,7 @@ namespace DiseñoFinal
                 dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                     row.Height = 40;
-                double[] Totales = manejadorUsuario.getTotalesBalance(dateDesde.Value, dateHasta.Value);
+                double[] Totales = manejadorBanco.getTotalesBalance(dateDesde.Value, dateHasta.Value);
                 txt_TotalRetiros.Text = Totales[0].ToString("c2", System.Globalization.CultureInfo.CurrentCulture);
                 txt_TotalDepositos.Text = Totales[1].ToString("c2", System.Globalization.CultureInfo.CurrentCulture);
             }

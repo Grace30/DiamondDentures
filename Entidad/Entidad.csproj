@@ -172,6 +172,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorBanco.cs" />
     <Compile Include="ManejadorControlPedido.cs" />
     <Compile Include="ManejadorFacturas.cs" />
     <Compile Include="ManejadorPrincipal.cs" />

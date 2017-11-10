@@ -1,7 +1,22 @@
-﻿namespace DiseñoFinal
+﻿using System.Runtime.InteropServices;
+namespace DiseñoFinal
 {
     partial class FirmarAsistencia
     {
+
+        #region MoverPantalla
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")] //Médodos para importar librerias necesarias de la interface de usuario
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        private void MoveForm()
+        {
+            ReleaseCapture(); //Habilita la posibilidad de arrastrar el control y mover el formulario con el
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -60,7 +75,7 @@
             // 
             // btn_Continuar
             // 
-            this.btn_Continuar.Location = new System.Drawing.Point(100, 91);
+            this.btn_Continuar.Location = new System.Drawing.Point(104, 90);
             this.btn_Continuar.Name = "btn_Continuar";
             this.btn_Continuar.Size = new System.Drawing.Size(75, 23);
             this.btn_Continuar.TabIndex = 2;
@@ -99,12 +114,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::DiseñoFinal.Properties.Resources.Invisible_20px;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(245, 59);
+            this.button1.Location = new System.Drawing.Point(242, 59);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 21);
             this.button1.TabIndex = 6;
@@ -127,6 +142,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_Loginn);
             this.panel1.Controls.Add(this.button1);
@@ -136,7 +152,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 124);
+            this.panel1.Size = new System.Drawing.Size(274, 125);
             this.panel1.TabIndex = 8;
             // 
             // pBSalir2
@@ -169,7 +185,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FirmarAsistencia";
             this.Click += new System.EventHandler(this.FirmarAsistencia_Click);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moverpantalla);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FirmarAsistencia_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).EndInit();

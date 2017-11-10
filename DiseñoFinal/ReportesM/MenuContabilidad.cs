@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Entidad;
 
 namespace DiseñoFinal
 {
@@ -21,6 +22,8 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            timer1.Start();
+            CheckForIllegalCrossThreadCalls = false;
         }
         public MenuContabilidad(Form pantalla)
         {
@@ -28,6 +31,9 @@ namespace DiseñoFinal
             intusuario = new InterfaceUsuario(this);
             this.pantalla = pantalla;
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
+            timer1.Start();
+            CheckForIllegalCrossThreadCalls = false;
+
         }
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -72,6 +78,7 @@ namespace DiseñoFinal
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+           
         }
 
         private void pBCrearFactura_Click(object sender, EventArgs e)
@@ -120,6 +127,7 @@ namespace DiseñoFinal
         private void MenuContabilidad_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = UsuarioEnCurso;
+            requests();
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
@@ -132,6 +140,71 @@ namespace DiseñoFinal
         {
             string[] Datos = new string[1];
             intusuario.enviarEvento("PantallaNomina", Datos);
+        }
+        int countRAnt = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            new System.Threading.Thread(requests).Start();
+        }
+
+
+        private void requests()
+        {
+            int countR = new ManejadorRequisicion().CountRequisicionesPendientes();
+            if (countR != countRAnt)
+            {
+                switch (countR)
+                {
+                    case 0:
+                        pictureBox1.Image = Properties.Resources.Request0;
+                        break;
+                    case 1:
+                        pictureBox1.Image = Properties.Resources.Request1;
+                        break;
+                    case 2:
+                        pictureBox1.Image = Properties.Resources.Request2;
+                        break;
+                    case 3:
+                        pictureBox1.Image = Properties.Resources.Request3;
+                        break;
+                    case 4:
+                        pictureBox1.Image = Properties.Resources.Request4;
+                        break;
+                    case 5:
+                        pictureBox1.Image = Properties.Resources.Request5;
+                        break;
+                    default:
+                        if (countR > 5)
+                            pictureBox1.Image = Properties.Resources.RequestMoreOf5;
+                        break;
+                }
+                countRAnt = countR;
+            }
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+        }
+
+        
+
+        private void pictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).Size = new Size(((PictureBox)sender).Size.Width + 3, ((PictureBox)sender).Size.Height + 3);
+            ((PictureBox)sender).Location = new Point(((PictureBox)sender).Location.X - 1, ((PictureBox)sender).Location.Y - 1);
+            ((PictureBox)sender).BackColor = Color.GhostWhite;
+        }
+
+        private void pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).Size = new Size(((PictureBox)sender).Size.Width - 3, ((PictureBox)sender).Size.Height - 3);
+            ((PictureBox)sender).Location = new Point(((PictureBox)sender).Location.X + 1, ((PictureBox)sender).Location.Y + 1);
+            ((PictureBox)sender).BackColor = Color.Transparent;
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            new OrdenesDeCompra().ShowDialog();
         }
     }
 }
