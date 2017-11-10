@@ -17,11 +17,17 @@ namespace DiseñoFinal.ReportesM
         public VistaPreviaCorte()
         {
             InitializeComponent();
-            ReporteCorteCaja objReporte = new ReporteCorteCaja();
-            objReporte.SetParameterValue("@FolioCorte", Folio);
-            objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
-            VGeneral.ReportSource = objReporte;
+            
         }
-       
+
+        private void VistaPreviaCorte_Load(object sender, EventArgs e)
+        {
+            PruebaCorte obj = new PruebaCorte();
+            obj.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+
+            obj.SetParameterValue("@FolioCorte", Folio);
+
+            VGeneral.ReportSource = obj;
+        }
     }
 }

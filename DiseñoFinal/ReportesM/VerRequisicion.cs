@@ -36,6 +36,9 @@ namespace DiseñoFinal.ReportesM
                 dgvReq["CantidadTotal", renglon].Value = ReducirEspaciado(fila["CantidadTotal"].ToString());
                 dgvReq["FechadePedido", renglon].Value = ReducirEspaciado(fila["Fecha de Pedido"].ToString());
                 dgvReq["Surtido", renglon].Value = ReducirEspaciado(fila["Surtido"].ToString());
+                dgvReq["FechaAutorizado", renglon].Value = ReducirEspaciado(fila["FechaAutorizado"].ToString());
+                dgvReq["FechaSurtido", renglon].Value = ReducirEspaciado(fila["FechaSurtido"].ToString());
+                dgvReq["Proveedor", renglon].Value = ReducirEspaciado(fila["Proveedor"].ToString());
                 renglon++;
             }
         }
@@ -70,6 +73,11 @@ namespace DiseñoFinal.ReportesM
             string NoReq = dgvReq[0, dgvReq.CurrentCell.RowIndex].Value.ToString();
             objform.NoReq = NoReq;
             objform.ShowDialog();
+        }
+
+        private void dgvReq_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

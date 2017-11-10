@@ -283,6 +283,12 @@
     <Compile Include="ReportesM\PantallaListados\PListadoClientes.Designer.cs">
       <DependentUpon>PListadoClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\PruebaCorte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PruebaCorte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesM\Reportes\Consultas\Consulta1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1018,6 +1024,10 @@
     <EmbeddedResource Include="ReportesM\PantallaListados\PListadoClientes.resx">
       <DependentUpon>PListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\PruebaCorte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PruebaCorte.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes\Consultas\Consulta1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Consulta1.cs</LastGenOutput>
@@ -1347,6 +1357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaComprasProve.resx">
       <DependentUpon>VistaPreviaComprasProve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaCorte.resx">
+      <DependentUpon>VistaPreviaCorte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaCorteFechas.resx">
       <DependentUpon>VistaPreviaCorteFechas.cs</DependentUpon>

@@ -107,7 +107,7 @@ namespace DiseñoFinal
                     crystalReportViewer1.ReportSource = objReporte;
                     break;
                 case "NLPedidos":
-                    ListadoClientes objre = new ListadoClientes();
+                    ListadoPedidos objre = new ListadoPedidos();
                     objre.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = objre;
                     break;
@@ -320,7 +320,7 @@ namespace DiseñoFinal
                     crystalReportViewer1.ReportSource = c15;
                     break;
                 case "Nodo16":
-                    Consulta15 c16 = new Consulta15();
+                    Consulta16 c16 = new Consulta16();
                     c16.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = c16;
                     break;

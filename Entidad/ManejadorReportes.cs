@@ -30,7 +30,7 @@ namespace Entidad
         }
         public DataTable BuscarCorteCaja(string[] Datos)
         {
-            return IbaseDatos.BuscarPorPedido(Datos);
+            return IbaseDatos.BuscarPorNombreFolio(Datos);
         }
         public DataTable BuscarCortePorFecha(string[] Datos)
         {
