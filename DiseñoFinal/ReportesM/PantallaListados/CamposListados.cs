@@ -6,6 +6,7 @@
         {
             {"Nombre", "" },
             {"Apellidos", "" },
+        //    {"RFC","" },
             {"Direccion", "Dirección" },
             {"Colonia", "" },
             {"Ciudad", "" },

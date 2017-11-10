@@ -79,10 +79,10 @@ namespace DiseñoFinal.ReportesM
 
         private void btnCortesEmpleado_Click(object sender, EventArgs e)
         {
-            VistaPreviaCorte objForm = new VistaPreviaCorte();
+            VistaPreviaCorte obj = new VistaPreviaCorte();
             string Folio = dgvCortes[0, dgvCortes.CurrentCell.RowIndex].Value.ToString();
-            objForm.Folio = Folio;
-            objForm.ShowDialog();
+            obj.Folio = Folio;
+            obj.ShowDialog();
         }
 
         private void btnCortesFecha_Click(object sender, EventArgs e)
