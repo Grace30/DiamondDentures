@@ -29,5 +29,10 @@ namespace DiseñoFinal
         {
             dataGridView1.DataSource = manejadorUsuario.ObtenerAsistenciaPorFecha(dateTimePicker1.Value.Date);
         }
+
+        private void ListaDeAsistencia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

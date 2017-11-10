@@ -18,7 +18,8 @@ namespace DiseñoFinal
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("es-MX");
             //Application.Run(new Login());
-            Application.Run(new Nomina());
+            //Application.Run(new Nomina());
+            Application.Run(new MenuContabilidad());
         }
     }
 }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using Entidad;
 
 namespace DiseñoFinal
@@ -16,24 +15,10 @@ namespace DiseñoFinal
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")] //Médodos para importar librerias necesarias de la interface de usuario
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        private void moverpantalla(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
         public FirmarAsistencia()
         {
             InitializeComponent();
         }
-
-
-        
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,6 +29,9 @@ namespace DiseñoFinal
                     else{
                         manejadorUsuario.RegistrarAsistencia(txt_Loginn.Text);
                         MessageBox.Show("Operacion realizada con exito");
+                        txt_Paswordd.Clear();
+                        txt_Loginn.Clear();
+                        txt_Loginn.Focus();
                     }
                 }
             }
@@ -77,6 +65,11 @@ namespace DiseñoFinal
         private void FirmarAsistencia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FirmarAsistencia_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoveForm();
         }
     }
 }
