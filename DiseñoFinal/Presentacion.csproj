@@ -258,18 +258,17 @@
     <Compile Include="CorrecionBalance.Designer.cs">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiamondDenturesDataSetEber.Designer.cs">
+     <Compile Include="DiamondDenturesDataSetEber.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesDeCompra.cs">
+	<Compile Include="OrdenesDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdenesDeCompra.Designer.cs">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesM\CrystalReport1.cs">
     <Compile Include="ReportesM\BalanceGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1005,13 +1004,12 @@
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
-     <EmbeddedResource Include="CorrecionBalance.resx">
+    <EmbeddedResource Include="CorrecionBalance.resx">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesDeCompra.resx">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\CrystalReport1.rpt"
     <EmbeddedResource Include="ReportesM\BalanceGeneral.resx">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1397,7 +1395,7 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DiamondDenturesDataSetEber.xsc">
+	 <None Include="DiamondDenturesDataSetEber.xsc">
       <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
     </None>
     <None Include="DiamondDenturesDataSetEber.xsd">

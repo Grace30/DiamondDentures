@@ -12,20 +12,20 @@ namespace Datos
         public string[] Instanciaas = { "(local)\\DIAMONDDENTURES", "(local)\\sqlexpress", "(local)\\", "(local)", "." };
         public string strConexionAzure = "Server=tcp:rebeater.database.windows.net,1433;Initial Catalog=DiamondDentures;Persist Security Info=False;User ID=Rebeater;Password=Eber123123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         //public string strConexionAzure = "Data Source=DESKTOP-K4HLM96;Initial Catalog=DiamondDentures;Integrated Security=True";
-        private SqlConnection conexion { get; set; }
+        private SqlConnection conexionAzure;
 
         public SqlConnection getAzureConexion()
         {
-            conexion = new SqlConnection(strConexionAzure);
+            conexionAzure = new SqlConnection(strConexionAzure);
             try
             {
-                conexion.Open();
+                conexionAzure.Open();
             }
             catch (Exception ms)
             {
                
             }
-            return this.conexion;
+            return conexionAzure;
         }
 
         //Método para obtener la conexión
@@ -35,9 +35,9 @@ namespace Datos
             {
                 try
                 {
-                    conexion = new SqlConnection("Data Source = " + Instanciaas[INSTANCIA] + "; Initial Catalog = DiamondDentures; Integrated Security = True");
-                    this.conexion.Open();
-                    return this.conexion;
+                    conexionAzure = new SqlConnection("Data Source = " + Instanciaas[INSTANCIA] + "; Initial Catalog = DiamondDentures; Integrated Security = True");
+                    this.conexionAzure.Open();
+                    return this.conexionAzure;
                 }
                 catch (Exception ms)
                 {
@@ -50,10 +50,10 @@ namespace Datos
         //Método para cerrar la conexion
         public void CerrarConexio()
         {
-            if (this.conexion != null)
+            if (this.conexionAzure != null)
             {
 
-            } this.conexion.Close();
+            } this.conexionAzure.Close();
         }
     }
 }
