@@ -16,6 +16,9 @@ namespace DiseñoFinal
     {
 
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+        ManejadorBanco manejadorBanco = new ManejadorBanco();
+
+
         bool tablalista = false;
         bool marcarTodo = false;
         public PagoAEmpleados()
@@ -199,7 +202,7 @@ namespace DiseñoFinal
             }
             if (MessageBox.Show(msg + "\r\nTotal a pagar: " + totalAPagar.ToString("C2"), "Empleados", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                if (manejadorUsuario.GetSaldoEnBanco() < totalAPagar)
+                if (manejadorBanco.GetSaldoEnBanco() < totalAPagar)
                     MessageBox.Show("No se puede realizar el pago debido a saldo insuficiente");
                 else
                 {

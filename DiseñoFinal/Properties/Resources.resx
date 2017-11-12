@@ -217,6 +217,9 @@
   <data name="ojo 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ojo 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Print_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="registrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\registrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,6 +322,9 @@
   <data name="salir2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="User Male_10px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Male_10px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Ver pedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ver pedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -363,6 +369,9 @@
   </data>
   <data name="retarjeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\retarjeta.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search Property_31px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search Property_31px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="acceder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\acceder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,6 +454,9 @@
   <data name="u1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\u1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Eye_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eye_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Salir 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Salir 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -496,6 +508,9 @@
   <data name="actualizar datos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizar datos3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Invisible_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Invisible_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="footer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\footer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -511,10 +526,28 @@
   <data name="u" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\u.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eye_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eye_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Request0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Invisible_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Invisible_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Request1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Request2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Request3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Request4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Request5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Request5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RequestMoreOf5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RequestMoreOf5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drip_echo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\399191__spiceprogram__drip-echo.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

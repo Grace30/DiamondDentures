@@ -33,7 +33,7 @@ namespace Datos
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
             {
-                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToUInt32(cmdReader["CostoBase"])));
+                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToDouble(cmdReader["CostoBase"])));
                 requi = new Requisicion(Convert.ToInt32(cmdReader["IDRequisicion"]), cmdReader["Departamento"].ToString(), cmdReader["Solicitante"].ToString(),(DateTime)cmdReader["Fecha"], cmdReader["Surtido"].ToString(), cmdReader["Estado"].ToString(), items.ToArray());
             }
             cmdReader.Close();
@@ -41,6 +41,78 @@ namespace Datos
             return requi;
         }
 
+        public int AutorizarRequisicion(int IDRequisicion, string Loginn)
+        {
+            string[] Parametros = { "@IDRequisicion", "@Loginn"};
+            return Ejecutar("AutorizarRequisicion", Parametros, IDRequisicion, Loginn);
+        }
+
+        public object[] NombreProveedores()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            List<string> empleados = new List<string>();
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute NombreProvedores", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public object[] NombreEmpleados()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            List<string> empleados = new List<string>();
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute NombreEmpleados", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public int CountRequisicionesPendientes()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            int count = 0;
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                count = Convert.ToInt32(cmdReader[0]);
+            return count;
+        }
+
+        public string[] NombreEmpleadosContabilidad()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            List<string> empleados = new List<string>();
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute NombreEmpleadosContabilidad", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public void InsertIngreso(double cantidad)
+        {//Venta
+
+        }
+
+        public void InsertRetiro(double cantidad)
+        {//Compra
+
+        }
+		
         public object[] getAñoBalance()
         {
             List<string> periodos = new List<string>();

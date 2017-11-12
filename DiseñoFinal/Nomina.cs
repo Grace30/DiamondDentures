@@ -15,6 +15,8 @@ namespace DiseñoFinal
     {
         double saldo;
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+        ManejadorBanco manejadorBanco = new ManejadorBanco();
+        ManejadorRequisicion manejadorRequisicion = new ManejadorRequisicion();
 
         public Nomina()
         {
@@ -76,12 +78,13 @@ namespace DiseñoFinal
         {
             timerBanco.Stop();
             lbl_Saldo.BackColor = Color.FromArgb(185, 209, 234);
-            double saldonuevo = manejadorUsuario.GetSaldoEnBanco();
+            double saldonuevo = manejadorBanco.GetSaldoEnBanco();
             if (saldo < saldonuevo)
                 lbl_Saldo.BackColor = Color.Green;
             else if (saldo > saldonuevo)
                 lbl_Saldo.BackColor = Color.Red;
-            lbl_Saldo.Text = string.Format("{0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+            if (saldo != saldonuevo)
+                lbl_Saldo.Text = string.Format("{0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
             saldo = saldonuevo;
             //timerBanco.Start();
 
@@ -91,7 +94,7 @@ namespace DiseñoFinal
         {
             dataGridView1.RowCount = 1;
             dataGridView1.Rows[0].Selected = true;
-            lbl_Saldo.Text = string.Format("{0} MXN", manejadorUsuario.GetSaldoEnBanco().ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+            lbl_Saldo.Text = string.Format("{0} MXN", manejadorBanco.GetSaldoEnBanco().ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
 
             /// Prueba 
             //dataGridView2[3, 0].Value = Properties.Resources.Checkmark_20px;
@@ -109,7 +112,7 @@ namespace DiseñoFinal
                 if (dataGridView1.SelectedRows.Count > 0)
                     rowSelect = dataGridView1.SelectedRows[0].Index;
             int rows = dataGridView1.RowCount;
-            DataTable t = manejadorUsuario.getRequisicionesPorAprobar();
+            DataTable t = manejadorRequisicion.getRequisicionesPorAprobar();
             dataGridView1.DataSource = t;
             dataGridView1.Columns[0].FillWeight = 1;
             dataGridView1.Columns[1].FillWeight = 40;
@@ -149,6 +152,7 @@ namespace DiseñoFinal
 
         private void lbl_Saldo_Click(object sender, EventArgs e)
         {
+            new CorrecionBalance().ShowDialog();
 
         }
 

@@ -36,6 +36,16 @@ namespace Entidad
             return IbaseDatos.getPeriodosBalance(año);
         }
 
+        public object[] NombreEmpleados()
+        {
+            return IbaseDatos.NombreEmpleados();
+        }
+
+        public object[] NombreProveedores()
+        {
+            return IbaseDatos.NombreProveedores();
+        }
+
         public DataTable getBalance(DateTime Desde, DateTime Hasta)
         {
             return IbaseDatos.getBalance(Desde, Hasta);
@@ -69,6 +79,11 @@ namespace Entidad
         public double[] getTotalesBalance(DateTime Desde, DateTime Hasta)
         {
             return IbaseDatos.GetTotalesBalance(Desde, Hasta);
+        }
+
+        public object[] NombreEmpleadosContabilidad()
+        {
+            return IbaseDatos.NombreEmpleadosContabilidad();
         }
 
         public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)
@@ -124,11 +139,7 @@ namespace Entidad
             return IbaseDatos.ActualizarRegistroUsuario(Datos);
         }
 
-        public DataTable getRequisicionesPorAprobar()
-        {
-            return IbaseDatos.getRequisicionesPorAprobar();
-        }
-
+        
         public int EliminarRegistro(string[] Datos)
         {
             return IbaseDatos.EliminarUsuario(Datos);

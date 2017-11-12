@@ -22,5 +22,20 @@ namespace Entidad
            return IbaseDatos.getRequisicion(idRequisicion);
 
         }
+
+        public int CountRequisicionesPendientes()
+        {
+            return IbaseDatos.CountRequisicionesPendientes();
+        }
+
+        public DataTable getRequisicionesPorAprobar()
+        {
+            return IbaseDatos.getRequisicionesPorAprobar();
+        }
+
+        public int AutorizarRequisicion(int IDRequisicion, string Loginn)
+        {
+            return IbaseDatos.AutorizarRequisicion(IDRequisicion, Loginn);
+        }
     }
 }

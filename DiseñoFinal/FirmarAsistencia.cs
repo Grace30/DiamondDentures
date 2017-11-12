@@ -20,7 +20,8 @@ namespace DiseñoFinal
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
-        private void moverpantalla(object sender, MouseEventArgs e)
+        
+		private void moverpantalla(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
@@ -44,6 +45,9 @@ namespace DiseñoFinal
                     else{
                         manejadorUsuario.RegistrarAsistencia(txt_Loginn.Text);
                         MessageBox.Show("Operacion realizada con exito");
+                        txt_Paswordd.Clear();
+                        txt_Loginn.Clear();
+                        txt_Loginn.Focus();
                     }
                 }
             }

@@ -252,6 +252,29 @@
     <Compile Include="ControlPedidos.Designer.cs">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CorrecionBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CorrecionBalance.designer.cs">
+      <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiamondDenturesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MenuContabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuContabilidad.designer.cs">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesDeCompra.designer.cs">
+      <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -426,12 +449,6 @@
     </Compile>
     <Compile Include="Materiales.Designer.cs">
       <DependentUpon>Materiales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.Designer.cs">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGeneral.cs">
       <SubType>Form</SubType>
@@ -762,6 +779,15 @@
     <EmbeddedResource Include="ControlPedidos.resx">
       <DependentUpon>ControlPedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CorrecionBalance.resx">
+      <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuContabilidad.resx">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesDeCompra.resx">
+      <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -867,9 +893,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materiales.resx">
       <DependentUpon>Materiales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\MenuContabilidad.resx">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGeneral.resx">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
@@ -1019,6 +1042,17 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DiamondDenturesDataSet.xsc">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiamondDenturesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiamondDenturesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiamondDenturesDataSet.xss">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Presentacion_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
@@ -1814,6 +1848,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\399191__spiceprogram__drip-echo.wav" />
+    <None Include="Resources\RequestMoreOf5.png" />
+    <None Include="Resources\Request5.png" />
+    <None Include="Resources\Request4.png" />
+    <None Include="Resources\Request3.png" />
+    <None Include="Resources\Request2.png" />
+    <None Include="Resources\Request1.png" />
+    <None Include="Resources\Request0.png" />
+    <None Include="Resources\Search Property_31px.png" />
+    <None Include="Resources\User Male_10px.png" />
+    <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Invisible_20px.png" />
     <None Include="Resources\Eye_20px.png" />
     <None Include="Resources\Checkmark_20px.png" />
