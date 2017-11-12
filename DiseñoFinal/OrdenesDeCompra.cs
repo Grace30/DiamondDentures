@@ -24,11 +24,18 @@ namespace DiseñoFinal
 
         private void OrdenesDeCompra_Load(object sender, EventArgs e)
         {
-            button3.Text = Program.Loginn;
+            button1.PerformClick();
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
+
+            new Thread(LlenarCboxContadores).Start();
+            new Thread(LlenarCboxEmpleados).Start();
+            new Thread(LlenarCboxProveedores).Start();
+
             cbox_Autorizo.SelectedIndex = 0;
             cbox_Estatus.SelectedIndex = 0;
             cbox_EstatusSurtido.SelectedIndex = 0;
             cbx_Solicitante.SelectedIndex = 0;
+
             cbox_Proovedor.SelectedIndex = 0;
 
         }
@@ -121,21 +128,7 @@ namespace DiseñoFinal
             button1.PerformClick();
         }
 
-        private void OrdenesDeCompra_Load(object sender, EventArgs e)
-        {
-            button1.PerformClick();
-            button3.Text = Program.Departamento + " - " + Program.Loginn;
-
-            new Thread(LlenarCboxContadores).Start();
-            new Thread(LlenarCboxEmpleados).Start();
-            new Thread(LlenarCboxProveedores).Start();
-
-            cbox_Autorizo.SelectedIndex = 0;
-            cbox_Estatus.SelectedIndex = 0;
-            cbox_EstatusSurtido.SelectedIndex = 0;
-            cbx_Solicitante.SelectedIndex = 0;
-            cbox_Proovedor.SelectedIndex = 0;
-        }
+      
 
         private void LlenarCboxEmpleados() { cbx_Solicitante.Items.AddRange(manejadorUsuario.NombreEmpleados()); }
         private void LlenarCboxContadores() { cbox_Autorizo.Items.AddRange(manejadorUsuario.NombreEmpleadosContabilidad()); }
