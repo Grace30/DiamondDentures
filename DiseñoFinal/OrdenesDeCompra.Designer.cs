@@ -487,7 +487,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::DiseñoFinal.Properties.Resources.Logo_dd;
+            this.pictureBox3.Image =  global::DiseñoFinal.Properties.Resources.Logo_dd;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";

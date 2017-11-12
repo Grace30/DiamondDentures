@@ -652,6 +652,16 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eye_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("Eye_20px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fabricar1 {
             get {
                 object obj = ResourceManager.GetObject("Fabricar1", resourceCulture);
@@ -845,6 +855,16 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap Invisible_20px {
             get {
                 object obj = ResourceManager.GetObject("Invisible_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Invisible_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("Invisible_20px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,10 +16,6 @@ namespace DiseñoFinal
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
 
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")] //Médodos para importar librerias necesarias de la interface de usuario
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
         
 		private void moverpantalla(object sender, MouseEventArgs e)
         {
