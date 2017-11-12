@@ -279,6 +279,16 @@
     <Compile Include="CorrecionBalance.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DiamondDenturesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MenuContabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuContabilidad.designer.cs">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     <Compile Include="CorrecionBalance.Designer.cs">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
     </Compile>
@@ -693,12 +703,6 @@
     <Compile Include="Materiales.Designer.cs">
       <DependentUpon>Materiales.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.Designer.cs">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1097,6 +1101,9 @@
     <EmbeddedResource Include="CorrecionBalance.resx">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="MenuContabilidad.resx">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     <EmbeddedResource Include="EntradaYSalida.resx">
       <DependentUpon>EntradaYSalida.cs</DependentUpon>
     </EmbeddedResource>
@@ -1341,9 +1348,6 @@
     <EmbeddedResource Include="Materiales.resx">
       <DependentUpon>Materiales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\MenuContabilidad.resx">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuGeneral.resx">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1516,6 +1520,17 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DiamondDenturesDataSet.xsc">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiamondDenturesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiamondDenturesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiamondDenturesDataSet.xss">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+
     <None Include="DiamondDenturesDataSetEber.xsc">
       <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
     </None>
@@ -2333,16 +2348,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\399191__spiceprogram__drip-echo.wav" />
+
     <None Include="Resources\User Male_10px.png" />
     <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Search Property_31px.png" />
     <None Include="Resources\Request0.png" />
+
     <None Include="Resources\RequestMoreOf5.png" />
     <None Include="Resources\Request5.png" />
     <None Include="Resources\Request4.png" />
     <None Include="Resources\Request3.png" />
     <None Include="Resources\Request2.png" />
     <None Include="Resources\Request1.png" />
+    <None Include="Resources\Request0.png" />
+    <None Include="Resources\Search Property_31px.png" />
+    <None Include="Resources\User Male_10px.png" />
+    <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Invisible_20px.png" />
     <None Include="Resources\Eye_20px.png" />
     <None Include="Resources\Checkmark_20px.png" />

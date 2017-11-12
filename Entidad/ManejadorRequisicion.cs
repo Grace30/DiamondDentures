@@ -32,5 +32,11 @@ namespace Entidad
         {
             return IbaseDatos.getRequisicionesPorAprobar();
         }
+
+        public int AutorizarRequisicion(int IDRequisicion, string Loginn)
+        {
+            return IbaseDatos.AutorizarRequisicion(IDRequisicion, Loginn);
+        }
+
     }
 }

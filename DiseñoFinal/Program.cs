@@ -8,6 +8,8 @@ namespace DiseñoFinal
 {
     static class Program
     {
+        public static string Loginn;
+        public static string Departamento;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -18,7 +20,6 @@ namespace DiseñoFinal
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("es-MX");
             Application.Run(new Login());
-            ////Application.Run(new Nomina());
             //Application.Run(new MenuContabilidad());
         }
     }

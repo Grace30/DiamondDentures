@@ -26,7 +26,30 @@ namespace Entidad
             return IbaseDatos.Departamento(Datos);
         }
 
-       
+        public object[] getAñoBalance()
+        {
+            return IbaseDatos.getAñoBalance(); 
+        }
+
+        public object[] getPeriodosBalance(int año)
+        {
+            return IbaseDatos.getPeriodosBalance(año);
+        }
+
+        public object[] NombreEmpleados()
+        {
+            return IbaseDatos.NombreEmpleados();
+        }
+
+        public object[] NombreProveedores()
+        {
+            return IbaseDatos.NombreProveedores();
+        }
+
+        public DataTable getBalance(DateTime Desde, DateTime Hasta)
+        {
+            return IbaseDatos.getBalance(Desde, Hasta);
+        }
 
        
 
@@ -51,6 +74,11 @@ namespace Entidad
         }
 
      
+
+        public object[] NombreEmpleadosContabilidad()
+        {
+            return IbaseDatos.NombreEmpleadosContabilidad();
+        }
 
         public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)
         {
@@ -104,8 +132,6 @@ namespace Entidad
         {
             return IbaseDatos.ActualizarRegistroUsuario(Datos);
         }
-
-     
 
         public int EliminarRegistro(string[] Datos)
         {
