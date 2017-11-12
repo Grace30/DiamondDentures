@@ -16,9 +16,25 @@ namespace Entidad
         {
             return IbaseDatos.ObtenerDatosVentas();
         }
+        public DataTable ObtenerCortes()
+        {
+            return IbaseDatos.ObtenerCortes();
+        }
         public DataTable BuscarPorFecha(string[] Datos)
         {
             return IbaseDatos.BuscarPorFecha(Datos);
+        }
+        public DataTable ObtenerBalanceGeneral(string[] Datos)
+        {
+            return IbaseDatos.ObtenerBalanceGeneral(Datos);
+        }
+        public DataTable BuscarCorteCaja(string[] Datos)
+        {
+            return IbaseDatos.BuscarPorNombreFolio(Datos);
+        }
+        public DataTable BuscarCortePorFecha(string[] Datos)
+        {
+            return IbaseDatos.BuscarCortePorFecha(Datos);
         }
         public DataTable BuscarPorNombreE(string Datos)
         {
@@ -27,6 +43,14 @@ namespace Entidad
         public DataTable BuscarPorNombreProveedor(string Datos)
         {
             return IbaseDatos.BuscarPorNombreProveedor(Datos);
+        }
+        public DataTable NominaMes(int Mes)
+        {
+            return IbaseDatos.NominaMes(Mes);
+        }
+        public DataTable ObtenerNominaGeneral()
+        {
+            return IbaseDatos.ObtenerNominaGeneral();
         }
         public DataTable ObtenerDatosCatalago()
         {
@@ -51,6 +75,18 @@ namespace Entidad
         public DataTable ObtenerDatosSalidas()
         {
             return IbaseDatos.ObtenerDatosSalidas();
+        }
+        public DataTable ObtenerNotas()
+        {
+            return IbaseDatos.ObtenerNotas();
+        }
+        public DataTable ObtenerOficios()
+        {
+            return IbaseDatos.ObtenerOficios();
+        }
+        public DataTable ObtenerFormas()
+        {
+            return IbaseDatos.ObtenerFormas();
         }
 
 

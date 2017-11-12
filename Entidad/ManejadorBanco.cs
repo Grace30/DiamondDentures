@@ -46,11 +46,13 @@ namespace Entidad
         public void InsertRetiro(double Cantidad)
         {
             //IbaseDatos.InsertRetiro(Cantidad);
+
         }
 
         public void InsertIngreso(double Cantidad)
         {
             //IbaseDatos.InsertIngreso(Cantidad);
+
 
         }
     }

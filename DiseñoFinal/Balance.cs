@@ -15,7 +15,7 @@ namespace DiseñoFinal
     {
 		ManejadorBanco manejadorBanco = new ManejadorBanco();
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
-
+        ManejadorBanco manejadorBanco = new ManejadorBanco();
         public Balance()
         {
             InitializeComponent();

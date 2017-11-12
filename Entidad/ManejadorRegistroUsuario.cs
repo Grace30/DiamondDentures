@@ -51,10 +51,7 @@ namespace Entidad
             return IbaseDatos.getBalance(Desde, Hasta);
         }
 
-        public double GetSaldoEnBanco()
-        {
-            return IbaseDatos.GetSaldoEnBanco();
-        }
+       
 
         public string[] listaDeUsuarios()
         {
@@ -76,10 +73,7 @@ namespace Entidad
             return IbaseDatos.calcularPagoMes(Loginn, Mes);
         }
 
-        public double[] getTotalesBalance(DateTime Desde, DateTime Hasta)
-        {
-            return IbaseDatos.GetTotalesBalance(Desde, Hasta);
-        }
+     
 
         public object[] NombreEmpleadosContabilidad()
         {
@@ -139,7 +133,6 @@ namespace Entidad
             return IbaseDatos.ActualizarRegistroUsuario(Datos);
         }
 
-        
         public int EliminarRegistro(string[] Datos)
         {
             return IbaseDatos.EliminarUsuario(Datos);

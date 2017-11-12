@@ -55,7 +55,7 @@
             this.NoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -183,7 +183,7 @@
             this.NoFac,
             this.Nombre,
             this.Fecha,
-            this.Column1});
+            this.Empleado});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +192,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFacturas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvFacturas.Location = new System.Drawing.Point(88, 268);
+            this.dgvFacturas.Location = new System.Drawing.Point(8, 268);
             this.dgvFacturas.Name = "dgvFacturas";
             this.dgvFacturas.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -206,7 +206,7 @@
             this.dgvFacturas.RowHeadersVisible = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             this.dgvFacturas.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvFacturas.Size = new System.Drawing.Size(525, 135);
+            this.dgvFacturas.Size = new System.Drawing.Size(651, 150);
             this.dgvFacturas.TabIndex = 183;
             this.dgvFacturas.CurrentCellChanged += new System.EventHandler(this.dgvFacturas_CurrentCellChanged);
             // 
@@ -308,11 +308,11 @@
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
             // 
-            // Column1
+            // Empleado
             // 
-            this.Column1.HeaderText = "Empleado";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Empleado.HeaderText = "Facturado por :";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
             // 
             // Facturas
             // 
@@ -376,6 +376,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NoFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
     }
 }

@@ -49,7 +49,6 @@
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblNombreE = new System.Windows.Forms.Label();
-            this.btnReporteGeneral = new System.Windows.Forms.Button();
             this.btnVentasFecha = new System.Windows.Forms.Button();
             this.btnVentasEmpleado = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
@@ -244,18 +243,6 @@
             this.lblNombreE.TabIndex = 179;
             this.lblNombreE.Text = "Nombre Empleado :";
             // 
-            // btnReporteGeneral
-            // 
-            this.btnReporteGeneral.BackColor = System.Drawing.Color.Silver;
-            this.btnReporteGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteGeneral.Location = new System.Drawing.Point(174, 453);
-            this.btnReporteGeneral.Name = "btnReporteGeneral";
-            this.btnReporteGeneral.Size = new System.Drawing.Size(220, 26);
-            this.btnReporteGeneral.TabIndex = 180;
-            this.btnReporteGeneral.Text = "Ver Reporte General de ventas";
-            this.btnReporteGeneral.UseVisualStyleBackColor = false;
-            this.btnReporteGeneral.Click += new System.EventHandler(this.btnReporteGeneral_Click);
-            // 
             // btnVentasFecha
             // 
             this.btnVentasFecha.BackColor = System.Drawing.Color.Silver;
@@ -284,7 +271,7 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.Silver;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.Location = new System.Drawing.Point(617, 453);
+            this.btnTicket.Location = new System.Drawing.Point(370, 462);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(192, 26);
             this.btnTicket.TabIndex = 183;
@@ -326,7 +313,6 @@
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.btnVentasEmpleado);
             this.Controls.Add(this.btnVentasFecha);
-            this.Controls.Add(this.btnReporteGeneral);
             this.Controls.Add(this.lblNombreE);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
@@ -337,6 +323,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvRepoVentas);
             this.Name = "ReportesVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes de Ventas";
             this.Load += new System.EventHandler(this.ReportesVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepoVentas)).EndInit();
@@ -370,7 +357,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FormaDePago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
-        private System.Windows.Forms.Button btnReporteGeneral;
         private System.Windows.Forms.Button btnVentasFecha;
         private System.Windows.Forms.Button btnVentasEmpleado;
         private System.Windows.Forms.Button btnTicket;

@@ -33,7 +33,7 @@ namespace Entidad
 
         public void CrearBase()
         {
-            IbaseDatos.CrearBase();
+            //IbaseDatos.CrearBase();
         }
 
         public bool setClaveRegistro(string[] Datos)
@@ -147,6 +147,16 @@ namespace Entidad
         public DataTable getTiempos(string[] Datos)
         {
             return IbaseDatos.getTiempos(Datos);
+        }
+
+        public int AgregarProveedor(string[] Datos)
+        {
+            return IbaseDatos.AgregarProveedor(Datos);
+        }
+
+        public int ActualizarProveedor(string[] Datos)
+        {
+            return IbaseDatos.ActualizarProveedor(Datos);
         }
     }
 }

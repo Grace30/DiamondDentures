@@ -190,7 +190,7 @@ namespace DiseñoFinal
 
             string idPed = lblNoPedido.Text;
 
-            objForm.IDPedido = idPed;
+            objForm.Pedido = idPed;
 
             Cambios = false;
 

@@ -31,6 +31,9 @@ namespace DiseñoFinal.Properties {
         public string DiamondDenturesConnectionStringReta {
             get {
                 return ((string)(this["DiamondDenturesConnectionStringReta"]));
+        public string DiamondDenturesConnectionString {
+            get {
+                return ((string)(this["DiamondDenturesConnectionString"]));
             }
         }
     }

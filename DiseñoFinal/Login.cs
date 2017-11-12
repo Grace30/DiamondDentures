@@ -22,6 +22,10 @@ namespace DiseñoFinal
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             v = new Validación();
+            //Quitar esto :B
+            //txtPassword.Text = txtLogin.Text = "Maribel02";
+            //pBIngresar_Click(pBIngresar, new EventArgs());
+            //Hide();
         }
         //quitar el marco y poder moverlo
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -199,6 +203,11 @@ namespace DiseñoFinal
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.Enter(e,intusuario,txtLogin,txtPassword, this);             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

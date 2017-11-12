@@ -82,12 +82,14 @@ namespace Datos
             SqlDataReader cmdReader;
             int count = 0;
             conexion = new Conexion().getAzureConexion();
+
             cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
                 count = Convert.ToInt32(cmdReader[0]);
             return count;
         }
+
 
         public string[] NombreEmpleadosContabilidad()
         {
@@ -112,7 +114,6 @@ namespace Datos
         {//Compra
 
         }
-		
         public object[] getAñoBalance()
         {
             List<string> periodos = new List<string>();

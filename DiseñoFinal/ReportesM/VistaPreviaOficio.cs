@@ -1,4 +1,5 @@
 ﻿using DiseñoFinal.ReportesM;
+using DiseñoFinal.ReportesM.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace DiseñoFinal
 {
     public partial class VistaPreviaOficio : Form
     {
-        public string IDPedido;
+        public string Folio,Pedido;
         public VistaPreviaOficio()
         {
             InitializeComponent();
@@ -22,8 +23,15 @@ namespace DiseñoFinal
         private void VistaPreviaOficio_Load(object sender, EventArgs e)
         {
             Oficio_de_confirmación2 objReporte = new Oficio_de_confirmación2();
-            objReporte.SetParameterValue("@IDPedido", IDPedido);
+            objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+            objReporte.SetParameterValue("@FolioOficio", Folio);
+            objReporte.SetParameterValue("@Pedido", Pedido);
             VOficio.ReportSource = objReporte;
+
+        }
+
+        private void VOficio_Load(object sender, EventArgs e)
+        {
 
         }
     }

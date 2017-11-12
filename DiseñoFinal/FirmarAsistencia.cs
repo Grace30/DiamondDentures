@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using Entidad;
 
 namespace DiseñoFinal
@@ -15,6 +14,7 @@ namespace DiseñoFinal
     public partial class FirmarAsistencia : Form
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")] //Médodos para importar librerias necesarias de la interface de usuario
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -31,10 +31,6 @@ namespace DiseñoFinal
         {
             InitializeComponent();
         }
-
-
-        
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -81,6 +77,11 @@ namespace DiseñoFinal
         private void FirmarAsistencia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FirmarAsistencia_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoveForm();
         }
     }
 }

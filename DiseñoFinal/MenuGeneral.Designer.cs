@@ -41,6 +41,7 @@
             this.pbxSemaforo = new System.Windows.Forms.PictureBox();
             this.pbLaboratorio = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -196,6 +198,17 @@
             this.panel1.TabIndex = 27;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(65, 402);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 71);
+            this.pictureBox1.TabIndex = 214;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MenuGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -203,8 +216,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DiseñoFinal.Properties.Resources.Captura2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(428, 431);
+            this.ClientSize = new System.Drawing.Size(428, 494);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pBReportes);
             this.Controls.Add(this.pBMenúContabilidad);
             this.Controls.Add(this.pbxSemaforo);
@@ -231,6 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +263,6 @@
         private System.Windows.Forms.PictureBox pbLaboratorio;
         private System.Windows.Forms.PictureBox pBReportes;
         private System.Windows.Forms.PictureBox pBMenúContabilidad;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

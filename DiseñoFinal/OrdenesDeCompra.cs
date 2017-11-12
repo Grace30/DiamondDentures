@@ -16,9 +16,21 @@ namespace DiseñoFinal
     {
         ManejadorRequisicion manejadorRequisicion = new ManejadorRequisicion();
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+
         public OrdenesDeCompra()
         {
             InitializeComponent();
+        }
+
+        private void OrdenesDeCompra_Load(object sender, EventArgs e)
+        {
+            button3.Text = Program.Loginn;
+            cbox_Autorizo.SelectedIndex = 0;
+            cbox_Estatus.SelectedIndex = 0;
+            cbox_EstatusSurtido.SelectedIndex = 0;
+            cbx_Solicitante.SelectedIndex = 0;
+            cbox_Proovedor.SelectedIndex = 0;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +86,7 @@ namespace DiseñoFinal
             AUTORIZADO
             SURTIDO
             PAGADO*/
+
             switch (cbox_Estatus.SelectedIndex)
             {
                 case 1:
@@ -98,6 +111,7 @@ namespace DiseñoFinal
                 dataGridView1.ClearSelection();
                 dataGridView1.Rows[e.RowIndex].Selected = true;
             }
+
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -132,6 +146,7 @@ namespace DiseñoFinal
         private void datePicker_AutoriFin_ValueChanged(object sender, EventArgs e) { datePicker_AutoriIni.Checked = datePicker_AutoriFin.Checked;}
         private void datePicker_EntregaIni_ValueChanged(object sender, EventArgs e){ datePicker_EntregaFin.Checked = datePicker_EntregaIni.Checked;}
         private void datePicker_EntregaFin_ValueChanged(object sender, EventArgs e) { datePicker_EntregaIni.Checked = datePicker_EntregaFin.Checked; }
+
 
     }
 }

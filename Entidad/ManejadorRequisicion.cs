@@ -37,5 +37,6 @@ namespace Entidad
         {
             return IbaseDatos.AutorizarRequisicion(IDRequisicion, Loginn);
         }
+
     }
 }

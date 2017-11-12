@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "DiseñoFinal\Presentacion.csproj", "{E5F75EB2-0663-4797-B896-4DCC72DBFC0A}"
 EndProject
@@ -39,7 +39,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5F75EB2-0663-4797-B896-4DCC72DBFC0A} = {FF3935C8-E65B-430E-8481-192355827502}
-		{4EF6D310-8EAD-45FF-98CE-26FC3F009080} = {DC092FD4-9F51-4F93-A10F-AE6422E85990}
 		{AA5F913A-ECA3-4AC3-825A-2EB993850C02} = {001802AE-BE3B-4ABB-82C5-3CF7FF810910}
+		{4EF6D310-8EAD-45FF-98CE-26FC3F009080} = {DC092FD4-9F51-4F93-A10F-AE6422E85990}
 	EndGlobalSection
 EndGlobal
