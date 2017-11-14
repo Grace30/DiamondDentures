@@ -26,9 +26,58 @@ namespace Entidad
             return IbaseDatos.Departamento(Datos);
         }
 
+        public object[] getAñoBalance()
+        {
+            return IbaseDatos.getAñoBalance(); 
+        }
+
+        public object[] getPeriodosBalance(int año)
+        {
+            return IbaseDatos.getPeriodosBalance(año);
+        }
+
+        public object[] NombreEmpleados()
+        {
+            return IbaseDatos.NombreEmpleados();
+        }
+
+        public object[] NombreProveedores()
+        {
+            return IbaseDatos.NombreProveedores();
+        }
+
+        public DataTable getBalance(DateTime Desde, DateTime Hasta)
+        {
+            return IbaseDatos.getBalance(Desde, Hasta);
+        }
+
+       
+
+        public string[] listaDeUsuarios()
+        {
+                return IbaseDatos.ListaUsuarios();
+        }
+
+        public void calcularpagoAEmpleados()
+        {
+            IbaseDatos.calcularPagoAempleados(9);
+        }
+
         public DataTable ObtenerAsistenciaPorFecha(DateTime fecha)
         {
             return IbaseDatos.obtenerAsistenciaPorFecha(fecha);
+        }
+
+        public Salario calcularPagoPorMes(string Loginn, int Mes)
+        {
+            return IbaseDatos.calcularPagoMes(Loginn, Mes);
+        }
+
+     
+
+        public object[] NombreEmpleadosContabilidad()
+        {
+            return IbaseDatos.NombreEmpleadosContabilidad();
         }
 
         public DataTable ObtenerRegistroAsistencia(string Nombres, string Apellidos)
@@ -94,5 +143,9 @@ namespace Entidad
             return IbaseDatos.RegistrarAsistencia(Loginn);
         }
 
+        public int PagarAEmpleado(string Loginn, double Sueldo, int Mes, string TasaISR,  string CuotaISR , string APagar)
+        {
+            return IbaseDatos.PagarAEmpleado(Loginn,Sueldo, Mes, TasaISR, CuotaISR, APagar);
+        }
     }
 }

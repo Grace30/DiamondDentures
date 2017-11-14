@@ -14,12 +14,15 @@ namespace DiseñoFinal
     public partial class MenuPrincipal : Form
     {
         InterfaceUsuario intusuario;
-        string UsuarioEnCurso;
+        public static string UsuarioEnCurso;
         public MenuPrincipal(string Usuario)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             UsuarioEnCurso = Usuario;
+            //También Aquí :B
+            //pBReportes_Click(pBReportes, new EventArgs());
+            //Hide();
         }
 
         public MenuPrincipal()
@@ -139,7 +142,10 @@ namespace DiseñoFinal
 
         private void pBReportes_Click(object sender, EventArgs e)
         {
-            Reportes frm = new Reportes(this);
+            //Reportes frm = new Reportes(this);
+            //intusuario.desplegarPantalla(frm);
+            //intusuario.cerrarPantalla(this);
+            MenúReportes frm = new MenúReportes();
             intusuario.desplegarPantalla(frm);
             intusuario.cerrarPantalla(this);
         }

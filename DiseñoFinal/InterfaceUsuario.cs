@@ -250,11 +250,16 @@ namespace DiseñoFinal
             {
                 if (maru.ValidarUsuario(Datos) > 0)
                 {
+
+                    
                     string Dep = "";
                     var Departamento = new DataTable();
                     Departamento = maru.Departamento(Datos);
                     foreach (DataRow fila in Departamento.Rows)
                     { Dep = fila["Departamento"].ToString(); }
+
+                    Program.Departamento = Dep;
+                    Program.Loginn = Datos[0];
 
                     if (Datos[0] == "Admin")
                     {
@@ -659,7 +664,9 @@ namespace DiseñoFinal
                     foreach (DataRow fila in datosFactura.Rows)
                     {
                         vfac.Pedido = fila["IDPedido"].ToString();
+                        vfac.Loginn = MenuPrincipal.UsuarioEnCurso;
                         vfac.Nombre = fila["Nombre"].ToString();
+                        vfac.Apellido = fila["Apellidos"].ToString();
                         vfac.RFC = fila["RFC"].ToString();
                         vfac.Cedula = fila["Cedula"].ToString();
                         vfac.Direccion = fila["Direccion"].ToString();
@@ -678,7 +685,9 @@ namespace DiseñoFinal
                     foreach (DataRow fila in datosFactura.Rows)
                     {
                         vfac.Pedido = fila["Pedido"].ToString();
+                        vfac.Loginn = fila["Loginn"].ToString();
                         vfac.Nombre = fila["Nombre"].ToString();
+                        vfac.Apellido = fila["Apellido"].ToString();
                         vfac.RFC = fila["RFC"].ToString();
                         vfac.Cedula = fila["Cedula"].ToString();
                         vfac.Direccion = fila["Direccion"].ToString();
@@ -694,6 +703,10 @@ namespace DiseñoFinal
                 }
 
                 desplegarPantalla(vfac);
+            }
+            if (Evento == "PantallaNomina")
+            {
+                new Nomina().ShowDialog();
             }
 
             if (Evento == "Registrar Datos Factura")
@@ -745,7 +758,116 @@ namespace DiseñoFinal
                 desplegarPantalla(notas);
             
               //  cerrarPantalla(llamada);
+            }
 
+            if (Evento == "PantallaAlmacen")
+            {
+                Almacen alm = new Almacen(llamada, Datos[1]);
+                var datosAlm = new DataTable();
+                datosAlm = mancp.ObtenerDatosMateriales(Datos);
+                alm.DatosData(datosAlm);
+                desplegarPantalla(alm);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaInventario")
+            {
+                Inventario alm = new Inventario(llamada, Datos[1]);
+                var datosAlm = new DataTable();
+                datosAlm = mancp.ObtenerDatosMateriales(Datos);
+                alm.DatosData(datosAlm);
+                desplegarPantalla(alm);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaHistorial")
+            {
+                HistorialInv hinv = new HistorialInv(llamada, Datos[2]);
+                var datosAlm = new DataTable();
+                datosAlm = mancp.ObtenerHistorial(Datos);
+                hinv.DatosData(datosAlm);
+                desplegarPantalla(hinv);
+                cerrarPantalla(llamada);
+            }
+
+            if (Evento == "PantallaRequisiciones")
+            {
+                Requisiciones requi = new Requisiciones(llamada, Datos[1]);
+                var datosRequi = new DataTable();
+                datosRequi = mancp.ObtenerRequisiciones(Datos);
+                requi.DatosData(datosRequi);
+                desplegarPantalla(requi);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaSurtidoMat")
+            {
+                SurtidoMaterial surtm = new SurtidoMaterial(llamada, Datos[1]);
+                var datosRequi = new DataTable();
+                datosRequi = mancp.RequisicionesAcep(Datos);
+                surtm.DatosData(datosRequi);
+                desplegarPantalla(surtm);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaProveedores")
+            {
+                ProveedoresJesusCrack prov = new ProveedoresJesusCrack(llamada, Datos[1]);
+                var datosProv = new DataTable();
+                datosProv = mancp.ObtenerProveedores(Datos);
+                prov.DatosData(datosProv);
+                desplegarPantalla(prov);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaAgregarProveedor")
+            {
+                AgregarProveedor aprov = new AgregarProveedor(llamada);
+                desplegarPantalla(aprov);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaActualizarProveedor")
+            {
+                ModificarProveedor modp = new ModificarProveedor(llamada, Datos[1]);
+                var datosProv = new DataTable();
+                datosProv = mancp.ObtenerProveedores(Datos);
+                modp.DatosData(datosProv);
+                desplegarPantalla(modp);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaRequisicionMateriales")
+            {
+                RequisicionMateriales remat = new RequisicionMateriales(llamada, Datos[1]);
+                var datosMat = new DataTable();
+                datosMat = mancp.ObtenerDatosMateriales(Datos);
+                remat.DatosData(datosMat, 1);
+
+                datosMat = mancp.ObtenerFaltantes(Datos);
+                remat.DatosData(datosMat, 0);
+                desplegarPantalla(remat);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaCatalogoProductos")
+            {
+                CatalogoProductos catpr = new CatalogoProductos(llamada, Datos[1]);
+                var datosCat = new DataTable();
+                datosCat = mancp.ObtenerCatalogo(Datos);
+                catpr.DatosData(datosCat);
+                desplegarPantalla(catpr);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaCompraProveedores")
+            {
+                ComprasProveedores comprov = new ComprasProveedores(llamada, Datos[1]);
+                var datosComProv = new DataTable();
+                datosComProv = mancp.ComprasAProveedor(Datos);
+                comprov.DatosData(datosComProv);
+                desplegarPantalla(comprov);
+                cerrarPantalla(llamada);
+            }
+            if (Evento == "PantallaEntradaSalida")
+            {
+                EntradaYSalida eys = new EntradaYSalida(llamada);
+                var datosMat = new DataTable();
+                datosMat = mancp.ObtenerEntradas(Datos);
+                eys.DatosData(datosMat);
+                desplegarPantalla(eys);
+                cerrarPantalla(llamada);
             }
 
             //ACABA

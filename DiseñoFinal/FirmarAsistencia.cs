@@ -15,6 +15,14 @@ namespace DiseñoFinal
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
+
+        
+		private void moverpantalla(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         public FirmarAsistencia()
         {
             InitializeComponent();
@@ -29,6 +37,9 @@ namespace DiseñoFinal
                     else{
                         manejadorUsuario.RegistrarAsistencia(txt_Loginn.Text);
                         MessageBox.Show("Operacion realizada con exito");
+                        txt_Paswordd.Clear();
+                        txt_Loginn.Clear();
+                        txt_Loginn.Focus();
                     }
                 }
             }
@@ -42,6 +53,31 @@ namespace DiseñoFinal
             {
                 btn_Continuar.PerformClick();
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txt_Paswordd.UseSystemPasswordChar = !txt_Paswordd.UseSystemPasswordChar;
+            if (txt_Paswordd.UseSystemPasswordChar)
+                button1.BackgroundImage = Properties.Resources.Invisible_20px;
+            else
+                button1.BackgroundImage = Properties.Resources.Eye_20px;
+            Focus();
+        }
+
+        private void pBSalir2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FirmarAsistencia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FirmarAsistencia_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoveForm();
         }
     }
 }

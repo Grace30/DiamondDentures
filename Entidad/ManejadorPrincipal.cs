@@ -149,6 +149,16 @@ namespace Entidad
             return IbaseDatos.getTiempos(Datos);
         }
 
+        public int AgregarProveedor(string[] Datos)
+        {
+            return IbaseDatos.AgregarProveedor(Datos);
+        }
+
+        public int ActualizarProveedor(string[] Datos)
+        {
+            return IbaseDatos.ActualizarProveedor(Datos);
+        }
+
         public DataTable getMaterialesProducto(string[] Datos)
         {
             return IbaseDatos.getMaterialesProducto(Datos);
