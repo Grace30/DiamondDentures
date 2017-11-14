@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaSolicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fabricador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pBMostrar = new System.Windows.Forms.PictureBox();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,16 +49,10 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Número,
-            this.Nombre,
-            this.Status,
-            this.FechaSolicitud,
-            this.FechaEntrega,
-            this.Fabricador});
             this.dataGridView1.Location = new System.Drawing.Point(12, 86);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -74,42 +62,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(534, 232);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
-            // 
-            // Número
-            // 
-            this.Número.HeaderText = "Número";
-            this.Número.Name = "Número";
-            this.Número.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // FechaSolicitud
-            // 
-            this.FechaSolicitud.HeaderText = "Fecha de solicitud";
-            this.FechaSolicitud.Name = "FechaSolicitud";
-            this.FechaSolicitud.ReadOnly = true;
-            // 
-            // FechaEntrega
-            // 
-            this.FechaEntrega.HeaderText = "Fecha de entrega";
-            this.FechaEntrega.Name = "FechaEntrega";
-            this.FechaEntrega.ReadOnly = true;
-            // 
-            // Fabricador
-            // 
-            this.Fabricador.HeaderText = "Fabricador";
-            this.Fabricador.Name = "Fabricador";
-            this.Fabricador.ReadOnly = true;
             // 
             // pBMostrar
             // 
@@ -225,12 +177,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pBMostrar;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaSolicitud;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fabricador;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

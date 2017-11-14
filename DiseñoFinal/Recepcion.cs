@@ -52,12 +52,14 @@ namespace DiseñoFinal
 
         private void pBPedido_Click(object sender, EventArgs e)
         {
-            ItUs.enviarEvento("NuevoPedido", new string[0]);
+            string[] Datos = { UsuarioEnCurso };
+            ItUs.enviarEvento("NuevoPedido", Datos);
         }
 
         private void pBPedidos_Click(object sender, EventArgs e)
         {
-            ItUs.enviarEvento("Pedidos", new string[0]);
+            string[] Datos = { UsuarioEnCurso };
+            ItUs.enviarEvento("Pedidos", Datos);
         }
 
         private void panel3_MouseDown(object sender, MouseEventArgs e)
@@ -90,6 +92,12 @@ namespace DiseñoFinal
         {
             string[] Datos = { UsuarioEnCurso };
             ItUs.enviarEvento("PantallaVentas", Datos);
+        }
+
+        private void btnCaja_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { UsuarioEnCurso };
+            ItUs.enviarEvento("PantallaCaja", Datos);
         }
     }
 }

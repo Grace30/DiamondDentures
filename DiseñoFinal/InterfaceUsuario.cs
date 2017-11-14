@@ -502,7 +502,7 @@ namespace DiseñoFinal
             }
             if(Evento == "NuevoPedido")
             {
-                Pedido ped = new Pedido(llamada);
+                Pedido ped = new Pedido(llamada, Datos[0]);
                 desplegarPantalla(ped);
                 cerrarPantalla(llamada);
             }
@@ -514,7 +514,7 @@ namespace DiseñoFinal
             }
             if(Evento == "Pedidos")
             {
-                Pedidos p = new Pedidos();
+                Pedidos p = new Pedidos(llamada, Datos[0]);
                 desplegarPantalla(p);
                 cerrarPantalla(llamada);
             }
@@ -532,7 +532,7 @@ namespace DiseñoFinal
             }
             if(Evento == "ActualizarPedido")
             {
-                ModificarPedido mp = new ModificarPedido(Datos, llamada);
+                ModificarPedido2 mp = new ModificarPedido2(Datos, llamada);
                 desplegarPantalla(mp);
                 cerrarPantalla(llamada);
             }
@@ -560,8 +560,26 @@ namespace DiseñoFinal
             }
             if (Evento == "PantallaVentas")
             {
-                Ventas vn = new Ventas();
+                Ventas vn = new Ventas(Datos[0]);
                 desplegarPantalla(vn);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaEntregas")
+            {
+                Entregas et = new Entregas(Datos[0], llamada);
+                desplegarPantalla(et);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaCaja")
+            {
+                Caja cj = new Caja(Datos[0], llamada);
+                desplegarPantalla(cj);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaRetiro")
+            {
+                Retiro rt = new Retiro(Datos[0]);
+                desplegarPantalla(rt);
                 cerrarPantalla(llamada);
             }
             if (Evento == "ActualizarDentista")
