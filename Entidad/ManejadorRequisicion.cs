@@ -38,5 +38,9 @@ namespace Entidad
             return IbaseDatos.AutorizarRequisicion(IDRequisicion, Loginn);
         }
 
+        public int Pagar(string loginn,string tipo, Requisicion requisicion)
+        {
+            return IbaseDatos.IngresarCompra(loginn, tipo, requisicion);
+        }
     }
 }

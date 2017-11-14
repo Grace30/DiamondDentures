@@ -35,20 +35,23 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pBSalir2 = new System.Windows.Forms.PictureBox();
-            this.pBCrearFactura = new System.Windows.Forms.PictureBox();
+            this.pbox_CrearFactura = new System.Windows.Forms.PictureBox();
             this.pBSalir = new System.Windows.Forms.PictureBox();
-            this.pBAdministrar = new System.Windows.Forms.PictureBox();
+            this.pbox_Administrar = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbox_Requisiciones = new System.Windows.Forms.PictureBox();
+            this.pbox_Balance = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_SaldoActual = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCrearFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_CrearFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Administrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Requisiciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Balance)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -57,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(217, 80);
+            this.label2.Location = new System.Drawing.Point(200, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 23);
             this.label2.TabIndex = 208;
@@ -71,6 +74,7 @@
             this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pBSalir2);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(-3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(641, 75);
@@ -118,22 +122,22 @@
             this.toolTip1.SetToolTip(this.pBSalir2, "Salir");
             this.pBSalir2.Click += new System.EventHandler(this.pBSalir2_Click_1);
             // 
-            // pBCrearFactura
+            // pbox_CrearFactura
             // 
-            this.pBCrearFactura.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pBCrearFactura.BackColor = System.Drawing.Color.Transparent;
-            this.pBCrearFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBCrearFactura.Image = global::DiseñoFinal.Properties.Resources.fact;
-            this.pBCrearFactura.Location = new System.Drawing.Point(381, 163);
-            this.pBCrearFactura.Name = "pBCrearFactura";
-            this.pBCrearFactura.Size = new System.Drawing.Size(97, 105);
-            this.pBCrearFactura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBCrearFactura.TabIndex = 212;
-            this.pBCrearFactura.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBCrearFactura, "Facturar");
-            this.pBCrearFactura.Click += new System.EventHandler(this.pBCrearFactura_Click);
-            this.pBCrearFactura.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
-            this.pBCrearFactura.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            this.pbox_CrearFactura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbox_CrearFactura.BackColor = System.Drawing.Color.Transparent;
+            this.pbox_CrearFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbox_CrearFactura.Image = global::DiseñoFinal.Properties.Resources.fact2;
+            this.pbox_CrearFactura.Location = new System.Drawing.Point(332, 164);
+            this.pbox_CrearFactura.Name = "pbox_CrearFactura";
+            this.pbox_CrearFactura.Size = new System.Drawing.Size(97, 105);
+            this.pbox_CrearFactura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox_CrearFactura.TabIndex = 212;
+            this.pbox_CrearFactura.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbox_CrearFactura, "Facturar");
+            this.pbox_CrearFactura.Click += new System.EventHandler(this.pBCrearFactura_Click);
+            this.pbox_CrearFactura.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pbox_CrearFactura.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
             // 
             // pBSalir
             // 
@@ -150,39 +154,56 @@
             this.toolTip1.SetToolTip(this.pBSalir, "Regresar");
             this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click_1);
             // 
-            // pBAdministrar
+            // pbox_Administrar
             // 
-            this.pBAdministrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pBAdministrar.BackColor = System.Drawing.Color.Transparent;
-            this.pBAdministrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBAdministrar.Image = ((System.Drawing.Image)(resources.GetObject("pBAdministrar.Image")));
-            this.pBAdministrar.Location = new System.Drawing.Point(256, 163);
-            this.pBAdministrar.Name = "pBAdministrar";
-            this.pBAdministrar.Size = new System.Drawing.Size(97, 105);
-            this.pBAdministrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBAdministrar.TabIndex = 210;
-            this.pBAdministrar.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBAdministrar, "Facturas");
-            this.pBAdministrar.Click += new System.EventHandler(this.pBAdministrar_Click);
-            this.pBAdministrar.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
-            this.pBAdministrar.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            this.pbox_Administrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbox_Administrar.BackColor = System.Drawing.Color.Transparent;
+            this.pbox_Administrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbox_Administrar.Image = ((System.Drawing.Image)(resources.GetObject("pbox_Administrar.Image")));
+            this.pbox_Administrar.Location = new System.Drawing.Point(211, 164);
+            this.pbox_Administrar.Name = "pbox_Administrar";
+            this.pbox_Administrar.Size = new System.Drawing.Size(97, 105);
+            this.pbox_Administrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox_Administrar.TabIndex = 210;
+            this.pbox_Administrar.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbox_Administrar, "Facturas");
+            this.pbox_Administrar.Click += new System.EventHandler(this.pBAdministrar_Click);
+            this.pbox_Administrar.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pbox_Administrar.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
             // 
-            // pictureBox1
+            // pbox_Requisiciones
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::DiseñoFinal.Properties.Resources.Request0;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 163);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 216;
-            this.pictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox1, "Requisiciones");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            this.pbox_Requisiciones.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbox_Requisiciones.BackColor = System.Drawing.Color.Transparent;
+            this.pbox_Requisiciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbox_Requisiciones.Image = global::DiseñoFinal.Properties.Resources.Request0;
+            this.pbox_Requisiciones.Location = new System.Drawing.Point(93, 164);
+            this.pbox_Requisiciones.Name = "pbox_Requisiciones";
+            this.pbox_Requisiciones.Size = new System.Drawing.Size(97, 105);
+            this.pbox_Requisiciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbox_Requisiciones.TabIndex = 216;
+            this.pbox_Requisiciones.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbox_Requisiciones, "Requisiciones");
+            this.pbox_Requisiciones.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pbox_Requisiciones.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pbox_Requisiciones.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            // 
+            // pbox_Balance
+            // 
+            this.pbox_Balance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbox_Balance.BackColor = System.Drawing.Color.Transparent;
+            this.pbox_Balance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbox_Balance.Image = global::DiseñoFinal.Properties.Resources.Balance;
+            this.pbox_Balance.Location = new System.Drawing.Point(446, 164);
+            this.pbox_Balance.Name = "pbox_Balance";
+            this.pbox_Balance.Size = new System.Drawing.Size(105, 105);
+            this.pbox_Balance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbox_Balance.TabIndex = 217;
+            this.pbox_Balance.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbox_Balance, "Balance");
+            this.pbox_Balance.Click += new System.EventHandler(this.pbox_Balance_Click);
+            this.pbox_Balance.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pbox_Balance.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
             // 
             // button1
             // 
@@ -199,6 +220,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbl_SaldoActual
+            // 
+            this.lbl_SaldoActual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_SaldoActual.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_SaldoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SaldoActual.Location = new System.Drawing.Point(12, 80);
+            this.lbl_SaldoActual.Name = "lbl_SaldoActual";
+            this.lbl_SaldoActual.Size = new System.Drawing.Size(615, 20);
+            this.lbl_SaldoActual.TabIndex = 215;
+            this.lbl_SaldoActual.Text = "Saldo en banco: $1,000,000,000.00 MXN";
+            this.lbl_SaldoActual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MenuContabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,12 +241,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(635, 377);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbox_Balance);
+            this.Controls.Add(this.lbl_SaldoActual);
+            this.Controls.Add(this.pbox_Requisiciones);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pBCrearFactura);
+            this.Controls.Add(this.pbox_CrearFactura);
             this.Controls.Add(this.pBSalir);
-            this.Controls.Add(this.pBAdministrar);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbox_Administrar);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -224,28 +259,30 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCrearFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_CrearFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Administrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Requisiciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbox_Balance)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pBCrearFactura;
+        private System.Windows.Forms.PictureBox pbox_CrearFactura;
         private System.Windows.Forms.PictureBox pBSalir;
-        private System.Windows.Forms.PictureBox pBAdministrar;
+        private System.Windows.Forms.PictureBox pbox_Administrar;
         private System.Windows.Forms.PictureBox pBSalir2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbox_Requisiciones;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl_SaldoActual;
+        private System.Windows.Forms.PictureBox pbox_Balance;
     }
 }

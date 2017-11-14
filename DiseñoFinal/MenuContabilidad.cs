@@ -129,6 +129,7 @@ namespace DiseñoFinal
         private void MenuContabilidad_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = UsuarioEnCurso;
+            GetSaldo();
             requests();
         }
 
@@ -147,8 +148,14 @@ namespace DiseñoFinal
         private void timer1_Tick(object sender, EventArgs e)
         {
             new System.Threading.Thread(requests).Start();
+            new System.Threading.Thread(GetSaldo).Start();
         }
 
+        private void GetSaldo()
+        {
+            double saldonuevo = new ManejadorBanco().GetSaldoEnBanco();
+            lbl_SaldoActual.Text = string.Format("Saldo en banco: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+        }
 
         private void requests()
         {
@@ -159,26 +166,26 @@ namespace DiseñoFinal
                 switch (countR)
                 {
                     case 0:
-                        pictureBox1.Image = Properties.Resources.Request0;
+                        pbox_Requisiciones.Image = Properties.Resources.Request0;
                         break;
                     case 1:
-                        pictureBox1.Image = Properties.Resources.Request1;
+                        pbox_Requisiciones.Image = Properties.Resources.Request1;
                         break;
                     case 2:
-                        pictureBox1.Image = Properties.Resources.Request2;
+                        pbox_Requisiciones.Image = Properties.Resources.Request2;
                         break;
                     case 3:
-                        pictureBox1.Image = Properties.Resources.Request3;
+                        pbox_Requisiciones.Image = Properties.Resources.Request3;
                         break;
                     case 4:
-                        pictureBox1.Image = Properties.Resources.Request4;
+                        pbox_Requisiciones.Image = Properties.Resources.Request4;
                         break;
                     case 5:
-                        pictureBox1.Image = Properties.Resources.Request5;
+                        pbox_Requisiciones.Image = Properties.Resources.Request5;
                         break;
                     default:
                         if (countR > 5)
-                            pictureBox1.Image = Properties.Resources.RequestMoreOf5;
+                            pbox_Requisiciones.Image = Properties.Resources.RequestMoreOf5;
                         break;
                 }
                 countRAnt = countR;
@@ -200,17 +207,16 @@ namespace DiseñoFinal
         private void brillo() {
             for (int i = 0; i < 3; i++)
             {
-                pictureBox1.BackColor = Color.Green;
+                pbox_Requisiciones.BackColor = Color.Green;
                 Thread.Sleep(400);
-                pictureBox1.BackColor = Color.Transparent;
+                pbox_Requisiciones.BackColor = Color.Transparent;
                 Thread.Sleep(400);
             }
         }
+
         private void panel1_Click(object sender, EventArgs e)
         {
         }
-
-        
 
         private void pictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -229,6 +235,11 @@ namespace DiseñoFinal
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             new OrdenesDeCompra().ShowDialog();
+        }
+
+        private void pbox_Balance_Click(object sender, EventArgs e)
+        {
+            new Balance().ShowDialog();
         }
     }
 }

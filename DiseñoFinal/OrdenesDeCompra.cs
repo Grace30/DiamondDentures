@@ -140,6 +140,10 @@ namespace DiseñoFinal
         private void datePicker_EntregaIni_ValueChanged(object sender, EventArgs e){ datePicker_EntregaFin.Checked = datePicker_EntregaIni.Checked;}
         private void datePicker_EntregaFin_ValueChanged(object sender, EventArgs e) { datePicker_EntregaIni.Checked = datePicker_EntregaFin.Checked; }
 
-
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

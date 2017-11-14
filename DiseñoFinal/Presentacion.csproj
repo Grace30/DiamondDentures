@@ -2392,6 +2392,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\Balance.png" />
+    <None Include="Resources\fact1.PNG" />
     <None Include="Resources\399191__spiceprogram__drip-echo.wav" />
     <None Include="Resources\User Male_10px.png" />
     <None Include="Resources\Print_25px.png" />
