@@ -29,7 +29,7 @@ namespace DiseñoFinal
         {
             requisicion = manejadorRequisicion.getRequisicion(idRequisicion);
             txt_IDRequisicion.Text = requisicion.IdRequisicion.ToString();
-            txt_Fecha.Text = requisicion.Fecha.ToShortDateString();
+            txt_Fecha.Text = ((DateTime)(requisicion.Fecha)).ToShortDateString();
             txt_Estado.Text = requisicion.Estado;
             txt_Departamento.Text = requisicion.Departamento;
             txt_Solicitante.Text = requisicion.Solicitante.TrimEnd();
@@ -53,17 +53,17 @@ namespace DiseñoFinal
 
             if (requisicion.Surtido == "SI" && requisicion.Estado == "AUTORIZADO")
             {
-                button1.Enabled = false;
-                button2.Enabled = true;
+                btn_Autorizar.Enabled = false;
+                btn_Pagar.Enabled = true;
             }
             else if (requisicion.Surtido == "NO" && requisicion.Estado == "EN ESPERA")
             {
-                button1.Enabled = true;
-                button2.Enabled = false;
+                btn_Autorizar.Enabled = true;
+                btn_Pagar.Enabled = false;
             }
             else {
-                button1.Enabled = false;
-                button2.Enabled = false;
+                btn_Autorizar.Enabled = false;
+                btn_Pagar.Enabled = false;
             }
             
 
@@ -79,8 +79,29 @@ namespace DiseñoFinal
             if(manejadorRequisicion.AutorizarRequisicion(Convert.ToInt32(txt_IDRequisicion.Text),Program.Loginn) > 0)
             {
                 MessageBox.Show("Requisicion Autorizada");
-                button1.Enabled = false;
+                btn_Autorizar.Enabled = false;
             }
+        }
+
+        private void btn_Pagar_Click(object sender, EventArgs e)
+        {
+            Requisicion r = manejadorRequisicion.getRequisicion(Convert.ToInt32(txt_IDRequisicion.Text));
+            string tipo = "";
+            if (r.Items[0].IDMaterial[0] == 'I')
+                tipo = "Insumo";
+            else if (r.Items[0].IDMaterial[0] == 'M')
+                tipo = "Material";
+
+
+            if(manejadorRequisicion.Pagar(Program.Loginn, tipo, r) > 0)
+            {
+                MessageBox.Show("Pago a realizado");
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar el pago");
+            }
+
         }
     }
 }

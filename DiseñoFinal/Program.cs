@@ -8,19 +8,19 @@ namespace DiseñoFinal
 {
     static class Program
     {
-        public static string Loginn;
-        public static string Departamento;
+        public static string Loginn = "Eber04";
+        public static string Departamento = "Contabilidad";
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        [STAThread]
+        [STAThread] 
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("es-MX");
-            Application.Run(new Login());
-            //Application.Run(new MenuContabilidad());
+            //Application.Run(new Login());
+            Application.Run(new MenuContabilidad());
         }
     }
 }

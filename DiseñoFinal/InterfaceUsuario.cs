@@ -250,16 +250,14 @@ namespace DiseñoFinal
             {
                 if (maru.ValidarUsuario(Datos) > 0)
                 {
-
-                    
                     string Dep = "";
                     var Departamento = new DataTable();
                     Departamento = maru.Departamento(Datos);
                     foreach (DataRow fila in Departamento.Rows)
                     { Dep = fila["Departamento"].ToString(); }
 
-                    Program.Departamento = Dep;
-                    Program.Loginn = Datos[0];
+                    Program.Departamento = Dep.TrimEnd();
+                    Program.Loginn = Datos[0].TrimEnd(); ;
 
                     if (Datos[0] == "Admin")
                     {

@@ -33,12 +33,48 @@ namespace Datos
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
             {
-                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToDouble(cmdReader["CostoBase"])));
-                requi = new Requisicion(Convert.ToInt32(cmdReader["IDRequisicion"]), cmdReader["Departamento"].ToString(), cmdReader["Solicitante"].ToString(),(DateTime)cmdReader["Fecha"], cmdReader["Surtido"].ToString(), cmdReader["Estado"].ToString(), items.ToArray());
+                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToDouble(cmdReader["CostoBase"]),Convert.ToDouble(cmdReader["Importe"])));
+                int id = Convert.ToInt32(cmdReader["IDRequisicion"]);
+                string proveedor = cmdReader["Proveedor"].ToString();
+                DateTime fechaSurtido = cmdReader.IsDBNull(14) ? new DateTime(): (DateTime)(cmdReader["FechaSurtido"]) ;
+                string Departamento= cmdReader["Departamento"].ToString(); 
+                string Solicitante = cmdReader["Solicitante"].ToString();
+                DateTime Fecha = (DateTime)cmdReader["Fecha"];
+                string surtido= cmdReader["Surtido"].ToString();
+                string Estado = cmdReader["Estado"].ToString();
+                double Importe = Convert.ToDouble(cmdReader["Importe"]);
+                requi = new Requisicion(id, proveedor, fechaSurtido, Departamento, Solicitante, Fecha, surtido, Estado,items.ToArray(), Importe);
             }
             cmdReader.Close();
             conexion.Close();
             return requi;
+        }
+
+        public int IngresarCompra(string loginn, string tipo, Requisicion r)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand(string.Format("execute RegistrarCompra '{0}',{1},'{2}',{3},'{4}','{5}'", loginn, r.IdRequisicion, r.Proveedor, r.Total, tipo, "PAGADO"), new Conexion().getAzureConexion());
+            int f = cmd.ExecuteNonQuery();
+            if (tipo == "Material")
+            {
+                foreach (var item in r.Items)
+                    cmd = new SqlCommand(string.Format("execute RegistrarDetalleComprasMaterial {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                cmd.ExecuteNonQuery();
+            }
+           
+            else if (tipo == "Insumo")
+            {
+                foreach (var item in r.Items)
+                    cmd = new SqlCommand(string.Format("execute RegistrarDetalleCompraInsumo {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return f;
         }
 
         public int AutorizarRequisicion(int IDRequisicion, string Loginn)
@@ -81,9 +117,7 @@ namespace Datos
             SqlConnection conexion;
             SqlDataReader cmdReader;
             int count = 0;
-            conexion = new Conexion().getAzureConexion();
-
-            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
+            cmd = new SqlCommand("execute countRequisicionesEnEspera", new Conexion().getAzureConexion());
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
                 count = Convert.ToInt32(cmdReader[0]);

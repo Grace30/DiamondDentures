@@ -443,6 +443,16 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Balance {
+            get {
+                object obj = ResourceManager.GetObject("Balance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Banners_Web_Airen_franja_azul {
             get {
                 object obj = ResourceManager.GetObject("Banners-Web-Airen-franja-azul", resourceCulture);
@@ -675,6 +685,26 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap fact {
             get {
                 object obj = ResourceManager.GetObject("fact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fact1 {
+            get {
+                object obj = ResourceManager.GetObject("fact1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fact2 {
+            get {
+                object obj = ResourceManager.GetObject("fact2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
