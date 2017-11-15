@@ -99,13 +99,7 @@ namespace DiseñoFinal
 
                 DataTable datosPieza = new DataTable();
                 datosPieza = mancp.EditarPieza(Datos);
-                foreach (DataRow fila in datosPieza.Rows)
-                {
-                    edpie.CodPieza = fila["Codigo"].ToString();
-                    edpie.Nombre = fila["Nombre"].ToString();
-                    edpie.TiempoFab = fila["Tiempo"].ToString();
-                    edpie.Precio = fila["Precio"].ToString();
-                }
+                edpie.DatosTabla(datosPieza);                
                 edpie.ShowDialog();
             }
             if (Evento == "PantallaActualizarMaterial")
@@ -114,13 +108,7 @@ namespace DiseñoFinal
 
                 DataTable datosMaterial = new DataTable();
                 datosMaterial = mancp.EditarMaterial(Datos);
-                foreach (DataRow fila in datosMaterial.Rows)
-                {
-                    edmat.CodMat = fila["Codigo"].ToString();
-                    edmat.Nombre = fila["Nombre"].ToString();
-                    edmat.Precio = fila["Precio"].ToString();
-                    edmat.Tiempo = fila["Tiempo"].ToString();
-                }
+                edmat.DatosTabla(datosMaterial);
                 edmat.ShowDialog();
 
             }
@@ -145,14 +133,7 @@ namespace DiseñoFinal
                 FabricarProducto fabp = new FabricarProducto(Datos[0], llamada);
                 var datosPedidos = new DataTable();
                 datosPedidos = mancp.ObtenerDatosPedido(Datos);
-                foreach (DataRow fila in datosPedidos.Rows)
-                {
-                    fabp.CodPed.Add(fila["IDPedido"].ToString());
-                    fabp.Est.Add(fila["Estatus"].ToString());
-                    fabp.FechaEnt.Add(fila["FechaCalculada"].ToString());
-                    fabp.Labor.Add(fila["Fabricante"].ToString());
-                    fabp.Urg.Add(fila["Urgencia"].ToString());
-                }
+                fabp.DatosTabla(datosPedidos);
                 desplegarPantalla(fabp);
                 cerrarPantalla(llamada);
             }
@@ -168,16 +149,7 @@ namespace DiseñoFinal
                 ControlPedidos conp = new ControlPedidos(Datos[0], Dep, llamada);
                 var datosPedidos = new DataTable();
                 datosPedidos = mancp.ObtenerDatosPedido(Datos);
-                foreach (DataRow fila in datosPedidos.Rows)
-                {
-                    conp.Dent.Add(fila["IDDentista"].ToString());
-                    conp.CodPed.Add(fila["IDPedido"].ToString());
-                    conp.Est.Add(fila["Estatus"].ToString());
-                    conp.FechaLle.Add(fila["FechaIngreso"].ToString());
-                    conp.FechaEnt.Add(fila["FechaCalculada"].ToString());
-                    conp.Labor.Add(fila["Fabricante"].ToString());
-                    conp.Urg.Add(fila["Urgencia"].ToString());
-                }
+                conp.DatosTabla(datosPedidos);
                 desplegarPantalla(conp);
                 cerrarPantalla(llamada);
             }
@@ -336,11 +308,11 @@ namespace DiseñoFinal
                     perfil.Nombre = fila["Nombre"].ToString();
                     perfil.Direccion = fila["Direccion"].ToString();
                     perfil.Colonia = fila["Colonia"].ToString();
-                    perfil.Pais = fila["País"].ToString();
+                    perfil.Pais = fila["Pais"].ToString();
                     perfil.Estado = fila["Estado"].ToString();
                     perfil.Municipio = fila["Municipio"].ToString();
                     perfil.Ciudad = fila["Ciudad"].ToString();
-                    perfil.Codigo = fila["CP"].ToString();
+                    perfil.Codigo = fila["CodigoPostal"].ToString();
                     perfil.TelCasa = fila["TelCasa"].ToString();
                     perfil.TelOficina = fila["TelOfi"].ToString();
                     perfil.TelMovil = fila["TelCel"].ToString();
@@ -384,11 +356,11 @@ namespace DiseñoFinal
                     actregi.Apellidos = fila["Apellidos"].ToString();
                     actregi.Direccion = fila["Direccion"].ToString();
                     actregi.Colonia = fila["Colonia"].ToString();
-                    actregi.Pais = fila["País"].ToString();
+                    actregi.Pais = fila["Pais"].ToString();
                     actregi.Estado = fila["Estado"].ToString();
                     actregi.Municipio = fila["Municipio"].ToString();
                     actregi.Ciudad = fila["Ciudad"].ToString();
-                    actregi.Codigo = fila["CP"].ToString();
+                    actregi.Codigo = fila["CodigoPostal"].ToString();
                     actregi.TelCasa = fila["TelCasa"].ToString();
                     actregi.TelOficina = fila["TelOfi"].ToString();
                     actregi.TelMovil = fila["TelCel"].ToString();

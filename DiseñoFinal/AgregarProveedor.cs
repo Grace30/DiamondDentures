@@ -28,7 +28,7 @@ namespace DiseñoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] Datos = { txtClave.Text, txtNombre.Text, mkTelefono.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtDesc.Text, txtRFC.Text, txtNombreCont.Text, "ACT" };
+            string[] Datos = { txtClave.Text, txtNombre.Text, mkTelefono.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtDesc.Text, txtRFC.Text, txtNombreCont.Text, "ACT", txtNCuenta.Text };
            if(manp.AgregarProveedor(Datos) > 0) { MessageBox.Show("Proveedor Registrado"); }
         }
 
@@ -47,11 +47,11 @@ namespace DiseñoFinal
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            if (pantalla.GetType() == typeof(Almacen))
+            if (pantalla.GetType() == typeof(ProveedoresJesusCrack))
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(Almacen))
+                    if (frm.GetType() == typeof(ProveedoresJesusCrack))
                     {
                         frm.Show();
                     }

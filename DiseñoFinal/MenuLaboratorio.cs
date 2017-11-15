@@ -51,7 +51,7 @@ namespace DiseñoFinal
 
         private void pbMateriales_Click(object sender, EventArgs e)
         {
-            string[] Datos = new string[1];
+            string[] Datos = { "" };
             intusuario.enviarEvento("PantallaMateriales", Datos);
         }
 

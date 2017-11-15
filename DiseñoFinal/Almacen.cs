@@ -46,6 +46,8 @@ namespace DiseñoFinal
                 { Dep = fila["Departamento"].ToString(); }
                 lblDep.Text = ReducirEspaciado(Dep);
             }
+            timer1.Interval = 2000;
+            timer1.Start();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -172,6 +174,23 @@ namespace DiseñoFinal
         {
             string[] Datos = { "", lblUsuario.Text };
             intusuario.enviarEvento("PantallaSurtidoMat", Datos);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            var datosMat = new DataTable();
+            string[] Datos = { "" };
+            datosMat = mancp.ObtenerFaltantes(Datos);
+
+            var datosRequi = new DataTable();
+            datosRequi = mancp.RequisicionesAcep(Datos);
+
+            int req = datosRequi.Rows.Count;
+            int mat = datosMat.Rows.Count;
+            lblAcep.Text = req.ToString();
+            lblFaltante.Text = mat.ToString();
+            timer1.Start();
         }
     }
 }

@@ -77,17 +77,33 @@ namespace DiseñoFinal
                 {
                     Cadena = Cadena.Replace("  ", "");
                 }
+                if (Cadena.Length > 0)
+                {
+                    if (Cadena[Cadena.Length - 1] == ' ')
+                    {
+                        Cadena = Cadena.Remove(Cadena.Length - 1, 1);
+                    }
+                }
             }
             return Cadena;
         }
 
         private void EditarPieza_Load_1(object sender, EventArgs e)
         {
-            txtCodPieza.Text = ReducirEspaciado(CodPieza);
-            txtNombre.Text = ReducirEspaciado(Nombre);
+            txtCodPieza.Text = CodPieza;
+            txtNombre.Text = Nombre;
             nudTiempo.Value = Convert.ToInt32(TiempoFab);
-            txtPrecio.Text = ReducirEspaciado(Precio);
+            txtPrecio.Text = Precio;
         }
-
+        public void DatosTabla(DataTable datosPieza)
+        {
+            foreach (DataRow fila in datosPieza.Rows)
+            {
+                CodPieza = ReducirEspaciado(fila["CodigoProducto"].ToString());
+                Nombre = ReducirEspaciado(fila["Nombre"].ToString());
+                TiempoFab = ReducirEspaciado(fila["TiempoBase"].ToString());
+                Precio = ReducirEspaciado(fila["PrecioBase"].ToString());
+            }
+        }
     }
 }
