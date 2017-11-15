@@ -48,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblClave = new System.Windows.Forms.Label();
+            this.txtNCuenta = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,11 +244,39 @@
             this.lblClave.Size = new System.Drawing.Size(0, 13);
             this.lblClave.TabIndex = 189;
             // 
+            // txtNCuenta
+            // 
+            this.txtNCuenta.Location = new System.Drawing.Point(358, 71);
+            this.txtNCuenta.MaxLength = 16;
+            this.txtNCuenta.Name = "txtNCuenta";
+            this.txtNCuenta.Size = new System.Drawing.Size(103, 20);
+            this.txtNCuenta.TabIndex = 192;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 13);
+            this.label7.TabIndex = 191;
+            this.label7.Text = "Numero de Cuenta";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Enabled = false;
+            this.txtClave.Location = new System.Drawing.Point(70, 33);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(109, 20);
+            this.txtClave.TabIndex = 193;
+            // 
             // ModificarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 363);
+            this.Controls.Add(this.txtClave);
+            this.Controls.Add(this.txtNCuenta);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.button1);
@@ -297,5 +328,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.TextBox txtNCuenta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtClave;
     }
 }

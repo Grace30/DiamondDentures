@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvAlmacen = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblFaltante = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,6 +50,8 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblAcep = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlmacen)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,6 +115,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblAcep);
+            this.groupBox1.Controls.Add(this.lblFaltante);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button2);
@@ -121,10 +127,19 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(21, 367);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(779, 64);
+            this.groupBox1.Size = new System.Drawing.Size(784, 78);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // lblFaltante
+            // 
+            this.lblFaltante.AutoSize = true;
+            this.lblFaltante.Location = new System.Drawing.Point(731, 57);
+            this.lblFaltante.Name = "lblFaltante";
+            this.lblFaltante.Size = new System.Drawing.Size(13, 13);
+            this.lblFaltante.TabIndex = 8;
+            this.lblFaltante.Text = "0";
             // 
             // button1
             // 
@@ -266,11 +281,24 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblAcep
+            // 
+            this.lblAcep.AutoSize = true;
+            this.lblAcep.Location = new System.Drawing.Point(630, 57);
+            this.lblAcep.Name = "lblAcep";
+            this.lblAcep.Size = new System.Drawing.Size(13, 13);
+            this.lblAcep.TabIndex = 9;
+            this.lblAcep.Text = "0";
+            // 
             // Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 439);
+            this.ClientSize = new System.Drawing.Size(907, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -285,6 +313,7 @@
             this.Load += new System.EventHandler(this.Almacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlmacen)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -315,5 +344,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblFaltante;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblAcep;
     }
 }

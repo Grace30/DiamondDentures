@@ -49,6 +49,8 @@
             this.txtRFC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombreCont = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNCuenta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,11 +251,30 @@
             this.txtNombreCont.Size = new System.Drawing.Size(328, 20);
             this.txtNombreCont.TabIndex = 1;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(271, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 13);
+            this.label7.TabIndex = 170;
+            this.label7.Text = "Numero de Cuenta";
+            // 
+            // txtNCuenta
+            // 
+            this.txtNCuenta.Location = new System.Drawing.Point(373, 65);
+            this.txtNCuenta.MaxLength = 16;
+            this.txtNCuenta.Name = "txtNCuenta";
+            this.txtNCuenta.Size = new System.Drawing.Size(103, 20);
+            this.txtNCuenta.TabIndex = 171;
+            // 
             // AgregarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 356);
+            this.Controls.Add(this.txtNCuenta);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.button1);
@@ -307,5 +328,7 @@
         private System.Windows.Forms.TextBox txtRFC;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombreCont;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNCuenta;
     }
 }

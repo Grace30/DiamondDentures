@@ -64,8 +64,7 @@ namespace Datos
                     return cmd.ExecuteNonQuery();
                 }
                 catch (Exception ms)
-                {
-                    
+                {                    
                     return 0;
                 }
             }
@@ -496,8 +495,8 @@ namespace Datos
 
         public int AgregarDatosMaterial(string[] Datos)
         {
-            string[] Parametros = { "@Codigo", "@Nombre", "@Precio", "@Tiempo" };
-            return Ejecutar("procAgregarMaterial", Parametros, Datos[0], Datos[1], Convert.ToInt32(Datos[2]), Datos[3]);
+            string[] Parametros = { "@Codigo", "@Nombre", "@Descripcion","@CostoBase","@Precio", "@Tiempo","@Proveedor","@Unidad","@Stock" };
+            return Ejecutar("procAgregarMaterial", Parametros, Datos[0], Datos[1], Datos[2], Convert.ToInt32(Datos[3]), Convert.ToInt32(Datos[4]), Convert.ToInt32(Datos[5]), Datos[6], Datos[7], Convert.ToInt32(Datos[8]));
         }
 
         public int BorrarPieza(string[] Datos)
@@ -529,8 +528,8 @@ namespace Datos
         }
         public int ActualizarMaterial(string[] Datos)
         {
-            string[] Parametros = { "@CodMaterial", "@NombreMat", "@Precio", "@Tiempo" };
-            return Ejecutar("procActualizarMaterial", Parametros, Datos[0], Datos[1], Convert.ToInt32(Datos[2]), Datos[3]);
+            string[] Parametros = { "@CodMaterial", "@NombreMat", "@Descripcion", "@CostoBase", "@Precio", "@Tiempo", "@Proveedor", "@Unidad", "@Stock" };
+            return Ejecutar("procActualizarMaterial", Parametros, Datos[0], Datos[1], Datos[2], Convert.ToInt32(Datos[3]), Convert.ToInt32(Datos[4]), Convert.ToInt32(Datos[5]), Datos[6], Datos[7], Convert.ToInt32(Datos[8]));
         }
         public int CambiarLab(string[] Datos)
         {

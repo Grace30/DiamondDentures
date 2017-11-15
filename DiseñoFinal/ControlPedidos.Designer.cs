@@ -92,6 +92,7 @@
             this.gBAcotaciones = new System.Windows.Forms.GroupBox();
             this.bntCancelado = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEntregado = new System.Windows.Forms.Button();
             this.gBLaboratorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFabricar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPiezas)).BeginInit();
@@ -196,7 +197,7 @@
             // 
             this.llRegistrar.AutoSize = true;
             this.llRegistrar.Enabled = false;
-            this.llRegistrar.Location = new System.Drawing.Point(732, 503);
+            this.llRegistrar.Location = new System.Drawing.Point(726, 522);
             this.llRegistrar.Name = "llRegistrar";
             this.llRegistrar.Size = new System.Drawing.Size(127, 16);
             this.llRegistrar.TabIndex = 223;
@@ -208,7 +209,7 @@
             // 
             this.cbLaboratorista.Enabled = false;
             this.cbLaboratorista.FormattingEnabled = true;
-            this.cbLaboratorista.Location = new System.Drawing.Point(692, 477);
+            this.cbLaboratorista.Location = new System.Drawing.Point(686, 496);
             this.cbLaboratorista.Name = "cbLaboratorista";
             this.cbLaboratorista.Size = new System.Drawing.Size(161, 24);
             this.cbLaboratorista.TabIndex = 5;
@@ -218,7 +219,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(689, 458);
+            this.label17.Location = new System.Drawing.Point(683, 477);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(130, 16);
             this.label17.TabIndex = 221;
@@ -754,6 +755,7 @@
             // gBAcotaciones
             // 
             this.gBAcotaciones.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gBAcotaciones.Controls.Add(this.btnEntregado);
             this.gBAcotaciones.Controls.Add(this.bntCancelado);
             this.gBAcotaciones.Controls.Add(this.btnSinElaborar);
             this.gBAcotaciones.Controls.Add(this.btnUrgente);
@@ -765,7 +767,7 @@
             this.gBAcotaciones.Enabled = false;
             this.gBAcotaciones.Location = new System.Drawing.Point(783, 180);
             this.gBAcotaciones.Name = "gBAcotaciones";
-            this.gBAcotaciones.Size = new System.Drawing.Size(153, 255);
+            this.gBAcotaciones.Size = new System.Drawing.Size(153, 291);
             this.gBAcotaciones.TabIndex = 241;
             this.gBAcotaciones.TabStop = false;
             this.gBAcotaciones.Text = "ACOTACIONES";
@@ -775,13 +777,25 @@
             this.bntCancelado.BackColor = System.Drawing.Color.Brown;
             this.bntCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntCancelado.ForeColor = System.Drawing.Color.Black;
-            this.bntCancelado.Location = new System.Drawing.Point(21, 226);
+            this.bntCancelado.Location = new System.Drawing.Point(21, 252);
             this.bntCancelado.Name = "bntCancelado";
             this.bntCancelado.Size = new System.Drawing.Size(113, 23);
             this.bntCancelado.TabIndex = 236;
             this.bntCancelado.Text = "CANCELADO";
             this.bntCancelado.UseVisualStyleBackColor = false;
             this.bntCancelado.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEntregado
+            // 
+            this.btnEntregado.BackColor = System.Drawing.Color.Fuchsia;
+            this.btnEntregado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregado.ForeColor = System.Drawing.Color.Black;
+            this.btnEntregado.Location = new System.Drawing.Point(21, 223);
+            this.btnEntregado.Name = "btnEntregado";
+            this.btnEntregado.Size = new System.Drawing.Size(113, 23);
+            this.btnEntregado.TabIndex = 255;
+            this.btnEntregado.Text = "ENTREGADO";
+            this.btnEntregado.UseVisualStyleBackColor = false;
             // 
             // ControlPedidos
             // 
@@ -905,5 +919,6 @@
         private System.Windows.Forms.Button bntCancelado;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnEntregado;
     }
 }

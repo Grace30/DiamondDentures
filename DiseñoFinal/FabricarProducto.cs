@@ -162,9 +162,9 @@ namespace DiseñoFinal
             int i = 0;
             for (i = 0; i < Est.Count; i++)
             {
-                if (Est[i] == "FINALIZADO          ")
+                if (Est[i] == "FINALIZADO")
                 { Urg[i] = "NO"; }
-                if (Est[i] == "FACTURADO           ")
+                if (Est[i] == "FACTURAD")
                 { Urg[i] = "NO"; }
             }
             i = 0;
@@ -177,7 +177,7 @@ namespace DiseñoFinal
                         string temp = CodPed[i];
                         CodPed[i] = CodPed[j];
                         CodPed[j] = temp;
-                        
+
                         temp = Urg[i];
                         Urg[i] = Urg[j];
                         Urg[j] = temp;
@@ -185,7 +185,7 @@ namespace DiseñoFinal
                         temp = Est[i];
                         Est[i] = Est[j];
                         Est[j] = temp;
-                        
+
                         temp = FechaEnt[i];
                         FechaEnt[i] = FechaEnt[j];
                         FechaEnt[j] = temp;
@@ -207,16 +207,16 @@ namespace DiseñoFinal
                 }
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
-                    if (Est[j] == "CONFIRMADO          ")
+                    if (Est[j] == "CONFIRMADO")
                     {
                         string temp = CodPed[i];
                         CodPed[i] = CodPed[j];
                         CodPed[j] = temp;
-                        
+
                         temp = Urg[i];
                         Urg[i] = Urg[j];
                         Urg[j] = temp;
@@ -236,22 +236,25 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
             i = 0;
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Urg[i] != "SI")
                 {
                     break;
                 }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Est[i] != "CONFIRMADO          ")
                 { break; }
+                i++;
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
@@ -264,7 +267,7 @@ namespace DiseñoFinal
                         temp = Urg[i];
                         Urg[i] = Urg[j];
                         Urg[j] = temp;
-                        
+
                         temp = Est[i];
                         Est[i] = Est[j];
                         Est[j] = temp;
@@ -272,7 +275,7 @@ namespace DiseñoFinal
                         temp = FechaEnt[i];
                         FechaEnt[i] = FechaEnt[j];
                         FechaEnt[j] = temp;
-                        
+
                         temp = Labor[i];
                         Labor[i] = Labor[j];
                         Labor[j] = temp;
@@ -280,25 +283,29 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
             i = 0;
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Urg[i] != "SI")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "CONFIRMADO          ")
+                if (Est[i] != "CONFIRMADO")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "EN PROCESO          ")
+                if (Est[i] != "EN PROCESO")
                 { break; }
+                i++;
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
@@ -311,12 +318,12 @@ namespace DiseñoFinal
                         temp = Urg[i];
                         Urg[i] = Urg[j];
                         Urg[j] = temp;
-                        
+
 
                         temp = Est[i];
                         Est[i] = Est[j];
                         Est[j] = temp;
-                        
+
 
                         temp = FechaEnt[i];
                         FechaEnt[i] = FechaEnt[j];
@@ -329,30 +336,35 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
             i = 0;
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Urg[i] != "SI")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Est[i] != "CONFIRMADO          ")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Est[i] != "EN PROCESO          ")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Est[i] != "POR CONFIRMAR       ")
                 { break; }
+                i++;
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
@@ -365,12 +377,12 @@ namespace DiseñoFinal
                         temp = Urg[i];
                         Urg[i] = Urg[j];
                         Urg[j] = temp;
-                        
+
 
                         temp = Est[i];
                         Est[i] = Est[j];
                         Est[j] = temp;
-                        
+
 
                         temp = FechaEnt[i];
                         FechaEnt[i] = FechaEnt[j];
@@ -383,39 +395,45 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
             i = 0;
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Urg[i] != "SI")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "CONFIRMADO          ")
+                if (Est[i] != "CONFIRMADO")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "EN PROCESO          ")
+                if (Est[i] != "EN PROCESO")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "POR CONFIRMAR       ")
+                if (Est[i] != "POR CONFIRMAR")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "SIN ELABORAR        ")
+                if (Est[i] != "SIN ELABORAR")
                 { break; }
+                i++;
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
-                    if (Est[j] == "FINALIZADO          ")
+                    if (Est[j] == "FINALIZADO")
                     {
                         string temp = CodPed[i];
                         CodPed[i] = CodPed[j];
@@ -442,44 +460,51 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
             i = 0;
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
                 if (Urg[i] != "SI")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "CONFIRMADO          ")
+                if (Est[i] != "CONFIRMADO")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while(i < Urg.Count)
             {
-                if (Est[i] != "EN PROCESO          ")
+                if (Est[i] != "EN PROCESO")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while(i < Urg.Count)
             {
-                if (Est[i] != "POR CONFIRMAR       ")
+                if (Est[i] != "POR CONFIRMAR")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "SIN ELABORAR        ")
+                if (Est[i] != "SIN ELABORAR")
                 { break; }
+                i++;
             }
-            for (i = i; i < Urg.Count; i++)
+            while (i < Urg.Count)
             {
-                if (Est[i] != "FINALIZADO          ")
+                if (Est[i] != "FINALIZADO")
                 { break; }
+                i++;
             }
 
-            for (i = i; i < CodPed.Count; i++)
+            while (i < CodPed.Count)
             {
                 for (int j = i; j < CodPed.Count; j++)
                 {
-                    if (Est[j] == "FACTURADO           ")
+                    if (Est[j] == "FACTURADO")
                     {
                         string temp = CodPed[i];
                         CodPed[i] = CodPed[j];
@@ -504,6 +529,7 @@ namespace DiseñoFinal
                         break;
                     }
                 }
+                i++;
             }
         }
 
@@ -511,7 +537,7 @@ namespace DiseñoFinal
         {
             for (int i = 0; i < dgvPedidos.RowCount; i++)
             {
-                if (dgvPedidos[1, i].Value.ToString() == "POR CONFIRMAR ")
+                if (dgvPedidos[1, i].Value.ToString() == "POR CONFIRMAR")
                 {
                     dgvPedidos.Rows[i].DefaultCellStyle.BackColor = Color.Silver;
                 }
@@ -531,11 +557,11 @@ namespace DiseñoFinal
                 {
                     dgvPedidos.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
                 }
-                if (dgvPedidos[1, i].Value.ToString() == "FACTURADO ")
+                if (dgvPedidos[1, i].Value.ToString() == "FACTURADO")
                 {
                     dgvPedidos.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                 }
-                if (dgvPedidos[1, i].Value.ToString() == "CANCELADO ")
+                if (dgvPedidos[1, i].Value.ToString() == "CANCELADO")
                 {
                     dgvPedidos.Rows[i].DefaultCellStyle.BackColor = Color.Brown;
                 }
@@ -586,15 +612,24 @@ namespace DiseñoFinal
             }
         }
 
-    
+
 
         public static string ReducirEspaciado(string Cadena)
         {
-            while (Cadena.Contains("  "))
+            if (Cadena != null)
             {
-                Cadena = Cadena.Replace("  ", "");
+                while (Cadena.Contains("  "))
+                {
+                    Cadena = Cadena.Replace("  ", "");
+                }
+                if (Cadena.Length > 0)
+                {
+                    if (Cadena[Cadena.Length - 1] == ' ')
+                    {
+                        Cadena = Cadena.Remove(Cadena.Length - 1, 1);
+                    }
+                }
             }
-
             return Cadena;
         }
 
@@ -699,13 +734,25 @@ namespace DiseñoFinal
             datosPedidos2 = mancp.ObtenerDatosPedido(Datos2);
             foreach (DataRow fila in datosPedidos2.Rows)
             {
-                CodPed.Add(fila["IDPedido"].ToString());
-                Est.Add(fila["Estatus"].ToString());
-                FechaEnt.Add(fila["FechaCalculada"].ToString());
-                Labor.Add(fila["Fabricante"].ToString());
-                Urg.Add(fila["Urgencia"].ToString());
+                CodPed.Add(ReducirEspaciado(fila["IDPedido"].ToString()));
+                Est.Add(ReducirEspaciado(fila["Estatus"].ToString()));
+                FechaEnt.Add(ReducirEspaciado(fila["FechaCalculada"].ToString()));
+                Labor.Add(ReducirEspaciado(fila["Fabricante"].ToString()));
+                Urg.Add(ReducirEspaciado(fila["Urgencia"].ToString()));
             }
             this.FabricarProducto_Load(sender, e);
+        }
+
+        public void DatosTabla(DataTable datosPedidos)
+        {
+            foreach (DataRow fila in datosPedidos.Rows)
+            {
+                CodPed.Add(ReducirEspaciado(fila["IDPedido"].ToString()));
+                Est.Add(ReducirEspaciado(fila["EstatusPedido"].ToString()));
+                FechaEnt.Add(ReducirEspaciado(fila["FechaCalculada"].ToString()));
+                Labor.Add(ReducirEspaciado(fila["Laboratorista"].ToString()));
+                Urg.Add(ReducirEspaciado(fila["Urgencia"].ToString()));
+            }
         }
     }
 }

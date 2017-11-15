@@ -87,8 +87,8 @@ namespace Datos
                 Email = Datos[3];
                 Email += '@' + Datos[5];
             }
-            string[] Parametros = { "@ClaveProv", "@Nombre", "@Telefono", "@Correo", "@Descrip", "@RFC", "@Contacto", "@Estatus", };
-            return Ejecutar("AgregarProv", Parametros, Datos[0], Datos[1], Datos[2], Email, Datos[6], Datos[7], Datos[8], Datos[9]);
+            string[] Parametros = { "@ClaveProv", "@Nombre", "@Telefono", "@Correo", "@Descrip", "@RFC", "@Contacto", "@Estatus", "@NCuenta"};
+            return Ejecutar("AgregarProv", Parametros, Datos[0], Datos[1], Datos[2], Email, Datos[6], Datos[7], Datos[8], Datos[9], Datos[10]);
         }
 
         public int ActualizarProveedor(string[] Datos)
@@ -104,8 +104,8 @@ namespace Datos
                 Email = Datos[3];
                 Email += '@' + Datos[5];
             }
-            string[] Parametros = { "@ClaveProv", "@Nombre", "@Telefono", "@Correo", "@Descrip", "@RFC", "@Contacto", "@Estatus", };
-            return Ejecutar("ActualizarProv", Parametros, Datos[0], Datos[1], Datos[2], Email, Datos[6], Datos[7], Datos[8], Datos[9]);
+            string[] Parametros = { "@ClaveProv", "@Nombre", "@Telefono", "@Correo", "@Descrip", "@RFC", "@Contacto", "@Estatus", "@NCuenta"};
+            return Ejecutar("ActualizarProv", Parametros, Datos[0], Datos[1], Datos[2], Email, Datos[6], Datos[7], Datos[8], Datos[9],Datos[10]);
         }
 
         public int InsertarRequisicion(string[] Datos)
