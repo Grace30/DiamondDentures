@@ -63,6 +63,11 @@ namespace Entidad
             IbaseDatos.calcularPagoAempleados(9);
         }
 
+        public string NombreEmpleados(string loginn)
+        {
+            return IbaseDatos.NombreEmpleados(loginn);
+        }
+
         public DataTable ObtenerAsistenciaPorFecha(DateTime fecha)
         {
             return IbaseDatos.obtenerAsistenciaPorFecha(fecha);

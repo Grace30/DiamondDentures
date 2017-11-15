@@ -48,10 +48,12 @@ namespace DiseñoFinal
         
         private void pBAdministrar_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             //Facturas frm = new Facturas();
             //frm.Show();
             string[] Datos = new string[1];
             intusuario.enviarEvento("PantallaFacturas", Datos);
+            timer1.Start();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -85,9 +87,11 @@ namespace DiseñoFinal
 
         private void pBCrearFactura_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
              string[] Datos = new string[1];
            // string[] Datos = { UsuarioEnCurso };
             intusuario.enviarEvento("PantallaFacturar", Datos);
+            timer1.Start();
         }
 
         private void pBSalir_Click_1(object sender, EventArgs e)
@@ -131,6 +135,7 @@ namespace DiseñoFinal
             lblUsuario.Text = UsuarioEnCurso;
             GetSaldo();
             requests();
+            getCajaConta();
         }
 
         private void panel1_MouseDown_1(object sender, MouseEventArgs e)
@@ -147,8 +152,9 @@ namespace DiseñoFinal
         int countRAnt = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            new System.Threading.Thread(requests).Start();
-            new System.Threading.Thread(GetSaldo).Start();
+            new Thread(requests).Start();
+            new Thread(GetSaldo).Start();
+            new Thread(getCajaConta).Start();
         }
 
         private void GetSaldo()
@@ -156,6 +162,13 @@ namespace DiseñoFinal
             double saldonuevo = new ManejadorBanco().GetSaldoEnBanco();
             lbl_SaldoActual.Text = string.Format("Saldo en banco: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
         }
+
+        private void getCajaConta()
+        {
+            double saldonuevo = new ManejadorBanco().getSaldoEnCajaConta();
+            cajaConta.Text = string.Format("Saldo en caja Contabilidad: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+        }
+
 
         private void requests()
         {
@@ -234,12 +247,28 @@ namespace DiseñoFinal
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+            //timer1.Stop();
             new OrdenesDeCompra().ShowDialog();
+            //timer1.Start();
         }
 
         private void pbox_Balance_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             new Balance().ShowDialog();
+            timer1.Start();
+        }
+
+        private void lbl_SaldoActual_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            new CorrecionBalance().ShowDialog();
+            timer1.Start();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
