@@ -43,17 +43,21 @@ namespace Entidad
             return IbaseDatos.GetTotalesBalance(Desde, Hasta);
         }
 
-        public void InsertRetiro(double Cantidad)
+        public void InsertRetiro(string loginn, double Cantidad)
         {
-            //IbaseDatos.InsertRetiro(Cantidad);
+            IbaseDatos.IngresarCompra(loginn, "Corrección",new Requisicion(0,"",new DateTime(),"","",new DateTime(),"","",null,Cantidad));
+        }
+
+        public int InsertIngreso(string loginn, double Cantidad)
+        {
+            return IbaseDatos.InsertIngreso(loginn, Cantidad);
+
 
         }
 
-        public void InsertIngreso(double Cantidad)
+        public double getSaldoEnCajaConta()
         {
-            //IbaseDatos.InsertIngreso(Cantidad);
-
-
+            return IbaseDatos.getSaldoCajaConta();
         }
     }
 }

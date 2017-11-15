@@ -137,6 +137,7 @@
             // 
             // txt_TotalRetiros
             // 
+            this.txt_TotalRetiros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TotalRetiros.Location = new System.Drawing.Point(353, 373);
             this.txt_TotalRetiros.Name = "txt_TotalRetiros";
             this.txt_TotalRetiros.Size = new System.Drawing.Size(107, 20);
@@ -144,6 +145,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(305, 376);
             this.label2.Name = "label2";
@@ -153,6 +155,7 @@
             // 
             // txt_TotalDepositos
             // 
+            this.txt_TotalDepositos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TotalDepositos.Location = new System.Drawing.Point(476, 373);
             this.txt_TotalDepositos.Name = "txt_TotalDepositos";
             this.txt_TotalDepositos.Size = new System.Drawing.Size(107, 20);

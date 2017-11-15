@@ -50,29 +50,64 @@ namespace Datos
             return requi;
         }
 
+        public double getSaldoCajaConta()
+        {
+            double saldo = 0;
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion = new Conexion().getAzureConexion();
+            SqlDataReader cmdReader;
+            if (conexion.State != ConnectionState.Open) conexion.Open();
+            cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+            {
+                saldo = Convert.ToDouble(cmdReader[0].ToString());
+            }
+            return saldo;
+
+        }
+
+        public string NombreEmpleados(string loginn)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader cmdReader;
+            cmd = new SqlCommand(string.Format("execute getNombreEmpleado '{0}'", loginn), new Conexion().getAzureConexion());
+            cmdReader = cmd.ExecuteReader();
+            string nombre = "";
+            while (cmdReader.Read())
+                nombre = cmdReader[0].ToString();
+
+            return nombre;
+        }
+
         public int IngresarCompra(string loginn, string tipo, Requisicion r)
         {
 
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion;
-            SqlDataReader cmdReader;
+            int f = 0;
+            if (tipo != "Corrección")
+            {
+                cmd = new SqlCommand(string.Format("execute RegistrarCompra '{0}',{1},'{2}',{3},'{4}','{5}'", loginn, r.IdRequisicion, r.Proveedor, r.Total, tipo, "PAGADO"), new Conexion().getAzureConexion());
+                f = cmd.ExecuteNonQuery();
+                if (tipo == "Material")
+                {
+                    foreach (var item in r.Items)
+                        cmd = new SqlCommand(string.Format("execute RegistrarDetalleComprasMaterial {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                    cmd.ExecuteNonQuery();
+                }
 
-            conexion = new Conexion().getAzureConexion();
-            cmd = new SqlCommand(string.Format("execute RegistrarCompra '{0}',{1},'{2}',{3},'{4}','{5}'", loginn, r.IdRequisicion, r.Proveedor, r.Total, tipo, "PAGADO"), new Conexion().getAzureConexion());
-            int f = cmd.ExecuteNonQuery();
-            if (tipo == "Material")
-            {
-                foreach (var item in r.Items)
-                    cmd = new SqlCommand(string.Format("execute RegistrarDetalleComprasMaterial {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
-                cmd.ExecuteNonQuery();
+                else if (tipo == "Insumo")
+                {
+                    foreach (var item in r.Items)
+                        cmd = new SqlCommand(string.Format("execute RegistrarDetalleCompraInsumo {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                    cmd.ExecuteNonQuery();
+                }
             }
-           
-            else if (tipo == "Insumo")
+            else
             {
-                foreach (var item in r.Items)
-                    cmd = new SqlCommand(string.Format("execute RegistrarDetalleCompraInsumo {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
-                cmd.ExecuteNonQuery();
-                conexion.Close();
+                cmd = new SqlCommand(string.Format("execute RegistrarCompraC '{0}','{1}',{2},'{3}','{4}'", loginn,  "", Math.Abs(r.Total), tipo, "PAGADO"), new Conexion().getAzureConexion());
+                f = cmd.ExecuteNonQuery();
             }
             return f;
         }
@@ -114,10 +149,11 @@ namespace Datos
         public int CountRequisicionesPendientes()
         {
             SqlCommand cmd = new SqlCommand();
-            SqlConnection conexion;
+            SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             int count = 0;
-            cmd = new SqlCommand("execute countRequisicionesEnEspera", new Conexion().getAzureConexion());
+            if (conexion.State != ConnectionState.Open) conexion.Open();
+            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
                 count = Convert.ToInt32(cmdReader[0]);
@@ -139,13 +175,14 @@ namespace Datos
             return empleados.ToArray();
         }
 
-        public void InsertIngreso(double cantidad)
-        {//Venta
-
+        public int InsertIngreso(string loginn, double cantidad)
+        {
+            string[] Parametros = { "@Loginn", "@Importe" };
+            return Ejecutar("insertarVentaC", Parametros, loginn.TrimEnd(), cantidad);
         }
 
         public void InsertRetiro(double cantidad)
-        {//Compra
+        {
 
         }
         public object[] getAñoBalance()
@@ -213,10 +250,11 @@ namespace Datos
         public double GetSaldoEnBanco()
         { 
             SqlCommand cmd = new SqlCommand();
-            SqlConnection conexion;
+            SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             double saldo = 0;
             conexion = new Conexion().getAzureConexion();
+            if (conexion.State != ConnectionState.Open) conexion.Open();
             cmd = new SqlCommand("execute getSaldoBanco", conexion);
             
                 cmdReader = cmd.ExecuteReader();

@@ -49,7 +49,9 @@ namespace DiseñoFinal
                 total += Convert.ToDouble(dataGridView1[7, i].Value);
             }
             txt_Total.Text = total.ToString("c2", System.Globalization.CultureInfo.CurrentCulture);
-            lbl_Presupuesto.Text = (total <= manejadorBanco.GetSaldoEnBanco()) ? "COMPRA DENTRO DEL PRESUEPUESTO" : "COMPRA FUERA DEL PRESUPUESTO";
+
+           
+
 
             if (requisicion.Surtido == "SI" && requisicion.Estado == "AUTORIZADO")
             {
@@ -65,7 +67,17 @@ namespace DiseñoFinal
                 btn_Autorizar.Enabled = false;
                 btn_Pagar.Enabled = false;
             }
-            
+            if (total <= manejadorBanco.GetSaldoEnBanco())
+            {
+                lbl_Presupuesto.Text = "COMPRA DENTRO DEL PRESUEPUESTO";
+                lbl_Presupuesto.ForeColor = Color.DarkGreen;
+            }
+            else
+            {
+                lbl_Presupuesto.Text = "COMPRA FUERA DEL PRESUPUESTO";
+                lbl_Presupuesto.ForeColor = Color.DarkRed;
+                btn_Autorizar.Enabled = false;
+            }
 
         }
 
@@ -101,6 +113,11 @@ namespace DiseñoFinal
             {
                 MessageBox.Show("No se puede realizar el pago");
             }
+
+        }
+
+        private void lbl_Presupuesto_Click(object sender, EventArgs e)
+        {
 
         }
     }
