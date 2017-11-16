@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -99,7 +100,13 @@ namespace DiseñoFinal
                     txtCincuentaCentavos.Text, txtVeinteCentavos.Text, txtDiezCentavos.Text, txtCincoCentavos.Text,
                     txtEstimado.Text, txtTotal.Text, "10000", banco, rtxtComentarios.Text };
                 if (mcp.CorteDeCaja(Datos) == 1)
+                {
                     MessageBox.Show("Corte de Caja");
+                    VistaPreviaCorte obj = new VistaPreviaCorte();
+                    string Folio = "";
+                    obj.Folio = Folio;
+                    obj.ShowDialog();
+                }
                 else
                     MessageBox.Show("No transaccion");
             }

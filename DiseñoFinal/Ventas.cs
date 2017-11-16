@@ -103,6 +103,7 @@ namespace DiseñoFinal
                 }
                 LlenaPrincipal();
                 llenatxt();
+
                 MessageBox.Show("Ticket");
             }
                 
