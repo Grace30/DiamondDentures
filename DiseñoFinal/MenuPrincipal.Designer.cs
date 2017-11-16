@@ -46,6 +46,7 @@
             this.linkLogoutMP = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenúContabilidad)).BeginInit();
@@ -56,6 +57,7 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxSemaforo
@@ -176,6 +178,7 @@
             // 
             this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.footer1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.linkLogoutMP);
@@ -256,6 +259,21 @@
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DiseñoFinal.Properties.Resources.Time_Card_40px;
+            this.pictureBox2.Location = new System.Drawing.Point(571, 85);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 216;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Firmar asistencia");
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +309,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +332,6 @@
         private System.Windows.Forms.PictureBox pBReportes;
         private System.Windows.Forms.PictureBox pbxSemaforo;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

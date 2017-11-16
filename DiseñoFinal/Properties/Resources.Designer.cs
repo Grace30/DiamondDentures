@@ -1432,6 +1432,16 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Time_Card_40px {
+            get {
+                object obj = ResourceManager.GetObject("Time Card_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap u {
             get {
                 object obj = ResourceManager.GetObject("u", resourceCulture);

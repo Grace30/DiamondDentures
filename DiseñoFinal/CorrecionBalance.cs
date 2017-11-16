@@ -20,12 +20,14 @@ namespace DiseñoFinal
         {
             InitializeComponent();
         }
-
+        private void load() {
+            saldoActual = manejadorBanco.GetSaldoEnBanco();
+            textBox1.Text = "$ " + saldoActual.ToString("n", System.Globalization.CultureInfo.CurrentCulture) + " MXN";
+            textBox2.Text = saldoActual.ToString("n", System.Globalization.CultureInfo.CurrentCulture);
+        }
         private void CorrecionBalance_Load(object sender, EventArgs e)
         {
-            saldoActual = manejadorBanco.GetSaldoEnBanco();
-            textBox1.Text = "$ " + saldoActual.ToString("n", System.Globalization.CultureInfo.CurrentCulture)+ " MXN";
-            textBox2.Text = saldoActual.ToString("n", System.Globalization.CultureInfo.CurrentCulture);
+            load();
         }
 
         private void pBSalir2_Click(object sender, EventArgs e)
@@ -37,9 +39,11 @@ namespace DiseñoFinal
         {
             double cantidad =  Convert.ToDouble(textBox2.Text) - saldoActual;
             if (cantidad > 0)
-                manejadorBanco.InsertIngreso(saldoActual + cantidad);
+                manejadorBanco.InsertIngreso(Program.Loginn, cantidad);
             else if (cantidad < 0)
-                manejadorBanco.InsertRetiro(saldoActual + cantidad);
+                manejadorBanco.InsertRetiro(Program.Loginn, cantidad);
+            MessageBox.Show("Operación realizada con exito");
+            load();
         }
 
         private void CorrecionBalance_MouseDown(object sender, MouseEventArgs e)

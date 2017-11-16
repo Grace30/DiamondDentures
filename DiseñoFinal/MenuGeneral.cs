@@ -135,5 +135,25 @@ namespace DiseñoFinal
             string[] Datos = { "", "Admin" };
             intusuario.enviarEvento("PantallaAlmacen", Datos);
         }
+
+        private void pictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).Size = new Size(((PictureBox)sender).Size.Width + 3, ((PictureBox)sender).Size.Height + 3);
+            ((PictureBox)sender).Location = new Point(((PictureBox)sender).Location.X - 1, ((PictureBox)sender).Location.Y - 1);
+            ((PictureBox)sender).BackColor = Color.GhostWhite;
+        }
+
+        private void pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).Size = new Size(((PictureBox)sender).Size.Width - 3, ((PictureBox)sender).Size.Height - 3);
+            ((PictureBox)sender).Location = new Point(((PictureBox)sender).Location.X + 1, ((PictureBox)sender).Location.Y + 1);
+            ((PictureBox)sender).BackColor = Color.Transparent;
+        }
+
+        private void C(object sender, EventArgs e)
+        {
+            new FirmarAsistencia().ShowDialog();
+
+        }
     }
 }

@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_SaldoActual = new System.Windows.Forms.Label();
+            this.cajaConta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -80,6 +81,7 @@
             this.panel1.Size = new System.Drawing.Size(641, 75);
             this.panel1.TabIndex = 214;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // lblUsuario
@@ -232,6 +234,20 @@
             this.lbl_SaldoActual.TabIndex = 215;
             this.lbl_SaldoActual.Text = "Saldo en banco: $1,000,000,000.00 MXN";
             this.lbl_SaldoActual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_SaldoActual.Click += new System.EventHandler(this.lbl_SaldoActual_Click);
+            // 
+            // cajaConta
+            // 
+            this.cajaConta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cajaConta.BackColor = System.Drawing.Color.Transparent;
+            this.cajaConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cajaConta.Location = new System.Drawing.Point(12, 100);
+            this.cajaConta.Name = "cajaConta";
+            this.cajaConta.Size = new System.Drawing.Size(615, 20);
+            this.cajaConta.TabIndex = 218;
+            this.cajaConta.Text = "Saldo en caja Contabilidad: $1,000,000,000.00 MXN";
+            this.cajaConta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MenuContabilidad
             // 
@@ -241,6 +257,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(635, 377);
             this.ControlBox = false;
+            this.Controls.Add(this.cajaConta);
             this.Controls.Add(this.pbox_Balance);
             this.Controls.Add(this.lbl_SaldoActual);
             this.Controls.Add(this.pbox_Requisiciones);
@@ -284,5 +301,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_SaldoActual;
         private System.Windows.Forms.PictureBox pbox_Balance;
+        private System.Windows.Forms.Label cajaConta;
     }
 }

@@ -42,6 +42,7 @@
             this.pbLaboratorio = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -209,6 +211,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DiseñoFinal.Properties.Resources.Time_Card_40px;
+            this.pictureBox2.Location = new System.Drawing.Point(1, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 215;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Firmar asistencia");
+            this.pictureBox2.Click += new System.EventHandler(this.C);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            // 
             // MenuGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -218,6 +235,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(428, 494);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pBReportes);
             this.Controls.Add(this.pBMenúContabilidad);
@@ -246,6 +264,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +283,6 @@
         private System.Windows.Forms.PictureBox pBReportes;
         private System.Windows.Forms.PictureBox pBMenúContabilidad;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

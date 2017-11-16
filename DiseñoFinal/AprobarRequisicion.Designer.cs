@@ -304,6 +304,7 @@
             this.lbl_Presupuesto.Size = new System.Drawing.Size(210, 13);
             this.lbl_Presupuesto.TabIndex = 0;
             this.lbl_Presupuesto.Text = "COMPRA DENTRO DEL PRESUPUESTO";
+            this.lbl_Presupuesto.Click += new System.EventHandler(this.lbl_Presupuesto_Click);
             // 
             // groupBox3
             // 
