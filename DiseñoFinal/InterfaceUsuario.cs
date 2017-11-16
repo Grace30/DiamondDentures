@@ -99,13 +99,7 @@ namespace DiseñoFinal
 
                 DataTable datosPieza = new DataTable();
                 datosPieza = mancp.EditarPieza(Datos);
-                foreach (DataRow fila in datosPieza.Rows)
-                {
-                    edpie.CodPieza = fila["Codigo"].ToString();
-                    edpie.Nombre = fila["Nombre"].ToString();
-                    edpie.TiempoFab = fila["Tiempo"].ToString();
-                    edpie.Precio = fila["Precio"].ToString();
-                }
+                edpie.DatosTabla(datosPieza);                
                 edpie.ShowDialog();
             }
             if (Evento == "PantallaActualizarMaterial")
@@ -114,13 +108,7 @@ namespace DiseñoFinal
 
                 DataTable datosMaterial = new DataTable();
                 datosMaterial = mancp.EditarMaterial(Datos);
-                foreach (DataRow fila in datosMaterial.Rows)
-                {
-                    edmat.CodMat = fila["Codigo"].ToString();
-                    edmat.Nombre = fila["Nombre"].ToString();
-                    edmat.Precio = fila["Precio"].ToString();
-                    edmat.Tiempo = fila["Tiempo"].ToString();
-                }
+                edmat.DatosTabla(datosMaterial);
                 edmat.ShowDialog();
 
             }
@@ -145,14 +133,7 @@ namespace DiseñoFinal
                 FabricarProducto fabp = new FabricarProducto(Datos[0], llamada);
                 var datosPedidos = new DataTable();
                 datosPedidos = mancp.ObtenerDatosPedido(Datos);
-                foreach (DataRow fila in datosPedidos.Rows)
-                {
-                    fabp.CodPed.Add(fila["IDPedido"].ToString());
-                    fabp.Est.Add(fila["Estatus"].ToString());
-                    fabp.FechaEnt.Add(fila["FechaCalculada"].ToString());
-                    fabp.Labor.Add(fila["Fabricante"].ToString());
-                    fabp.Urg.Add(fila["Urgencia"].ToString());
-                }
+                fabp.DatosTabla(datosPedidos);
                 desplegarPantalla(fabp);
                 cerrarPantalla(llamada);
             }
@@ -168,16 +149,7 @@ namespace DiseñoFinal
                 ControlPedidos conp = new ControlPedidos(Datos[0], Dep, llamada);
                 var datosPedidos = new DataTable();
                 datosPedidos = mancp.ObtenerDatosPedido(Datos);
-                foreach (DataRow fila in datosPedidos.Rows)
-                {
-                    conp.Dent.Add(fila["IDDentista"].ToString());
-                    conp.CodPed.Add(fila["IDPedido"].ToString());
-                    conp.Est.Add(fila["Estatus"].ToString());
-                    conp.FechaLle.Add(fila["FechaIngreso"].ToString());
-                    conp.FechaEnt.Add(fila["FechaCalculada"].ToString());
-                    conp.Labor.Add(fila["Fabricante"].ToString());
-                    conp.Urg.Add(fila["Urgencia"].ToString());
-                }
+                conp.DatosTabla(datosPedidos);
                 desplegarPantalla(conp);
                 cerrarPantalla(llamada);
             }
@@ -339,18 +311,18 @@ namespace DiseñoFinal
                     perfil.Nombre = fila["Nombre"].ToString();
                     perfil.Direccion = fila["Direccion"].ToString();
                     perfil.Colonia = fila["Colonia"].ToString();
-                    perfil.Pais = fila["País"].ToString();
+                    perfil.Pais = fila["Pais"].ToString();
                     perfil.Estado = fila["Estado"].ToString();
                     perfil.Municipio = fila["Municipio"].ToString();
                     perfil.Ciudad = fila["Ciudad"].ToString();
-                    perfil.Codigo = fila["CP"].ToString();
+                    perfil.Codigo = fila["CodigoPostal"].ToString();
                     perfil.TelCasa = fila["TelCasa"].ToString();
                     perfil.TelOficina = fila["TelOfi"].ToString();
                     perfil.TelMovil = fila["TelCel"].ToString();
                     perfil.Email = fila["Email"].ToString();
                 }
                 desplegarPantalla(perfil);
-                cerrarPantalla(llamada);
+                cerrarPantalla(llamada);    
             }
             if (Evento == "Usuarios")
             {
@@ -387,11 +359,11 @@ namespace DiseñoFinal
                     actregi.Apellidos = fila["Apellidos"].ToString();
                     actregi.Direccion = fila["Direccion"].ToString();
                     actregi.Colonia = fila["Colonia"].ToString();
-                    actregi.Pais = fila["País"].ToString();
+                    actregi.Pais = fila["Pais"].ToString();
                     actregi.Estado = fila["Estado"].ToString();
                     actregi.Municipio = fila["Municipio"].ToString();
                     actregi.Ciudad = fila["Ciudad"].ToString();
-                    actregi.Codigo = fila["CP"].ToString();
+                    actregi.Codigo = fila["CodigoPostal"].ToString();
                     actregi.TelCasa = fila["TelCasa"].ToString();
                     actregi.TelOficina = fila["TelOfi"].ToString();
                     actregi.TelMovil = fila["TelCel"].ToString();
@@ -505,7 +477,7 @@ namespace DiseñoFinal
             }
             if(Evento == "NuevoPedido")
             {
-                Pedido ped = new Pedido(llamada);
+                Pedido ped = new Pedido(llamada, Datos[0]);
                 desplegarPantalla(ped);
                 cerrarPantalla(llamada);
             }
@@ -517,7 +489,7 @@ namespace DiseñoFinal
             }
             if(Evento == "Pedidos")
             {
-                Pedidos p = new Pedidos();
+                Pedidos p = new Pedidos(llamada, Datos[0]);
                 desplegarPantalla(p);
                 cerrarPantalla(llamada);
             }
@@ -535,7 +507,7 @@ namespace DiseñoFinal
             }
             if(Evento == "ActualizarPedido")
             {
-                ModificarPedido mp = new ModificarPedido(Datos, llamada);
+                ModificarPedido2 mp = new ModificarPedido2(Datos, llamada);
                 desplegarPantalla(mp);
                 cerrarPantalla(llamada);
             }
@@ -563,8 +535,26 @@ namespace DiseñoFinal
             }
             if (Evento == "PantallaVentas")
             {
-                Ventas vn = new Ventas();
+                Ventas vn = new Ventas(Datos[0]);
                 desplegarPantalla(vn);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaEntregas")
+            {
+                Entregas et = new Entregas(Datos[0], llamada);
+                desplegarPantalla(et);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaCaja")
+            {
+                Caja cj = new Caja(Datos[0], llamada);
+                desplegarPantalla(cj);
+                cerrarPantalla(llamada);
+            }
+            if(Evento == "PantallaRetiro")
+            {
+                Retiro rt = new Retiro(Datos[0]);
+                desplegarPantalla(rt);
                 cerrarPantalla(llamada);
             }
             if (Evento == "ActualizarDentista")
@@ -698,6 +688,26 @@ namespace DiseñoFinal
                 }
                 else
                     MessageBox.Show("No se registraron los datos");
+            }
+            if (Evento == "Registrar Datos Forma")
+            {
+
+                if (marr.RegistrarDatosForma(Datos) != 0)
+                {
+                    MessageBox.Show("Registrado satisfactoriamente");
+                }
+                else
+                    MessageBox.Show("No se registraron los datos");
+            }
+            if (Evento == "Registrar Datos Oficio")
+            {
+
+                if (marr.RegistrarDatosOficio(Datos) != 0)
+                {
+                    MessageBox.Show("Confirmado satisfactoriamente");
+                }
+                else
+                    MessageBox.Show("No se pudo confirmar");
             }
             if (Evento == "Modificar Datos Factura")
             {

@@ -72,7 +72,7 @@ namespace DiseñoFinal.ReportesM
             VistaPreviaOficio objForm = new VistaPreviaOficio();
             string Folio = dgvOficios[0, dgvOficios.CurrentCell.RowIndex].Value.ToString();
             string Pedido = dgvOficios[1, dgvOficios.CurrentCell.RowIndex].Value.ToString();
-            objForm.Folio = Folio;
+            //objForm.Folio = Folio;
             objForm.Pedido = Pedido;
             objForm.ShowDialog();
         }

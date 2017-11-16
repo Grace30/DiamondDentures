@@ -36,12 +36,14 @@ namespace DiseñoFinal
             string Email = "", EmailPartes = "";
             foreach (DataRow fila in Datos.Rows)
             {
+                txtClave.Text = ReducirEspaciado(fila["ClaveProveedor"].ToString());
                 txtNombre.Text = ReducirEspaciado(fila["Nombre"].ToString());
                 txtDesc.Text = ReducirEspaciado(fila["Descripcion"].ToString());
                 mkTelefono.Text = ReducirEspaciado(fila["Telefono"].ToString());
                 Email = fila["Correo"].ToString();
                 txtRFC.Text = ReducirEspaciado(fila["RFC"].ToString());
                 txtNombreCont.Text = ReducirEspaciado(fila["Contacto"].ToString());
+                txtNCuenta.Text = ReducirEspaciado(fila["NumeroCuenta"].ToString());
             }
 
             int i = 0;
@@ -76,18 +78,18 @@ namespace DiseñoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] Datos = { lblClave.Text, txtNombre.Text, mkTelefono.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtDesc.Text, txtRFC.Text, txtNombreCont.Text, "ACT" };
+            string[] Datos = { lblClave.Text, txtNombre.Text, mkTelefono.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtDesc.Text, txtRFC.Text, txtNombreCont.Text, "ACT", txtNCuenta.Text };
             if (manp.ActualizarProveedor(Datos) > 0) { MessageBox.Show("Proveedor Actualizado"); }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-            if (pantalla.GetType() == typeof(Proveedores))
+            if (pantalla.GetType() == typeof(ProveedoresJesusCrack))
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(Proveedores))
+                    if (frm.GetType() == typeof(ProveedoresJesusCrack))
                     {
                         frm.Show();
                     }
@@ -96,7 +98,6 @@ namespace DiseñoFinal
         }
         public static string ReducirEspaciado(string Cadena)
         {
-
             while (Cadena.Contains("  "))
             {
                 Cadena = Cadena.Replace("  ", "");
@@ -105,10 +106,9 @@ namespace DiseñoFinal
             {
                 if (Cadena[Cadena.Length - 1] == ' ')
                 {
-                    Cadena.Remove(Cadena.Length - 1, 1);
+                   Cadena = Cadena.Remove(Cadena.Length - 1, 1);
                 }
             }
-
             return Cadena;
         }
     }

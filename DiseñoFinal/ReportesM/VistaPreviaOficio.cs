@@ -14,7 +14,7 @@ namespace DiseñoFinal
 {
     public partial class VistaPreviaOficio : Form
     {
-        public string Folio,Pedido;
+        public string Pedido;
         public VistaPreviaOficio()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace DiseñoFinal
         {
             Oficio_de_confirmación2 objReporte = new Oficio_de_confirmación2();
             objReporte.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
-            objReporte.SetParameterValue("@FolioOficio", Folio);
+          //  objReporte.SetParameterValue("@FolioOficio", Folio);
             objReporte.SetParameterValue("@Pedido", Pedido);
             VOficio.ReportSource = objReporte;
 

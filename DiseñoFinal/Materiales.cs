@@ -46,7 +46,7 @@ namespace DiseñoFinal
 
         private void pbAgregarMaterial_Click(object sender, EventArgs e)
         {
-            string[] Datos = new string[1];
+            string[] Datos = { "" };
             intusuario.enviarEvento("PantallaAgregarMaterial", Datos);
 
             var datosPiezas = new DataTable();
@@ -71,7 +71,8 @@ namespace DiseñoFinal
 
 
                 var datosPiezas = new DataTable();
-                datosPiezas = mancp.ObtenerDatosMateriales(Datos);
+                string[] Datos2 = { "" };
+                datosPiezas = mancp.ObtenerDatosMateriales(Datos2);
                 DatosData(datosPiezas);
 
                 dgvMateriales.ClearSelection();

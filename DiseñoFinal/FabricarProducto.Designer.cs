@@ -64,6 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEntregado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -279,7 +280,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::DiseñoFinal.Properties.Resources.salir2;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(648, 446);
+            this.pictureBox1.Location = new System.Drawing.Point(650, 453);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(58, 58);
             this.pictureBox1.TabIndex = 249;
@@ -415,7 +416,7 @@
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(608, 392);
+            this.button1.Location = new System.Drawing.Point(608, 421);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 259;
@@ -430,6 +431,19 @@
             this.label12.Size = new System.Drawing.Size(106, 13);
             this.label12.TabIndex = 260;
             this.label12.Text = "Nota de Terminación";
+            // 
+            // btnEntregado
+            // 
+            this.btnEntregado.BackColor = System.Drawing.Color.Fuchsia;
+            this.btnEntregado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntregado.ForeColor = System.Drawing.Color.Black;
+            this.btnEntregado.Location = new System.Drawing.Point(608, 392);
+            this.btnEntregado.Name = "btnEntregado";
+            this.btnEntregado.Size = new System.Drawing.Size(113, 23);
+            this.btnEntregado.TabIndex = 254;
+            this.btnEntregado.Text = "ENTREGADO";
+            this.btnEntregado.UseVisualStyleBackColor = false;
+            this.btnEntregado.Click += new System.EventHandler(this.btnFacturado_Click);
             // 
             // FabricarProducto
             // 
@@ -446,6 +460,7 @@
             this.Controls.Add(this.cbLaboratorista);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.btnSinElaborar);
+            this.Controls.Add(this.btnEntregado);
             this.Controls.Add(this.btnFacturado);
             this.Controls.Add(this.btnFinalizado);
             this.Controls.Add(this.pictureBox1);
@@ -514,5 +529,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnEntregado;
     }
 }

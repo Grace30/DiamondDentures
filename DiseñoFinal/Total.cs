@@ -207,7 +207,7 @@ namespace DiseñoFinal
 
                 string idPed = lblPedido.Text.Substring(1);
 
-                objForm.Folio = idPed;
+                objForm.Pedido = idPed;
 
                 objForm.ShowDialog();
                 checkBox1.Enabled = false;

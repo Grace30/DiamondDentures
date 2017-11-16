@@ -55,13 +55,19 @@
     <ManifestKeyFile>Presentacion_ClaveTemporal.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Logo dd.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -246,6 +252,12 @@
     <Compile Include="AsistenciaPorEmpleado.Designer.cs">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja.Designer.cs">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Balance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +356,12 @@
     </Compile>
     <Compile Include="ReportesM\BalanceGeneral.Designer.cs">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\FormaPedido2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormaPedido2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportesM\PantallaListados\CamposListados.cs" />
     <Compile Include="ReportesM\PantallaListados\PListadoClientes.cs">
@@ -648,6 +666,12 @@
     <Compile Include="EditarPieza.Designer.cs">
       <DependentUpon>EditarPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entregas.Designer.cs">
+      <DependentUpon>Entregas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FabricarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -732,6 +756,12 @@
     </Compile>
     <Compile Include="Menú Admin.Designer.cs">
       <DependentUpon>Menú Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageValidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageValidate.Designer.cs">
+      <DependentUpon>MessageValidate.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportesM\MenúReportes.cs">
       <SubType>Form</SubType>
@@ -854,6 +884,18 @@
     </Compile>
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaForma2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
+      <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retiro.Designer.cs">
+      <DependentUpon>Retiro.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportesM\ReportesAlmacen.cs">
       <SubType>Form</SubType>
@@ -1084,6 +1126,9 @@
     <EmbeddedResource Include="AsistenciaPorEmpleado.resx">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caja.resx">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Balance.resx">
       <DependentUpon>Balance.cs</DependentUpon>
     </EmbeddedResource>
@@ -1125,6 +1170,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\BalanceGeneral.resx">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\FormaPedido2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FormaPedido2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\PantallaListados\PListadoClientes.resx">
       <DependentUpon>PListadoClientes.cs</DependentUpon>
@@ -1317,6 +1366,9 @@
     <EmbeddedResource Include="EditarPieza.resx">
       <DependentUpon>EditarPieza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entregas.resx">
+      <DependentUpon>Entregas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FabricarProducto.resx">
       <DependentUpon>FabricarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -1360,6 +1412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menú Admin.resx">
       <DependentUpon>Menú Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageValidate.resx">
+      <DependentUpon>MessageValidate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\MenúReportes.resx">
       <DependentUpon>MenúReportes.cs</DependentUpon>
@@ -1426,6 +1481,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
+      <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retiro.resx">
+      <DependentUpon>Retiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\ReportesAlmacen.resx">
       <DependentUpon>ReportesAlmacen.cs</DependentUpon>
@@ -1545,6 +1606,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Presentacion_ClaveTemporal.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2350,6 +2412,11 @@
   <ItemGroup>
     <Content Include="Logo dd.ico" />
     <None Include="Resources\paysheet.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\22.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\+3.png" />
     <None Include="Resources\Time Card_40px.png" />
     <None Include="Resources\Balance.png" />
     <None Include="Resources\fact1.PNG" />

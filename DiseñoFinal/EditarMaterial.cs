@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 
 namespace DiseñoFinal
 {
@@ -14,7 +15,9 @@ namespace DiseñoFinal
     {
         InterfaceUsuario intusuario;
         Validación v = new Validación();
-        public string CodMat, Nombre, Precio, Tiempo;
+        public string CodMat, Nombre, Descrip, Costo , Precio, Tiempo,Unidad,Proveedor,Stock;
+        ManejadorControlPedido mancp = new ManejadorControlPedido();
+        List<string[,]> Proveedores = new List<string[,]>();
 
         public EditarMaterial()
         {
@@ -34,7 +37,15 @@ namespace DiseñoFinal
         {
             if (v.ValidaCamposMat(txtCodMat, txtNombre, txtTiempo, txtPrecio))
             {
-                string[] Datos = { txtCodMat.Text, txtNombre.Text , txtPrecio.Text , txtTiempo.Text};
+                for (int i = 0; i < Proveedores.Count; i++)
+                {
+                    if (Proveedores[i][0, 1] == cbProv.Text.ToString())
+                    {
+                        Proveedor = Proveedores[i][0, 0];
+                        break;
+                    }
+                }
+                string[] Datos = { txtCodMat.Text, txtNombre.Text, txtDesc.Text, txtCosto.Text, txtPrecio.Text, txtTiempo.Text, Proveedor, txtUnidad.Text, txtStock.Text };
                 intusuario.enviarEvento("ActualizarMaterial", Datos);
             }
             else
@@ -67,20 +78,66 @@ namespace DiseñoFinal
 
         private void EditarMaterial_Load_1(object sender, EventArgs e)
         {
+            var datosProv = new DataTable();
+            string[] Datos = { "" };
+            datosProv = mancp.ObtenerProveedores(Datos);
+            foreach (DataRow fila in datosProv.Rows)
+            {
+                cbProv.Items.Add(ReducirEspaciado(fila["Nombre"].ToString()));
+                Proveedores.Add(new string[,] { { ReducirEspaciado(fila["ClaveProveedor"].ToString()), ReducirEspaciado(fila["Nombre"].ToString()) } });
+            }
+
             txtCodMat.Text = ReducirEspaciado(CodMat);
             txtNombre.Text = ReducirEspaciado(Nombre);
             txtPrecio.Text = ReducirEspaciado(Precio);
             txtTiempo.Text = ReducirEspaciado(Tiempo);
+            txtCosto.Text = ReducirEspaciado(Costo);
+            txtDesc.Text = ReducirEspaciado(Descrip);
+            txtStock.Text = ReducirEspaciado(Stock);
+            txtUnidad.Text = ReducirEspaciado(Unidad);
+            for (int i = 0; i < Proveedores.Count; i++)
+            {
+                if(Proveedor == Proveedores[i][0, 0])
+                {
+                    cbProv.Text = Proveedores[i][0, 1];
+                    break;
+                }
+            }
         }
 
         public static string ReducirEspaciado(string Cadena)
         {
-            while (Cadena.Contains("  "))
+            if (Cadena != null)
             {
-                Cadena = Cadena.Replace("  ", "");
+                while (Cadena.Contains("  "))
+                {
+                    Cadena = Cadena.Replace("  ", "");
+                }
+                if (Cadena.Length > 0)
+                {
+                    if (Cadena[Cadena.Length - 1] == ' ')
+                    {
+                        Cadena = Cadena.Remove(Cadena.Length - 1, 1);
+                    }
+                }
             }
-
             return Cadena;
+        }
+
+        public void DatosTabla(DataTable datosMaterial)
+        {
+            foreach (DataRow fila in datosMaterial.Rows)
+            {
+                CodMat = fila["CodigoMaterial"].ToString();
+                Nombre = fila["Nombre"].ToString();
+                Descrip = fila["Descripcion"].ToString();
+                Costo = fila["CostoBase"].ToString();
+                Precio = fila["PrecioBase"].ToString();
+                Tiempo = fila["TiempoBase"].ToString();
+                Proveedor = ReducirEspaciado(fila["Proveedor"].ToString());
+                Unidad = fila["Unidad"].ToString();
+                Stock = fila["Stock"].ToString();
+            }
         }
     }
 }

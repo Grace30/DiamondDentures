@@ -42,6 +42,7 @@
             this.pBPedidos = new System.Windows.Forms.PictureBox();
             this.pbxSemaforo = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCaja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBPedido)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,6 +131,7 @@
             // 
             this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.fondo_recepcion;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnCaja);
             this.panel1.Controls.Add(this.btnVentas);
             this.panel1.Controls.Add(this.pBSalir);
             this.panel1.Location = new System.Drawing.Point(-8, 256);
@@ -190,6 +192,16 @@
             this.toolTip1.SetToolTip(this.pbxSemaforo, "Semáforo");
             this.pbxSemaforo.Click += new System.EventHandler(this.pbxSemaforo_Click);
             // 
+            // btnCaja
+            // 
+            this.btnCaja.Location = new System.Drawing.Point(245, 12);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnCaja.TabIndex = 11;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
             // Recepcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +247,6 @@
         private System.Windows.Forms.PictureBox pbxSemaforo;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnCaja;
     }
 }

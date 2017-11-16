@@ -63,6 +63,7 @@ namespace DiseñoFinal
             {
                 txtNombre.Text = fila["Nombre"].ToString();
             }
+            txtApellidos.Text = Datos.Rows[0][4].ToString();
             foreach (DataRow fila in Datos.Rows)
             {
                 txtDireccion.Text = fila["Direccion"].ToString();
@@ -99,6 +100,9 @@ namespace DiseñoFinal
             {
                 maskedTCasa.Text = fila["Telefono"].ToString();
             }
+            txtEmail.Text = Datos.Rows[0][14].ToString();
+            txtConsultorio.Text = Datos.Rows[0][16].ToString();
+            txtFechaNac.Text = Datos.Rows[0][18].ToString();
             var Paises = new DataTable();
             cbPais.Items.Clear();
             cbPais.Items.Add(" ");
@@ -125,7 +129,7 @@ namespace DiseñoFinal
                 maskedTCasa.Text.Length == 13 && txtCedula.Text.Length == 7 && txtRFC.Text.Length == 13)
             {
                 string[] Datos = { txtCedula.Text, txtRFC.Text.ToUpper(), txtNombre.Text.ToUpper(), txtDireccion.Text, txtNumExt.Text, cbPais.Text,
-                    cbEstado.Text, cbMunicipio.Text, cbCiudad.Text, txtColonia.Text, maskedCodigo.Text, maskedTCasa.Text, Cedula[0] };
+                    cbEstado.Text, cbMunicipio.Text, cbCiudad.Text, txtColonia.Text, maskedCodigo.Text, maskedTCasa.Text, Cedula[0], txtApellidos.Text.ToUpper(), txtEmail.Text, txtConsultorio.Text, txtFechaNac.Text.Substring(0,10) };
                 It.enviarEvento("ActualizarDentista", Datos);
 
             }

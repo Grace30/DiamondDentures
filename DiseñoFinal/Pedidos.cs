@@ -22,10 +22,20 @@ namespace DiseñoFinal
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
+        Form llamada;
+        string usuarioencurso;
         public Pedidos()
         {
             InitializeComponent();
             It = new InterfaceUsuario(this);
+        }
+
+        public Pedidos(Form llamada, string usuarioencurso)
+        {
+            InitializeComponent();
+            It = new InterfaceUsuario(this);
+            this.llamada = llamada;
+            this.usuarioencurso = usuarioencurso;
         }
 
         private void pBSalir_Click(object sender, EventArgs e)
@@ -53,26 +63,7 @@ namespace DiseñoFinal
         {
             var Pedidos = new DataTable();
             Pedidos = map.getPedidos();
-            dataGridView1.ColumnCount = Pedidos.Columns.Count;
-            dataGridView1.RowCount = Pedidos.Rows.Count;
-            int renglon = 0;
-            foreach (DataRow fila in Pedidos.Rows)
-            {
-                dataGridView1["Número", renglon].Value = fila["IDPedido"].ToString();
-                dataGridView1["Nombre", renglon].Value = fila["Nombre"].ToString();
-                dataGridView1["Status", renglon].Value = fila["Estatus"].ToString();
-                dataGridView1["FechaSolicitud", renglon].Value = fila["FechaIngreso"].ToString();
-                dataGridView1["FechaEntrega", renglon].Value = fila["FechaCalculada"].ToString();
-                dataGridView1["Fabricador", renglon].Value = fila["Fabricante"].ToString();
-                renglon++;
-            }
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
-            {
-                for (int j = 0; j < dataGridView1.RowCount; j++)
-                {
-                    dataGridView1[i, j].Value = v.reducirCadena(dataGridView1[i, j].Value.ToString());
-                }
-            }
+            dataGridView1.DataSource = Pedidos;
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
