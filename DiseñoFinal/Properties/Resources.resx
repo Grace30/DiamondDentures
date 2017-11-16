@@ -567,7 +567,8 @@
   </data>
   <data name="User Male_10px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User Male_10px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="Invisible_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="Invisible_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Invisible_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo recepcion" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -576,9 +577,10 @@
   <data name="Pedidos11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pedidos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paysheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paysheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="+3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <data name="paysheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+      <value>..\Resources\paysheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    </data>
+    <data name="+3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\+3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="0" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -590,8 +592,9 @@
   <data name="22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+      <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    </data>
   <data name="Time Card_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Time Card_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
