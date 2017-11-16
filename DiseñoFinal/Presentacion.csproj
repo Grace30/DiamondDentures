@@ -2411,6 +2411,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\paysheet.png" />
     <None Include="Resources\3.png" />
     <None Include="Resources\22.png" />
     <None Include="Resources\11.png" />

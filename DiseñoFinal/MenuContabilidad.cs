@@ -261,14 +261,17 @@ namespace DiseñoFinal
 
         private void lbl_SaldoActual_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
             new CorrecionBalance().ShowDialog();
-            timer1.Start();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+            new PagoAEmpleados().ShowDialog();
         }
     }
 }
