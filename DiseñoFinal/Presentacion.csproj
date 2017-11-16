@@ -2333,6 +2333,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\22.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\+3.png" />
     <None Include="Resources\User Male_10px.png" />
     <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Search Property_31px.png" />

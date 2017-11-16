@@ -583,9 +583,9 @@ namespace DiseñoFinal
             foreach (DataRow fila in datosPedidos.Rows)
             {
                 fabp.CodPed.Add(fila["IDPedido"].ToString());
-                fabp.Est.Add(fila["Estatus"].ToString());
+                fabp.Est.Add(fila["EstatusPedido"].ToString());
                 fabp.FechaEnt.Add(fila["FechaCalculada"].ToString());
-                fabp.Labor.Add(fila["Fabricante"].ToString());
+                fabp.Labor.Add(fila["Laboratorista"].ToString());
                 fabp.Urg.Add(fila["Urgencia"].ToString());
             }
             fabp.Show();

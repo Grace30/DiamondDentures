@@ -319,7 +319,7 @@ namespace DiseñoFinal
                     perfil.Email = fila["Email"].ToString();
                 }
                 desplegarPantalla(perfil);
-                cerrarPantalla(llamada);
+                cerrarPantalla(llamada);    
             }
             if (Evento == "Usuarios")
             {
