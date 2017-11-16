@@ -60,6 +60,10 @@ namespace Entidad
         {
             return IbaseDatos.selectCedulaNombre(Datos);
         }
+        public int RegistrarDatosForma(string[] Datos)
+        {
+            return IbaseDatos.RegistrarDatosForma(Datos);
+        }
 
     }
 }

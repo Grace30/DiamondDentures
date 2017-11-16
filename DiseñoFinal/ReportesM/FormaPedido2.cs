@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DiseñoFinal.ReportesM.Reportes {
+namespace DiseñoFinal.ReportesM {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace DiseñoFinal.ReportesM.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class FormaPedido : ReportClass {
+    public class FormaPedido2 : ReportClass {
         
-        public FormaPedido() {
+        public FormaPedido2() {
         }
         
         public override string ResourceName {
             get {
-                return "FormaPedido.rpt";
+                return "FormaPedido2.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DiseñoFinal.ReportesM.Reportes {
         
         public override string FullResourceName {
             get {
-                return "DiseñoFinal.ReportesM.Reportes.FormaPedido.rpt";
+                return "DiseñoFinal.ReportesM.FormaPedido2.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,25 @@ namespace DiseñoFinal.ReportesM.Reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Pedido {
+        public CrystalDecisions.Shared.IParameterField Parameter_Folio {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_productorpt_Pedido {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFormaPedido : Component, ICachedReport {
+    public class CachedFormaPedido2 : Component, ICachedReport {
         
-        public CachedFormaPedido() {
+        public CachedFormaPedido2() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace DiseñoFinal.ReportesM.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            FormaPedido rpt = new FormaPedido();
+            FormaPedido2 rpt = new FormaPedido2();
             rpt.Site = this.Site;
             return rpt;
         }

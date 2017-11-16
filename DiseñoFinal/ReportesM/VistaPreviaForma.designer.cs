@@ -52,7 +52,7 @@
             this.VForma.Size = new System.Drawing.Size(739, 457);
             this.VForma.TabIndex = 3;
             this.VForma.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.VForma.Load += new System.EventHandler(this.VOficio_Load);
+//            this.VForma.Load += new System.EventHandler(this.VOficio_Load);
             // 
             // VistaPreviaForma
             // 

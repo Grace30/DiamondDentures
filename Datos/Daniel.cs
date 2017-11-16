@@ -135,5 +135,11 @@ namespace Datos
             string[] Parametros = { "@Pedido", "@Dentista", "@Estatus", "@FechaCalculada", "@Urgencia", "@Total", "@Pagado", "@Restante", "@IVA", "@Devuelto", "@Devolucion", "@Modificacion", "@FechaModi" };
             return Ejecutar("ModificarPedido", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12]);
         }
+        public int RegistrarDatosForma(string[] Datos)
+        {
+            string[] Parametros = { "@Pedido", "@Loginn", "@Fecha", "@FechaEntrega" };
+            return Ejecutar("FormaDePedido", Parametros, Datos[0], Datos[1], Datos[2], Datos[3]);
+        }
+
     }
 }

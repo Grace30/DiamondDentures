@@ -32,9 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.lblPedido = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtCodigoMaterial = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pBAñadir = new System.Windows.Forms.PictureBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
@@ -53,35 +56,32 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.cBCedula = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pBSalir = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pBSalir1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pBSacarProducto = new System.Windows.Forms.PictureBox();
-            this.pBGenerarPedido = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pBGenerarPedido = new System.Windows.Forms.PictureBox();
+            this.pBSacarProducto = new System.Windows.Forms.PictureBox();
+            this.pBAñadir = new System.Windows.Forms.PictureBox();
+            this.pBSalir = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pBSalir1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBAñadir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGenerarPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSacarProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAñadir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBSacarProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBGenerarPedido)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPedido
@@ -123,6 +123,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del producto";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(281, 95);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(55, 23);
+            this.textBox1.TabIndex = 224;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(280, 76);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 17);
+            this.label12.TabIndex = 223;
+            this.label12.Text = "Codigo";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(183, 94);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(92, 25);
+            this.comboBox1.TabIndex = 222;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(182, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 17);
+            this.label13.TabIndex = 221;
+            this.label13.Text = "Material2*";
+            // 
             // txtCodigoMaterial
             // 
             this.txtCodigoMaterial.Location = new System.Drawing.Point(121, 96);
@@ -139,21 +175,6 @@
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 219;
             this.label3.Text = "Codigo";
-            // 
-            // pBAñadir
-            // 
-            this.pBAñadir.BackColor = System.Drawing.Color.Transparent;
-            this.pBAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBAñadir.Enabled = false;
-            this.pBAñadir.Image = global::DiseñoFinal.Properties.Resources.Carrito_añadir;
-            this.pBAñadir.Location = new System.Drawing.Point(318, 188);
-            this.pBAñadir.Name = "pBAñadir";
-            this.pBAñadir.Size = new System.Drawing.Size(39, 38);
-            this.pBAñadir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBAñadir.TabIndex = 209;
-            this.pBAñadir.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBAñadir, "Añadir Producto");
-            this.pBAñadir.Click += new System.EventHandler(this.pBAñadir_Click);
             // 
             // txtSubTotal
             // 
@@ -342,97 +363,6 @@
             this.label7.TabIndex = 130;
             this.label7.Text = "Número de cédula*";
             // 
-            // pBSalir
-            // 
-            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
-            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
-            this.pBSalir.Location = new System.Drawing.Point(346, 617);
-            this.pBSalir.Name = "pBSalir";
-            this.pBSalir.Size = new System.Drawing.Size(39, 39);
-            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBSalir.TabIndex = 11;
-            this.pBSalir.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBSalir, "Regresar");
-            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.Pedido;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pBSalir1);
-            this.panel1.Location = new System.Drawing.Point(-8, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 58);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::DiseñoFinal.Properties.Resources.Logo_dd;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(5, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 59);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 23);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "PEDIDO NUEVO";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // pBSalir1
-            // 
-            this.pBSalir1.BackColor = System.Drawing.Color.Transparent;
-            this.pBSalir1.BackgroundImage = global::DiseñoFinal.Properties.Resources._1489837723_Close;
-            this.pBSalir1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBSalir1.Location = new System.Drawing.Point(360, 12);
-            this.pBSalir1.Name = "pBSalir1";
-            this.pBSalir1.Size = new System.Drawing.Size(36, 36);
-            this.pBSalir1.TabIndex = 10;
-            this.pBSalir1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBSalir1, "Salir");
-            this.pBSalir1.Click += new System.EventHandler(this.pBSalir1_Click);
-            // 
-            // pBSacarProducto
-            // 
-            this.pBSacarProducto.BackColor = System.Drawing.Color.Transparent;
-            this.pBSacarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBSacarProducto.Image = global::DiseñoFinal.Properties.Resources.regresar_producto;
-            this.pBSacarProducto.Location = new System.Drawing.Point(297, 549);
-            this.pBSacarProducto.Name = "pBSacarProducto";
-            this.pBSacarProducto.Size = new System.Drawing.Size(43, 39);
-            this.pBSacarProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBSacarProducto.TabIndex = 215;
-            this.pBSacarProducto.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBSacarProducto, "Sacar Producto");
-            this.pBSacarProducto.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pBGenerarPedido
-            // 
-            this.pBGenerarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.pBGenerarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pBGenerarPedido.Image = global::DiseñoFinal.Properties.Resources.forma_de_pedido;
-            this.pBGenerarPedido.Location = new System.Drawing.Point(346, 549);
-            this.pBGenerarPedido.Name = "pBGenerarPedido";
-            this.pBGenerarPedido.Size = new System.Drawing.Size(39, 39);
-            this.pBGenerarPedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBGenerarPedido.TabIndex = 221;
-            this.pBGenerarPedido.TabStop = false;
-            this.toolTip1.SetToolTip(this.pBGenerarPedido, "Generar Forma de Pedido");
-            this.pBGenerarPedido.Click += new System.EventHandler(this.pBGenerarPedido_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -506,41 +436,111 @@
             this.dateTimePicker1.TabIndex = 216;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // textBox1
+            // pBGenerarPedido
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(55, 23);
-            this.textBox1.TabIndex = 224;
+            this.pBGenerarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.pBGenerarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBGenerarPedido.Image = global::DiseñoFinal.Properties.Resources.forma_de_pedido;
+            this.pBGenerarPedido.Location = new System.Drawing.Point(346, 549);
+            this.pBGenerarPedido.Name = "pBGenerarPedido";
+            this.pBGenerarPedido.Size = new System.Drawing.Size(39, 39);
+            this.pBGenerarPedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBGenerarPedido.TabIndex = 221;
+            this.pBGenerarPedido.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBGenerarPedido, "Generar Forma de Pedido");
+            this.pBGenerarPedido.Click += new System.EventHandler(this.pBGenerarPedido_Click);
             // 
-            // label12
+            // pBSacarProducto
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(280, 76);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 17);
-            this.label12.TabIndex = 223;
-            this.label12.Text = "Codigo";
+            this.pBSacarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.pBSacarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSacarProducto.Image = global::DiseñoFinal.Properties.Resources.regresar_producto;
+            this.pBSacarProducto.Location = new System.Drawing.Point(297, 549);
+            this.pBSacarProducto.Name = "pBSacarProducto";
+            this.pBSacarProducto.Size = new System.Drawing.Size(43, 39);
+            this.pBSacarProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSacarProducto.TabIndex = 215;
+            this.pBSacarProducto.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBSacarProducto, "Sacar Producto");
+            this.pBSacarProducto.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // comboBox1
+            // pBAñadir
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(183, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 25);
-            this.comboBox1.TabIndex = 222;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.pBAñadir.BackColor = System.Drawing.Color.Transparent;
+            this.pBAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBAñadir.Enabled = false;
+            this.pBAñadir.Image = global::DiseñoFinal.Properties.Resources.Carrito_añadir;
+            this.pBAñadir.Location = new System.Drawing.Point(318, 188);
+            this.pBAñadir.Name = "pBAñadir";
+            this.pBAñadir.Size = new System.Drawing.Size(39, 38);
+            this.pBAñadir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBAñadir.TabIndex = 209;
+            this.pBAñadir.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBAñadir, "Añadir Producto");
+            this.pBAñadir.Click += new System.EventHandler(this.pBAñadir_Click);
             // 
-            // label13
+            // pBSalir
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(182, 76);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 17);
-            this.label13.TabIndex = 221;
-            this.label13.Text = "Material2*";
+            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
+            this.pBSalir.Location = new System.Drawing.Point(346, 617);
+            this.pBSalir.Name = "pBSalir";
+            this.pBSalir.Size = new System.Drawing.Size(39, 39);
+            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSalir.TabIndex = 11;
+            this.pBSalir.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBSalir, "Regresar");
+            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.Pedido;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pBSalir1);
+            this.panel1.Location = new System.Drawing.Point(-8, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(448, 58);
+            this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::DiseñoFinal.Properties.Resources.Logo_dd;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(5, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 59);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(139, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "PEDIDO NUEVO";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pBSalir1
+            // 
+            this.pBSalir1.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir1.BackgroundImage = global::DiseñoFinal.Properties.Resources._1489837723_Close;
+            this.pBSalir1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBSalir1.Location = new System.Drawing.Point(360, 12);
+            this.pBSalir1.Name = "pBSalir1";
+            this.pBSalir1.Size = new System.Drawing.Size(36, 36);
+            this.pBSalir1.TabIndex = 10;
+            this.pBSalir1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBSalir1, "Salir");
+            this.pBSalir1.Click += new System.EventHandler(this.pBSalir1_Click);
             // 
             // Pedido
             // 
@@ -570,18 +570,18 @@
             this.Load += new System.EventHandler(this.Pedido_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBAñadir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCantidad)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGenerarPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSacarProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBAñadir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBSacarProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBGenerarPedido)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

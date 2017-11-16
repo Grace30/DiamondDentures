@@ -362,10 +362,13 @@ namespace DiseñoFinal
                 Datos[15] = "NO";
                 Datos[16] = "";
                 It.enviarEvento("GenerarPedido", Datos);
-                //VistaPreviaForma objForm = new VistaPreviaForma();
-                //string idPed = lblPedido.Text.Substring(1);
-                //objForm.IDPedido = idPed;
-                //objForm.ShowDialog();
+
+                string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioActual, v.FormatoFecha(DateTime.Now), v.FormatoFecha(dateTimePicker1.Value) };
+                It.enviarEvento("Registrar Datos Forma", Datos1);
+                VistaPreviaForma objForm = new VistaPreviaForma();
+                string idPed = lblPedido.Text.Substring(1);
+                objForm.Pedido = idPed;
+                objForm.ShowDialog();
                 checkBox1.Enabled = false;
             }
             else
