@@ -13,8 +13,8 @@ namespace DiseñoFinal
 {
     public partial class Balance : Form
     {
+		ManejadorBanco manejadorBanco = new ManejadorBanco();
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
-        ManejadorBanco manejadorBanco = new ManejadorBanco();
         public Balance()
         {
             InitializeComponent();

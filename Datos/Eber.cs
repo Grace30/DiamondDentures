@@ -33,38 +33,158 @@ namespace Datos
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
             {
-                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToUInt32(cmdReader["CostoBase"])));
-                requi = new Requisicion(Convert.ToInt32(cmdReader["IDRequisicion"]), cmdReader["Departamento"].ToString(), cmdReader["Solicitante"].ToString(),(DateTime)cmdReader["Fecha"], cmdReader["Surtido"].ToString(), cmdReader["Estado"].ToString(), items.ToArray());
+                items.Add(new Material(cmdReader["IDMaterial"].ToString(), cmdReader["Nombre"].ToString(),cmdReader["Descripcion"].ToString(), cmdReader["Proveedor"].ToString(), cmdReader["Unidad"].ToString(),Convert.ToInt32(cmdReader["Cantidad"]), Convert.ToDouble(cmdReader["CostoBase"]),Convert.ToDouble(cmdReader["Importe"])));
+                int id = Convert.ToInt32(cmdReader["IDRequisicion"]);
+                string proveedor = cmdReader["Proveedor"].ToString();
+                DateTime fechaSurtido = cmdReader.IsDBNull(14) ? new DateTime(): (DateTime)(cmdReader["FechaSurtido"]) ;
+                string Departamento= cmdReader["Departamento"].ToString(); 
+                string Solicitante = cmdReader["Solicitante"].ToString();
+                DateTime Fecha = (DateTime)cmdReader["Fecha"];
+                string surtido= cmdReader["Surtido"].ToString();
+                string Estado = cmdReader["Estado"].ToString();
+                double Importe = Convert.ToDouble(cmdReader["Importe"]);
+                requi = new Requisicion(id, proveedor, fechaSurtido, Departamento, Solicitante, Fecha, surtido, Estado,items.ToArray(), Importe);
             }
             cmdReader.Close();
             conexion.Close();
             return requi;
         }
 
-        public int CountRequisicionesPendientes()
+        public double getSaldoCajaConta()
+        {
+            double saldo = 0;
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion = new Conexion().getAzureConexion();
+            SqlDataReader cmdReader;
+            if (conexion.State != ConnectionState.Open) conexion.Open();
+            cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+            {
+                saldo = Convert.ToDouble(cmdReader[0].ToString());
+            }
+            return saldo;
+
+        }
+
+        public string NombreEmpleados(string loginn)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader cmdReader;
+            cmd = new SqlCommand(string.Format("execute getNombreEmpleado '{0}'", loginn), new Conexion().getAzureConexion());
+            cmdReader = cmd.ExecuteReader();
+            string nombre = "";
+            while (cmdReader.Read())
+                nombre = cmdReader[0].ToString();
+
+            return nombre;
+        }
+
+        public int IngresarCompra(string loginn, string tipo, Requisicion r)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            int f = 0;
+            if (tipo != "Corrección")
+            {
+                cmd = new SqlCommand(string.Format("execute RegistrarCompra '{0}',{1},'{2}',{3},'{4}','{5}'", loginn, r.IdRequisicion, r.Proveedor, r.Total, tipo, "PAGADO"), new Conexion().getAzureConexion());
+                f = cmd.ExecuteNonQuery();
+                if (tipo == "Material")
+                {
+                    foreach (var item in r.Items)
+                        cmd = new SqlCommand(string.Format("execute RegistrarDetalleComprasMaterial {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                    cmd.ExecuteNonQuery();
+                }
+
+                else if (tipo == "Insumo")
+                {
+                    foreach (var item in r.Items)
+                        cmd = new SqlCommand(string.Format("execute RegistrarDetalleCompraInsumo {0}, '{1}',{2}, {3}", r.IdRequisicion, item.IDMaterial, item.Cantidad, item.Importe), new Conexion().getAzureConexion());
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                cmd = new SqlCommand(string.Format("execute RegistrarCompraC '{0}','{1}',{2},'{3}','{4}'", loginn,  "", Math.Abs(r.Total), tipo, "PAGADO"), new Conexion().getAzureConexion());
+                f = cmd.ExecuteNonQuery();
+            }
+            return f;
+        }
+
+        public int AutorizarRequisicion(int IDRequisicion, string Loginn)
+        {
+            string[] Parametros = { "@IDRequisicion", "@Loginn"};
+            return Ejecutar("AutorizarRequisicion", Parametros, IDRequisicion, Loginn);
+        }
+
+        public object[] NombreProveedores()
         {
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion;
             SqlDataReader cmdReader;
-            int count = 0;
+            List<string> empleados = new List<string>();
             conexion = new Conexion().getAzureConexion();
-            cmd = new SqlCommand("execute countRequisicionesEnEspera",conexion);
+            cmd = new SqlCommand("execute NombreProvedores", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public object[] NombreEmpleados()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            List<string> empleados = new List<string>();
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute NombreEmpleados", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public int CountRequisicionesPendientes()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion = new Conexion().getAzureConexion();
+            SqlDataReader cmdReader;
+            int count = 0;
+            if (conexion.State != ConnectionState.Open) conexion.Open();
+            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
             cmdReader = cmd.ExecuteReader();
             while (cmdReader.Read())
                 count = Convert.ToInt32(cmdReader[0]);
             return count;
         }
 
-        public void InsertIngreso(double cantidad)
-        {//Venta
 
+        public string[] NombreEmpleadosContabilidad()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion;
+            SqlDataReader cmdReader;
+            List<string> empleados = new List<string>();
+            conexion = new Conexion().getAzureConexion();
+            cmd = new SqlCommand("execute NombreEmpleadosContabilidad", conexion);
+            cmdReader = cmd.ExecuteReader();
+            while (cmdReader.Read())
+                empleados.Add(cmdReader[0].ToString());
+            return empleados.ToArray();
+        }
+
+        public int InsertIngreso(string loginn, double cantidad)
+        {
+            string[] Parametros = { "@Loginn", "@Importe" };
+            return Ejecutar("insertarVentaC", Parametros, loginn.TrimEnd(), cantidad);
         }
 
         public void InsertRetiro(double cantidad)
-        {//Compra
+        {
 
         }
-
         public object[] getAñoBalance()
         {
             List<string> periodos = new List<string>();
@@ -130,10 +250,11 @@ namespace Datos
         public double GetSaldoEnBanco()
         { 
             SqlCommand cmd = new SqlCommand();
-            SqlConnection conexion;
+            SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             double saldo = 0;
             conexion = new Conexion().getAzureConexion();
+            if (conexion.State != ConnectionState.Open) conexion.Open();
             cmd = new SqlCommand("execute getSaldoBanco", conexion);
             
                 cmdReader = cmd.ExecuteReader();

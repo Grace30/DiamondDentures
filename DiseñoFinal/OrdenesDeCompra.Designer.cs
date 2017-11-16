@@ -1,7 +1,15 @@
-﻿namespace DiseñoFinal
+﻿using System.Runtime.InteropServices;
+
+namespace DiseñoFinal
 {
     partial class OrdenesDeCompra
     {
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -166,6 +174,7 @@
             this.datePicker_AutoriFin.ShowCheckBox = true;
             this.datePicker_AutoriFin.Size = new System.Drawing.Size(100, 20);
             this.datePicker_AutoriFin.TabIndex = 13;
+            this.datePicker_AutoriFin.ValueChanged += new System.EventHandler(this.datePicker_AutoriFin_ValueChanged);
             // 
             // cbox_Estatus
             // 
@@ -173,7 +182,7 @@
             this.cbox_Estatus.Items.AddRange(new object[] {
             "(TODAS)",
             "EN ESPERA",
-            "ACEPTADO",
+            "AUTORIZADO",
             "SURTIDO",
             "PAGADO"});
             this.cbox_Estatus.Location = new System.Drawing.Point(99, 45);
@@ -200,6 +209,7 @@
             this.datePicker_AutoriIni.ShowCheckBox = true;
             this.datePicker_AutoriIni.Size = new System.Drawing.Size(100, 20);
             this.datePicker_AutoriIni.TabIndex = 10;
+            this.datePicker_AutoriIni.ValueChanged += new System.EventHandler(this.datePicker_AutoriIni_ValueChanged);
             // 
             // label11
             // 
@@ -259,6 +269,7 @@
             this.datePicker_SolicitudFin.ShowCheckBox = true;
             this.datePicker_SolicitudFin.Size = new System.Drawing.Size(100, 20);
             this.datePicker_SolicitudFin.TabIndex = 15;
+            this.datePicker_SolicitudFin.ValueChanged += new System.EventHandler(this.datePicker_SolicitudFin_ValueChanged);
             // 
             // datePicker_EntregaFin
             // 
@@ -269,6 +280,7 @@
             this.datePicker_EntregaFin.ShowCheckBox = true;
             this.datePicker_EntregaFin.Size = new System.Drawing.Size(100, 20);
             this.datePicker_EntregaFin.TabIndex = 14;
+            this.datePicker_EntregaFin.ValueChanged += new System.EventHandler(this.datePicker_EntregaFin_ValueChanged);
             // 
             // datePicker_SolicitudIni
             // 
@@ -279,6 +291,7 @@
             this.datePicker_SolicitudIni.ShowCheckBox = true;
             this.datePicker_SolicitudIni.Size = new System.Drawing.Size(100, 20);
             this.datePicker_SolicitudIni.TabIndex = 12;
+            this.datePicker_SolicitudIni.ValueChanged += new System.EventHandler(this.datePicker_SolicitudIni_ValueChanged);
             // 
             // datePicker_EntregaIni
             // 
@@ -289,6 +302,7 @@
             this.datePicker_EntregaIni.ShowCheckBox = true;
             this.datePicker_EntregaIni.Size = new System.Drawing.Size(100, 20);
             this.datePicker_EntregaIni.TabIndex = 11;
+            this.datePicker_EntregaIni.ValueChanged += new System.EventHandler(this.datePicker_EntregaIni_ValueChanged);
             // 
             // label7
             // 
@@ -340,7 +354,7 @@
             "(TODOS)"});
             this.cbox_Proovedor.Location = new System.Drawing.Point(621, 75);
             this.cbox_Proovedor.Name = "cbox_Proovedor";
-            this.cbox_Proovedor.Size = new System.Drawing.Size(135, 21);
+            this.cbox_Proovedor.Size = new System.Drawing.Size(158, 21);
             this.cbox_Proovedor.TabIndex = 1;
             // 
             // label1
@@ -368,7 +382,7 @@
             "(TODOS)"});
             this.cbx_Solicitante.Location = new System.Drawing.Point(621, 48);
             this.cbx_Solicitante.Name = "cbx_Solicitante";
-            this.cbx_Solicitante.Size = new System.Drawing.Size(135, 21);
+            this.cbx_Solicitante.Size = new System.Drawing.Size(158, 21);
             this.cbx_Solicitante.TabIndex = 26;
             // 
             // dataGridView1
@@ -410,7 +424,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.Login;
+            this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.Captura1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
@@ -418,8 +432,9 @@
             this.panel1.Controls.Add(this.pBSalir2);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 74);
+            this.panel1.Size = new System.Drawing.Size(973, 119);
             this.panel1.TabIndex = 3;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // label3
             // 

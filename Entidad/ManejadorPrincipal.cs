@@ -31,10 +31,10 @@ namespace Entidad
             return IbaseDatos.Ciudades(Datos);
         }
 
-        public void CrearBase()
-        {
-            //IbaseDatos.CrearBase();
-        }
+        //public void CrearBase()
+        //{
+        //    IbaseDatos.CrearBase();
+        //}
 
         public bool setClaveRegistro(string[] Datos)
         {
@@ -157,6 +157,21 @@ namespace Entidad
         public int ActualizarProveedor(string[] Datos)
         {
             return IbaseDatos.ActualizarProveedor(Datos);
+        }
+
+        public DataTable getMaterialesProducto(string[] Datos)
+        {
+            return IbaseDatos.getMaterialesProducto(Datos);
+        }
+
+        public DataTable getDatosProductosPedido(string[] Datos)
+        {
+            return IbaseDatos.getDatosProductosPedido(Datos);
+        }
+
+        public int ModificarPedido(string[] Datos)
+        {
+            return IbaseDatos.ModificarPedido(Datos);
         }
     }
 }

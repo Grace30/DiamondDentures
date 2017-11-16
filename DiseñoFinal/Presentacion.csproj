@@ -55,13 +55,19 @@
     <ManifestKeyFile>Presentacion_ClaveTemporal.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Logo dd.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -246,6 +252,12 @@
     <Compile Include="AsistenciaPorEmpleado.Designer.cs">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja.Designer.cs">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Balance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +290,17 @@
     </Compile>
     <Compile Include="CorrecionBalance.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiamondDenturesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MenuContabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuContabilidad.designer.cs">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="CorrecionBalance.Designer.cs">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
@@ -317,6 +340,11 @@
     <Compile Include="OrdenesDeCompra.Designer.cs">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ProveedoresJesusCrack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +356,12 @@
     </Compile>
     <Compile Include="ReportesM\BalanceGeneral.Designer.cs">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\FormaPedido2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormaPedido2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportesM\PantallaListados\CamposListados.cs" />
     <Compile Include="ReportesM\PantallaListados\PListadoClientes.cs">
@@ -632,6 +666,12 @@
     <Compile Include="EditarPieza.Designer.cs">
       <DependentUpon>EditarPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entregas.Designer.cs">
+      <DependentUpon>Entregas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FabricarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -693,12 +733,6 @@
     <Compile Include="Materiales.Designer.cs">
       <DependentUpon>Materiales.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesM\MenuContabilidad.Designer.cs">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -722,6 +756,12 @@
     </Compile>
     <Compile Include="Menú Admin.Designer.cs">
       <DependentUpon>Menú Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageValidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageValidate.Designer.cs">
+      <DependentUpon>MessageValidate.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportesM\MenúReportes.cs">
       <SubType>Form</SubType>
@@ -797,11 +837,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -849,6 +884,18 @@
     </Compile>
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaForma2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
+      <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retiro.Designer.cs">
+      <DependentUpon>Retiro.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportesM\ReportesAlmacen.cs">
       <SubType>Form</SubType>
@@ -1079,6 +1126,9 @@
     <EmbeddedResource Include="AsistenciaPorEmpleado.resx">
       <DependentUpon>AsistenciaPorEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caja.resx">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Balance.resx">
       <DependentUpon>Balance.cs</DependentUpon>
     </EmbeddedResource>
@@ -1096,6 +1146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CorrecionBalance.resx">
       <DependentUpon>CorrecionBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuContabilidad.resx">
+      <DependentUpon>MenuContabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntradaYSalida.resx">
       <DependentUpon>EntradaYSalida.cs</DependentUpon>
@@ -1117,6 +1170,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\BalanceGeneral.resx">
       <DependentUpon>BalanceGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\FormaPedido2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FormaPedido2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\PantallaListados\PListadoClientes.resx">
       <DependentUpon>PListadoClientes.cs</DependentUpon>
@@ -1309,6 +1366,9 @@
     <EmbeddedResource Include="EditarPieza.resx">
       <DependentUpon>EditarPieza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entregas.resx">
+      <DependentUpon>Entregas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FabricarProducto.resx">
       <DependentUpon>FabricarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -1341,9 +1401,6 @@
     <EmbeddedResource Include="Materiales.resx">
       <DependentUpon>Materiales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\MenuContabilidad.resx">
-      <DependentUpon>MenuContabilidad.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MenuGeneral.resx">
       <DependentUpon>MenuGeneral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1355,6 +1412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menú Admin.resx">
       <DependentUpon>Menú Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageValidate.resx">
+      <DependentUpon>MessageValidate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\MenúReportes.resx">
       <DependentUpon>MenúReportes.cs</DependentUpon>
@@ -1421,6 +1481,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
+      <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retiro.resx">
+      <DependentUpon>Retiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\ReportesAlmacen.resx">
       <DependentUpon>ReportesAlmacen.cs</DependentUpon>
@@ -1516,6 +1582,17 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaOficio.resx">
       <DependentUpon>VistaPreviaOficio.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DiamondDenturesDataSet.xsc">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiamondDenturesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiamondDenturesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiamondDenturesDataSet.xss">
+      <DependentUpon>DiamondDenturesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DiamondDenturesDataSetEber.xsc">
       <DependentUpon>DiamondDenturesDataSetEber.xsd</DependentUpon>
     </None>
@@ -1529,6 +1606,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Presentacion_ClaveTemporal.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2338,6 +2416,10 @@
     <None Include="Resources\11.png" />
     <None Include="Resources\0.png" />
     <None Include="Resources\+3.png" />
+    <None Include="Resources\Time Card_40px.png" />
+    <None Include="Resources\Balance.png" />
+    <None Include="Resources\fact1.PNG" />
+    <None Include="Resources\399191__spiceprogram__drip-echo.wav" />
     <None Include="Resources\User Male_10px.png" />
     <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Search Property_31px.png" />
@@ -2348,6 +2430,10 @@
     <None Include="Resources\Request3.png" />
     <None Include="Resources\Request2.png" />
     <None Include="Resources\Request1.png" />
+    <None Include="Resources\Request0.png" />
+    <None Include="Resources\Search Property_31px.png" />
+    <None Include="Resources\User Male_10px.png" />
+    <None Include="Resources\Print_25px.png" />
     <None Include="Resources\Invisible_20px.png" />
     <None Include="Resources\Eye_20px.png" />
     <None Include="Resources\Checkmark_20px.png" />

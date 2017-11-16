@@ -87,7 +87,7 @@ namespace DiseñoFinal
 
         private void Login_Load(object sender, EventArgs e)
         {
-            manp.CrearBase();                        
+            //manp.CrearBase();                        
         }
 
         private void bPSalir_MouseEnter(object sender, EventArgs e)

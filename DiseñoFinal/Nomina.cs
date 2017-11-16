@@ -22,8 +22,8 @@ namespace DiseñoFinal
         {
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
-            timerBanco.Start();
-            timerRequisiciones.Start();
+//            timerBanco.Start();
+  //          timerRequisiciones.Start();
         }
 
         private void firmarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)

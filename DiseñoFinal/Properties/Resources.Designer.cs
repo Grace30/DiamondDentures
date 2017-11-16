@@ -473,6 +473,16 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Balance {
+            get {
+                object obj = ResourceManager.GetObject("Balance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Banners_Web_Airen_franja_azul {
             get {
                 object obj = ResourceManager.GetObject("Banners-Web-Airen-franja-azul", resourceCulture);
@@ -641,6 +651,15 @@ namespace DiseñoFinal.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream drip_echo {
+            get {
+                return ResourceManager.GetStream("drip_echo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap eliminar {
@@ -673,6 +692,16 @@ namespace DiseñoFinal.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eye_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("Eye_20px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fabricar1 {
             get {
                 object obj = ResourceManager.GetObject("Fabricar1", resourceCulture);
@@ -686,6 +715,26 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap fact {
             get {
                 object obj = ResourceManager.GetObject("fact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fact1 {
+            get {
+                object obj = ResourceManager.GetObject("fact1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fact2 {
+            get {
+                object obj = ResourceManager.GetObject("fact2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -866,6 +915,16 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap Invisible_20px {
             get {
                 object obj = ResourceManager.GetObject("Invisible_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Invisible_20px1 {
+            get {
+                object obj = ResourceManager.GetObject("Invisible_20px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1396,6 +1455,16 @@ namespace DiseñoFinal.Properties {
         internal static System.Drawing.Bitmap tarjetas2 {
             get {
                 object obj = ResourceManager.GetObject("tarjetas2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Time_Card_40px {
+            get {
+                object obj = ResourceManager.GetObject("Time Card_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

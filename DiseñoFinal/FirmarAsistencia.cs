@@ -15,9 +15,18 @@ namespace DiseñoFinal
     {
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
+
+        
+		private void moverpantalla(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         public FirmarAsistencia()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,7 +37,7 @@ namespace DiseñoFinal
                         MessageBox.Show("Este usuario ya ha registrado su asistencia el dia de hoy");
                     else{
                         manejadorUsuario.RegistrarAsistencia(txt_Loginn.Text);
-                        MessageBox.Show("Operacion realizada con exito");
+                        MessageBox.Show("Bienvenido "+ manejadorUsuario.NombreEmpleados(txt_Loginn.Text) ,"Operacion realizada con exito");
                         txt_Paswordd.Clear();
                         txt_Loginn.Clear();
                         txt_Loginn.Focus();
@@ -70,6 +79,13 @@ namespace DiseñoFinal
         private void FirmarAsistencia_MouseDown(object sender, MouseEventArgs e)
         {
             MoveForm();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            lbl_FechaActual.Text = now.ToLongDateString();
+            lbl_HoraActual.Text = string.Format("{0:00}:{1}:{2}", now.Hour, now.Minute, now.Second);
         }
     }
 }

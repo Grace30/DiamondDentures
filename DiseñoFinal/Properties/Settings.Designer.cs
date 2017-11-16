@@ -28,6 +28,13 @@ namespace DiseñoFinal.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=rebeater.database.windows.net;Initial Catalog=DiamondDentures;Persist" +
             " Security Info=True;User ID=AdminDD;Password=Admin123123")]
+        public string DiamondDenturesConnectionStringReta
+        {
+            get
+            {
+                return ((string)(this["DiamondDenturesConnectionStringReta"]));
+            }
+        }
         public string DiamondDenturesConnectionString {
             get {
                 return ((string)(this["DiamondDenturesConnectionString"]));

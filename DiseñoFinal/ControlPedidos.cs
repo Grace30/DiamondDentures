@@ -973,7 +973,7 @@ namespace DiseñoFinal
 
                 string idPed = dgvPedidos[0, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString();
 
-                objForm.Folio = idPed;
+                objForm.Pedido = idPed;
 
                 objForm.ShowDialog();
 
@@ -993,7 +993,7 @@ namespace DiseñoFinal
 
                     string idPed = dgvPedidos[0, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString();
 
-                    objForm.Folio = idPed;
+                    objForm.Pedido = idPed;
 
                     objForm.ShowDialog();
                     //string[] Datos = { dgvPedidos[0, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString(), "CONFIRMADO" };

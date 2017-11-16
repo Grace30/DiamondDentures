@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using Entidad;
 
 namespace DiseñoFinal
@@ -14,6 +15,7 @@ namespace DiseñoFinal
     public partial class OrdenesDeCompra : Form
     {
         ManejadorRequisicion manejadorRequisicion = new ManejadorRequisicion();
+        ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
 
         public OrdenesDeCompra()
         {
@@ -22,11 +24,18 @@ namespace DiseñoFinal
 
         private void OrdenesDeCompra_Load(object sender, EventArgs e)
         {
-            button3.Text = "ASFGDTREWLASFGDTREWLASFGDTREWLASFGDTREWL";
+            button1.PerformClick();
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
+
+            new Thread(LlenarCboxContadores).Start();
+            new Thread(LlenarCboxEmpleados).Start();
+            new Thread(LlenarCboxProveedores).Start();
+
             cbox_Autorizo.SelectedIndex = 0;
             cbox_Estatus.SelectedIndex = 0;
             cbox_EstatusSurtido.SelectedIndex = 0;
             cbx_Solicitante.SelectedIndex = 0;
+
             cbox_Proovedor.SelectedIndex = 0;
 
         }
@@ -63,10 +72,8 @@ namespace DiseñoFinal
             toolStripStatusLabel1.Text = "Requisiciones: Se obtuvieron " + dataGridView1.RowCount +  " registros";
         }
 
-        private void pBSalir2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void pBSalir2_Click(object sender, EventArgs e) { this.Close(); }
+
         int i_EstadoSurtido = 0;
         private void cbox_EstatusSurtido_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -82,10 +89,11 @@ namespace DiseñoFinal
         private void cbox_Estatus_SelectedIndexChanged(object sender, EventArgs e)
         {/*
             (TODAS)
-EN ESPERA
-ACEPTADO
-SURTIDO
-PAGADO*/
+            EN ESPERA
+            AUTORIZADO
+            SURTIDO
+            PAGADO*/
+
             switch (cbox_Estatus.SelectedIndex)
             {
                 case 1:
@@ -105,13 +113,37 @@ PAGADO*/
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ClearSelection();
-            dataGridView1.Rows[e.RowIndex].Selected = true; 
+            if (e.RowIndex >= 0)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+            }
+
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridView1.Rows[e.RowIndex].Selected = true;
+            new AprobarRequisicion(Convert.ToInt32(dataGridView1[0,e.RowIndex].Value)).ShowDialog();
+            button1.PerformClick();
+        }
 
+      
+
+        private void LlenarCboxEmpleados() { cbx_Solicitante.Items.AddRange(manejadorUsuario.NombreEmpleados()); }
+        private void LlenarCboxContadores() { cbox_Autorizo.Items.AddRange(manejadorUsuario.NombreEmpleadosContabilidad()); }
+        private void LlenarCboxProveedores() { cbox_Proovedor.Items.AddRange(manejadorUsuario.NombreProveedores()); }
+        private void datePicker_SolicitudIni_ValueChanged(object sender, EventArgs e) { datePicker_SolicitudFin.Checked = datePicker_SolicitudIni.Checked;}
+        private void datePicker_SolicitudFin_ValueChanged(object sender, EventArgs e) { datePicker_SolicitudIni.Checked = datePicker_SolicitudFin.Checked;}
+        private void datePicker_AutoriIni_ValueChanged(object sender, EventArgs e) { datePicker_AutoriFin.Checked = datePicker_AutoriIni.Checked;}
+        private void datePicker_AutoriFin_ValueChanged(object sender, EventArgs e) { datePicker_AutoriIni.Checked = datePicker_AutoriFin.Checked;}
+        private void datePicker_EntregaIni_ValueChanged(object sender, EventArgs e){ datePicker_EntregaFin.Checked = datePicker_EntregaIni.Checked;}
+        private void datePicker_EntregaFin_ValueChanged(object sender, EventArgs e) { datePicker_EntregaIni.Checked = datePicker_EntregaFin.Checked; }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

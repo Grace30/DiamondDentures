@@ -18,24 +18,27 @@ namespace DiseñoFinal
         ManejadorRegistroDentista marr = new ManejadorRegistroDentista();
         ManejadorPrincipal map = new ManejadorPrincipal();
         Validación v = new Validación();
-        string preciounitario = "0", preciounitario2 = "0";
-        int punitario = 0, subtotal = 0;
+        string preciounitario = "0", preciounitario2 = "0", preciounitario3 = "0";
+        float punitario = 0, subtotal = 0;
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         Form pantalla;
+        int filaactual;
+        string UsuarioActual;
         public Pedido()
         {
             InitializeComponent();
             It = new InterfaceUsuario(this);
         }
 
-        public Pedido(Form pantalla)
+        public Pedido(Form pantalla, string usuarioactual)
         {
             InitializeComponent();
             It = new InterfaceUsuario(this);
             this.pantalla = pantalla;
+            UsuarioActual = usuarioactual;
         }
 
         private void pBSalir_Click(object sender, EventArgs e)
@@ -88,12 +91,13 @@ namespace DiseñoFinal
             foreach (DataRow fila in Materiales.Rows)
             {
                 cBMaterial.Items.Add(fila["Nombre"].ToString());
+                comboBox1.Items.Add(fila["Nombre"].ToString());
             }
         }
 
         private void cBCedula_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -112,20 +116,18 @@ namespace DiseñoFinal
                     {
                         dato = item["ID"].ToString();
                     }
-                    string[] Datos = { dato, "SIN ELABORAR"};
+                    string[] Datos = { dato, UsuarioActual ,"SIN ELABORAR"};
                     It.enviarEvento("CrearPedido", Datos);
                     cBMaterial.Enabled = true;
                     cBProducto.Enabled = true;
+                    comboBox1.Enabled = true;
                     pBAñadir.Enabled = true;
-                    pBVerP.Enabled = true;
                     nCantidad.Enabled = true;
                     linkLabel2.Enabled = false;
                     linkLabel3.Enabled = false;
                 }
                 else
                     MessageBox.Show("No se ha elegido ninguna Cedula, favor de elegir una");
-                
-
             }
             
         }
@@ -138,34 +140,36 @@ namespace DiseñoFinal
             Productos = map.PrecioProducto(Datos);
             foreach (DataRow fila in Productos.Rows)
             {
-                txtCodigo.Text = (fila["Codigo"].ToString());
+                txtCodigo.Text = (fila["CodigoProducto"].ToString());
             }
             foreach (DataRow fila in Productos.Rows)
             {
-                preciounitario=(fila["Precio"].ToString());
+                preciounitario=(fila["PrecioBase"].ToString());
             }
-            punitario += int.Parse(preciounitario) + int.Parse(preciounitario2);
+            punitario += float.Parse(preciounitario) + float.Parse(preciounitario2);
             subtotal = punitario * (int)nCantidad.Value;
             txtPrecioUnitario.Text = punitario.ToString();
             txtSubTotal.Text = subtotal.ToString();
         }
 
-        private void cBMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        private string sacacodigomaterial(string nombrematerial, TextBox txt)
         {
-            string[] Datos = { cBMaterial.Text};
+            string[] Datos = { nombrematerial };
             punitario = 0;
             var Materiales = new DataTable();
             Materiales = map.PrecioMaterial(Datos);
             foreach (DataRow fila in Materiales.Rows)
             {
-                txtCodigoMaterial.Text = (fila["Codigo"].ToString());
+                txt.Text = (fila["CodigoMaterial"].ToString());
             }
-            foreach (DataRow fila in Materiales.Rows)
-            {
-                preciounitario2 = (fila["Precio"].ToString());
-            }
-            punitario += int.Parse(preciounitario) + int.Parse(preciounitario2);
-            subtotal = punitario * (int)nCantidad.Value;
+            return Materiales.Rows[0]["PrecioBase"].ToString();
+        }
+
+        private void cBMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            preciounitario2 = sacacodigomaterial(cBMaterial.Text, txtCodigoMaterial);
+            punitario += float.Parse(preciounitario) + float.Parse(preciounitario2) + float.Parse(preciounitario3);
+            subtotal = punitario * (float)nCantidad.Value;
             txtPrecioUnitario.Text = punitario.ToString();
             txtSubTotal.Text = subtotal.ToString();
         }
@@ -235,6 +239,151 @@ namespace DiseñoFinal
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] Datos = { lblPedido.Text.Substring(1), dataGridView1[0, filaactual].Value.ToString() };
+                map.SacarProducto(Datos);
+                RellenarTODO();
+            }
+            catch (Exception) { MessageBox.Show("No hay productos que sacar"); }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            DateTime hoy = DateTime.Now;
+            hoy = dateTimePicker1.Value;
+            if (checkBox1.Checked)
+                hoy.AddDays(-3);
+            else
+                hoy.AddDays(3);
+            dateTimePicker1.Value = hoy;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            filaactual = e.RowIndex;
+        }
+
+        public void RellenarTODO()
+        {
+            float Total = 0;            
+            string[] Datos = new string[] { lblPedido.Text.Substring(1) };
+            DataTable tabla = map.getDatosProductosPedido(Datos);
+            dataGridView1.DataSource = tabla;
+            float dias = 0;
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                dias += float.Parse(tabla.Rows[i]["Tiempo"].ToString()) * float.Parse(tabla.Rows[i]["Cantidad"].ToString());
+                Total += float.Parse(tabla.Rows[i]["SubTotal"].ToString());
+            }
+            txtTotal.Text = Total.ToString();
+            CalculaFecha(dias);
+        }
+
+        public void CalculaFecha(float dias)
+        {
+            DateTime hoy = DateTime.Now;
+            int z = 0;
+            if (checkBox1.Checked)
+                dias += 3;
+            while (dias != z)
+            {
+                if (hoy.DayOfWeek.ToString() != "Saturday" && hoy.DayOfWeek.ToString() != "Sunday")
+                {
+                    z++;
+                    hoy = hoy.AddDays(1);
+                }
+                else
+                    hoy = hoy.AddDays(1);
+
+            }
+            dateTimePicker1.Value = hoy;
+        }
+
+        private void pBGenerarPedido_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount != 0)
+            {
+                string[] Datos = new string[17];
+                string[] id = { lblPedido.Text.Substring(1) };
+                var IDDentista = new DataTable();
+                IDDentista = marr.selectIDDentista(id);
+                foreach (DataRow item in IDDentista.Rows)
+                {
+                    Datos[1] = item["IDDentista"].ToString();
+                }
+                string urgente = "NO";
+                if (checkBox1.Checked)
+                    urgente = "SI";
+                Datos[0] = lblPedido.Text.Substring(1);
+                Datos[2] = UsuarioActual;
+                Datos[4] = DateTime.Today.ToShortDateString();
+                string x = Datos[4];
+                Datos[5] = dateTimePicker1.Value.ToShortDateString();
+                Datos[4] = x.Substring(6);
+                Datos[4] += "-" + x.Substring(3, 2);
+                Datos[4] += "-" + x.Substring(0, 2);
+                x = Datos[5];
+                Datos[5] = x.Substring(6);
+                Datos[5] += "-" + x.Substring(3, 2);
+                Datos[5] += "-" + x.Substring(0, 2);
+                Datos[6] = "";
+                Datos[8] = txtTotal.Text;
+                Datos[9] = "";
+                Datos[3] = "SIN CONFIRMAR";
+                Datos[7] = urgente;
+                Datos[10] = "NO";
+                Datos[11] = txtTotal.Text;
+                Datos[12] = "16%";
+                Datos[13] = "NO";
+                Datos[14] = "";
+                Datos[15] = "NO";
+                Datos[16] = "";
+                It.enviarEvento("GenerarPedido", Datos);
+
+                string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioActual, v.FormatoFecha(DateTime.Now), v.FormatoFecha(dateTimePicker1.Value) };
+                It.enviarEvento("Registrar Datos Forma", Datos1);
+                VistaPreviaForma objForm = new VistaPreviaForma();
+                string idPed = lblPedido.Text.Substring(1);
+                objForm.Pedido = idPed;
+                objForm.ShowDialog();
+                checkBox1.Enabled = false;
+            }
+            else
+                MessageBox.Show("No se puede Elaborar una forma de pedido sin productos");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            preciounitario3 = sacacodigomaterial(comboBox1.Text, textBox1);
+            punitario += float.Parse(preciounitario) + float.Parse(preciounitario2) + float.Parse(preciounitario3);
+            subtotal = punitario * (float)nCantidad.Value;
+            txtPrecioUnitario.Text = punitario.ToString();
+            txtSubTotal.Text = subtotal.ToString();
+        }
+
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string[] Datos = { cBCedula.Text };
@@ -246,21 +395,17 @@ namespace DiseñoFinal
             if(cBMaterial.SelectedItem!=null && cBProducto.SelectedItem!=null && txtCodigo.Text!="" && 
                 txtCodigoMaterial.Text!="" && txtPrecioUnitario.Text!="" && txtSubTotal.Text != "")
             {
-                int Pedido = 0;
-                var Ultimo = new DataTable();
-                Ultimo = map.getUltimoPedido();
-                foreach (DataRow fila in Ultimo.Rows)
+                string[] Datos = { txtCodigoMaterial.Text, textBox1.Text, txtCodigo.Text };
+                DataTable gg = map.getMaterialesProducto(Datos);
+                if (gg.Rows.Count != 0)
                 {
-                    if (fila["Ultimo"].ToString() != "")
-                        Pedido = int.Parse(fila["Ultimo"].ToString());
-                    else
-                        Pedido = 1;
+                    string especial = gg.Rows[0]["CodigoEspecial"].ToString();
+                    Datos = new string[]{ lblPedido.Text.Substring(1), especial, nCantidad.Value.ToString(), txtSubTotal.Text };
+                    map.InsertarProducto(Datos);
+                    RellenarTODO();
                 }
-                string[] x = {txtCodigo.Text};
-                Ultimo = map.getIDProducto(x);
-                DataRow fila2 = Ultimo.Rows[0];
-                string[] Datos = { "" + Pedido, fila2["ID"].ToString(), txtCodigoMaterial.Text, txtPrecioUnitario.Text, nCantidad.Value.ToString(), txtSubTotal.Text };
-                It.enviarEvento("InsertarProducto", Datos);
+                else
+                    MessageBox.Show("No existe esa clase de combinación de producto y materiales dentro de la base de datos");                               
             }
         }
     }

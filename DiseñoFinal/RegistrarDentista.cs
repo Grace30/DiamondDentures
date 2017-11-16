@@ -38,8 +38,13 @@ namespace DiseñoFinal
                 (maskedCodigo.Text.Length == 5 || maskedCodigo.Text.Length == 6) &&
                 maskedTCasa.Text.Length == 13 && txtCedula.Text.Length == 7 && txtRFC.Text.Length == 13)
             {
-                string[] Datos = { txtCedula.Text, txtRFC.Text.ToUpper(), txtNombre.Text.ToUpper(), txtDireccion.Text, txtNumExt.Text, cbPais.Text,
-                    cbEstado.Text, cbMunicipio.Text, cbCiudad.Text, txtColonia.Text, maskedCodigo.Text, maskedTCasa.Text };
+                DateTime localdate = DateTime.Now.Date;
+                string año, mes, dia;
+                año = localdate.Year.ToString();
+                mes = localdate.Month.ToString();
+                dia = localdate.Day.ToString();
+                string[] Datos = { txtCedula.Text, txtRFC.Text.ToUpper(), txtNombre.Text.ToUpper(),txtApellidos.Text.ToUpper(), txtDireccion.Text, txtNumExt.Text, cbPais.Text,
+                    cbEstado.Text, cbMunicipio.Text, cbCiudad.Text, txtColonia.Text, maskedCodigo.Text, maskedTCasa.Text, txtEmail.Text, "0", txtConsultorio.Text, año+"-"+mes+"-"+dia, txtFechaNac.Text };
                 It.enviarEvento("Registrar Dentistax2", Datos);
 
             }
