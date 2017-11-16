@@ -19,6 +19,8 @@ namespace DiseñoFinal
         ManejadorRegistroDentista mar = new ManejadorRegistroDentista();
         Validación v = new Validación();
         string[] Datos;
+        InterfaceUsuario intusuario;
+        string UsuarioEnCurso = "";
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -34,6 +36,7 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             It = new InterfaceUsuario(this);
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
             this.Datos = Datos;
             this.pantalla = pantalla;
         }
@@ -142,12 +145,14 @@ namespace DiseñoFinal
                     Datos[7] = fila["Fabricante"].ToString();
                     Datos[8] = fila["Total"].ToString();
                     It.enviarEvento("GenerarPedido", Datos);
+
+                    //string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioEnCurso, v.FormatoFecha(DateTime.Now)
+                    //    //v.FormatoFecha(dateTimePicker1.Value)
+                    //};
+                    //It.enviarEvento("Registrar Datos Forma", Datos1);
                     VistaPreviaForma objForm = new VistaPreviaForma();
-
                     string idPed = lblPedido.Text.Substring(1);
-
                     objForm.Pedido = idPed;
-
                     objForm.ShowDialog();
                 }
                 else
@@ -251,10 +256,13 @@ namespace DiseñoFinal
                         It.enviarEvento("GenerarPedido", Datos);
                         MessageBox.Show("Pedido Confirmado");
                     }
-                    //VistaPreviaOficio objForm = new VistaPreviaOficio();
-                    //string idPed = lblPedido.Text.Substring(1);
-                    //objForm.IDPedido = idPed;
-                    //objForm.ShowDialog();
+
+                    string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioEnCurso, v.FormatoFecha(DateTime.Now), v.FormatoFecha(DateTime.Now) };
+                    It.enviarEvento("Registrar Datos Oficio", Datos1);
+                    VistaPreviaOficio objForm = new VistaPreviaOficio();
+                    string idPed = lblPedido.Text.Substring(1);
+                    objForm.Pedido = idPed;
+                    objForm.ShowDialog();
                 }
                 else
                     MessageBox.Show("No se puede confirmar un pedido sin estar elaborado, favor de elaborar");

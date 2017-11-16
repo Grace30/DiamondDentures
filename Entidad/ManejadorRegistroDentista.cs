@@ -64,6 +64,10 @@ namespace Entidad
         {
             return IbaseDatos.RegistrarDatosForma(Datos);
         }
+        public int RegistrarDatosOficio(string[] Datos)
+        {
+            return IbaseDatos.RegistrarDatosOficio(Datos);
+        }
 
     }
 }

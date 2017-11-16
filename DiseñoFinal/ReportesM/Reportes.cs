@@ -234,7 +234,7 @@ namespace DiseñoFinal
 
             string idPed= dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.Folio = idPed;
+            objForm.Pedido = idPed;
 
             objForm.ShowDialog();
         }
@@ -305,7 +305,7 @@ namespace DiseñoFinal
         {
             VistaPreviaOficio objForm = new VistaPreviaOficio();
 
-            objForm.Folio = IDPedido;
+            objForm.Pedido = IDPedido;
 
             objForm.ShowDialog();
         }

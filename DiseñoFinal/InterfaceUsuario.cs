@@ -699,6 +699,16 @@ namespace DiseñoFinal
                 else
                     MessageBox.Show("No se registraron los datos");
             }
+            if (Evento == "Registrar Datos Oficio")
+            {
+
+                if (marr.RegistrarDatosOficio(Datos) != 0)
+                {
+                    MessageBox.Show("Confirmado satisfactoriamente");
+                }
+                else
+                    MessageBox.Show("No se pudo confirmar");
+            }
             if (Evento == "Modificar Datos Factura")
             {
                 if (maf.ModificarDatosFactura(Datos) != 0)

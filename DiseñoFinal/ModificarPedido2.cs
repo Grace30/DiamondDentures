@@ -27,11 +27,14 @@ namespace DiseñoFinal
         private extern static void ReleaseCapture();
         Form llamada;
         int filaactual;
+        InterfaceUsuario intusuario;
+        string UsuarioEnCurso = "";
         public ModificarPedido2(string[] Datos)
         {
             InitializeComponent();
             this.Datos = Datos;
             It = new InterfaceUsuario(this);
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
 
         public ModificarPedido2(string[] Datos, Form llamada)
@@ -39,6 +42,7 @@ namespace DiseñoFinal
             InitializeComponent();
             this.Datos = Datos;
             It = new InterfaceUsuario(this);
+            
             this.llamada = llamada;
         }
 
@@ -269,12 +273,13 @@ namespace DiseñoFinal
                 Datos[10] = "";
                 Datos[11] = "SI";
                 map.ModificarPedido(Datos);
-                //VistaPreviaForma objForm = new VistaPreviaForma();
-                //string idPed = lblPedido.Text.Substring(1);
 
-                //objForm.IDPedido = idPed;
-
-                //objForm.ShowDialog();
+                string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioEnCurso, v.FormatoFecha(DateTime.Now), v.FormatoFecha(dateTimePicker1.Value) };
+                It.enviarEvento("Registrar Datos Forma", Datos1);
+                VistaPreviaForma objForm = new VistaPreviaForma();
+                string idPed = lblPedido.Text.Substring(1);
+                objForm.Pedido = idPed;
+                objForm.ShowDialog();
                 checkBox1.Enabled = false;
             }
             else

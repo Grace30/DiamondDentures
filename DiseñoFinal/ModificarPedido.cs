@@ -25,6 +25,7 @@ namespace DiseñoFinal
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         Form pantalla;
+        string UsuarioActual;
         public ModificarPedido(string[] Datos)
         {
             InitializeComponent();
@@ -32,11 +33,12 @@ namespace DiseñoFinal
             It = new InterfaceUsuario(this);
         }
 
-        public ModificarPedido(string[] Datos, Form pantalla)
+        public ModificarPedido(string[] Datos, Form pantalla, string usuarioactual)
         {
             InitializeComponent();
             this.Datos = Datos;
             It = new InterfaceUsuario(this);
+            UsuarioActual = usuarioactual;
             this.pantalla = pantalla;
         }
 
@@ -201,12 +203,12 @@ namespace DiseñoFinal
                 Datos[2] = "POR CONFIRMAR";
                 Datos[7] = "";
                 It.enviarEvento("GenerarPedido", Datos);
+
+                string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioActual, v.FormatoFecha(DateTime.Now), v.FormatoFecha(dateTimePicker1.Value) };
+                It.enviarEvento("Registrar Datos Forma", Datos1);
                 VistaPreviaForma objForm = new VistaPreviaForma();
-
                 string idPed = lblPedido.Text.Substring(1);
-
-            objForm.Pedido = idPed;
-
+                objForm.Pedido = idPed;
                 objForm.ShowDialog();
                 checkBox1.Enabled = false;
             }

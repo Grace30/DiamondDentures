@@ -140,6 +140,11 @@ namespace Datos
             string[] Parametros = { "@Pedido", "@Loginn", "@Fecha", "@FechaEntrega" };
             return Ejecutar("FormaDePedido", Parametros, Datos[0], Datos[1], Datos[2], Datos[3]);
         }
+        public int RegistrarDatosOficio(string[] Datos)
+        {
+            string[] Parametros = { "@Pedido", "@Loginn", "@Fecha", "@FechaConfirmacion" };
+            return Ejecutar("Oficio", Parametros, Datos[0], Datos[1], Datos[2], Datos[3]);
+        }
 
     }
 }
