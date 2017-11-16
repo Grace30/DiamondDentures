@@ -2349,6 +2349,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo dd.ico" />
+    <None Include="Resources\paysheet.png" />
     <None Include="Resources\Time Card_40px.png" />
     <None Include="Resources\Balance.png" />
     <None Include="Resources\fact1.PNG" />
