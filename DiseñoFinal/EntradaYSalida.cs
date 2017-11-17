@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
-using 
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -81,11 +81,13 @@ namespace DiseñoFinal
         {
             if (radioButton1.Checked)
             {
-
+                VistaPreviaEyS vpe = new VistaPreviaEyS();
+                vpe.ShowDialog();
             }
             else if (radioButton2.Checked)
             {
-
+                VistaPreviaSyE vps = new VistaPreviaSyE();
+                vps.ShowDialog();
             }
         }
     }
