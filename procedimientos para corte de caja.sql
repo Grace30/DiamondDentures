@@ -148,3 +148,5 @@ create proc UltimaVenta as select top(1) * from Ventas where IDPedido is not nul
 select * from Ventas
 select * from Pedido
 select * from ProductosPedido
+
+select * from CorteCaja
