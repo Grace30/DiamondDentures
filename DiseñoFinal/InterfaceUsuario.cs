@@ -16,6 +16,7 @@ namespace DiseñoFinal
         ManejadorRegistroTarjeta mart = new ManejadorRegistroTarjeta();
         ManejadorRegistroUsuario maru = new ManejadorRegistroUsuario();
         ManejadorRegistroDentista marr = new ManejadorRegistroDentista();
+        ManejadorReportes mar = new ManejadorReportes();
         ManejadorFacturas maf = new ManejadorFacturas();
         ManejadorPrincipal manp = new ManejadorPrincipal();
         public bool EsAdmin = false;
@@ -709,6 +710,16 @@ namespace DiseñoFinal
                 else
                     MessageBox.Show("No se pudo confirmar");
             }
+            if (Evento == "Registrar Datos Nota")
+            {
+
+                if (mar.RegistrarDatosNota(Datos) != 0)
+                {
+                    MessageBox.Show("Terminado satisfactoriamente");
+                }
+                else
+                    MessageBox.Show("No se pudo terminar");
+            }
             if (Evento == "Modificar Datos Factura")
             {
                 if (maf.ModificarDatosFactura(Datos) != 0)
@@ -738,11 +749,11 @@ namespace DiseñoFinal
                 {
                     notas.NoPedido = fila["IDPedido"].ToString();
                     notas.Nombre = fila["Nombre"].ToString();
+                    notas.Nombre = fila["Apellidos"].ToString();
                     notas.RFC = fila["RFC"].ToString();
                     notas.Direccion = fila["Direccion"].ToString();
                     notas.Telefono = fila["Telefono"].ToString();
                     notas.Fecha = fila["FechaEntrega"].ToString();
-                    notas.Comentario = fila["Comentario"].ToString();
 
                 }
                 desplegarPantalla(notas);

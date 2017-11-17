@@ -339,6 +339,11 @@ namespace DiseñoFinal
                     c19.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
                     crystalReportViewer1.ReportSource = c19;
                     break;
+                case "Nota":
+                    Reportes n = new Reportes();
+                    n.ShowDialog();
+                    break;
+
 
 
 

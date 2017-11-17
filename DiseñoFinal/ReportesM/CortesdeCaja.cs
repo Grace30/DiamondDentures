@@ -134,6 +134,11 @@ namespace DiseñoFinal.ReportesM
                 renglon++;
             }
         }
+
+        private void txtDato_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
