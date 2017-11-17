@@ -60,7 +60,7 @@ namespace DiseñoFinal
         {
             if (dgvPiezas.CurrentCell.Selected == true)
             {
-                string[] Datos = { dgvPiezas[1, dgvPiezas.CurrentCell.RowIndex].Value.ToString() };
+                string[] Datos = { dgvPiezas[0, dgvPiezas.CurrentCell.RowIndex].Value.ToString() };
                 intusuario.enviarEvento("PantallaActualizarPieza", Datos);
 
 

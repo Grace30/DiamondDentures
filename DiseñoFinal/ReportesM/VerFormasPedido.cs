@@ -69,9 +69,9 @@ namespace DiseñoFinal.ReportesM
 
         private void btnForma_Click(object sender, EventArgs e)
         {
-            VistaPreviaForma objForm = new VistaPreviaForma();
-            string Folio = dgvFormas[0, dgvFormas.CurrentCell.RowIndex].Value.ToString();
-            string Pedido = dgvFormas[0, dgvFormas.CurrentCell.RowIndex].Value.ToString();
+            VistaPreviaForma2 objForm = new VistaPreviaForma2();
+         string Folio = dgvFormas[1, dgvFormas.CurrentCell.RowIndex].Value.ToString();
+            string Pedido = dgvFormas[1, dgvFormas.CurrentCell.RowIndex].Value.ToString();
             objForm.Folio = Folio;
             objForm.Pedido = Pedido;
             objForm.ShowDialog();

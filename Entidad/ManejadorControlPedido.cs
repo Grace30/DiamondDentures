@@ -11,6 +11,7 @@ namespace Entidad
     public class ManejadorControlPedido
     {
         InterfaceBaseDeDatos IbaseDatos = new InterfaceBaseDeDatos();
+        
 
         public DataTable ObtenerPedido (string [] Datos)
         {
@@ -173,6 +174,88 @@ namespace Entidad
         public int InsertarDetalleRequisicion(string[] Datos)
         {
             return IbaseDatos.InsertarDetalleRequisicion(Datos);
+        }
+
+        public DataTable getPedidosSinPagar(string[] Datos)
+        {
+            return IbaseDatos.getPedidosSinPagar(Datos);
+        }
+
+        public DataTable getTicket(string[] Datos)
+        {
+            return IbaseDatos.getTicket(Datos);
+        }
+
+        public int PagarVenta(string[] Datos)
+        {
+            return IbaseDatos.PagarVenta(Datos);
+        }
+
+        public int ActualizaRestante(string[] Datos)
+        {
+            return IbaseDatos.ActualizaRestante(Datos);
+        }
+
+        public int CorteDeCaja (string[] Datos)
+        {
+            return IbaseDatos.CorteDeCaja(Datos);
+        }
+
+        public DataTable VentasPorCorte(string[] Datos)
+        {
+            return IbaseDatos.VentasPorCorte(Datos);
+        }
+        public DataTable ComprasPorCorte(string[] Datos)
+        {
+            return IbaseDatos.ComprasPorCorte(Datos);
+        }
+
+        public DataTable PedidosSinPagarBuscar(string[] Datos)
+        {
+            return IbaseDatos.getPedidosSinPagarBuscar(Datos);
+        }
+
+        public DataTable CajaActual(string[] Datos)
+        {
+            return IbaseDatos.CajaActual(Datos);
+        }
+
+        public DataTable UltimoCorte (string[] Datos)
+        {
+            return IbaseDatos.UltimoCorte(Datos);
+        }
+
+        public int InsertRetiro(string[] Datos)
+        {
+            return IbaseDatos.InsertRetiro(Datos);
+        }
+
+        public DataTable RetirosPorCorte(string[] Datos)
+        {
+            return IbaseDatos.RetirosPorCorte(Datos);
+        }
+        public DataTable VentasDelDia(string[] Datos)
+        {
+            return IbaseDatos.VentasDelDia(Datos);
+        }
+        public DataTable RetirosDelDia(string[] Datos)
+        {
+            return IbaseDatos.RetirosDelDia(Datos);
+        }
+
+        public DataTable VentasConTarjeta(string[] Datos)
+        {
+            return IbaseDatos.VentasConTarjeta(Datos);
+        }
+
+        public DataTable PedidosPorEntregar(string[] Datos)
+        {
+            return IbaseDatos.PedidosPorEntregar(Datos);
+        }
+
+        public int EntregaPedido(string[] Datos)
+        {
+            return IbaseDatos.EntregaPedido(Datos);
         }
     }
 }
