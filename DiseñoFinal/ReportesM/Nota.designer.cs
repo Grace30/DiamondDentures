@@ -52,12 +52,6 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +59,13 @@
             this.pBActualizar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -248,6 +249,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.lblApellidos);
             this.groupBox1.Controls.Add(this.lblTel);
             this.groupBox1.Controls.Add(this.lblDireccion);
             this.groupBox1.Controls.Add(this.lblRFC);
@@ -270,6 +273,7 @@
             this.dgvProducto.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducto.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -286,8 +290,7 @@
             this.Cant,
             this.Producto,
             this.Mat,
-            this.Prec,
-            this.Imp});
+            this.Prec});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,48 +313,8 @@
             this.dgvProducto.RowHeadersVisible = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgvProducto.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvProducto.Size = new System.Drawing.Size(584, 104);
+            this.dgvProducto.Size = new System.Drawing.Size(584, 117);
             this.dgvProducto.TabIndex = 224;
-            // 
-            // Cod
-            // 
-            this.Cod.HeaderText = "Código";
-            this.Cod.Name = "Cod";
-            this.Cod.ReadOnly = true;
-            this.Cod.Width = 70;
-            // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Cantidad";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            this.Cant.Width = 70;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 120;
-            // 
-            // Mat
-            // 
-            this.Mat.HeaderText = "Material";
-            this.Mat.Name = "Mat";
-            this.Mat.ReadOnly = true;
-            this.Mat.Width = 120;
-            // 
-            // Prec
-            // 
-            this.Prec.HeaderText = "Precio Unitario";
-            this.Prec.Name = "Prec";
-            this.Prec.ReadOnly = true;
-            // 
-            // Imp
-            // 
-            this.Imp.HeaderText = "Importe";
-            this.Imp.Name = "Imp";
-            this.Imp.ReadOnly = true;
             // 
             // label13
             // 
@@ -417,6 +380,56 @@
             this.panel1.TabIndex = 244;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.Location = new System.Drawing.Point(16, 37);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(63, 15);
+            this.lblApellidos.TabIndex = 222;
+            this.lblApellidos.Text = "Apellidos :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(78, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 223;
+            this.label9.Text = "label21";
+            // 
+            // Cod
+            // 
+            this.Cod.HeaderText = "Código";
+            this.Cod.Name = "Cod";
+            this.Cod.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Producto y Materiales";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Precio Unitario";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Mat
+            // 
+            this.Mat.HeaderText = "Cantidad";
+            this.Mat.Name = "Mat";
+            this.Mat.ReadOnly = true;
+            // 
+            // Prec
+            // 
+            this.Prec.HeaderText = "SubTotal";
+            this.Prec.Name = "Prec";
+            this.Prec.ReadOnly = true;
+            // 
             // Nota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,12 +493,6 @@
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imp;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label4;
@@ -493,5 +500,12 @@
         private System.Windows.Forms.PictureBox pBActualizar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblApellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prec;
     }
 }

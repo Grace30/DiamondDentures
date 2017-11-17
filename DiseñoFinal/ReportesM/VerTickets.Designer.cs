@@ -41,6 +41,8 @@
             this.FechaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTicket = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepoVentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,13 +73,12 @@
             this.Descripcion,
             this.FechaPago});
             this.dgvRepoVentas.GridColor = System.Drawing.Color.Purple;
-            this.dgvRepoVentas.Location = new System.Drawing.Point(12, 56);
+            this.dgvRepoVentas.Location = new System.Drawing.Point(12, 104);
             this.dgvRepoVentas.Name = "dgvRepoVentas";
             this.dgvRepoVentas.ReadOnly = true;
             this.dgvRepoVentas.RowHeadersVisible = false;
             this.dgvRepoVentas.Size = new System.Drawing.Size(709, 244);
             this.dgvRepoVentas.TabIndex = 172;
-            this.dgvRepoVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepoVentas_CellContentClick);
             // 
             // FolioVenta
             // 
@@ -137,7 +138,7 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.Silver;
             this.btnTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicket.Location = new System.Drawing.Point(291, 329);
+            this.btnTicket.Location = new System.Drawing.Point(277, 354);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(192, 26);
             this.btnTicket.TabIndex = 184;
@@ -156,12 +157,32 @@
             this.label1.TabIndex = 188;
             this.label1.Text = "TICKETS DE VENTA";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(94, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 16);
+            this.label2.TabIndex = 195;
+            this.label2.Text = "Nombre Empleado o Folio";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(308, 58);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscar.TabIndex = 194;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // VerTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(739, 379);
+            this.ClientSize = new System.Drawing.Size(739, 392);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.dgvRepoVentas);
@@ -188,5 +209,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

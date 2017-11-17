@@ -23,8 +23,10 @@ namespace DiseñoFinal.ReportesM
 
         public void RellenarRequisicion()
         {
+            string[] Datos = { "", "" };
             var req = new DataTable();
-            req = mare.ObtenerDatosRequisicion();
+        
+            req = mare.ObtenerDatosRequisicion(Datos);
             dgvReq.RowCount = req.Rows.Count;
             dgvReq.ColumnCount = req.Columns.Count;
 
@@ -78,6 +80,29 @@ namespace DiseñoFinal.ReportesM
         private void dgvReq_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, System.EventArgs e)
+        {
+            var req = new DataTable();
+            string[] Datos = { txtBuscar.Text, txtBuscar.Text };
+            req = mare.ObtenerDatosRequisicion(Datos);
+            dgvReq.RowCount = req.Rows.Count;
+         //   dgvReq.ColumnCount = req.Columns.Count;
+
+            int renglon = 0;
+            foreach (DataRow fila in req.Rows)
+            {
+                dgvReq["IDRequisicion", renglon].Value = ReducirEspaciado(fila["IDRequisicion"].ToString());
+                dgvReq["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
+                dgvReq["CantidadTotal", renglon].Value = ReducirEspaciado(fila["CantidadTotal"].ToString());
+                dgvReq["FechadePedido", renglon].Value = ReducirEspaciado(fila["Fecha de Pedido"].ToString());
+                dgvReq["Surtido", renglon].Value = ReducirEspaciado(fila["Surtido"].ToString());
+                dgvReq["FechaAutorizado", renglon].Value = ReducirEspaciado(fila["FechaAutorizado"].ToString());
+                dgvReq["FechaSurtido", renglon].Value = ReducirEspaciado(fila["FechaSurtido"].ToString());
+                dgvReq["Proveedor", renglon].Value = ReducirEspaciado(fila["Proveedor"].ToString());
+                renglon++;
+            }
         }
     }
 }

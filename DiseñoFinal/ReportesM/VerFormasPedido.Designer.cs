@@ -42,6 +42,8 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFormas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +92,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFormas.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvFormas.Location = new System.Drawing.Point(24, 94);
+            this.dgvFormas.Location = new System.Drawing.Point(32, 93);
             this.dgvFormas.Name = "dgvFormas";
             this.dgvFormas.ReadOnly = true;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -143,12 +145,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 35);
+            this.label1.Location = new System.Drawing.Point(248, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 18);
             this.label1.TabIndex = 187;
             this.label1.Text = "FORMAS DE PEDIDO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(251, 44);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscar.TabIndex = 188;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(58, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 16);
+            this.label2.TabIndex = 189;
+            this.label2.Text = "Nombre Dentista o Folio";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // VerFormasPedido
             // 
@@ -156,6 +177,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(709, 361);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvFormas);
             this.Controls.Add(this.btnForma);
@@ -177,5 +200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomEmp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
     }
 }
