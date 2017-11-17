@@ -93,23 +93,56 @@ namespace DiseñoFinal
                 Tabla = mcp.VentasConTarjeta(Datos);
                 string banco = Tabla.Rows[0][0].ToString();
                 float cajachica = float.Parse(txtRestante.Text) * -1;
+                float cajamaxima = float.Parse(textBox1.Text);
+                //Que se pueda cambiar el fondo de caja y la caja máxima.
                 Datos = new string[]{ año + "-" + mes + "-" + dia,
-                    hora + ":" + minutos + ":" + segundos + ":" + milisegundos, UsuarioActual,"Admin","1500" ,txtMil.Text,
+                    hora + ":" + minutos + ":" + segundos + ":" + milisegundos, UsuarioActual,"Admin",cajachica.ToString() ,txtMil.Text,
                     txtQuinientos.Text, txtDosc.Text, txtCien.Text,
                     txtCincuenta.Text, txtVeinte.Text, txtDiez.Text, txtCinco.Text, txtDos.Text, txtUno.Text,
                     txtCincuentaCentavos.Text, txtVeinteCentavos.Text, txtDiezCentavos.Text, txtCincoCentavos.Text,
-                    txtEstimado.Text, txtTotal.Text, "10000", banco, rtxtComentarios.Text };
+                    txtEstimado.Text, txtTotal.Text, cajamaxima.ToString(), banco, rtxtComentarios.Text };
+                //Realizar un retiro aquí con todo
+                Retira();
                 if (mcp.CorteDeCaja(Datos) == 1)
                 {
-                    MessageBox.Show("Corte de Caja");
+                    Tabla = mcp.UltimoCorte(new string[0]);
                     VistaPreviaCorte obj = new VistaPreviaCorte();
-                    string Folio = "";
+                    string Folio = Tabla.Rows[0][0].ToString();
                     obj.Folio = Folio;
                     obj.ShowDialog();
                 }
                 else
                     MessageBox.Show("No transaccion");
             }
+        }
+
+        private void Retira()
+        {
+            int motivo = 0;
+            string[] Datos = { };
+            mcp = new ManejadorControlPedido();
+            var Pedidos = mcp.UltimoCorte(Datos);
+            int ultimocorte;
+            if (Pedidos.Rows[0][0].ToString() != "NULL")
+                ultimocorte = int.Parse(Pedidos.Rows[0][0].ToString()) + 1;
+            else
+                ultimocorte = 1;
+            DateTime localdate = DateTime.Now.Date;
+            string año, mes, dia, hora, minutos, segundos, milisegundos;
+            año = localdate.Year.ToString();
+            mes = localdate.Month.ToString();
+            dia = localdate.Day.ToString();
+            hora = DateTime.Now.Hour.ToString();
+            minutos = DateTime.Now.Minute.ToString();
+            segundos = DateTime.Now.Second.ToString();
+            milisegundos = DateTime.Now.Millisecond.ToString();
+            Datos = new string[] { ultimocorte.ToString(), año + "-" + mes + "-" + dia,
+                    hora + ":" + minutos + ":" + segundos + ":" + milisegundos, txtTotal.Text, txtMil.Text,
+                    txtQuinientos.Text, txtDosc.Text, txtCien.Text,
+                    txtCincuenta.Text, txtVeinte.Text, txtDiez.Text, txtCinco.Text, txtDos.Text, txtUno.Text,
+                    txtCincuentaCentavos.Text, txtVeinteCentavos.Text, txtDiezCentavos.Text, txtCincoCentavos.Text,
+                    txtRestante.Text, UsuarioActual, "Admin", motivo.ToString(), rtxtComentarios.Text };
+            mcp.InsertRetiro(Datos);
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
@@ -279,6 +312,12 @@ namespace DiseñoFinal
         private void Caja_Activated(object sender, EventArgs e)
         {
             CargaPantalla();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CortesdeCaja caja = new CortesdeCaja();
+            caja.ShowDialog();
         }
     }
 }

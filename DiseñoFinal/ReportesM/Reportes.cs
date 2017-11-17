@@ -241,15 +241,15 @@ namespace DiseñoFinal
 
         private void pBNota_Click(object sender, EventArgs e)
         {
-            //string[] Datos = { dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString() };
-            //intusuario.enviarEvento("Elaborar nota", Datos);
-            VistaPreviaNota objForm = new VistaPreviaNota();
+            string[] Datos = { dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString() };
+            intusuario.enviarEvento("Elaborar nota", Datos);
+            //VistaPreviaNota objForm = new VistaPreviaNota();
 
-            string idPed = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
+            //string idPed = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-            objForm.Folio = idPed;
+            //objForm.Folio = idPed;
 
-            objForm.ShowDialog();
+            //objForm.ShowDialog();
         }
 
         private void pBFactura_Click(object sender, EventArgs e)

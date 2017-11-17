@@ -39,6 +39,8 @@
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnreq = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.FechaSurtido,
             this.Proveedor});
             this.dgvReq.GridColor = System.Drawing.Color.SlateGray;
-            this.dgvReq.Location = new System.Drawing.Point(12, 89);
+            this.dgvReq.Location = new System.Drawing.Point(12, 95);
             this.dgvReq.Name = "dgvReq";
             this.dgvReq.RowHeadersVisible = false;
             this.dgvReq.Size = new System.Drawing.Size(773, 201);
@@ -120,11 +122,29 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(407, 32);
+            this.label1.Location = new System.Drawing.Point(347, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 18);
             this.label1.TabIndex = 188;
             this.label1.Text = "REQUISICIONES";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(112, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(252, 16);
+            this.label2.TabIndex = 197;
+            this.label2.Text = "IDRequisición o Nombre Empleado";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(370, 49);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscar.TabIndex = 196;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // VerRequisicion
             // 
@@ -132,6 +152,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(838, 366);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnreq);
             this.Controls.Add(this.dgvReq);
@@ -158,5 +180,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAutorizado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaSurtido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

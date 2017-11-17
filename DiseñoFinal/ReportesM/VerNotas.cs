@@ -35,7 +35,8 @@ namespace DiseñoFinal.ReportesM
         public void RellenarTODO()
         {
             var notas = new DataTable();
-            notas = mare.ObtenerNotas();
+            string[] Datos = { "", "" };
+            notas = mare.ObtenerNotas(Datos);
             dgvNota.ColumnCount = notas.Columns.Count;
             dgvNota.RowCount = notas.Rows.Count;
             int renglon = 0;
@@ -81,6 +82,26 @@ namespace DiseñoFinal.ReportesM
             objForm.ShowDialog();
         }
 
-     
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var notas = new DataTable();
+            string[] Datos = { txtBuscar.Text, txtBuscar.Text };
+            notas = mare.ObtenerNotas(Datos);
+          
+            dgvNota.RowCount = notas.Rows.Count;
+            int renglon = 0;
+            foreach (DataRow fila in notas.Rows)
+            {
+                dgvNota["Folio1", renglon].Value = ReducirEspaciado(fila["Folionota"].ToString());
+                dgvNota["NoPed1", renglon].Value = ReducirEspaciado(fila["Pedido"].ToString());
+                dgvNota["NomDent1", renglon].Value = ReducirEspaciado(fila["NombreDentista"].ToString());
+                dgvNota["Fecha1", renglon].Value = ReducirEspaciado(fila["FechaEmisión"].ToString());
+                dgvNota["NomEmp1", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
+                dgvNota["FechaTerminaciónPedido1", renglon].Value = ReducirEspaciado(fila["FechaTerminaciónPedido"].ToString());
+                dgvNota["FechaEntrega1", renglon].Value = ReducirEspaciado(fila["FechaEntrega"].ToString());
+                dgvNota["Observaciones1", renglon].Value = ReducirEspaciado(fila["Observaciones"].ToString());
+                renglon++;
+            }
+        }
     }
 }

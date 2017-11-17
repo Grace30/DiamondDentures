@@ -352,7 +352,7 @@ namespace DiseñoFinal
                 Datos[6] = "";
                 Datos[8] = txtTotal.Text;
                 Datos[9] = "";
-                Datos[3] = "SIN CONFIRMAR";
+                Datos[3] = "POR CONFIRMAR";
                 Datos[7] = urgente;
                 Datos[10] = "NO";
                 Datos[11] = txtTotal.Text;
