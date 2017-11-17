@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiseñoFinal.ReportesM.Reportes;
 
 namespace DiseñoFinal.ReportesM
 {
@@ -15,6 +16,13 @@ namespace DiseñoFinal.ReportesM
         public VistaPreviaComprasProve()
         {
             InitializeComponent();
+        }
+
+        private void VistaPreviaComprasProve_Load(object sender, EventArgs e)
+        {
+            ReporteProveedores rp = new ReporteProveedores();
+            rp.SetDatabaseLogon("AdminDD", "Admin123123", "Rebeater.Database.Windows.Net", "DiamondDentures");
+            VGeneral.ReportSource = rp;
         }
     }
 }
