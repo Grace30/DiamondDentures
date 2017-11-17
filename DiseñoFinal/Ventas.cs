@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -85,6 +86,11 @@ namespace DiseñoFinal
                     CajaMaxima = float.Parse(DatosTabla.Rows[0][0].ToString()) + 1500; //1500 de caja chica
                 else
                     CajaMaxima = 1500;
+                DatosTabla = mcp.UltimaVenta(Datos);
+                VIstaPreviaTicket objForm = new VIstaPreviaTicket();
+                string Folio = DatosTabla.Rows[0]["FolioVenta"].ToString();
+                objForm.Folio = Folio;
+                objForm.ShowDialog();
                 DatosTabla = mcp.RetirosDelDia(Datos);
                 if (DatosTabla.Rows[0][0].ToString() != "")
                     CajaMaxima -= float.Parse(DatosTabla.Rows[0][0].ToString());
@@ -103,6 +109,7 @@ namespace DiseñoFinal
                 }
                 LlenaPrincipal();
                 llenatxt();
+                //Hacer procedimiento para obtener el folio de venta y desplegar el verdadero ticket
 
                 MessageBox.Show("Ticket");
             }

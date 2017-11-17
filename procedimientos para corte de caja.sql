@@ -142,3 +142,9 @@ FechaDevolucion = @Devolucion,
 Modificacion = @Modificacion,
 FechaModificacion = @FechaModi
 where IDPedido = @Pedido and IDDentista = @Dentista end
+
+select * from Ventas
+create proc UltimaVenta as select top(1) * from Ventas where IDPedido is not null order by FolioVenta desc
+select * from Ventas
+select * from Pedido
+select * from ProductosPedido

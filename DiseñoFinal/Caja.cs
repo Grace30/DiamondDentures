@@ -93,17 +93,19 @@ namespace DiseñoFinal
                 Tabla = mcp.VentasConTarjeta(Datos);
                 string banco = Tabla.Rows[0][0].ToString();
                 float cajachica = float.Parse(txtRestante.Text) * -1;
+                //Que se pueda cambiar el fondo de caja y la caja máxima.
                 Datos = new string[]{ año + "-" + mes + "-" + dia,
                     hora + ":" + minutos + ":" + segundos + ":" + milisegundos, UsuarioActual,"Admin","1500" ,txtMil.Text,
                     txtQuinientos.Text, txtDosc.Text, txtCien.Text,
                     txtCincuenta.Text, txtVeinte.Text, txtDiez.Text, txtCinco.Text, txtDos.Text, txtUno.Text,
                     txtCincuentaCentavos.Text, txtVeinteCentavos.Text, txtDiezCentavos.Text, txtCincoCentavos.Text,
                     txtEstimado.Text, txtTotal.Text, "10000", banco, rtxtComentarios.Text };
+                //Realizar un retiro aquí con todo
                 if (mcp.CorteDeCaja(Datos) == 1)
                 {
-                    MessageBox.Show("Corte de Caja");
+                    Tabla = mcp.UltimoCorte(new string[0]);
                     VistaPreviaCorte obj = new VistaPreviaCorte();
-                    string Folio = "";
+                    string Folio = Tabla.Rows[0][0].ToString();
                     obj.Folio = Folio;
                     obj.ShowDialog();
                 }

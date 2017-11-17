@@ -257,5 +257,10 @@ namespace Entidad
         {
             return IbaseDatos.EntregaPedido(Datos);
         }
+
+        public DataTable UltimaVenta(string[] Datos)
+        {
+            return IbaseDatos.UltimaVenta(Datos);
+        }
     }
 }

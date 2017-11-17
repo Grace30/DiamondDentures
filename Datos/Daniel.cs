@@ -146,5 +146,11 @@ namespace Datos
             return Ejecutar("Oficio", Parametros, Datos[0], Datos[1], Datos[2], Datos[3]);
         }
 
+        public DataTable UltimaVenta(string[] Datos)
+        {
+            string[] Parametros = new string[0];
+            return getDatosTabla("UltimaVenta", Parametros, Datos = new string[0]);
+        }
+
     }
 }
