@@ -885,11 +885,23 @@
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\VistaPreviaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCatalogo.Designer.cs">
+      <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaInventario.Designer.cs">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Retiro.cs">
       <SubType>Form</SubType>
@@ -1482,8 +1494,14 @@
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaCatalogo.resx">
+      <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.cs</DependentUpon>

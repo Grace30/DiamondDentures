@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -84,6 +85,12 @@ namespace DiseñoFinal
             }
 
             return Cadena;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VistaPreviaCatalogo vpc = new VistaPreviaCatalogo();
+            vpc.ShowDialog();
         }
     }
 }
