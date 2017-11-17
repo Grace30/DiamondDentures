@@ -29,7 +29,8 @@ namespace DiseñoFinal.ReportesM
         public void RellenarTODO()
         {
             var formas = new DataTable();
-            formas = mare.ObtenerFormas();
+            string[] Datos = {"", ""};
+            formas = mare.ObtenerFormas( Datos);
             dgvFormas.ColumnCount = formas.Columns.Count;
             dgvFormas.RowCount = formas.Rows.Count;
             int renglon = 0;
@@ -78,6 +79,42 @@ namespace DiseñoFinal.ReportesM
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+             string[] Datos = { txtBuscar.Text, txtBuscar.Text };
+            var Tabla = new DataTable();
+             Tabla = mare.ObtenerFormas(Datos);
+
+            //if (rdbNombre.Checked == true)
+            //{
+            //    string[] Datos = { txtBuscar.Text, "" };
+            //    Tabla = mare.ObtenerFormas(Datos);
+            //}
+            //else
+            //{
+            //    string[] Datos = { "", txtBuscar.Text };
+
+            //    Tabla = mare.ObtenerFormas(Datos);
+            //}
+            dgvFormas.RowCount = Tabla.Rows.Count;
+            int renglon = 0;
+            foreach (DataRow fila in Tabla.Rows)
+            {
+                dgvFormas["Folio", renglon].Value = ReducirEspaciado(fila["FolioForma"].ToString());
+                dgvFormas["NoPed", renglon].Value = ReducirEspaciado(fila["Pedido"].ToString());
+                dgvFormas["NombreDent", renglon].Value = ReducirEspaciado(fila["NombreDentista"].ToString());
+                dgvFormas["Fecha", renglon].Value = ReducirEspaciado(fila["FechaEmisión"].ToString());
+                dgvFormas["NomEmp", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
+                renglon++;
+            }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
