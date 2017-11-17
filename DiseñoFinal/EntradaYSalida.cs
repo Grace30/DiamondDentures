@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using 
 
 namespace DiseñoFinal
 {
@@ -40,10 +41,13 @@ namespace DiseñoFinal
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            string[] Datos = { txtNombre.Text };
-            var datosMat = new DataTable();
-            datosMat = mancp.ObtenerSalidas(Datos);
-            DatosData(datosMat);
+            if (radioButton2.Checked)
+            {
+                string[] Datos = { txtNombre.Text };
+                var datosMat = new DataTable();
+                datosMat = mancp.ObtenerSalidas(Datos);
+                DatosData(datosMat);
+            }
         }
         public void DatosData(DataTable DatosAlmacen)
         {
@@ -52,10 +56,13 @@ namespace DiseñoFinal
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            string[] Datos = { txtNombre.Text };
-            var datosMat = new DataTable();
-            datosMat = mancp.ObtenerEntradas(Datos);
-            DatosData(datosMat);
+            if (radioButton1.Checked)
+            {
+                string[] Datos = { txtNombre.Text };
+                var datosMat = new DataTable();
+                datosMat = mancp.ObtenerEntradas(Datos);
+                DatosData(datosMat);
+            }
         }        
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
@@ -68,6 +75,18 @@ namespace DiseñoFinal
             { datosMat = mancp.ObtenerSalidas(Datos); }
             DatosData(datosMat);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+
+            }
+            else if (radioButton2.Checked)
+            {
+
+            }
         }
     }
 }
