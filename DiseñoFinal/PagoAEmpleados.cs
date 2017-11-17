@@ -30,6 +30,7 @@ namespace DiseñoFinal
         private void PagoAEmpleados_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = DateTime.Now.Month - 1;
+            button1.PerformClick();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -223,6 +224,23 @@ namespace DiseñoFinal
                 }
             }
             button1.PerformClick();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int mes = Convert.ToInt32(comboBox1.SelectedIndex + 1);
+            ReportesM.VistaPreviaNominaMes obj = new ReportesM.VistaPreviaNominaMes(mes);
+            obj.ShowDialog();
+        }
+
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index >= 0)
+            {
+                StringFormat st = new StringFormat() { Alignment = StringAlignment.Center };
+                e.Graphics.Clear(Color.White);
+                e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, st);
+            }
         }
     }
 }

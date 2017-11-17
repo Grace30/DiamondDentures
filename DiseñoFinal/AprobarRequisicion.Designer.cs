@@ -59,6 +59,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_Autorizar = new System.Windows.Forms.Button();
             this.btn_Pagar = new System.Windows.Forms.Button();
+            this.Imprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -336,11 +337,22 @@
             this.btn_Pagar.UseVisualStyleBackColor = true;
             this.btn_Pagar.Click += new System.EventHandler(this.btn_Pagar_Click);
             // 
+            // Imprimir
+            // 
+            this.Imprimir.Location = new System.Drawing.Point(409, 370);
+            this.Imprimir.Name = "Imprimir";
+            this.Imprimir.Size = new System.Drawing.Size(75, 23);
+            this.Imprimir.TabIndex = 19;
+            this.Imprimir.Text = "Imprimir";
+            this.Imprimir.UseVisualStyleBackColor = true;
+            this.Imprimir.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // AprobarRequisicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 410);
+            this.Controls.Add(this.Imprimir);
             this.Controls.Add(this.btn_Pagar);
             this.Controls.Add(this.btn_Autorizar);
             this.Controls.Add(this.groupBox3);
@@ -393,5 +405,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_Autorizar;
         private System.Windows.Forms.Button btn_Pagar;
+        private System.Windows.Forms.Button Imprimir;
     }
 }

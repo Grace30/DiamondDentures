@@ -23,9 +23,9 @@ namespace Entidad
 
         }
 
-        public int CountRequisicionesPendientes()
+        public int CountRequisicionesPendientes(int countAnt)
         {
-            return IbaseDatos.CountRequisicionesPendientes();
+            return IbaseDatos.CountRequisicionesPendientes(countAnt);
         }
 
         public DataTable getRequisicionesPorAprobar()

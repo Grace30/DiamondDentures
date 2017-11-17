@@ -10,8 +10,8 @@ namespace Datos
     {
         public int RegistrarAsistencia(string loginn)
         {
-            string[] Parametros = { "@Loginn"};
-            return Ejecutar("RegistrarAsistencia", Parametros,loginn);
+            string[] Parametros = { "@Loginn", "@Fecha"};
+            return Ejecutar("RegistrarAsistencia", Parametros,loginn, DateTime.Now);
         }
 
         public DataTable ObtenerRegistroAsistencia(string loginnn, DateTime date)
@@ -50,21 +50,27 @@ namespace Datos
             return requi;
         }
 
-        public double getSaldoCajaConta()
+        public double getSaldoCajaConta(double saldAnt)
         {
             double saldo = 0;
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
-            cmdReader = cmd.ExecuteReader();
-            while (cmdReader.Read())
+            try
             {
-                saldo = Convert.ToDouble(cmdReader[0].ToString());
-            }
-            return saldo;
+                if (conexion.State != ConnectionState.Open)
+                    conexion.Open();
 
+                cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                {
+                    saldo = Convert.ToDouble(cmdReader[0].ToString());
+                }
+            }
+            catch (Exception ms)
+            { return saldAnt; }
+            return saldo;
         }
 
         public string NombreEmpleados(string loginn)
@@ -146,17 +152,22 @@ namespace Datos
             return empleados.ToArray();
         }
 
-        public int CountRequisicionesPendientes()
+        public int CountRequisicionesPendientes(int countAnt)
         {
+
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             int count = 0;
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
-            cmdReader = cmd.ExecuteReader();
-            while (cmdReader.Read())
-                count = Convert.ToInt32(cmdReader[0]);
+            try
+            {
+                if (conexion.State != ConnectionState.Open) conexion.Open();
+                cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                    count = Convert.ToInt32(cmdReader[0]);
+            }
+            catch (Exception) { return countAnt; }
             return count;
         }
 
@@ -247,24 +258,27 @@ namespace Datos
             return getDatosTabla("getBalance", Parametros, desde,hasta);
         }
 
-        public double GetSaldoEnBanco()
-        { 
+        public double GetSaldoEnBanco(double saldoAnt)
+        {
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             double saldo = 0;
-            conexion = new Conexion().getAzureConexion();
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute getSaldoBanco", conexion);
-            
+            try
+            {
+                conexion = new Conexion().getAzureConexion();
+                if (conexion.State != ConnectionState.Open) conexion.Open();
+                cmd = new SqlCommand("execute getSaldoBanco", conexion);
+
                 cmdReader = cmd.ExecuteReader();
                 while (cmdReader.Read())
                     saldo = Convert.ToDouble(cmdReader[0]);
                 cmdReader.Close();
                 conexion.Close();
+            }
+            catch (Exception ms)
+            { return saldoAnt; }
             return saldo;
-
-
         }
 
         public string[] ListaUsuarios()

@@ -49,10 +49,13 @@ namespace DiseñoFinal
             int rows = dataGridView1.RowCount;
             DataTable t = manejadorRequisicion.getRequisicionesPorAprobar();
             dataGridView1.DataSource = t;
-            dataGridView1.Columns[0].FillWeight = 40;
-            dataGridView1.Columns[1].FillWeight = 70;
-            dataGridView1.Columns[3].FillWeight = 80;
-            dataGridView1.Columns[4].FillWeight = 70;
+            if (dataGridView1.ColumnCount > 0)
+            {
+                dataGridView1.Columns[0].FillWeight = 40;
+                dataGridView1.Columns[1].FillWeight = 70;
+                dataGridView1.Columns[3].FillWeight = 80;
+                dataGridView1.Columns[4].FillWeight = 70;
+            }
 
             dataGridView1.ClearSelection();
             if (rows == dataGridView1.RowCount)
@@ -70,6 +73,8 @@ namespace DiseñoFinal
                         dataGridView1.Rows[0].Selected = true;
             }
             toolStripStatusLabel1.Text = "Requisiciones: Se obtuvieron " + dataGridView1.RowCount +  " registros";
+            if (dataGridView1.RowCount > 0)
+                dataGridView1.Rows[0].Selected = true;
         }
 
         private void pBSalir2_Click(object sender, EventArgs e) { this.Close(); }
@@ -149,6 +154,14 @@ namespace DiseñoFinal
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReportesM.VistaPreviaReq objform = new ReportesM.VistaPreviaReq();
+            string NoReq = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            objform.NoReq = NoReq;
+            objform.ShowDialog();
         }
     }
 }
