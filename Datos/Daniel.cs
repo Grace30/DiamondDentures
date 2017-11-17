@@ -152,5 +152,11 @@ namespace Datos
             return getDatosTabla("UltimaVenta", Parametros, Datos = new string[0]);
         }
 
+        public int ActualizaBanco(string[] Datos)
+        {
+            string[] Parametros = { "@Importe" };
+            return Ejecutar("ActualizaBanco", Parametros, Datos[0]);
+        }
+
     }
 }

@@ -68,6 +68,7 @@
             this.txtBusqueda.Size = new System.Drawing.Size(409, 20);
             this.txtBusqueda.TabIndex = 1;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // groupBox1
             // 
@@ -106,6 +107,7 @@
             // rbtnCedula
             // 
             this.rbtnCedula.AutoSize = true;
+            this.rbtnCedula.Enabled = false;
             this.rbtnCedula.Location = new System.Drawing.Point(7, 68);
             this.rbtnCedula.Name = "rbtnCedula";
             this.rbtnCedula.Size = new System.Drawing.Size(58, 17);
@@ -117,6 +119,7 @@
             // rbtnNombre
             // 
             this.rbtnNombre.AutoSize = true;
+            this.rbtnNombre.Enabled = false;
             this.rbtnNombre.Location = new System.Drawing.Point(7, 44);
             this.rbtnNombre.Name = "rbtnNombre";
             this.rbtnNombre.Size = new System.Drawing.Size(62, 17);

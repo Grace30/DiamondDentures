@@ -262,5 +262,10 @@ namespace Entidad
         {
             return IbaseDatos.UltimaVenta(Datos);
         }
+
+        public int ActualizaBanco(string[] Datos)
+        {
+            return IbaseDatos.ActualizaBanco(Datos);
+        }
     }
 }
