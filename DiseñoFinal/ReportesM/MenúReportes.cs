@@ -51,10 +51,8 @@ namespace DiseñoFinal
         }
 
         private void MenúReportes_Load(object sender, EventArgs e)
-        {
-        
+        {        
             lblUsuario.Text = UsuarioEnCurso;
-
         }
 
         private void btnFinanzas_Click(object sender, EventArgs e)

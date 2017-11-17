@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -168,11 +169,22 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Usuario:";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(321, 298);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 41);
+            this.button4.TabIndex = 72;
+            this.button4.Text = "IMPRIMIR";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // ProveedoresJesusCrack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 350);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button4;
     }
 }
