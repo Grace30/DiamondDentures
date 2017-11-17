@@ -137,7 +137,7 @@ namespace DiseñoFinal
                     Datos[0] = fila["IDPedido"].ToString();
                     Datos[1] = fila["IDDentista"].ToString();
                     if (v.reducirCadena(fila["Estatus"].ToString()) == "SIN ELABORAR")
-                        Datos[2] = "SIN CONFIRMAR";
+                        Datos[2] = "POR CONFIRMAR";
                     else
                         Datos[2] = fila["Estatus"].ToString();
                     Datos[5] = fila["FechaEntrega"].ToString();
@@ -194,7 +194,7 @@ namespace DiseñoFinal
             {
                 if (lblStatus.Text != "SIN ELABORAR")
                 {
-                    if (lblStatus.Text == "SIN CONFIRMAR")
+                    if (lblStatus.Text == "POR CONFIRMAR" || lblStatus.Text == "SIN CONFIRMAR")
                     {
                         string[] Datos = new string[17];
                         Datos[0] = lblPedido.Text.Substring(1);
