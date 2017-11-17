@@ -105,7 +105,7 @@ namespace DiseñoFinal
             {
                 if (dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "EN PROCESO" || dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "EN PROCESO ")
                 {
-                    if (dgvPedidos[3, dgvPedidos.SelectedCells[0].RowIndex].Value == lblUsuario.Text || lblUsuario.Text == "Admin")
+                    if (dgvPedidos[3, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == lblUsuario.Text || lblUsuario.Text == "Admin")
                     {
                         string[] Datos = { dgvPedidos[0, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString(), "FINALIZADO" };
                         intusuario.enviarEvento("CambiarEstado", Datos);
@@ -600,7 +600,7 @@ namespace DiseñoFinal
             {
                 if (dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "CONFIRMADO" || dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "CONFIRMADO " || dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "URGENTE " || dgvPedidos[1, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == "URGENTE")
                 {
-                    if (dgvPedidos[3, dgvPedidos.SelectedCells[0].RowIndex].Value == lblUsuario.Text || lblUsuario.Text == "Admin")
+                    if (dgvPedidos[3, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString() == lblUsuario.Text || lblUsuario.Text == "Admin")
                     {
                         string[] Datos = { dgvPedidos[0, dgvPedidos.SelectedCells[0].RowIndex].Value.ToString(), "EN PROCESO" };
                         intusuario.enviarEvento("CambiarEstado", Datos);
@@ -611,8 +611,6 @@ namespace DiseñoFinal
                 }
             }
         }
-
-
 
         public static string ReducirEspaciado(string Cadena)
         {
