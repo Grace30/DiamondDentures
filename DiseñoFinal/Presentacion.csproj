@@ -891,6 +891,12 @@
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\VistaPreviaEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaEntrega.Designer.cs">
+      <DependentUpon>VistaPreviaEntrega.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.cs">
       <SubType>Form</SubType>
     </Compile>

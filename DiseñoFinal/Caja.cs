@@ -313,5 +313,11 @@ namespace DiseñoFinal
         {
             CargaPantalla();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CortesdeCaja caja = new CortesdeCaja();
+            caja.ShowDialog();
+        }
     }
 }
