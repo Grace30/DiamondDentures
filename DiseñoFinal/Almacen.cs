@@ -188,8 +188,43 @@ namespace DiseñoFinal
 
             int req = datosRequi.Rows.Count;
             int mat = datosMat.Rows.Count;
-            lblAcep.Text = req.ToString();
-            lblFaltante.Text = mat.ToString();
+            switch (req)
+            {
+                case 0:
+                    pbReq.BackgroundImage = Properties.Resources._0;
+                    break;
+                case 1:
+                    pbReq.BackgroundImage = Properties.Resources._11;
+                    break;
+                case 2:
+                    pbReq.BackgroundImage = Properties.Resources._2;
+                    break;
+                case 3:
+                    break;
+                default:
+                    if (req > 5)
+                        pbReq.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    break;
+            }
+            switch (mat)
+            {
+                case 0:
+                    pbMat.BackgroundImage = Properties.Resources._0;
+                    break;
+                case 1:
+                    pbMat.BackgroundImage = Properties.Resources._11;
+                    break;
+                case 2:
+                    pbMat.BackgroundImage = Properties.Resources._2;
+                    break;
+                case 3:
+                    pbMat.BackgroundImage = Properties.Resources.Request3;
+                    break;
+                default:
+                    if (mat > 5)
+                        pbMat.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    break;
+            }
             timer1.Start();
         }
     }
