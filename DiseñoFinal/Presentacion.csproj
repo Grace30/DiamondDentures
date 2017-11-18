@@ -902,6 +902,7 @@
     </Compile>
     <Compile Include="ReportesM\VistaPreviaEyS.Designer.cs">
       <DependentUpon>VistaPreviaEyS.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaEntrega.cs">
       <SubType>Form</SubType>
     </Compile>
