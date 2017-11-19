@@ -440,7 +440,7 @@ namespace Datos
         public int RegistrarDatosFactura(string[] Datos)
         {
             string[] Parametros = { "@NoPedido","@Loginn", "@FechaEmision", "@Nombre","@Apellido", "@Cedula", "@RFC", "@Direccion", "@Pais", "@Estado", "@Municipio", "@Ciudad", "@Colonia", "@CodPos", "@Telefono" };
-            return Ejecutar("procRegistrarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[4], Datos[3], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12], Datos[13], Datos[14]);
+            return Ejecutar("procRegistrarDatosFactura", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5], Datos[6], Datos[7], Datos[8], Datos[9], Datos[10], Datos[11], Datos[12], Datos[13], Datos[14]);
         }
         public int ModificarDatosFactura(string[] Datos)
         {

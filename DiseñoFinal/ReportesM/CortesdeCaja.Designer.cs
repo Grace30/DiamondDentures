@@ -54,8 +54,10 @@
             this.Banco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoginnSupervisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pBSalir = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCortes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -290,12 +292,27 @@
             this.Comentarios.Name = "Comentarios";
             this.Comentarios.ReadOnly = true;
             // 
+            // pBSalir
+            // 
+            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
+            this.pBSalir.Location = new System.Drawing.Point(855, 412);
+            this.pBSalir.Name = "pBSalir";
+            this.pBSalir.Size = new System.Drawing.Size(51, 49);
+            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSalir.TabIndex = 229;
+            this.pBSalir.TabStop = false;
+            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
+            // 
             // CortesdeCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(931, 424);
+            this.ClientSize = new System.Drawing.Size(931, 463);
+            this.ControlBox = false;
+            this.Controls.Add(this.pBSalir);
             this.Controls.Add(this.dgvCortes);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnCortesEmpleado);
@@ -309,11 +326,13 @@
             this.Controls.Add(this.txtDato);
             this.Controls.Add(this.groupBox1);
             this.Name = "CortesdeCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CortesdeCaja";
             this.Load += new System.EventHandler(this.CortesdeCaja_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCortes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Banco;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoginnSupervisor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
+        private System.Windows.Forms.PictureBox pBSalir;
     }
 }

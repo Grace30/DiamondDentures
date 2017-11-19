@@ -15,16 +15,17 @@ namespace DiseñoFinal.ReportesM
     public partial class VerNotas : Form
     {
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
-        string UsuarioEnCurso = "";
+     string UsuarioEnCurso = "";
         
 
-        public VerNotas()
+        public VerNotas(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
@@ -75,9 +76,9 @@ namespace DiseñoFinal.ReportesM
         private void btnNota_Click(object sender, EventArgs e)
         {
             VistaPreviaNota objForm = new VistaPreviaNota();
-            string Folio = dgvNota[0, dgvNota.CurrentCell.RowIndex].Value.ToString();
+          //  string Folio = dgvNota[0, dgvNota.CurrentCell.RowIndex].Value.ToString();
             string Pedido = dgvNota[1, dgvNota.CurrentCell.RowIndex].Value.ToString();
-            objForm.Folio = Folio;
+         //   objForm.Folio = Folio;
             objForm.Pedido = Pedido;
             objForm.ShowDialog();
         }
@@ -101,6 +102,21 @@ namespace DiseñoFinal.ReportesM
                 dgvNota["FechaEntrega1", renglon].Value = ReducirEspaciado(fila["FechaEntrega"].ToString());
                 dgvNota["Observaciones1", renglon].Value = ReducirEspaciado(fila["Observaciones"].ToString());
                 renglon++;
+            }
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
             }
         }
     }

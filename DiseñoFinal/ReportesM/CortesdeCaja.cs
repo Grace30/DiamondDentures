@@ -16,14 +16,16 @@ namespace DiseñoFinal.ReportesM
     public partial class CortesdeCaja : Form
     {
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
+        
         string UsuarioEnCurso = "";
-        public CortesdeCaja()
+        public CortesdeCaja(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
             v = new Validación();
         }
@@ -138,6 +140,21 @@ namespace DiseñoFinal.ReportesM
         private void txtDato_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
     }
 }

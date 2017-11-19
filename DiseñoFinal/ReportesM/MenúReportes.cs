@@ -13,18 +13,19 @@ namespace DiseñoFinal
 {
     public partial class MenúReportes : Form
     {
-        Form pantalla;
-        string Folio;
+    
         Validación v;
         InterfaceUsuario intusuario;
+        Form pantalla;
         string UsuarioEnCurso = "";
-        public MenúReportes()
+        public MenúReportes(Form pantalla)
         {
            
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
             v = new Validación();
+            this.pantalla = pantalla;
             ReportesM.Reportes.VistaPreviarpt temp = new VistaPreviarpt();
             crystalReportViewer1.ReportSource = temp;
         }
@@ -60,20 +61,6 @@ namespace DiseñoFinal
 
         }
 
-        private void pBSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            //if (pantalla.GetType() == typeof(MenuPrincipal))
-            //{
-            //    foreach (Form frm in Application.OpenForms)
-            //    {
-            //        if (frm.GetType() == typeof(MenuPrincipal))
-            //        {
-            //            frm.Show();
-            //        }
-            //    }
-            //}
-        }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -140,44 +127,68 @@ namespace DiseñoFinal
                     crystalReportViewer1.ReportSource = temp5;
                     break;
                 case "NLNomina":
-                    VerNominaMes frm1 = new VerNominaMes();
-                    frm1.ShowDialog();
+
+                    VerNominaMes frm1 = new VerNominaMes(this);
+                    intusuario.desplegarPantalla(frm1);
+                    intusuario.cerrarPantalla(this);
+                  //  frm1.ShowDialog();
+
                     break;
                 case "NRRequi":
-                    VerRequisicion frm = new VerRequisicion();
-                    frm.ShowDialog();
+                    VerRequisicion frm = new VerRequisicion(this);
+                    intusuario.desplegarPantalla(frm);
+                    intusuario.cerrarPantalla(this);
+                   // frm.ShowDialog();
                     break;
                 case "NRTicket":
-                    VerTickets tic = new VerTickets();
-                    tic.ShowDialog();
+                    VerTickets tic = new VerTickets(this);
+                    intusuario.desplegarPantalla(tic);
+                    intusuario.cerrarPantalla(this);
+                   // tic.ShowDialog();
                     break;
                 case "NRForma":
-                    VerFormasPedido form = new VerFormasPedido();
-                    form.ShowDialog();
+                    VerFormasPedido form = new VerFormasPedido(this);
+                    intusuario.desplegarPantalla(form);
+                    intusuario.cerrarPantalla(this);
+                   // form.ShowDialog();
+
                     break;
                 case "NROficio":
-                    VerOficios form3 = new VerOficios();
-                    form3.ShowDialog();
+                    VerOficios form3 = new VerOficios(this);
+                    intusuario.desplegarPantalla(form3);
+                    intusuario.cerrarPantalla(this);
+
+                   // form3.ShowDialog();
                     break;
                 case "NRNota":
-                    VerNotas form4 = new VerNotas();
-                    form4.ShowDialog();
+                    VerNotas form4 = new VerNotas(this);
+                    intusuario.desplegarPantalla(form4);
+                    intusuario.cerrarPantalla(this);
+                 //   form4.ShowDialog();
                     break;
                 case "NRFacturas":
-                    Facturas form5 = new Facturas();
-                    form5.ShowDialog();
+                    Facturas form5 = new Facturas(this);
+                    intusuario.desplegarPantalla(form5);
+                    intusuario.cerrarPantalla(this);
+                   // form5.ShowDialog();
                     break;
                 case "NCVentas":
-                    ReportesVentas form6 = new ReportesVentas();
-                    form6.ShowDialog();
+                    ReportesVentas form6 = new ReportesVentas(this);
+                    intusuario.desplegarPantalla(form6);
+                    intusuario.cerrarPantalla(this);
+                  //  form6.ShowDialog();
                     break;
                 case "NRCortes":
-                    CortesdeCaja form7 = new CortesdeCaja();
-                    form7.ShowDialog();
+                    CortesdeCaja form7 = new CortesdeCaja(this);
+                    intusuario.desplegarPantalla(form7);
+                    intusuario.cerrarPantalla(this);
+                 //   form7.ShowDialog();
                     break;
                 case "NRBalance":
-                    BalanceGeneral form8 = new BalanceGeneral();
-                    form8.ShowDialog();
+                    BalanceGeneral form8 = new BalanceGeneral(this);
+                    intusuario.desplegarPantalla(form8);
+                    intusuario.cerrarPantalla(this);
+                 //   form8.ShowDialog();
                     break;
                 case "Empleados":
                     x = new PantallaListadosGeneral(CamposEmpleados, nombre);
@@ -338,8 +349,10 @@ namespace DiseñoFinal
                     crystalReportViewer1.ReportSource = c19;
                     break;
                 case "Nota":
-                    Reportes n = new Reportes();
-                    n.ShowDialog();
+                    Reportes n = new Reportes(this);
+                    intusuario.desplegarPantalla(n);
+                    intusuario.cerrarPantalla(this);
+                  //  n.ShowDialog();
                     break;
 
 
@@ -361,9 +374,21 @@ namespace DiseñoFinal
 
         private void pBSalir_Click_1(object sender, EventArgs e)
         {
-            ReportesAlmacen frm = new ReportesAlmacen(this);
-            intusuario.desplegarPantalla(frm);
-            intusuario.cerrarPantalla(this);
+            //ReportesAlmacen frm = new ReportesAlmacen(this);
+            //intusuario.desplegarPantalla(frm);
+            //intusuario.cerrarPantalla(this);
+         //   MenuPrincipal xd= new MenuPrincipal();
+            this.Close();
+            if (pantalla.GetType() == typeof(MenuPrincipal))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuPrincipal))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

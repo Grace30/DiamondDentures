@@ -41,7 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.pBSalir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReq
@@ -110,7 +112,7 @@
             // 
             // btnreq
             // 
-            this.btnreq.Location = new System.Drawing.Point(410, 331);
+            this.btnreq.Location = new System.Drawing.Point(332, 314);
             this.btnreq.Name = "btnreq";
             this.btnreq.Size = new System.Drawing.Size(153, 23);
             this.btnreq.TabIndex = 2;
@@ -146,12 +148,27 @@
             this.txtBuscar.TabIndex = 196;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // pBSalir
+            // 
+            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
+            this.pBSalir.Location = new System.Drawing.Point(775, 314);
+            this.pBSalir.Name = "pBSalir";
+            this.pBSalir.Size = new System.Drawing.Size(51, 49);
+            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSalir.TabIndex = 198;
+            this.pBSalir.TabStop = false;
+            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
+            // 
             // VerRequisicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(838, 366);
+            this.ControlBox = false;
+            this.Controls.Add(this.pBSalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
@@ -162,6 +179,7 @@
             this.Text = "VerRequisicion";
             this.Load += new System.EventHandler(this.VerRequisicion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.PictureBox pBSalir;
     }
 }

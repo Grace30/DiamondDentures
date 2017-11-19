@@ -145,7 +145,7 @@ namespace DiseñoFinal
             //Reportes frm = new Reportes(this);
             //intusuario.desplegarPantalla(frm);
             //intusuario.cerrarPantalla(this);
-            MenúReportes frm = new MenúReportes();
+            MenúReportes frm = new MenúReportes(this);
             intusuario.desplegarPantalla(frm);
             intusuario.cerrarPantalla(this);
         }

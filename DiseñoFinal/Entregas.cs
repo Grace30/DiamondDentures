@@ -52,6 +52,16 @@ namespace DiseñoFinal
             else
                 MessageBox.Show("No se pudo entregar el pedido");
             llenaesta();
+
+
+
+
+            //No tienes de donde sacar el ID del pedidp
+            //VistaEntrega objForm = new VistaEntrega();
+            //string Pedido = ; //ponlo aqui y debe de funcionar
+            //objForm.Pedido = Pedido;
+            //objForm.ShowDialog();
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
