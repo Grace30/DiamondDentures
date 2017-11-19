@@ -51,7 +51,7 @@ namespace DiseñoFinal
             {
                 data1["Mes", i].Value = salarios[i].mes;
                 data1["Usuario", i].Value = salarios[i].usuario;
-                data1["IdPago", i].Value = salarios[i].idPago;
+                data1["IdPago", i].Value = salarios[i].idPago.TrimEnd();
                 data1["SalarioDiario", i].Value = salarios[i].salarioDiario;
                 data1["DiasTrabajados", i].Value = salarios[i].dias;
                 data1["Sueldo", i].Value = salarios[i].sueldo;
@@ -109,20 +109,31 @@ namespace DiseñoFinal
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 9)
+            if (e.RowIndex > -1)
             {
-                if ((bool)data1[e.ColumnIndex, e.RowIndex].Value == true)
-                    data1[e.ColumnIndex, e.RowIndex].Value = false;
-                else
+                if (e.ColumnIndex == 9)
                 {
-
-                    if (data1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
-                    {
-                        MessageBox.Show("Ya se le pago a este empleado");
-                        data1["Pagar", e.RowIndex].Value = false;
-                    }
+                    if ((bool)data1[e.ColumnIndex, e.RowIndex].Value == true)
+                        data1[e.ColumnIndex, e.RowIndex].Value = false;
                     else
-                        data1[e.ColumnIndex, e.RowIndex].Value = !((bool)data1[e.ColumnIndex, e.RowIndex].Value);
+                    {
+
+                        if (data1["IdPago", e.RowIndex].Value.ToString() != "No Pagado ")
+                        {
+                            MessageBox.Show("Ya se le pago a este empleado");
+                            data1["Pagar", e.RowIndex].Value = false;
+                        }
+                        else
+                            data1[e.ColumnIndex, e.RowIndex].Value = !((bool)data1[e.ColumnIndex, e.RowIndex].Value);
+                    }
+                }
+                else if(e.ColumnIndex == 2)
+                {
+                    statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Cargando reporte..." });
+                    ReportNominaIndividual r = new ReportNominaIndividual() { loginn = data1[1, e.RowIndex].Value.ToString(), mes = comboBox1.SelectedIndex + 1 };
+                    r.ShowDialog();
+                    statusStrip1.Invoke(new CambiarMensajeCallBack(CambiarMensaje), new object[] { "Listo" });
+
                 }
             }
         }
@@ -232,14 +243,70 @@ namespace DiseñoFinal
             ReportesM.VistaPreviaNominaMes obj = new ReportesM.VistaPreviaNominaMes(mes);
             obj.ShowDialog();
         }
-
+        
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            if (e.Index >= 0)
+            ComboBox cbx = sender as ComboBox;
+            if (cbx != null)
             {
-                StringFormat st = new StringFormat() { Alignment = StringAlignment.Center };
-                e.Graphics.Clear(Color.White);
-                e.Graphics.DrawString(comboBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, st);
+                // Always draw the background
+                e.DrawBackground();
+
+                // Drawing one of the items?
+                if (e.Index >= 0)
+                {
+                    // Set the string alignment.  Choices are Center, Near and Far
+                    StringFormat sf = new StringFormat();
+                    sf.LineAlignment = StringAlignment.Center;
+                    sf.Alignment = StringAlignment.Center;
+
+                    // Set the Brush to ComboBox ForeColor to maintain any ComboBox color settings
+                    // Assumes Brush is solid
+                    Brush brush = new SolidBrush(cbx.ForeColor);
+
+                    // If drawing highlighted selection, change brush
+                    if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                        brush = SystemBrushes.HighlightText;
+
+                    // Draw the string
+                    e.Graphics.DrawString(cbx.Items[e.Index].ToString(), cbx.Font, brush, e.Bounds, sf);
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void data1_MouseEnter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void data1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                data1.ClearSelection();
+                data1.Rows[e.RowIndex].Selected = true;
+                if (e.ColumnIndex == 9)
+                    Cursor = Cursors.Hand;
+            }
+        }
+
+        private void data1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 9)
+            {
+                Cursor = Cursors.Arrow;
+            }
+        }
+
+        private void data1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 9)
+            {
+                Cursor = Cursors.Hand;
             }
         }
     }
