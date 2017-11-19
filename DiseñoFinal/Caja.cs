@@ -316,7 +316,7 @@ namespace DiseñoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CortesdeCaja caja = new CortesdeCaja();
+            CortesdeCaja caja = new CortesdeCaja(this);
             caja.ShowDialog();
         }
     }
