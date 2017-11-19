@@ -891,6 +891,12 @@
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\VistaEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaEntrega.Designer.cs">
+      <DependentUpon>VistaEntrega.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1491,6 +1497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaEntrega.resx">
+      <DependentUpon>VistaEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>

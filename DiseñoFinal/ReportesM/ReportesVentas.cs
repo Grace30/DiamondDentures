@@ -24,6 +24,7 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+          
             v = new Validación();
         }
         public ReportesVentas(Form pantalla)

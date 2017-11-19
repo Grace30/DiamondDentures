@@ -14,14 +14,16 @@ namespace DiseñoFinal.ReportesM
     public partial class VerFormasPedido : Form
     {
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
+        
         string UsuarioEnCurso = "";
-        public VerFormasPedido()
+        public VerFormasPedido(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
@@ -117,6 +119,21 @@ namespace DiseñoFinal.ReportesM
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
     }
 }

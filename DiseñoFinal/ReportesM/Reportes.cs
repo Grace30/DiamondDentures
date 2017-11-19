@@ -103,11 +103,11 @@ namespace DiseñoFinal
         private void pBSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            if (pantalla.GetType() == typeof(MenuPrincipal))
+            if (pantalla.GetType() == typeof(MenúReportes))
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(MenuPrincipal))
+                    if (frm.GetType() == typeof(MenúReportes))
                     {
                         frm.Show();
                     }
@@ -313,7 +313,7 @@ namespace DiseñoFinal
         {
             VistaPreviaNota objForm = new VistaPreviaNota();
 
-            objForm.Folio = IDPedido;
+            objForm.Pedido = IDPedido;
 
             objForm.ShowDialog();
         }

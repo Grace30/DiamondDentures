@@ -15,14 +15,16 @@ namespace DiseñoFinal.ReportesM
     {
 
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
+       
         string UsuarioEnCurso = "";
-        public VerTickets()
+        public VerTickets(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
          
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
@@ -101,6 +103,21 @@ namespace DiseñoFinal.ReportesM
                 dgvRepoVentas["Descripcion", renglon].Value = ReducirEspaciado(fila["Descripcion"].ToString());
                 dgvRepoVentas["FechaPago", renglon].Value = ReducirEspaciado(fila["FechaPago"].ToString());
                 renglon++;
+            }
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
             }
         }
     }

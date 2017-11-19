@@ -615,12 +615,12 @@ namespace DiseñoFinal
                 desplegarPantalla(fac);
                 cerrarPantalla(llamada);
             }
-            if (Evento == "PantallaFacturas")
-            {
-                Facturas fac = new Facturas();
-                desplegarPantalla(fac);
-                cerrarPantalla(llamada);
-            }
+            //if (Evento == "PantallaFacturas")
+            //{
+            //    Facturas fac = new Facturas();
+            //    desplegarPantalla(fac);
+            //    cerrarPantalla(llamada);
+            //}
 
 
             if (Evento == "PantallaElaborarFactura")
@@ -648,6 +648,7 @@ namespace DiseñoFinal
                         vfac.Colonia = fila["Colonia"].ToString();
                         vfac.CodigoPostal = fila["CodigoPostal"].ToString();
                         vfac.Telefono = fila["Telefono"].ToString();
+                      //  vfac.Fecha = fila["FechaEmision"].ToString();
 
                     }
                 }
@@ -658,7 +659,7 @@ namespace DiseñoFinal
                         vfac.Pedido = fila["Pedido"].ToString();
                         vfac.Loginn = fila["Loginn"].ToString();
                         vfac.Nombre = fila["Nombre"].ToString();
-                        vfac.Apellido = fila["Apellido"].ToString();
+                        vfac.Apellido = fila["Apellidos"].ToString();
                         vfac.RFC = fila["RFC"].ToString();
                         vfac.Cedula = fila["Cedula"].ToString();
                         vfac.Direccion = fila["Direccion"].ToString();
