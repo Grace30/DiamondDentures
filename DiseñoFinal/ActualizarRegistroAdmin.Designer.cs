@@ -83,6 +83,10 @@
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.pBMostrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cbDepartamento = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
@@ -98,7 +102,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(519, 550);
+            this.label16.Location = new System.Drawing.Point(519, 630);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(130, 16);
             this.label16.TabIndex = 236;
@@ -121,7 +125,7 @@
             // 
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.Image = global::DiseñoFinal.Properties.Resources.actualizar2;
-            this.btnActualizar.Location = new System.Drawing.Point(257, 550);
+            this.btnActualizar.Location = new System.Drawing.Point(257, 630);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(63, 57);
@@ -237,7 +241,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(385, 18);
+            this.label10.Location = new System.Drawing.Point(273, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 224;
@@ -245,11 +249,11 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(388, 47);
+            this.txtApellidos.Location = new System.Drawing.Point(276, 47);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtApellidos.MaxLength = 40;
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(297, 21);
+            this.txtApellidos.Size = new System.Drawing.Size(226, 21);
             this.txtApellidos.TabIndex = 2;
             this.txtApellidos.Enter += new System.EventHandler(this.txtApellidos_Enter);
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -382,7 +386,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(365, 21);
+            this.txtNombre.Size = new System.Drawing.Size(255, 21);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -414,7 +418,7 @@
             // 
             // txtRespuesta
             // 
-            this.txtRespuesta.Location = new System.Drawing.Point(316, 507);
+            this.txtRespuesta.Location = new System.Drawing.Point(316, 587);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtRespuesta.MaxLength = 40;
             this.txtRespuesta.Name = "txtRespuesta";
@@ -434,7 +438,7 @@
             "Apodo en la infancia ",
             "Profesor favorito",
             "Ocupación del padre"});
-            this.cBPreguntaSeguridad.Location = new System.Drawing.Point(316, 455);
+            this.cBPreguntaSeguridad.Location = new System.Drawing.Point(316, 535);
             this.cBPreguntaSeguridad.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.cBPreguntaSeguridad.Name = "cBPreguntaSeguridad";
             this.cBPreguntaSeguridad.Size = new System.Drawing.Size(303, 24);
@@ -444,7 +448,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(315, 485);
+            this.label15.Location = new System.Drawing.Point(315, 565);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 16);
             this.label15.TabIndex = 205;
@@ -453,7 +457,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(315, 436);
+            this.label14.Location = new System.Drawing.Point(315, 516);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 16);
             this.label14.TabIndex = 204;
@@ -483,7 +487,7 @@
             // 
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Image = global::DiseñoFinal.Properties.Resources.eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(339, 553);
+            this.btnEliminar.Location = new System.Drawing.Point(339, 633);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(56, 55);
@@ -499,7 +503,7 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::DiseñoFinal.Properties.Resources.salir1;
-            this.pictureBox4.Location = new System.Drawing.Point(643, 570);
+            this.pictureBox4.Location = new System.Drawing.Point(643, 650);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 34);
@@ -591,6 +595,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDepartamento);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.dtNacimiento);
+            this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label6);
@@ -625,10 +633,11 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(693, 274);
+            this.groupBox1.Size = new System.Drawing.Size(693, 354);
             this.groupBox1.TabIndex = 247;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -638,7 +647,7 @@
             this.groupBox2.Controls.Add(this.pBMostrar);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.txtPassword);
-            this.groupBox2.Location = new System.Drawing.Point(2, 435);
+            this.groupBox2.Location = new System.Drawing.Point(2, 515);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -707,6 +716,45 @@
             this.panel1.TabIndex = 249;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.Location = new System.Drawing.Point(10, 307);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
+            this.dtNacimiento.TabIndex = 245;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(8, 280);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 16);
+            this.label24.TabIndex = 244;
+            this.label24.Text = "Fecha de Nacimiento*";
+            // 
+            // cbDepartamento
+            // 
+            this.cbDepartamento.FormattingEnabled = true;
+            this.cbDepartamento.Items.AddRange(new object[] {
+            "Contabilidad",
+            "Recepción",
+            "Laboratorio"});
+            this.cbDepartamento.Location = new System.Drawing.Point(515, 44);
+            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbDepartamento.Name = "cbDepartamento";
+            this.cbDepartamento.Size = new System.Drawing.Size(157, 24);
+            this.cbDepartamento.TabIndex = 246;
+            this.cbDepartamento.Text = "-Elija un Departamento-";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(517, 23);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(95, 16);
+            this.label23.TabIndex = 247;
+            this.label23.Text = "Departamento*";
+            // 
             // ActualizarRegistroAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -714,7 +762,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DiseñoFinal.Properties.Resources.Login;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(696, 613);
+            this.ClientSize = new System.Drawing.Size(696, 694);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
@@ -811,5 +859,9 @@
         private System.Windows.Forms.PictureBox pBMostrar2;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtConfirmar;
+        private System.Windows.Forms.DateTimePicker dtNacimiento;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cbDepartamento;
+        private System.Windows.Forms.Label label23;
     }
 }

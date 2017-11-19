@@ -387,11 +387,11 @@ namespace DiseñoFinal
                     actregAd.Apellidos = fila["Apellidos"].ToString();
                     actregAd.Direccion = fila["Direccion"].ToString();
                     actregAd.Colonia = fila["Colonia"].ToString();
-                    actregAd.Pais = fila["País"].ToString();
+                    actregAd.Pais = fila["Pais"].ToString();
                     actregAd.Estado = fila["Estado"].ToString();
                     actregAd.Municipio = fila["Municipio"].ToString();
                     actregAd.Ciudad = fila["Ciudad"].ToString();
-                    actregAd.Codigo = fila["CP"].ToString();
+                    actregAd.Codigo = fila["CodigoPostal"].ToString();
                     actregAd.TelCasa = fila["TelCasa"].ToString();
                     actregAd.TelOficina = fila["TelOfi"].ToString();
                     actregAd.TelMovil = fila["TelCel"].ToString();
@@ -399,6 +399,8 @@ namespace DiseñoFinal
                     actregAd.Pregunta = fila["Pregunta"].ToString();
                     actregAd.Respuesta = fila["Respuesta"].ToString();
                     actregAd.Password = fila["Passwordd"].ToString();
+                    actregAd.Departamento = fila["Departamento"].ToString();
+                    actregAd.FechaNac = fila["FechaNacimiento"].ToString();
                 }
                 desplegarPantalla(actregAd);
                 cerrarPantalla(llamada);

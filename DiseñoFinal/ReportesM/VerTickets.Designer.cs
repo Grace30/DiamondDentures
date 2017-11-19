@@ -79,6 +79,7 @@
             this.dgvRepoVentas.Name = "dgvRepoVentas";
             this.dgvRepoVentas.ReadOnly = true;
             this.dgvRepoVentas.RowHeadersVisible = false;
+            this.dgvRepoVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRepoVentas.Size = new System.Drawing.Size(709, 244);
             this.dgvRepoVentas.TabIndex = 172;
             // 

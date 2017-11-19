@@ -85,8 +85,8 @@ namespace Datos
                 Email = Datos[12];
                 Email += '@' + Datos[14];
             }
-            string[] Parametros = { "@Nombre", "@Direccion", "@Colonia", "@Ciudad", "@Municipio", "@Estado", "@Pais", "@CP", "@TelCasa", "@TelOfi", "@TelCel", "@Email", "@Loginn", "@Passwordd", "@Apellidos", "@Pregunta", "@Respuesta", "@Activo", "@Departamento" };
-            return Ejecutar("procRegistrar", Parametros, Datos[0], Datos[2], Datos[3], Datos[7], Datos[6], Datos[5], Datos[4], Datos[8], Datos[9], Datos[10], Datos[11], Email, Datos[15], Datos[16], Datos[1], Datos[17], Datos[18], 0, Datos[19]);
+            string[] Parametros = { "@Nombre", "@Direccion", "@Colonia", "@Ciudad", "@Municipio", "@Estado", "@Pais", "@CP", "@TelCasa", "@TelOfi", "@TelCel", "@Email", "@Loginn", "@Passwordd", "@Apellidos", "@Pregunta", "@Respuesta", "@Activo", "@Departamento", "@Puesto", "@FechaNaci" };
+            return Ejecutar("procRegistrar", Parametros, Datos[0], Datos[2], Datos[3], Datos[7], Datos[6], Datos[5], Datos[4], Datos[8], Datos[9], Datos[10], Datos[11], Email, Datos[15], Datos[16], Datos[1], Datos[17], Datos[18], 0, Datos[19], Datos[20], Datos[21]);
         }
 
         public int CrearRegistoTarjeta(string[] Datos)
@@ -105,6 +105,7 @@ namespace Datos
             string[] Parametros = { "@Nombre", "@NumTar", "@BancoTar", "@FechaV", "@Tipo", "@Loginn" };
             return Ejecutar("procRegistrarTar", Parametros, Datos[0], Datos[1], Banco, FechaV, Tipo, Datos[8]);
         }
+
         public DataTable nombrecedula(string[] Datos)
         {
             string[] Parametros = { "@ID" };
@@ -124,8 +125,8 @@ namespace Datos
                 Email = Datos[12];
                 Email += '@' + Datos[14];
             }
-            string[] Parametros = { "@Nombre", "@Direccion", "@Colonia", "@Ciudad", "@Municipio", "@Estado", "@Pais", "@CP", "@TelCasa", "@TelOfi", "@TelCel", "@Email", "@Loginn", "@Passwordd", "@Apellidos", "@Pregunta", "@Respuesta", "@Activo", "@Departamento" };
-            return Ejecutar("procActualizarUsuario", Parametros, Datos[0], Datos[2], Datos[3], Datos[7], Datos[6], Datos[5], Datos[4], Datos[8], Datos[9], Datos[10], Datos[11], Email, Datos[15], Datos[16], Datos[1], Datos[17], Datos[18], 0, Datos[19]);
+            string[] Parametros = { "@Nombre", "@Direccion", "@Colonia", "@Ciudad", "@Municipio", "@Estado", "@Pais", "@CP", "@TelCasa", "@TelOfi", "@TelCel", "@Email", "@Loginn", "@Passwordd", "@Apellidos", "@Pregunta", "@Respuesta", "@Activo", "@Departamento", "@FechaNaci" };
+            return Ejecutar("procActualizarUsuario", Parametros, Datos[0], Datos[2], Datos[3], Datos[7], Datos[6], Datos[5], Datos[4], Datos[8], Datos[9], Datos[10], Datos[11], Email, Datos[15], Datos[16], Datos[1], Datos[17], Datos[18], 0, Datos[19], Datos[20]);
         }
 
         public int ActualizarRegistroTarjeta(string[] Datos)

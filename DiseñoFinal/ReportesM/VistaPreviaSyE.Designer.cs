@@ -1,6 +1,6 @@
 ﻿namespace DiseñoFinal.ReportesM
 {
-    partial class VistaPreviaComprasProve
+    partial class VistaPreviaSyE
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,19 @@
         {
             this.SuspendLayout();
             // 
-            // VistaPreviaComprasProve
+            // VGeneral
+            // 
+            this.VGeneral.Size = new System.Drawing.Size(846, 576);
+            // 
+            // VistaPreviaSyE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 447);
+            this.ClientSize = new System.Drawing.Size(846, 576);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "VistaPreviaComprasProve";
-            this.Text = "VistaPreviaComprasProve";
-            this.Load += new System.EventHandler(this.VistaPreviaComprasProve_Load);
+            this.Name = "VistaPreviaSyE";
+            this.Text = "VistaPreviaSyE";
+            this.Load += new System.EventHandler(this.VistaPreviaSyE_Load);
             this.ResumeLayout(false);
 
         }
