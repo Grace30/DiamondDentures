@@ -162,17 +162,17 @@ namespace DiseñoFinal
             double saldonuevo = new ManejadorBanco().GetSaldoEnBanco();
             lbl_SaldoActual.Text = string.Format("Saldo en banco: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
         }
-
+        double saldonuevo = 0;
         private void getCajaConta()
         {
-            double saldonuevo = new ManejadorBanco().getSaldoEnCajaConta();
+            saldonuevo = new ManejadorBanco().getSaldoEnCajaConta(saldonuevo);
             cajaConta.Text = string.Format("Saldo en caja Contabilidad: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
         }
 
 
         private void requests()
         {
-            int countR = new ManejadorRequisicion().CountRequisicionesPendientes();
+            int countR = new ManejadorRequisicion().CountRequisicionesPendientes(countRAnt);
             if (countR != countRAnt)
             {
                 Notification();
