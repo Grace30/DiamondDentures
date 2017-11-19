@@ -18,7 +18,7 @@ namespace DiseñoFinal
         ManejadorPrincipal manp = new ManejadorPrincipal();
         Validación v;
         bool guardado = false;
-        public string Nombre, Apellidos, Direccion, Colonia, Pais, Estado, Municipio, Ciudad, Codigo, TelCasa, TelOficina, TelMovil, Password, Pregunta, Respuesta, Email;
+        public string Nombre, Apellidos, Direccion, Colonia, Pais, Estado, Municipio, Ciudad, Codigo, TelCasa, TelOficina, TelMovil, Password, Pregunta, Respuesta, Email, Departamento, FechaNac;
 
         private void txtDireccion_Enter(object sender, EventArgs e)
         {
@@ -133,7 +133,17 @@ namespace DiseñoFinal
                     cBPais.SelectedIndex = 0;
                 if (txtDireccion.Text == "Calle Principal/  Calle Secundaria                    Número exterior                   Etc.")
                     txtDireccion.Text = "";
-                string[] Datos = { txtNombre.Text, txtApellidos.Text, txtDireccion.Text, txtColonia.Text, cBPais.Text.ToString(), cBEstado.Text.ToString(), cBMunicipio.Text.ToString(), cBCiudad.Text.ToString(), maskedCodigo.Text, maskedTCasa.Text, maskedTOficina.Text, maskedTMovil.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, lblLogin.Text, txtPassword.Text, cBPreguntaSeguridad.SelectedItem.ToString(), txtRespuesta.Text };
+
+                string[] today = dtNacimiento.Value.ToShortDateString().Split('/');
+                string fecha = "";
+                int i = 2;
+                while (i >= 0)
+                {
+                    fecha += today[i];
+                    if (i > 0) { fecha += "/"; }
+                    i--;
+                }
+                string[] Datos = { txtNombre.Text, txtApellidos.Text, txtDireccion.Text, txtColonia.Text, cBPais.Text.ToString(), cBEstado.Text.ToString(), cBMunicipio.Text.ToString(), cBCiudad.Text.ToString(), maskedCodigo.Text, maskedTCasa.Text, maskedTOficina.Text, maskedTMovil.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, lblLogin.Text, txtPassword.Text, cBPreguntaSeguridad.SelectedItem.ToString(), txtRespuesta.Text, cbDepartamento.Text, fecha };
                 intusuario.enviarEvento("Actualizar", Datos);
                 guardado = true;
             }
@@ -188,6 +198,8 @@ namespace DiseñoFinal
             txtPassword.Text = Password; 
             txtConfirmar.Text = Password;
             txtRespuesta.Text = Respuesta;
+            cbDepartamento.Text = Departamento;
+            dtNacimiento.Text = FechaNac;
             int i = 0;
             while (Email[i] != '@')
             {
@@ -326,6 +338,11 @@ namespace DiseñoFinal
         private void btnActualizar_MouseLeave(object sender, EventArgs e)
         {
             btnActualizar.Image = Properties.Resources.actualizar;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void btnActualizar_MouseHover(object sender, EventArgs e)

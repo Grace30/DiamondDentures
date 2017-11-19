@@ -11,12 +11,13 @@ namespace DiseñoFinal.ReportesM
         InterfaceUsuario intusuario;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-       // Form pantalla;
+        Form pantalla;
         string UsuarioEnCurso = "";
-        public VerNominaMes()
+        public VerNominaMes(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
@@ -99,6 +100,21 @@ namespace DiseñoFinal.ReportesM
         {
             VistaPreviaNominaGeneral objform = new VistaPreviaNominaGeneral();
             objform.ShowDialog();
+        }
+
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
     }
 }

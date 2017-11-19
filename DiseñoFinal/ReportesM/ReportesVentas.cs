@@ -24,6 +24,7 @@ namespace DiseñoFinal
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+          
             v = new Validación();
         }
         public ReportesVentas(Form pantalla)
@@ -64,7 +65,8 @@ namespace DiseñoFinal
         public void RellenarTODO()
         {
             var Ventas = new DataTable();
-            Ventas = mare.ObtenerDatosVentas();
+            string[] Datos = { "","","" };
+            Ventas = mare.ObtenerDatosVentas(Datos);
             dgvRepoVentas.ColumnCount = Ventas.Columns.Count;
             dgvRepoVentas.RowCount = Ventas.Rows.Count;
             int renglon = 0;

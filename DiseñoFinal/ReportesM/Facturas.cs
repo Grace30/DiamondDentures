@@ -14,14 +14,16 @@ namespace DiseñoFinal
     public partial class Facturas : Form
     {
         InterfaceUsuario intusuario;
+        Form pantalla;
         bool admin = false;
         ManejadorFacturas maf = new ManejadorFacturas();
         public string IDPedido;
         Validación v;
-        public Facturas()
+        public Facturas(Form pantalla)
         {
             InitializeComponent();
             v = new Validación();
+            this.pantalla = pantalla;
             intusuario = new InterfaceUsuario(this);
         }
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -80,24 +82,16 @@ namespace DiseñoFinal
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
-            if (!admin)
+            if (pantalla.GetType() == typeof(MenúReportes))
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(MenuContabilidad))
+                    if (frm.GetType() == typeof(MenúReportes))
                     {
                         frm.Show();
                     }
                 }
             }
-            else
-                foreach (Form frm in Application.OpenForms)
-                {
-                    if (frm.GetType() == typeof(MenuContabilidad))
-                    {
-                        frm.Show();
-                    }
-                }
         }
 
         private void pBSalir2_Click(object sender, EventArgs e)
@@ -225,6 +219,23 @@ namespace DiseñoFinal
             else
 
                 RellenarTODO();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenuContabilidad))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuContabilidad))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+
+
         }
     }
 }

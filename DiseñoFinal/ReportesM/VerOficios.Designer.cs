@@ -43,7 +43,11 @@
             this.NomEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOficio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.pBSalir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOficios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvOficios
@@ -54,6 +58,7 @@
             this.dgvOficios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOficios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOficios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOficios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvOficios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -79,6 +84,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOficios.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvOficios.GridColor = System.Drawing.Color.Black;
             this.dgvOficios.Location = new System.Drawing.Point(12, 84);
             this.dgvOficios.Name = "dgvOficios";
             this.dgvOficios.ReadOnly = true;
@@ -93,7 +99,7 @@
             this.dgvOficios.RowHeadersVisible = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             this.dgvOficios.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvOficios.Size = new System.Drawing.Size(767, 163);
+            this.dgvOficios.Size = new System.Drawing.Size(767, 196);
             this.dgvOficios.TabIndex = 187;
             // 
             // Folio
@@ -138,7 +144,7 @@
             // 
             this.btnOficio.BackColor = System.Drawing.Color.Silver;
             this.btnOficio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOficio.Location = new System.Drawing.Point(358, 300);
+            this.btnOficio.Location = new System.Drawing.Point(314, 314);
             this.btnOficio.Name = "btnOficio";
             this.btnOficio.Size = new System.Drawing.Size(192, 26);
             this.btnOficio.TabIndex = 188;
@@ -151,25 +157,62 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(300, 36);
+            this.label1.Location = new System.Drawing.Point(270, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 18);
             this.label1.TabIndex = 189;
             this.label1.Text = "OFICIOS DE CONFIRMACIÓN";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(197, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(176, 16);
+            this.label2.TabIndex = 195;
+            this.label2.Text = "Nombre Dentista o Folio";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(379, 44);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtBuscar.TabIndex = 194;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // pBSalir
+            // 
+            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
+            this.pBSalir.Location = new System.Drawing.Point(721, 334);
+            this.pBSalir.Name = "pBSalir";
+            this.pBSalir.Size = new System.Drawing.Size(51, 49);
+            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSalir.TabIndex = 201;
+            this.pBSalir.TabStop = false;
+            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
             // 
             // VerOficios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(774, 383);
+            this.ClientSize = new System.Drawing.Size(784, 383);
+            this.ControlBox = false;
+            this.Controls.Add(this.pBSalir);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOficio);
             this.Controls.Add(this.dgvOficios);
             this.Name = "VerOficios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerOficios";
             this.Load += new System.EventHandler(this.VerOficios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOficios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +229,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaConfirmacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomEmp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.PictureBox pBSalir;
     }
 }

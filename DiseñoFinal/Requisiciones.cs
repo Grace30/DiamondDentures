@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -93,6 +94,15 @@ namespace DiseñoFinal
             }
 
             return Cadena;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VistaPreviaReq objform = new VistaPreviaReq();
+
+            string NoReq = txtRequi.Text;
+            objform.NoReq = NoReq;
+            objform.ShowDialog();
         }
     }
 }
