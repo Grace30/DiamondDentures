@@ -933,6 +933,7 @@
     </Compile>
     <Compile Include="ReportNominaIndividual.Designer.cs">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+     </Compile>
     <Compile Include="ReportesM\VistaPreviaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1558,6 +1559,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNominaIndividual.resx">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
       <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
     </EmbeddedResource>
