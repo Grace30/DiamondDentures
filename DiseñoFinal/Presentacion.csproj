@@ -334,6 +334,12 @@
     <Compile Include="ModificarProveedor.designer.cs">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="NominaIndividual.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NominaIndividual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="OrdenesDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -922,6 +928,12 @@
     <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportNominaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportNominaIndividual.Designer.cs">
+      <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+     </Compile>
     <Compile Include="ReportesM\VistaPreviaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1204,6 +1216,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NominaIndividual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NominaIndividual.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesDeCompra.resx">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
@@ -1541,6 +1557,9 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportNominaIndividual.resx">
+      <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
       <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
     </EmbeddedResource>
