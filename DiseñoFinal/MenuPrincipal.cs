@@ -175,5 +175,11 @@ namespace DiseñoFinal
         {
             new FirmarAsistencia().ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { "", UsuarioEnCurso };
+            intusuario.enviarEvento("PantallaAlmacen", Datos);
+        }
     }
 }

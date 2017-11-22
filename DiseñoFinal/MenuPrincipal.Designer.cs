@@ -38,6 +38,7 @@
             this.pBSalir2 = new System.Windows.Forms.PictureBox();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.pBRecepcion = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,7 +47,7 @@
             this.linkLogoutMP = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBMenúContabilidad)).BeginInit();
@@ -54,10 +55,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRecepcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxSemaforo
@@ -165,6 +167,21 @@
             this.toolTip1.SetToolTip(this.pBRecepcion, "Recepcion");
             this.pBRecepcion.Click += new System.EventHandler(this.pBRecepcion_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DiseñoFinal.Properties.Resources.Time_Card_40px;
+            this.pictureBox2.Location = new System.Drawing.Point(571, 85);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 216;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Firmar asistencia");
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            // 
             // panel4
             // 
             this.panel4.BackgroundImage = global::DiseñoFinal.Properties.Resources.Ddblanco;
@@ -259,20 +276,16 @@
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::DiseñoFinal.Properties.Resources.Time_Card_40px;
-            this.pictureBox2.Location = new System.Drawing.Point(571, 85);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 216;
-            this.pictureBox2.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox2, "Firmar asistencia");
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox_MouseLeave);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(104, 441);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(87, 78);
+            this.pictureBox1.TabIndex = 215;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MenuPrincipal
             // 
@@ -282,6 +295,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(613, 595);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pbxSemaforo);
             this.Controls.Add(this.pBReportes);
@@ -304,12 +318,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRecepcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +348,6 @@
         private System.Windows.Forms.PictureBox pbxSemaforo;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
