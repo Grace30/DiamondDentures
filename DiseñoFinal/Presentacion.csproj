@@ -897,14 +897,7 @@
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
-
-    <Compile Include="ReportesM\VistaEntrega.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportesM\VistaEntrega.Designer.cs">
-      <DependentUpon>VistaEntrega.cs</DependentUpon>
-     </Compile>
-   <Compile Include="ReportesM\VistaPreviaCatalogo.cs">
+    <Compile Include="ReportesM\VistaPreviaCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportesM\VistaPreviaCatalogo.Designer.cs">
@@ -933,7 +926,7 @@
     </Compile>
     <Compile Include="ReportNominaIndividual.Designer.cs">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
-     </Compile>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1545,11 +1538,11 @@
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesM\VistaEntrega.resx">
-      <DependentUpon>VistaEntrega.cs</DependentUpon>
-     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaCatalogo.resx">
       <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaEntrega.resx">
+      <DependentUpon>VistaPreviaEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaEyS.resx">
       <DependentUpon>VistaPreviaEyS.cs</DependentUpon>
@@ -1559,7 +1552,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNominaIndividual.resx">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
       <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
     </EmbeddedResource>

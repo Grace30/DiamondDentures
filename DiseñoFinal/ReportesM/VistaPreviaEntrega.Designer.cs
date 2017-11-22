@@ -28,9 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // VGeneral
+            // 
+            this.VGeneral.Load += new System.EventHandler(this.VGeneral_Load);
+            // 
+            // VistaPreviaEntrega
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(987, 447);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "VistaPreviaEntrega";
             this.Text = "VistaPreviaEntrega";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

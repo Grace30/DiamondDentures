@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -48,20 +49,15 @@ namespace DiseñoFinal
             string[] Datos = { dataGridView1[0, filaactual].Value.ToString(), "Entregado", año + "-" + mes + "-" + dia };
             mcp = new ManejadorControlPedido();
             if (mcp.EntregaPedido(Datos) == 1)
-                MessageBox.Show("Pedido Entregado");
+            {
+                VistaPreviaEntrega objForm = new VistaPreviaEntrega();
+                string Pedido = dataGridView1[0, filaactual].Value.ToString();
+                objForm.Pedido = Pedido;
+                objForm.ShowDialog();
+            }
             else
                 MessageBox.Show("No se pudo entregar el pedido");
             llenaesta();
-
-
-
-
-            //No tienes de donde sacar el ID del pedidp
-            //VistaEntrega objForm = new VistaEntrega();
-            //string Pedido = ; //ponlo aqui y debe de funcionar
-            //objForm.Pedido = Pedido;
-            //objForm.ShowDialog();
-
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
