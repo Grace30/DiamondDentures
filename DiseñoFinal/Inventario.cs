@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiseñoFinal.ReportesM;
 using Entidad;
 
 namespace DiseñoFinal
@@ -39,7 +40,10 @@ namespace DiseñoFinal
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            VistaPreviaInventario vpi = new VistaPreviaInventario();
+            vpi.ShowDialog();
+            
+            
         }
 
         private void Inventario_Load(object sender, EventArgs e)

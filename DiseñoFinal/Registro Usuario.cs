@@ -133,7 +133,18 @@ namespace DiseñoFinal
                         cBPais.SelectedIndex = 0;
                     if (txtDireccion.Text == "Calle Principal/  Calle Secundaria                    Número exterior                   Etc.")
                         txtDireccion.Text = "";
-                    string[] Datos = { txtNombre.Text, txtApellidos.Text, txtDireccion.Text, txtColonia.Text, cBPais.Text.ToString(), cBEstado.Text.ToString(), cBMunicipio.Text.ToString(), cBCiudad.Text.ToString(), maskedCodigo.Text, maskedTCasa.Text, maskedTOficina.Text, maskedTMovil.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtLogin.Text, txtPassword.Text, cBPreguntaSeguridad.SelectedItem.ToString(), txtRespuesta.Text, cbDepartamento.SelectedItem.ToString() };
+
+                    string[] today = dtNacimiento.Value.ToShortDateString().Split('/');
+                    string fecha = "";
+                    int i = 2;
+                    while (i >= 0)
+                    {
+                        fecha += today[i];
+                        if (i > 0) { fecha += "/"; }
+                        i--;
+                    }
+                    string puesto = "Novato";
+                    string[] Datos = { txtNombre.Text, txtApellidos.Text, txtDireccion.Text, txtColonia.Text, cBPais.Text.ToString(), cBEstado.Text.ToString(), cBMunicipio.Text.ToString(), cBCiudad.Text.ToString(), maskedCodigo.Text, maskedTCasa.Text, maskedTOficina.Text, maskedTMovil.Text, txtEmail.Text, cBDominio.SelectedItem.ToString(), txtOtroDominio.Text, txtLogin.Text, txtPassword.Text, cBPreguntaSeguridad.SelectedItem.ToString(), txtRespuesta.Text, cbDepartamento.SelectedItem.ToString(), puesto, fecha };
                     intusuario.enviarEvento("Registrar", Datos);
                     guardado = true;
                 }
@@ -280,12 +291,15 @@ namespace DiseñoFinal
             cBCiudad.Items.Clear();
             cBCiudad.Items.Add(" ");
             cBCiudad.SelectedIndex = 0;
-            string[] Datos = { cBMunicipio.SelectedItem.ToString(), cBEstado.SelectedItem.ToString() };
-            var Ciudades = new DataTable();
-            Ciudades = manp.Ciudades(Datos);
-            foreach (DataRow fila in Ciudades.Rows)
+            if (cBMunicipio.SelectedItem != null && cBEstado.SelectedItem != null)
             {
-                cBCiudad.Items.Add(fila["NombreCiudad"].ToString());
+                string[] Datos = { cBMunicipio.SelectedItem.ToString(), cBEstado.SelectedItem.ToString() };
+                var Ciudades = new DataTable();
+                Ciudades = manp.Ciudades(Datos);
+                foreach (DataRow fila in Ciudades.Rows)
+                {
+                    cBCiudad.Items.Add(fila["NombreCiudad"].ToString());
+                }
             }
         }
 
@@ -390,6 +404,11 @@ namespace DiseñoFinal
         private void pBMostrar2_MouseHover(object sender, EventArgs e)
         {
             pBMostrar2.Image = Properties.Resources.ojo_2;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

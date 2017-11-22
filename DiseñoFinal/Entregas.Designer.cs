@@ -110,6 +110,7 @@
             this.Name = "Entregas";
             this.Text = "Entregas";
             this.Activated += new System.EventHandler(this.Entregas_Activated);
+            this.Load += new System.EventHandler(this.Entregas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

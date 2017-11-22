@@ -85,6 +85,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pBSalir2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBGuardar)).BeginInit();
@@ -311,7 +313,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(517, 544);
+            this.label16.Location = new System.Drawing.Point(519, 606);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(127, 16);
             this.label16.TabIndex = 128;
@@ -319,7 +321,7 @@
             // 
             // txtRespuesta
             // 
-            this.txtRespuesta.Location = new System.Drawing.Point(375, 488);
+            this.txtRespuesta.Location = new System.Drawing.Point(377, 550);
             this.txtRespuesta.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtRespuesta.MaxLength = 40;
             this.txtRespuesta.Name = "txtRespuesta";
@@ -339,7 +341,7 @@
             "Apodo en la infancia ",
             "Profesor favorito",
             "Ocupación del padre"});
-            this.cBPreguntaSeguridad.Location = new System.Drawing.Point(375, 438);
+            this.cBPreguntaSeguridad.Location = new System.Drawing.Point(377, 500);
             this.cBPreguntaSeguridad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cBPreguntaSeguridad.Name = "cBPreguntaSeguridad";
             this.cBPreguntaSeguridad.Size = new System.Drawing.Size(280, 24);
@@ -350,7 +352,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(372, 467);
+            this.label15.Location = new System.Drawing.Point(374, 529);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(70, 16);
             this.label15.TabIndex = 123;
@@ -359,7 +361,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(372, 416);
+            this.label14.Location = new System.Drawing.Point(374, 478);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 16);
             this.label14.TabIndex = 122;
@@ -401,7 +403,7 @@
             // 
             this.pBGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBGuardar.Image = global::DiseñoFinal.Properties.Resources.guardae;
-            this.pBGuardar.Location = new System.Drawing.Point(393, 533);
+            this.pBGuardar.Location = new System.Drawing.Point(395, 595);
             this.pBGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pBGuardar.Name = "pBGuardar";
             this.pBGuardar.Size = new System.Drawing.Size(68, 68);
@@ -417,7 +419,7 @@
             // 
             this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir2;
-            this.pBSalir.Location = new System.Drawing.Point(616, 579);
+            this.pBSalir.Location = new System.Drawing.Point(618, 641);
             this.pBSalir.Name = "pBSalir";
             this.pBSalir.Size = new System.Drawing.Size(33, 31);
             this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -449,6 +451,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtNacimiento);
             this.groupBox1.Controls.Add(this.txtColonia);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label18);
@@ -476,6 +479,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.maskedTCasa);
             this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -483,7 +487,7 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Location = new System.Drawing.Point(18, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(673, 269);
+            this.groupBox1.Size = new System.Drawing.Size(673, 331);
             this.groupBox1.TabIndex = 163;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos personales";
@@ -649,7 +653,7 @@
             this.groupBox2.Controls.Add(this.txtLogin);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Location = new System.Drawing.Point(21, 416);
+            this.groupBox2.Location = new System.Drawing.Point(23, 478);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(348, 131);
             this.groupBox2.TabIndex = 164;
@@ -730,6 +734,23 @@
             this.panel1.TabIndex = 165;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.Location = new System.Drawing.Point(13, 284);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
+            this.dtNacimiento.TabIndex = 208;
+            this.dtNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(11, 257);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 16);
+            this.label24.TabIndex = 140;
+            this.label24.Text = "Fecha de Nacimiento*";
+            // 
             // Registro_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -737,7 +758,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::DiseñoFinal.Properties.Resources.u1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(703, 614);
+            this.ClientSize = new System.Drawing.Size(703, 674);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
@@ -835,5 +856,7 @@
         private System.Windows.Forms.TextBox txtConfirmar;
         private System.Windows.Forms.ComboBox cbDepartamento;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dtNacimiento;
+        private System.Windows.Forms.Label label24;
     }
 }

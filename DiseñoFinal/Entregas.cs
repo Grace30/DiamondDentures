@@ -26,20 +26,7 @@ namespace DiseñoFinal
 
         private void Entregas_Activated(object sender, EventArgs e)
         {
-            string[] Datos = { };
-            mcp = new ManejadorControlPedido();
-            var Pedidos = new DataTable();
-            Pedidos = mcp.PedidosPorEntregar(Datos);
-            dataGridView1.DataSource = Pedidos;
-            if (dataGridView1.Rows.Count != 0)
-            {
-                Datos = new string[] { dataGridView1[0, filaactual].Value.ToString() };
-                mcp = new ManejadorControlPedido();
-                Pedidos = mcp.getTicket(Datos);
-                dataGridView2.DataSource = Pedidos;
-            }
-            else
-                MessageBox.Show("No hay pedidos por entregar");
+
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -64,6 +51,16 @@ namespace DiseñoFinal
                 MessageBox.Show("Pedido Entregado");
             else
                 MessageBox.Show("No se pudo entregar el pedido");
+            llenaesta();
+
+
+
+
+            //No tienes de donde sacar el ID del pedidp
+            //VistaEntrega objForm = new VistaEntrega();
+            //string Pedido = ; //ponlo aqui y debe de funcionar
+            //objForm.Pedido = Pedido;
+            //objForm.ShowDialog();
 
         }
 
@@ -86,6 +83,29 @@ namespace DiseñoFinal
                         frm.Show();
                     }
                 }
+        }
+
+        private void llenaesta()
+        {
+            string[] Datos = { };
+            mcp = new ManejadorControlPedido();
+            var Pedidos = new DataTable();
+            Pedidos = mcp.PedidosPorEntregar(Datos);
+            dataGridView1.DataSource = Pedidos;
+            if (dataGridView1.Rows.Count != 0)
+            {
+                Datos = new string[] { dataGridView1[0, filaactual].Value.ToString() };
+                mcp = new ManejadorControlPedido();
+                Pedidos = mcp.getTicket(Datos);
+                dataGridView2.DataSource = Pedidos;
+            }
+            else
+                MessageBox.Show("No hay pedidos por entregar");
+        }
+
+        private void Entregas_Load(object sender, EventArgs e)
+        {
+            llenaesta();
         }
     }
 }

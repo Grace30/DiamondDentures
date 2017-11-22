@@ -15,14 +15,16 @@ namespace DiseñoFinal.ReportesM
     {
 
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
+       
         string UsuarioEnCurso = "";
-        public VerTickets()
+        public VerTickets(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
          
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
@@ -37,9 +39,10 @@ namespace DiseñoFinal.ReportesM
         }
         public void RellenarTODO()
         {
+            string[] Datos = { "", ""};
             var Ventas = new DataTable();
-            Ventas = mare.ObtenerDatosVentas();
-            dgvRepoVentas.ColumnCount = Ventas.Columns.Count;
+            
+            Ventas = mare.ObtenerDatosVentas(Datos);
             dgvRepoVentas.RowCount = Ventas.Rows.Count;
             int renglon = 0;
             foreach (DataRow fila in Ventas.Rows)
@@ -80,9 +83,42 @@ namespace DiseñoFinal.ReportesM
             RellenarTODO();
         }
 
-        private void dgvRepoVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            var Ventas = new DataTable();
+            string[] Datos = { txtBuscar.Text, txtBuscar.Text};
+            Ventas = mare.ObtenerDatosVentas(Datos);
+          
+            dgvRepoVentas.RowCount = Ventas.Rows.Count;
+            int renglon = 0;
+            foreach (DataRow fila in Ventas.Rows)
+            {
+                dgvRepoVentas["FolioVenta", renglon].Value = ReducirEspaciado(fila["FolioVenta"].ToString());
+                dgvRepoVentas["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
+                dgvRepoVentas["IDPedido", renglon].Value = ReducirEspaciado(fila["IDPedido"].ToString());
+                dgvRepoVentas["Importe", renglon].Value = ReducirEspaciado(fila["Importe"].ToString());
+                dgvRepoVentas["Abono", renglon].Value = ReducirEspaciado(fila["Abono"].ToString());
+                dgvRepoVentas["Feria", renglon].Value = ReducirEspaciado(fila["Feria"].ToString());
+                dgvRepoVentas["FormadePago", renglon].Value = ReducirEspaciado(fila["FormaDePago"].ToString());
+                dgvRepoVentas["Descripcion", renglon].Value = ReducirEspaciado(fila["Descripcion"].ToString());
+                dgvRepoVentas["FechaPago", renglon].Value = ReducirEspaciado(fila["FechaPago"].ToString());
+                renglon++;
+            }
+        }
 
+        private void pBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
     }
 }

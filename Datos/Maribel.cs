@@ -5,9 +5,10 @@ namespace Datos
 {
     public partial class InterfaceBaseDeDatos
     {
-        public DataTable ObtenerDatosVentas()
+        public DataTable ObtenerDatosVentas(string[] Datos )
         {
-            return getDatosTabla("procTodasVentas", new string[0], new string[0]);
+            string[] Parametros = { "@Name", "@Folio" };
+            return getDatosTabla("ProcTodasVentas", Parametros, Datos[0], Datos[1]);
         }
         public DataTable ObtenerNominaGeneral()
         {
@@ -69,25 +70,40 @@ namespace Datos
         {
             return getDatosTabla("procComprasProv", new string[0], new string[0]);
         }
-        public DataTable ObtenerDatosRequisicion()
+        public DataTable ObtenerDatosRequisicion(string[] Datos)
         {
-            return getDatosTabla("procRequisionTodas", new string[0], new string[0]);
+            string[] Parametros = { "@Name", "@Folio" };
+            return getDatosTabla("procRequisionTodas", Parametros, Datos[0], Datos[1]);
         }
         public DataTable ObtenerDatosSalidas()
         {
             return getDatosTabla("procListaSalidas", new string[0], new string[0]);
         }
-        public DataTable ObtenerNotas()
+        public DataTable ObtenerNotas(string [] Datos)
         {
-            return getDatosTabla("procMostrarNotas", new string[0], new string[0]);
+            string[] Parametros = { "@Name", "@Folio" };
+            return getDatosTabla("procMostrarNotas", Parametros, Datos[0], Datos[1]);
         }
-        public DataTable ObtenerOficios()
+        public DataTable ObtenerOficios(string[] Datos)
         {
-            return getDatosTabla("procMostrarOficios", new string[0], new string[0]);
+            string[] Parametros = { "@Name", "@Folio" };
+            return getDatosTabla("procMostrarOficios", Parametros, Datos[0], Datos[1]);
         }
-        public DataTable ObtenerFormas()
+        public DataTable ObtenerFormas(string[] Datos)
         {
-            return getDatosTabla("procMostrarFormas", new string[0], new string[0]);
+            string[] Parametros = { "@Name", "@Folio"};
+            return getDatosTabla("procMostrarFormas", Parametros, Datos[0], Datos[1]);
         }
+        public DataTable ObtenerProductosPedido(string[] Datos)
+        {
+            string[] Parametros = { "@Pedido" };
+            return getDatosTabla("procProductosPedido", Parametros, Datos[0]);
+        }
+        public int RegistrarDatosNota (string[] Datos)
+        {
+            string[] Parametros = { "@Pedido", "@Loginn", "@FechaEmision", "@FechaTerminacion", "@Observaciones", "@FechaEntrega" };
+            return Ejecutar("Nota", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5]);
+        }
+
     }
 }

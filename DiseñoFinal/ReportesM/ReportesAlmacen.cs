@@ -129,21 +129,21 @@ namespace DiseñoFinal
         }
         public void RellenarRequisicion()
         {
-            var req = new DataTable();
-            req = mare.ObtenerDatosRequisicion();
-            dgvReq.RowCount = req.Rows.Count;
-            dgvReq.ColumnCount = req.Columns.Count;
+            //var req = new DataTable();
+            //req = mare.ObtenerDatosRequisicion();
+            //dgvReq.RowCount = req.Rows.Count;
+            //dgvReq.ColumnCount = req.Columns.Count;
 
-            int renglon = 0;
-            foreach (DataRow fila in req.Rows)
-            {
-                dgvReq["IDRequisicion", renglon].Value = ReducirEspaciado(fila["IDRequisicion"].ToString());
-                dgvReq["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
-                dgvReq["CantidadTotal", renglon].Value = ReducirEspaciado(fila["CantidadTotal"].ToString());
-                dgvReq["FechadePedido", renglon].Value = ReducirEspaciado(fila["Fecha de Pedido"].ToString());
-                dgvReq["Surtido", renglon].Value = ReducirEspaciado(fila["Surtido"].ToString());
-                renglon++;
-            }
+            //int renglon = 0;
+            //foreach (DataRow fila in req.Rows)
+            //{
+            //    dgvReq["IDRequisicion", renglon].Value = ReducirEspaciado(fila["IDRequisicion"].ToString());
+            //    dgvReq["Empleado", renglon].Value = ReducirEspaciado(fila["Empleado"].ToString());
+            //    dgvReq["CantidadTotal", renglon].Value = ReducirEspaciado(fila["CantidadTotal"].ToString());
+            //    dgvReq["FechadePedido", renglon].Value = ReducirEspaciado(fila["Fecha de Pedido"].ToString());
+            //    dgvReq["Surtido", renglon].Value = ReducirEspaciado(fila["Surtido"].ToString());
+            //    renglon++;
+            //}
         }
         public void RellenarSalidas()
         {

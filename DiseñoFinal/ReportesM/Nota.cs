@@ -15,14 +15,19 @@ namespace DiseñoFinal
     public partial class Nota : Form
     {
         ManejadorFacturas maf = new ManejadorFacturas();
+        ManejadorReportes mar = new ManejadorReportes();
         InterfaceUsuario intusuario;
+        string UsuarioEnCurso = "";
+        Validación v;
         public string Codigo, NombreProducto, Material, Cantidad, Precio, SubTotal, Fecha;
-        public string NoPedido, RFC, Nombre, Direccion, Telefono, Comentario;
+        public string NoPedido, RFC, Nombre,Apellidos, Direccion, Telefono, Comentario;
         public Nota()
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
-         //  lblNoPedido.Text = Pedido = NoPedido;
+            UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
+            v = new Validación();
+            //  lblNoPedido.Text = Pedido = NoPedido;
         }
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -39,6 +44,7 @@ namespace DiseñoFinal
             lblNoPedido.Text = ReducirEspaciado(NoPedido);
             lblFecha.Text = ReducirEspaciado(Fecha);
             lblNombre.Text = ReducirEspaciado(Nombre);
+            lblApellidos.Text = ReducirEspaciado(Apellidos);
             lblRFC.Text = ReducirEspaciado(RFC);
             lblDireccion.Text = ReducirEspaciado(Direccion);
             lblTel.Text = ReducirEspaciado(Telefono);
@@ -50,18 +56,18 @@ namespace DiseñoFinal
         {
             string[] Datos = { lblNoPedido.Text };
             var datosProductos = new DataTable();
-            datosProductos = maf.ProductosFacturar(Datos);
+            datosProductos = mar.ObtenerProductosPedido(Datos);
             dgvProducto.ColumnCount = datosProductos.Columns.Count;
             dgvProducto.RowCount = datosProductos.Rows.Count;
             int renglon = 0;
             foreach (DataRow fila in datosProductos.Rows)
             {
-                dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("Codigo")].ToString();
-                dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
-                dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("NombreProducto")].ToString();
-                dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Material")].ToString();
-                dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("Precio")].ToString();
-                dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
+                dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("CodigoEspecial")].ToString();
+                dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Producto y Materiales")].ToString();
+                dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("Precio Unitario")].ToString();
+                dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
+                dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
+          //      dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
                 renglon++;
             }
         }
@@ -86,15 +92,29 @@ namespace DiseñoFinal
 
         private void pBActualizar_Click(object sender, EventArgs e)
         {
-            string[] Datos = {lblNoPedido.Text, txtObservaciones.Text};
-            intusuario.enviarEvento("Registrar Comentario", Datos);
+            string x = lblFecha.Text;
+         DateTime dt=  Convert.ToDateTime(x);
+            string[] Datos1 = { lblNoPedido.Text, UsuarioEnCurso
+                    , v.FormatoFecha(DateTime.Now),v.FormatoFecha(DateTime.Now), txtObservaciones.Text,
+                v.FormatoFecha(dt)
+            };
+            intusuario.enviarEvento("Registrar Datos Nota", Datos1);
+
             VistaPreviaNota objForm = new VistaPreviaNota();
-
             string idPed = lblNoPedido.Text;
-
-            objForm.Folio = idPed;
-
+            objForm.Pedido = idPed;
             objForm.ShowDialog();
+
+
+            //string[] Datos = {lblNoPedido.Text, txtObservaciones.Text};
+            //intusuario.enviarEvento("Registrar Comentario", Datos);
+            //VistaPreviaNota objForm = new VistaPreviaNota();
+
+            //string idPed = lblNoPedido.Text;
+
+            //objForm.Folio = idPed;
+
+            //objForm.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

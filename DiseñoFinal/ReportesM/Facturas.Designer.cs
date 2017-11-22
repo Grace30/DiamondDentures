@@ -44,6 +44,11 @@
             this.rdNoFac = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
+            this.NoPed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pBVerFactura = new System.Windows.Forms.PictureBox();
@@ -51,11 +56,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.NoPed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBAdministrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -210,6 +211,38 @@
             this.dgvFacturas.TabIndex = 183;
             this.dgvFacturas.CurrentCellChanged += new System.EventHandler(this.dgvFacturas_CurrentCellChanged);
             // 
+            // NoPed
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.NoPed.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NoPed.HeaderText = "No. Pedido";
+            this.NoPed.Name = "NoPed";
+            this.NoPed.ReadOnly = true;
+            // 
+            // NoFac
+            // 
+            this.NoFac.HeaderText = "No. Factura";
+            this.NoFac.Name = "NoFac";
+            this.NoFac.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre Dentista";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha Emisión";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // Empleado
+            // 
+            this.Empleado.HeaderText = "Facturado por :";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -282,37 +315,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // NoPed
+            // button2
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.NoPed.DefaultCellStyle = dataGridViewCellStyle3;
-            this.NoPed.HeaderText = "No. Pedido";
-            this.NoPed.Name = "NoPed";
-            this.NoPed.ReadOnly = true;
-            // 
-            // NoFac
-            // 
-            this.NoFac.HeaderText = "No. Factura";
-            this.NoFac.Name = "NoFac";
-            this.NoFac.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre Dentista";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha Emisión";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Empleado
-            // 
-            this.Empleado.HeaderText = "Facturado por :";
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ReadOnly = true;
+            this.button2.Location = new System.Drawing.Point(537, 432);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 23);
+            this.button2.TabIndex = 209;
+            this.button2.Text = "Ir menú Contabilidad";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Facturas
             // 
@@ -322,6 +334,7 @@
             this.BackgroundImage = global::DiseñoFinal.Properties.Resources.u;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(662, 505);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dgvFacturas);
@@ -377,5 +390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.Button button2;
     }
 }

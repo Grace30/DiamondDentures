@@ -12,9 +12,9 @@ namespace Entidad
     {
         InterfaceBaseDeDatos IbaseDatos = new InterfaceBaseDeDatos();
 
-        public DataTable ObtenerDatosVentas()
+        public DataTable ObtenerDatosVentas(string[] Datos)
         {
-            return IbaseDatos.ObtenerDatosVentas();
+            return IbaseDatos.ObtenerDatosVentas(Datos);
         }
         public DataTable ObtenerCortes()
         {
@@ -68,25 +68,33 @@ namespace Entidad
         {
             return IbaseDatos.ObtenerDatosComprasProveedores();
         }
-        public DataTable ObtenerDatosRequisicion()
+        public DataTable ObtenerDatosRequisicion(string[] Datos)
         {
-            return IbaseDatos.ObtenerDatosRequisicion();
+            return IbaseDatos.ObtenerDatosRequisicion(Datos);
         }
         public DataTable ObtenerDatosSalidas()
         {
             return IbaseDatos.ObtenerDatosSalidas();
         }
-        public DataTable ObtenerNotas()
+        public DataTable ObtenerNotas(string[] Datos)
         {
-            return IbaseDatos.ObtenerNotas();
+            return IbaseDatos.ObtenerNotas(Datos);
         }
-        public DataTable ObtenerOficios()
+        public DataTable ObtenerOficios(string[] Datos)
         {
-            return IbaseDatos.ObtenerOficios();
+            return IbaseDatos.ObtenerOficios(Datos);
         }
-        public DataTable ObtenerFormas()
+        public DataTable ObtenerFormas(string[] Datos)
         {
-            return IbaseDatos.ObtenerFormas();
+            return IbaseDatos.ObtenerFormas(Datos);
+        }
+        public DataTable ObtenerProductosPedido(string[] Datos)
+        {
+            return IbaseDatos.ObtenerProductosPedido(Datos);
+        }
+        public int RegistrarDatosNota(string[] Datos)
+        {
+            return IbaseDatos.RegistrarDatosNota(Datos);
         }
 
 

@@ -600,6 +600,12 @@
       <DependentUpon>ReporteCortesFechas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportesM\Reportes\ReporteEntrega.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEntrega.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesM\Reportes\ReporteRequisicion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -891,6 +897,31 @@
     <Compile Include="ReportesM\Reportes.designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="ReportesM\VistaEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaEntrega.Designer.cs">
+      <DependentUpon>VistaEntrega.cs</DependentUpon>
+     </Compile>
+   <Compile Include="ReportesM\VistaPreviaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaCatalogo.Designer.cs">
+      <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaEyS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaEyS.Designer.cs">
+      <DependentUpon>VistaPreviaEyS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaEntrega.Designer.cs">
+      <DependentUpon>VistaPreviaEntrega.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -902,6 +933,17 @@
     </Compile>
     <Compile Include="ReportNominaIndividual.Designer.cs">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+    <Compile Include="ReportesM\VistaPreviaInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaInventario.Designer.cs">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaSyE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaSyE.Designer.cs">
+      <DependentUpon>VistaPreviaSyE.cs</DependentUpon>
     </Compile>
     <Compile Include="Retiro.cs">
       <SubType>Form</SubType>
@@ -1336,6 +1378,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteCortesFechas.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\Reportes\ReporteEntrega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEntrega.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes\ReporteRequisicion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteRequisicion.cs</LastGenOutput>
@@ -1498,11 +1544,25 @@
     <EmbeddedResource Include="ReportesM\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaEntrega.resx">
+      <DependentUpon>VistaEntrega.cs</DependentUpon>
+     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaCatalogo.resx">
+      <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaEyS.resx">
+      <DependentUpon>VistaPreviaEyS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNominaIndividual.resx">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+    <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
+      <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaSyE.resx">
+      <DependentUpon>VistaPreviaSyE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.cs</DependentUpon>
