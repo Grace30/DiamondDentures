@@ -50,6 +50,21 @@ namespace Datos
             return requi;
         }
 
+        public DataTable getRequisicionesConFiltros(string idRequisicion, string estado, string surtido, string solicitante, string autorizante, string proveedor, DateTime fechaSoliIni, DateTime fechaSoliFin, DateTime fechaAutoIni, DateTime fechaAutoFin, DateTime fechaEntregaIni, DateTime fechaEntregaFin)
+        {
+            string[] Parametros = { "@IdRequisicion", "@Estado", "@Surtido","@Solicitante", "@Autorizante", "@Proveedor",
+                        "@FechaSoliIni", "@FechaSoliFin",
+                        "@FechaAutoIni", "@FechaAutoFin",
+                        "@FechaEntregaIni", "@FechaEntregaFin"};
+            return getDatosTabla("getRequisiscionesConFiltro", Parametros, idRequisicion, estado, surtido, solicitante, autorizante, proveedor,
+                string.Format("{0}{1:00}{2:00}", fechaSoliIni.Date.Year, fechaSoliIni.Date.Month, fechaSoliIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaSoliFin.Date.Year, fechaSoliFin.Date.Month, fechaSoliFin.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaAutoIni.Date.Year, fechaAutoIni.Date.Month, fechaAutoIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaAutoFin.Date.Year, fechaAutoFin.Date.Month, fechaAutoFin.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaEntregaIni.Date.Year, fechaEntregaIni.Date.Month, fechaEntregaIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaEntregaFin.Date.Year, fechaEntregaFin.Date.Month, fechaEntregaFin.Date.Day));
+        }
+
         public double getSaldoCajaConta(double saldAnt)
         {
             double saldo = 0;

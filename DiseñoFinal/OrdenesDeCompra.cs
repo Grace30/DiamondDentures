@@ -19,6 +19,7 @@ namespace DiseñoFinal
 
         public OrdenesDeCompra()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
 
@@ -39,15 +40,31 @@ namespace DiseñoFinal
             cbox_Proovedor.SelectedIndex = 0;
 
         }
-
+        //cM16K21a9V
         private void button1_Click(object sender, EventArgs e)
+        {
+            string estatus = (cbox_Estatus.Text == "(TODAS)") ? "" : cbox_Estatus.Text;
+            string surtido = (cbox_EstatusSurtido.Text == "(TODAS)") ? "" : cbox_EstatusSurtido.Text;
+            string autorizo = (cbox_Autorizo.Text == "(TODOS)") ? "" : cbox_Autorizo.Text.Split('-')[0].TrimEnd();
+            string solicitante = (cbx_Solicitante.Text == "(TODOS)") ? "" : cbx_Solicitante.Text.Split('-')[0].TrimEnd();
+            string proveedor = (cbox_Proovedor.Text == "(TODOS)") ? "" : cbox_Proovedor.Text;
+
+
+            DataTable t = manejadorRequisicion.getRequisicionesConFiltro(txt_IDRequisicion.Text, estatus, surtido, solicitante, autorizo, proveedor, (datePicker_SolicitudIni.Checked) ? datePicker_SolicitudIni.Value : new DateTime(2000, 01, 01), (datePicker_SolicitudFin.Checked) ? datePicker_SolicitudFin.Value : new DateTime(2100, 01, 01),
+                (datePicker_AutoriIni.Checked) ? datePicker_AutoriIni.Value : new DateTime(2000, 01, 01), (datePicker_AutoriFin.Checked) ? datePicker_AutoriFin.Value : new DateTime(2100,01,01),
+                (datePicker_EntregaIni.Checked) ? datePicker_EntregaIni.Value: new DateTime(2000, 01, 01), (datePicker_EntregaFin.Checked) ? datePicker_EntregaFin.Value : new DateTime(2100, 01, 01)); 
+
+            //DataTable t = manejadorRequisicion.getRequisicionesPorAprobar();
+            listarRequis(t);
+        }
+        private void listarRequis(DataTable t)
         {
             int rowSelect = 0;
             if (dataGridView1.RowCount > 0)
                 if (dataGridView1.SelectedRows.Count > 0)
                     rowSelect = dataGridView1.SelectedRows[0].Index;
             int rows = dataGridView1.RowCount;
-            DataTable t = manejadorRequisicion.getRequisicionesPorAprobar();
+
             dataGridView1.DataSource = t;
             if (dataGridView1.ColumnCount > 0)
             {
@@ -58,7 +75,7 @@ namespace DiseñoFinal
             }
 
             dataGridView1.ClearSelection();
-            if (rows == dataGridView1.RowCount)
+            /*if (rows == dataGridView1.RowCount)
             {
                 if (dataGridView1.RowCount > 0)
                     dataGridView1.Rows[rowSelect].Selected = true;
@@ -71,8 +88,8 @@ namespace DiseñoFinal
                         dataGridView1.Rows[Math.Abs((dataGridView1.RowCount - rows))].Selected = true;
                     else
                         dataGridView1.Rows[0].Selected = true;
-            }
-            toolStripStatusLabel1.Text = "Requisiciones: Se obtuvieron " + dataGridView1.RowCount +  " registros";
+            }*/
+            toolStripStatusLabel1.Text = "Requisiciones: Se obtuvieron " + dataGridView1.RowCount + " registros";
             if (dataGridView1.RowCount > 0)
                 dataGridView1.Rows[0].Selected = true;
         }
@@ -162,6 +179,15 @@ namespace DiseñoFinal
             string NoReq = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             objform.NoReq = NoReq;
             objform.ShowDialog();
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+            }
         }
     }
 }

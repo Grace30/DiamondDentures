@@ -42,5 +42,14 @@ namespace Entidad
         {
             return IbaseDatos.IngresarCompra(loginn, tipo, requisicion);
         }
+
+        public DataTable getRequisicionesConFiltro(string IdRequisicion , string Estado , string Surtido , string Solicitante , string Autorizante, string Proveedor ,
+                        DateTime FechaSoliIni, DateTime FechaSoliFin, DateTime FechaAutoIni, DateTime FechaAutoFin,
+                        DateTime FechaEntregaIni, DateTime FechaEntregaFin)
+        {
+            return IbaseDatos.getRequisicionesConFiltros(IdRequisicion, Estado, Surtido, Solicitante, Autorizante, Proveedor,
+                        FechaSoliIni, FechaSoliFin, FechaAutoIni, FechaAutoFin,
+                        FechaEntregaIni, FechaEntregaFin);
+        }
     }
 }
