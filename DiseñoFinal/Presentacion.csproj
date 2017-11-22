@@ -2486,11 +2486,11 @@
   <ItemGroup>
     <Content Include="Logo dd.ico" />
     <None Include="Resources\paysheet.png" />
-    <None Include="Resources\3.png" />
-    <None Include="Resources\22.png" />
-    <None Include="Resources\11.png" />
-    <None Include="Resources\0.png" />
-    <None Include="Resources\+3.png" />
+    <None Include="Resources\el3.png" />
+    <None Include="Resources\el2.png" />
+    <None Include="Resources\el1.png" />
+    <None Include="Resources\el0.png" />
+    <None Include="Resources\elmas3.png" />
     <None Include="Resources\Time Card_40px.png" />
     <None Include="Resources\Balance.png" />
     <None Include="Resources\fact1.PNG" />
