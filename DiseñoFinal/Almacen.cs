@@ -145,6 +145,17 @@ namespace DiseñoFinal
                     }
                 }
             }
+            if (pantalla.GetType() == typeof(Login))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(Login))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -155,7 +166,7 @@ namespace DiseñoFinal
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string[] Datos = { "", lblUsuario.Text };
+            string[] Datos = { "", lblUsuario.Text, 1.ToString() };
             intusuario.enviarEvento("PantallaRequisiciones", Datos);
         }
         public static string ReducirEspaciado(string Cadena)
@@ -168,7 +179,7 @@ namespace DiseñoFinal
             {
                 if (Cadena[Cadena.Length - 1] == ' ')
                 {
-                    Cadena.Remove(Cadena.Length - 1, 1);
+                    Cadena = Cadena.Remove(Cadena.Length - 1, 1);
                 }
             }
             return Cadena;
@@ -237,6 +248,17 @@ namespace DiseñoFinal
                     break;
             }
             timer1.Start();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { "", lblUsuario.Text, 0.ToString() };
+            intusuario.enviarEvento("PantallaRequisiciones", Datos);
         }
     }
 }
