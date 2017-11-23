@@ -257,7 +257,10 @@ namespace DiseñoFinal
                         MessageBox.Show("Pedido Confirmado");
                     }
 
-                    string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioEnCurso, v.FormatoFecha(DateTime.Now), v.FormatoFecha(DateTime.Now) };
+                    string x = lblFechaEstimada.Text;
+                    DateTime dt = Convert.ToDateTime(x);
+                    string[] Datos1 = { lblPedido.Text.Substring(1), UsuarioEnCurso, v.FormatoFecha(DateTime.Now), v.FormatoFecha(DateTime.Now),
+                    v.FormatoFecha(dt)};
                     It.enviarEvento("Registrar Datos Oficio", Datos1);
                     VistaPreviaOficio objForm = new VistaPreviaOficio();
                     string idPed = lblPedido.Text.Substring(1);

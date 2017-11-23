@@ -756,7 +756,7 @@ namespace DiseñoFinal
                     notas.RFC = fila["RFC"].ToString();
                     notas.Direccion = fila["Direccion"].ToString();
                     notas.Telefono = fila["Telefono"].ToString();
-                    notas.Fecha = fila["FechaEntrega"].ToString();
+                    notas.Fecha = fila["FechaCalculada"].ToString();
 
                 }
                 desplegarPantalla(notas);
