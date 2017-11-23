@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidad;
+using DiseñoFinal.ReportesM;
 
 namespace DiseñoFinal
 {
@@ -45,10 +46,15 @@ namespace DiseñoFinal
             año = localdate.Year.ToString();
             mes = localdate.Month.ToString();
             dia = localdate.Day.ToString();
-            string[] Datos = { dataGridView1[0, filaactual].Value.ToString(), "Entregado", año + "-" + mes + "-" + dia };
+            string[] Datos = { dataGridView1[0, filaactual].Value.ToString(), "ENTREGADO", año + "-" + mes + "-" + dia };
             mcp = new ManejadorControlPedido();
             if (mcp.EntregaPedido(Datos) == 1)
-                MessageBox.Show("Pedido Entregado");
+            {
+                VistaPreviaEntrega objForm = new VistaPreviaEntrega();
+                string Pedido = dataGridView1[0, filaactual].Value.ToString();
+                objForm.Pedido = Pedido;
+                objForm.ShowDialog();
+            }
             else
                 MessageBox.Show("No se pudo entregar el pedido");
             llenaesta();

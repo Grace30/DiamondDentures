@@ -145,7 +145,7 @@ namespace DiseñoFinal
             //Reportes frm = new Reportes(this);
             //intusuario.desplegarPantalla(frm);
             //intusuario.cerrarPantalla(this);
-            MenúReportes frm = new MenúReportes();
+            MenúReportes frm = new MenúReportes(this);
             intusuario.desplegarPantalla(frm);
             intusuario.cerrarPantalla(this);
         }
@@ -174,6 +174,12 @@ namespace DiseñoFinal
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             new FirmarAsistencia().ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { "", UsuarioEnCurso };
+            intusuario.enviarEvento("PantallaAlmacen", Datos);
         }
     }
 }

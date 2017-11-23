@@ -43,7 +43,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pBSalir = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNominaMes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNominaMes
@@ -139,7 +141,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(291, 324);
+            this.button2.Location = new System.Drawing.Point(229, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 23);
             this.button2.TabIndex = 4;
@@ -149,7 +151,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(470, 324);
+            this.button3.Location = new System.Drawing.Point(420, 339);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(182, 23);
             this.button3.TabIndex = 5;
@@ -177,12 +179,27 @@
             this.label2.TabIndex = 189;
             this.label2.Text = "Mes";
             // 
+            // pBSalir
+            // 
+            this.pBSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir;
+            this.pBSalir.Location = new System.Drawing.Point(701, 324);
+            this.pBSalir.Name = "pBSalir";
+            this.pBSalir.Size = new System.Drawing.Size(51, 49);
+            this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBSalir.TabIndex = 190;
+            this.pBSalir.TabStop = false;
+            this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click);
+            // 
             // VerNominaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(778, 359);
+            this.ClientSize = new System.Drawing.Size(778, 374);
+            this.ControlBox = false;
+            this.Controls.Add(this.pBSalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -191,9 +208,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvNominaMes);
             this.Name = "VerNominaMes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VerNominaMes";
             this.Load += new System.EventHandler(this.VerNominaMes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNominaMes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +235,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pBSalir;
     }
 }

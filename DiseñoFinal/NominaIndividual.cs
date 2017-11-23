@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DiseñoFinal.ReportesM.Reportes {
+namespace DiseñoFinal {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace DiseñoFinal.ReportesM.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class NotaTerminación : ReportClass {
+    public class NominaIndividual : ReportClass {
         
-        public NotaTerminación() {
+        public NominaIndividual() {
         }
         
         public override string ResourceName {
             get {
-                return "NotaTerminación.rpt";
+                return "NominaIndividual.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DiseñoFinal.ReportesM.Reportes {
         
         public override string FullResourceName {
             get {
-                return "DiseñoFinal.ReportesM.Reportes.NotaTerminación.rpt";
+                return "DiseñoFinal.NominaIndividual.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,41 @@ namespace DiseñoFinal.ReportesM.Reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Pedido {
+        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection1 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Login {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Mes {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Loginn {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedNotaTerminación : Component, ICachedReport {
+    public class CachedNominaIndividual : Component, ICachedReport {
         
-        public CachedNotaTerminación() {
+        public CachedNominaIndividual() {
         }
         
         [Browsable(false)]
@@ -137,7 +161,7 @@ namespace DiseñoFinal.ReportesM.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            NotaTerminación rpt = new NotaTerminación();
+            NominaIndividual rpt = new NominaIndividual();
             rpt.Site = this.Site;
             return rpt;
         }

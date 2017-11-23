@@ -899,7 +899,9 @@ namespace DiseñoFinal
                         foreach (DataRow fila in datosFactura.Rows)
                         {
                             vfac.Pedido = fila["IDPedido"].ToString();
+                            vfac.Loginn = MenuPrincipal.UsuarioEnCurso;
                             vfac.Nombre = fila["Nombre"].ToString();
+                            vfac.Apellido = fila["Apellidos"].ToString();
                             vfac.RFC = fila["RFC"].ToString();
                             vfac.Cedula = fila["Cedula"].ToString();
                             vfac.Direccion = fila["Direccion"].ToString();
@@ -918,7 +920,9 @@ namespace DiseñoFinal
                         foreach (DataRow fila in datosFactura.Rows)
                         {
                             vfac.Pedido = fila["Pedido"].ToString();
+                            vfac.Loginn = fila["Loginn"].ToString();
                             vfac.Nombre = fila["Nombre"].ToString();
+                            vfac.Apellido = fila["Apellidos"].ToString();
                             vfac.RFC = fila["RFC"].ToString();
                             vfac.Cedula = fila["Cedula"].ToString();
                             vfac.Direccion = fila["Direccion"].ToString();
@@ -1033,7 +1037,7 @@ namespace DiseñoFinal
 
                         string idPed = dgvPedidos[0, dgvPedidos.CurrentCell.RowIndex].Value.ToString();
 
-                        objForm.Folio = idPed;
+                        objForm.Pedido = idPed;
 
                         objForm.ShowDialog();
                     }

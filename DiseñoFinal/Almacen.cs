@@ -135,6 +135,16 @@ namespace DiseñoFinal
                     }
                 }
             }
+            if (pantalla.GetType() == typeof(MenuPrincipal))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuPrincipal))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -191,38 +201,39 @@ namespace DiseñoFinal
             switch (req)
             {
                 case 0:
-                    pbReq.BackgroundImage = Properties.Resources._0;
+                    pbReq.BackgroundImage = Properties.Resources.el0;
                     break;
                 case 1:
-                    pbReq.BackgroundImage = Properties.Resources._11;
+                    pbReq.BackgroundImage = Properties.Resources.el1;
                     break;
                 case 2:
-                    pbReq.BackgroundImage = Properties.Resources._2;
+                    pbReq.BackgroundImage = Properties.Resources.el2;
                     break;
                 case 3:
+                    pbReq.BackgroundImage = Properties.Resources.el3;
                     break;
                 default:
-                    if (req > 5)
-                        pbReq.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    if (req > 3)
+                        pbReq.BackgroundImage = Properties.Resources.elmas3;
                     break;
             }
             switch (mat)
             {
                 case 0:
-                    pbMat.BackgroundImage = Properties.Resources._0;
+                    pbMat.BackgroundImage = Properties.Resources.el0;
                     break;
                 case 1:
-                    pbMat.BackgroundImage = Properties.Resources._11;
+                    pbMat.BackgroundImage = Properties.Resources.el1;
                     break;
                 case 2:
-                    pbMat.BackgroundImage = Properties.Resources._2;
+                    pbMat.BackgroundImage = Properties.Resources.el2;
                     break;
                 case 3:
-                    pbMat.BackgroundImage = Properties.Resources.Request3;
+                    pbMat.BackgroundImage = Properties.Resources.el3;
                     break;
                 default:
-                    if (mat > 5)
-                        pbMat.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    if (mat > 3)
+                        pbMat.BackgroundImage = Properties.Resources.elmas3;
                     break;
             }
             timer1.Start();

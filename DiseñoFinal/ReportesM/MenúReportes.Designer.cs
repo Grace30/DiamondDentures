@@ -323,13 +323,12 @@
             // 
             this.pBSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pBSalir.Image = global::DiseñoFinal.Properties.Resources.salir1;
-            this.pBSalir.Location = new System.Drawing.Point(232, 536);
+            this.pBSalir.Location = new System.Drawing.Point(1305, 5);
             this.pBSalir.Name = "pBSalir";
             this.pBSalir.Size = new System.Drawing.Size(37, 33);
             this.pBSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBSalir.TabIndex = 176;
             this.pBSalir.TabStop = false;
-            this.pBSalir.Visible = false;
             this.pBSalir.WaitOnLoad = true;
             this.pBSalir.Click += new System.EventHandler(this.pBSalir_Click_1);
             // 
@@ -373,6 +372,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1354, 565);
+            this.ControlBox = false;
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblDesde);
             this.Controls.Add(this.dtFechaHasta);

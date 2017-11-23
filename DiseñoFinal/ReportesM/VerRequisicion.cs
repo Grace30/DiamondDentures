@@ -8,14 +8,15 @@ namespace DiseñoFinal.ReportesM
     public partial class VerRequisicion : Form
     {
         InterfaceUsuario intusuario;
+        Form pantalla;
         ManejadorReportes mare = new ManejadorReportes();
         Validación v;
-        Form pantalla;
         string UsuarioEnCurso = "";
-        public VerRequisicion()
+        public VerRequisicion(Form pantalla)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
+            this.pantalla = pantalla;
             v = new Validación();
             UsuarioEnCurso = MenuPrincipal.UsuarioEnCurso;
         }
@@ -102,6 +103,21 @@ namespace DiseñoFinal.ReportesM
                 dgvReq["FechaSurtido", renglon].Value = ReducirEspaciado(fila["FechaSurtido"].ToString());
                 dgvReq["Proveedor", renglon].Value = ReducirEspaciado(fila["Proveedor"].ToString());
                 renglon++;
+            }
+        }
+
+        private void pBSalir_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+            if (pantalla.GetType() == typeof(MenúReportes))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenúReportes))
+                    {
+                        frm.Show();
+                    }
+                }
             }
         }
     }

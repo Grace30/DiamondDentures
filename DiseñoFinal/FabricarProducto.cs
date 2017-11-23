@@ -733,9 +733,9 @@ namespace DiseñoFinal
             foreach (DataRow fila in datosPedidos2.Rows)
             {
                 CodPed.Add(ReducirEspaciado(fila["IDPedido"].ToString()));
-                Est.Add(ReducirEspaciado(fila["Estatus"].ToString()));
+                Est.Add(ReducirEspaciado(fila["EstatusPedido"].ToString()));
                 FechaEnt.Add(ReducirEspaciado(fila["FechaCalculada"].ToString()));
-                Labor.Add(ReducirEspaciado(fila["Fabricante"].ToString()));
+                Labor.Add(ReducirEspaciado(fila["Laboratorista"].ToString()));
                 Urg.Add(ReducirEspaciado(fila["Urgencia"].ToString()));
             }
             this.FabricarProducto_Load(sender, e);

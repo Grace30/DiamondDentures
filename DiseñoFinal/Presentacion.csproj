@@ -334,6 +334,12 @@
     <Compile Include="ModificarProveedor.designer.cs">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="NominaIndividual.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NominaIndividual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="OrdenesDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -915,6 +921,12 @@
     <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportNominaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportNominaIndividual.Designer.cs">
+      <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportesM\VistaPreviaInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1197,6 +1209,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NominaIndividual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NominaIndividual.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesDeCompra.resx">
       <DependentUpon>OrdenesDeCompra.cs</DependentUpon>
@@ -1525,11 +1541,17 @@
     <EmbeddedResource Include="ReportesM\VistaPreviaCatalogo.resx">
       <DependentUpon>VistaPreviaCatalogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaEntrega.resx">
+      <DependentUpon>VistaPreviaEntrega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaEyS.resx">
       <DependentUpon>VistaPreviaEyS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNominaIndividual.resx">
+      <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaInventario.resx">
       <DependentUpon>VistaPreviaInventario.cs</DependentUpon>
@@ -2464,11 +2486,11 @@
   <ItemGroup>
     <Content Include="Logo dd.ico" />
     <None Include="Resources\paysheet.png" />
-    <None Include="Resources\3.png" />
-    <None Include="Resources\22.png" />
-    <None Include="Resources\11.png" />
-    <None Include="Resources\0.png" />
-    <None Include="Resources\+3.png" />
+    <None Include="Resources\el3.png" />
+    <None Include="Resources\el2.png" />
+    <None Include="Resources\el1.png" />
+    <None Include="Resources\el0.png" />
+    <None Include="Resources\elmas3.png" />
     <None Include="Resources\Time Card_40px.png" />
     <None Include="Resources\Balance.png" />
     <None Include="Resources\fact1.PNG" />

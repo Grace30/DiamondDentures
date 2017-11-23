@@ -10,8 +10,8 @@ namespace Datos
     {
         public int RegistrarAsistencia(string loginn)
         {
-            string[] Parametros = { "@Loginn"};
-            return Ejecutar("RegistrarAsistencia", Parametros,loginn);
+            string[] Parametros = { "@Loginn", "@Fecha"};
+            return Ejecutar("RegistrarAsistencia", Parametros,loginn, DateTime.Now);
         }
 
         public DataTable ObtenerRegistroAsistencia(string loginnn, DateTime date)
@@ -50,21 +50,42 @@ namespace Datos
             return requi;
         }
 
-        public double getSaldoCajaConta()
+        public DataTable getRequisicionesConFiltros(string idRequisicion, string estado, string surtido, string solicitante, string autorizante, string proveedor, DateTime fechaSoliIni, DateTime fechaSoliFin, DateTime fechaAutoIni, DateTime fechaAutoFin, DateTime fechaEntregaIni, DateTime fechaEntregaFin)
+        {
+            string[] Parametros = { "@IdRequisicion", "@Estado", "@Surtido","@Solicitante", "@Autorizante", "@Proveedor",
+                        "@FechaSoliIni", "@FechaSoliFin",
+                        "@FechaAutoIni", "@FechaAutoFin",
+                        "@FechaEntregaIni", "@FechaEntregaFin"};
+            return getDatosTabla("getRequisiscionesConFiltro", Parametros, idRequisicion, estado, surtido, solicitante, autorizante, proveedor,
+                string.Format("{0}{1:00}{2:00}", fechaSoliIni.Date.Year, fechaSoliIni.Date.Month, fechaSoliIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaSoliFin.Date.Year, fechaSoliFin.Date.Month, fechaSoliFin.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaAutoIni.Date.Year, fechaAutoIni.Date.Month, fechaAutoIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaAutoFin.Date.Year, fechaAutoFin.Date.Month, fechaAutoFin.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaEntregaIni.Date.Year, fechaEntregaIni.Date.Month, fechaEntregaIni.Date.Day),
+                string.Format("{0}{1:00}{2:00}", fechaEntregaFin.Date.Year, fechaEntregaFin.Date.Month, fechaEntregaFin.Date.Day));
+        }
+
+        public double getSaldoCajaConta(double saldAnt)
         {
             double saldo = 0;
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
-            cmdReader = cmd.ExecuteReader();
-            while (cmdReader.Read())
+            try
             {
-                saldo = Convert.ToDouble(cmdReader[0].ToString());
-            }
-            return saldo;
+                if (conexion.State != ConnectionState.Open)
+                    conexion.Open();
 
+                cmd = new SqlCommand("execute getSaldoCajaConta", conexion);
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                {
+                    saldo = Convert.ToDouble(cmdReader[0].ToString());
+                }
+            }
+            catch (Exception ms)
+            { return saldAnt; }
+            return saldo;
         }
 
         public string NombreEmpleados(string loginn)
@@ -146,17 +167,22 @@ namespace Datos
             return empleados.ToArray();
         }
 
-        public int CountRequisicionesPendientes()
+        public int CountRequisicionesPendientes(int countAnt)
         {
+
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             int count = 0;
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
-            cmdReader = cmd.ExecuteReader();
-            while (cmdReader.Read())
-                count = Convert.ToInt32(cmdReader[0]);
+            try
+            {
+                if (conexion.State != ConnectionState.Open) conexion.Open();
+                cmd = new SqlCommand("execute countRequisicionesEnEspera", conexion);
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                    count = Convert.ToInt32(cmdReader[0]);
+            }
+            catch (Exception) { return countAnt; }
             return count;
         }
 
@@ -247,24 +273,27 @@ namespace Datos
             return getDatosTabla("getBalance", Parametros, desde,hasta);
         }
 
-        public double GetSaldoEnBanco()
-        { 
+        public double GetSaldoEnBanco(double saldoAnt)
+        {
             SqlCommand cmd = new SqlCommand();
             SqlConnection conexion = new Conexion().getAzureConexion();
             SqlDataReader cmdReader;
             double saldo = 0;
-            conexion = new Conexion().getAzureConexion();
-            if (conexion.State != ConnectionState.Open) conexion.Open();
-            cmd = new SqlCommand("execute getSaldoBanco", conexion);
-            
+            try
+            {
+                conexion = new Conexion().getAzureConexion();
+                if (conexion.State != ConnectionState.Open) conexion.Open();
+                cmd = new SqlCommand("execute getSaldoBanco", conexion);
+
                 cmdReader = cmd.ExecuteReader();
                 while (cmdReader.Read())
                     saldo = Convert.ToDouble(cmdReader[0]);
                 cmdReader.Close();
                 conexion.Close();
+            }
+            catch (Exception ms)
+            { return saldoAnt; }
             return saldo;
-
-
         }
 
         public string[] ListaUsuarios()

@@ -101,7 +101,7 @@ namespace Datos
         }
         public int RegistrarDatosNota (string[] Datos)
         {
-            string[] Parametros = { "@Pedido", "@Loginn", "@FechaEmision", "@FechaTerminacion", "@Observaciones", "FechaEntrega" };
+            string[] Parametros = { "@Pedido", "@Loginn", "@FechaEmision", "@FechaTerminacion", "@Observaciones", "@FechaEntrega" };
             return Ejecutar("Nota", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4], Datos[5]);
         }
 

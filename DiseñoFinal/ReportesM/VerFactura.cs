@@ -15,6 +15,7 @@ namespace DiseñoFinal
     public partial class VerFactura : Form
     {
         ManejadorFacturas maf = new ManejadorFacturas();
+        ManejadorReportes mar = new ManejadorReportes();
         InterfaceUsuario intusuario;
         string UsuarioEnCurso = "";
         public string Pedido,Loginn, Cedula, RFC, Nombre,Apellido, Direccion, Pais, Estado, Municipio, Ciudad, Colonia, Telefono, CodigoPostal;
@@ -79,45 +80,46 @@ namespace DiseñoFinal
             txtpais.Text = ReducirEspaciado(Pais);
             dateTimePicker1.Value = !string.IsNullOrWhiteSpace(Fecha) ? Convert.ToDateTime(Fecha) : DateTime.Now;
             Cambios = false;
-            //RellenarTODO();
-            int subtotal = 0;
-            foreach (DataGridViewRow row in dgvProducto.Rows)
-            {
-                subtotal += Convert.ToInt32(row.Cells["Imp"].Value);
-            }
-            double iva, suma;
+            RellenarTODO();
+            //int subtotal = 0;
+            //foreach (DataGridViewRow row in dgvProducto.Rows)
+            //{
+            //    subtotal += Convert.ToInt32(row.Cells["Prec"].Value);
 
-            iva = subtotal * 0.16;
-            suma = subtotal + iva;
+            //}
+            //double iva, suma;
 
-            lbliva.Text = "$ " + Convert.ToString(iva) + ".00";
-            lblsub.Text = "$" + Convert.ToString(subtotal) + ".00";
-            lbltotal.Text = "$ " + Convert.ToString(suma) + ".00";
+            //iva = subtotal * 0.16;
+            //suma = subtotal + iva;
+
+            //lbliva.Text = "$ " + Convert.ToString(iva) + ".00";
+            //lblsub.Text = "$" + Convert.ToString(subtotal) + ".00";
+            //lbltotal.Text = "$ " + Convert.ToString(suma) + ".00";
 
 
 
         }
-        //public void RellenarTODO()
-        //{
-        //    string[] Datos = { lblNoPedido.Text };
-        //    var datosProductos = new DataTable();
-        //    datosProductos = maf.ProductosFacturar(Datos);
-        //    dgvProducto.ColumnCount = datosProductos.Columns.Count;
-        //    dgvProducto.RowCount = datosProductos.Rows.Count;
-        //    int renglon = 0;
-        //    foreach (DataRow fila in datosProductos.Rows)
-        //    {
-        //        dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("Codigo")].ToString();
-        //        dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
-        //        dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("NombreProducto")].ToString();
-        //        dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Material")].ToString();
-        //        dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("Precio")].ToString();
-        //        dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
-        //        renglon++;
-        //    }
-        //}
+        public void RellenarTODO()
+        {
+            string[] Datos = { lblNoPedido.Text };
+            var datosProductos = new DataTable();
+            datosProductos = mar.ObtenerProductosPedido(Datos);
+            dgvProducto.ColumnCount = datosProductos.Columns.Count;
+            dgvProducto.RowCount = datosProductos.Rows.Count;
+            int renglon = 0;
+            foreach (DataRow fila in datosProductos.Rows)
+            {
+                dgvProducto["Cod", renglon].Value = fila[ReducirEspaciado("CodigoEspecial")].ToString();
+                dgvProducto["Cant", renglon].Value = fila[ReducirEspaciado("Producto y Materiales")].ToString();
+                dgvProducto["Producto", renglon].Value = fila[ReducirEspaciado("Precio Unitario")].ToString();
+                dgvProducto["Mat", renglon].Value = fila[ReducirEspaciado("Cantidad")].ToString();
+                dgvProducto["Prec", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
+                //  dgvProducto["Imp", renglon].Value = fila[ReducirEspaciado("SubTotal")].ToString();
+                renglon++;
+            }
+        }
 
-       
+
         private void pBSalir2_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("¿Desea cerrar la aplicación?", "Cerrar la aplicación", MessageBoxButtons.YesNo);
@@ -156,7 +158,7 @@ namespace DiseñoFinal
                     {
                         if (DialogResult.Yes == MessageBox.Show("Se modificará la factura\n\n¿Continuar?", "", MessageBoxButtons.YesNoCancel))
                         {
-                            string[] Datos = {lblNoPedido.Text, lblFecha.Text,txtnombre.Text, txtApellido.Text
+                            string[] Datos = {lblNoPedido.Text, lblUsuario.Text,lblFecha.Text,txtnombre.Text, txtApellido.Text
                                 ,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
                     txtestado.Text, txtmunicipio.Text, txtciudad.Text, txtcolonia.Text, txtcp.Text, txtel.Text };
                             intusuario.enviarEvento("Modificar Datos Factura", Datos);
@@ -185,35 +187,37 @@ namespace DiseñoFinal
                 else
                     MessageBox.Show("No se puede registrar");
             }
-           
+
             int Factura = Convert.ToInt32(maf.BuscarFactura(new string[] { lblNoPedido.Text }).Rows[0].ItemArray[0]);
 
             string idPed = lblNoPedido.Text;
+
+            objForm.NoFactura = idPed;
 
             objForm.Pedido = idPed;
 
             Cambios = false;
 
             objForm.ShowDialog();
-            string[] Datos2 = { lblNoPedido.Text, "FACTURADO" };
-            intusuario.enviarEvento("CambiarEstado", Datos2);
+            //string[] Datos2 = { lblNoPedido.Text, "FACTURADO" };
+            //intusuario.enviarEvento("CambiarEstado", Datos2);
 
         }
 
         private void pBActualizar_Click(object sender, EventArgs e)
         {
-            if (txtcedula.Text != "" && txtrfc.Text != "" && txtnombre.Text != "" && txtcolonia.Text != "" && txtdireccion.Text != "" && txtciudad.Text != ""
+            if (txtcedula.Text != "" && txtrfc.Text != "" && txtnombre.Text != "" && txtApellido.Text != "" && txtcolonia.Text != "" && txtdireccion.Text != "" && txtciudad.Text != ""
                && txtestado.Text != "" && txtmunicipio.Text != "" && txtpais.Text != "" && txtcp.Text != "" && txtel.Text != "")
             {
                 if (maf.BuscarFactura(new string[] { lblNoPedido.Text, "" }).Rows.Count > 0)
                 {
-                    string[] Datos = {lblNoPedido.Text, lblFecha.Text,txtnombre.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
+                    string[] Datos = {lblNoPedido.Text,lblUsuario.Text, lblFecha.Text,txtnombre.Text, txtApellido.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
                     txtestado.Text, txtmunicipio.Text, txtciudad.Text, txtcolonia.Text, txtcp.Text, txtel.Text };
                     intusuario.enviarEvento("Modificar Datos Factura", Datos);
                 }
                 else
                 {
-                    string[] Datos = {lblNoPedido.Text,lblFecha.Text,txtnombre.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
+                    string[] Datos = {lblNoPedido.Text, lblUsuario.Text,lblFecha.Text,txtnombre.Text, txtApellido.Text,txtrfc.Text, txtcedula.Text,txtdireccion.Text, txtpais.Text,
                     txtestado.Text, txtmunicipio.Text, txtciudad.Text, txtcolonia.Text, txtcp.Text, txtel.Text };
                     intusuario.enviarEvento("Registrar Datos Factura", Datos);
                 }

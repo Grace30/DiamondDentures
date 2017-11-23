@@ -23,9 +23,9 @@ namespace Entidad
 
         }
 
-        public int CountRequisicionesPendientes()
+        public int CountRequisicionesPendientes(int countAnt)
         {
-            return IbaseDatos.CountRequisicionesPendientes();
+            return IbaseDatos.CountRequisicionesPendientes(countAnt);
         }
 
         public DataTable getRequisicionesPorAprobar()
@@ -41,6 +41,15 @@ namespace Entidad
         public int Pagar(string loginn,string tipo, Requisicion requisicion)
         {
             return IbaseDatos.IngresarCompra(loginn, tipo, requisicion);
+        }
+
+        public DataTable getRequisicionesConFiltro(string IdRequisicion , string Estado , string Surtido , string Solicitante , string Autorizante, string Proveedor ,
+                        DateTime FechaSoliIni, DateTime FechaSoliFin, DateTime FechaAutoIni, DateTime FechaAutoFin,
+                        DateTime FechaEntregaIni, DateTime FechaEntregaFin)
+        {
+            return IbaseDatos.getRequisicionesConFiltros(IdRequisicion, Estado, Surtido, Solicitante, Autorizante, Proveedor,
+                        FechaSoliIni, FechaSoliFin, FechaAutoIni, FechaAutoFin,
+                        FechaEntregaIni, FechaEntregaFin);
         }
     }
 }

@@ -120,5 +120,13 @@ namespace DiseñoFinal
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ReportesM.VistaPreviaReq objform = new ReportesM.VistaPreviaReq();
+            string NoReq = txt_IDRequisicion.Text;
+            objform.NoReq = NoReq;
+            objform.ShowDialog();
+        }
     }
 }

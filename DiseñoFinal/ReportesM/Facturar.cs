@@ -122,8 +122,8 @@ namespace DiseñoFinal
                 string[] Datos = { dgvFPedido[0, dgvFPedido.CurrentCell.RowIndex].Value.ToString() };
                 intusuario.enviarEvento("PantallaElaborarFactura", Datos);
 
-                string[] Datos2 = { dgvFPedido[0, dgvFPedido.CurrentCell.RowIndex].Value.ToString() };
-                intusuario.enviarEvento("ProductosAFacturar", Datos2);
+                //string[] Datos2 = { dgvFPedido[0, dgvFPedido.CurrentCell.RowIndex].Value.ToString() };
+                //intusuario.enviarEvento("ProductosAFacturar", Datos2);
             }
  
         }

@@ -92,8 +92,12 @@ namespace DiseñoFinal
 
         private void pBActualizar_Click(object sender, EventArgs e)
         {
+            string x = lblFecha.Text;
+         DateTime dt=  Convert.ToDateTime(x);
             string[] Datos1 = { lblNoPedido.Text, UsuarioEnCurso
-                    , v.FormatoFecha(DateTime.Now),v.FormatoFecha(DateTime.Now), txtObservaciones.Text,lblFecha.Text};
+                    , v.FormatoFecha(DateTime.Now),v.FormatoFecha(DateTime.Now), txtObservaciones.Text,
+                v.FormatoFecha(dt)
+            };
             intusuario.enviarEvento("Registrar Datos Nota", Datos1);
 
             VistaPreviaNota objForm = new VistaPreviaNota();
