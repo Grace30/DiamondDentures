@@ -138,6 +138,12 @@ namespace DiseñoFinal
                     string NoReq = txtRequi.Text;
                     objform.NoReq = NoReq;
                     objform.ShowDialog();
+
+                    //esto es para la requisición proveedor
+                    //VistaPreviaRequiProv obj = new VistaPreviaRequiProv();
+                    //string ClaveProveedor = ""; //falta de donde tomas la clave del proveedor
+                    //obj.ClaveProv = ClaveProveedor;
+                    //obj.ShowDialog();
                 }
             }
         }
