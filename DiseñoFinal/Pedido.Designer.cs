@@ -389,7 +389,6 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 220;
-            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // label10
             // 
@@ -400,7 +399,6 @@
             this.label10.Size = new System.Drawing.Size(50, 17);
             this.label10.TabIndex = 219;
             this.label10.Text = "Total $";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // checkBox1
             // 
@@ -423,7 +421,6 @@
             this.label11.Size = new System.Drawing.Size(129, 17);
             this.label11.TabIndex = 217;
             this.label11.Text = "Fecha de entrega*";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dateTimePicker1
             // 
@@ -433,8 +430,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(36, 565);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(117, 23);
-            this.dateTimePicker1.TabIndex = 216;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.TabIndex = 216;           
             // 
             // pBGenerarPedido
             // 

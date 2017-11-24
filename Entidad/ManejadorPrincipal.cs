@@ -46,6 +46,11 @@ namespace Entidad
                 return false;
         }
 
+        public DataTable getMaterialPorNombre(string[] Datos)
+        {
+            return IbaseDatos.getMaterialPorNombre(Datos);
+        }
+
         public DataTable getClave()
         {
             return IbaseDatos.getClave();

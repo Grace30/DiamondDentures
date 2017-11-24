@@ -99,5 +99,12 @@ namespace DiseñoFinal
             string[] Datos = { UsuarioEnCurso };
             ItUs.enviarEvento("PantallaCaja", Datos);
         }
+
+        private void pBReportes_Click(object sender, EventArgs e)
+        {
+            MenúReportes frm = new MenúReportes(this);
+            ItUs.desplegarPantalla(frm);
+            ItUs.cerrarPantalla(this);
+        }
     }
 }

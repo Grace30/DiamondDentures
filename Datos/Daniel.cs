@@ -158,5 +158,11 @@ namespace Datos
             return Ejecutar("ActualizaBanco", Parametros, Datos[0]);
         }
 
+        public DataTable getMaterialPorNombre(string[] Datos)
+        {
+            string[] Parametros = { "@Codigo" };
+            return getDatosTabla("getMaterialporCodigo", Parametros, Datos[0]);
+        }
+
     }
 }

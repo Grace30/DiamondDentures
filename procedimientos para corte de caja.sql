@@ -147,7 +147,10 @@ select * from Ventas
 create proc UltimaVenta as select top(1) * from Ventas where IDPedido is not null order by FolioVenta desc
 select * from Ventas
 select * from Pedido
+select * from Material
 select * from ProductosPedido
+ create proc getMaterialporCodigo @Codigo varchar(6) as
+select * from Material where Material.CodigoMaterial = @Codigo
 
 select * from CorteCaja
 

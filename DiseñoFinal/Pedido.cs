@@ -255,26 +255,6 @@ namespace DiseñoFinal
             CalculaFecha(dias);
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             filaactual = e.RowIndex;
@@ -287,14 +267,24 @@ namespace DiseñoFinal
             float Total = 0;            
             string[] Datos = new string[] { lblPedido.Text.Substring(1) };
             DataTable tabla = map.getDatosProductosPedido(Datos);
+            DataTable tabla2;
             dataGridView1.DataSource = tabla;
+            Datos = new string[] { txtCodigoMaterial.Text, textBox1.Text };
+            tabla2 = map.getMaterialPorNombre(Datos);
+            float materiales = 0;
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dias += float.Parse(tabla.Rows[i]["Tiempo"].ToString()) * float.Parse(tabla.Rows[i]["Cantidad"].ToString());
                 Total += float.Parse(tabla.Rows[i]["SubTotal"].ToString());
+                materiales += float.Parse(tabla.Rows[i]["Cantidad"].ToString());
             }
+            materiales = float.Parse(tabla2.Rows[0]["Existencia"].ToString()) - materiales;
             txtTotal.Text = Total.ToString();
             CalculaFecha(dias);
+            if (materiales <= 0)
+            {
+                MessageBox.Show("El material es insuficiente");
+            }
         }
 
         public void CalculaFecha(float dias)

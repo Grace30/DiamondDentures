@@ -37,12 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pBSalir1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCaja = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.pBSalir = new System.Windows.Forms.PictureBox();
             this.pBPedidos = new System.Windows.Forms.PictureBox();
             this.pbxSemaforo = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCaja = new System.Windows.Forms.Button();
+            this.pBReportes = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBPedido)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReportes)).BeginInit();
             this.SuspendLayout();
             // 
             // pBPedido
@@ -131,6 +133,7 @@
             // 
             this.panel1.BackgroundImage = global::DiseñoFinal.Properties.Resources.fondo_recepcion;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pBReportes);
             this.panel1.Controls.Add(this.btnCaja);
             this.panel1.Controls.Add(this.btnVentas);
             this.panel1.Controls.Add(this.pBSalir);
@@ -139,9 +142,19 @@
             this.panel1.Size = new System.Drawing.Size(371, 142);
             this.panel1.TabIndex = 0;
             // 
+            // btnCaja
+            // 
+            this.btnCaja.Location = new System.Drawing.Point(245, 41);
+            this.btnCaja.Name = "btnCaja";
+            this.btnCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnCaja.TabIndex = 11;
+            this.btnCaja.Text = "Caja";
+            this.btnCaja.UseVisualStyleBackColor = true;
+            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            // 
             // btnVentas
             // 
-            this.btnVentas.Location = new System.Drawing.Point(146, 12);
+            this.btnVentas.Location = new System.Drawing.Point(146, 41);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(75, 23);
             this.btnVentas.TabIndex = 10;
@@ -192,15 +205,20 @@
             this.toolTip1.SetToolTip(this.pbxSemaforo, "Semáforo");
             this.pbxSemaforo.Click += new System.EventHandler(this.pbxSemaforo_Click);
             // 
-            // btnCaja
+            // pBReportes
             // 
-            this.btnCaja.Location = new System.Drawing.Point(245, 12);
-            this.btnCaja.Name = "btnCaja";
-            this.btnCaja.Size = new System.Drawing.Size(75, 23);
-            this.btnCaja.TabIndex = 11;
-            this.btnCaja.Text = "Caja";
-            this.btnCaja.UseVisualStyleBackColor = true;
-            this.btnCaja.Click += new System.EventHandler(this.btnCaja_Click);
+            this.pBReportes.BackColor = System.Drawing.Color.Transparent;
+            this.pBReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pBReportes.Image = ((System.Drawing.Image)(resources.GetObject("pBReportes.Image")));
+            this.pBReportes.Location = new System.Drawing.Point(52, 11);
+            this.pBReportes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBReportes.Name = "pBReportes";
+            this.pBReportes.Size = new System.Drawing.Size(72, 76);
+            this.pBReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBReportes.TabIndex = 211;
+            this.pBReportes.TabStop = false;
+            this.toolTip1.SetToolTip(this.pBReportes, "Generar Reportes");
+            this.pBReportes.Click += new System.EventHandler(this.pBReportes_Click);
             // 
             // Recepcion
             // 
@@ -229,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSemaforo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReportes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +267,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnCaja;
+        private System.Windows.Forms.PictureBox pBReportes;
     }
 }
