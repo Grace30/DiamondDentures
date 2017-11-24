@@ -36,7 +36,10 @@ namespace DiseñoFinal
         private void pBSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            foreach (Form frm in Application.OpenForms)
+            if(Application.OpenForms.Count>0)
+                Application.OpenForms[Application.OpenForms.Count - 1].Show();
+            
+            /*foreach (Form frm in Application.OpenForms)
             {
                 if (frm.GetType() == typeof(Menú_Admin) && EsAdmin)
                 {
@@ -44,8 +47,15 @@ namespace DiseñoFinal
                 }
                 if (frm.GetType() == typeof(MenuPrincipal) && !EsAdmin)
                     frm.Show();
-                
-            }
+                if (frm.GetType() == typeof(MenuContabilidad))
+                    frm.Show();
+                if (frm.GetType() == typeof(Facturar))
+                    frm.Show();
+                if (frm.GetType() == typeof(Facturas))
+                    frm.Show();
+
+
+            }*/
         }
 
         private void pBTarjetas_Click(object sender, EventArgs e)

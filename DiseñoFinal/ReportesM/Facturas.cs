@@ -13,7 +13,7 @@ namespace DiseñoFinal
 {
     public partial class Facturas : Form
     {
-        InterfaceUsuario intusuario;
+        InterfaceUsuario intusuario = new InterfaceUsuario(new Form());
         Form pantalla;
         bool admin = false;
         ManejadorFacturas maf = new ManejadorFacturas();
@@ -32,7 +32,8 @@ namespace DiseñoFinal
         private extern static void ReleaseCapture();
         private void Facturas_Load(object sender, EventArgs e)
         {
-           
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
+
             RellenarTODO();
             
            
@@ -87,11 +88,15 @@ namespace DiseñoFinal
                 foreach (Form frm in Application.OpenForms)
                 {
                     if (frm.GetType() == typeof(MenúReportes))
-                    {
                         frm.Show();
-                    }
                 }
             }
+            else if (pantalla.GetType() == typeof(MenuContabilidad))
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuContabilidad))
+                        frm.Show();
+                }
         }
 
         private void pBSalir2_Click(object sender, EventArgs e)
@@ -236,6 +241,12 @@ namespace DiseñoFinal
             }
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario", Datos);
         }
     }
 }

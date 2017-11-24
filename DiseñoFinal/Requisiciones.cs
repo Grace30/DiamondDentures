@@ -18,20 +18,31 @@ namespace DiseñoFinal
         ManejadorRegistroUsuario maru = new ManejadorRegistroUsuario();
         InterfaceUsuario intusuario;
         Form pantalla;
-        public Requisiciones(Form pantalla, string Usuario)
+        int Proveedor = 1;
+        public Requisiciones(Form pantalla, string Usuario, int Prov)
         {
             InitializeComponent();
             intusuario = new InterfaceUsuario(this);
             this.pantalla = pantalla;
             lblUsuario.Text = Usuario;
+            Proveedor = Prov;
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            string[] Datos = { txtRequi.Text };
+            string Estado = "";
+            if(cbEstado.Text != "TODAS") { Estado = cbEstado.Text; }
+            string[] Datos = { txtRequi.Text, Estado };
             var datosRequi = new DataTable();
-            datosRequi = mancp.ObtenerRequisiciones(Datos);
-            DatosData(datosRequi);
+            if (Proveedor == 1)
+            {
+                datosRequi = mancp.ObtenerRequisiciones(Datos);
+                DatosData(datosRequi);
+            }else
+            {
+                datosRequi = mancp.ObtenerRequiProv(Datos);
+                DatosData(datosRequi);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,6 +69,7 @@ namespace DiseñoFinal
                 }
             }
         }
+
         public void DatosData(DataTable DatosAlmacen)
         {
             dgvAlmacen.DataSource = DatosAlmacen;
@@ -76,6 +88,11 @@ namespace DiseñoFinal
                 foreach (DataRow fila in Departamento.Rows)
                 { Dep = fila["Departamento"].ToString(); }
                 lblDep.Text = ReducirEspaciado(Dep);
+            }
+            if (Proveedor == 0)
+            {
+                btnProv.Visible = false;
+                label1.Text = "Proveedor";
             }
         }
         public static string ReducirEspaciado(string Cadena)
@@ -98,11 +115,55 @@ namespace DiseñoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VistaPreviaReq objform = new VistaPreviaReq();
+            if (txtRequi.Text != null)
+            {
+                VistaPreviaReq objform = new VistaPreviaReq();
 
-            string NoReq = txtRequi.Text;
-            objform.NoReq = NoReq;
-            objform.ShowDialog();
+                string NoReq = txtRequi.Text;
+                objform.NoReq = NoReq;
+                objform.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtRequi.Text != null)
+            {
+                string [] Datos = { txtRequi.Text};
+                if(mancp.EnviarRequi(Datos) > 0)
+                {
+                    MessageBox.Show("Requisicion Enviada al Proveedor");
+                    VistaPreviaReq objform = new VistaPreviaReq();
+
+                    string NoReq = txtRequi.Text;
+                    objform.NoReq = NoReq;
+                    objform.ShowDialog();
+
+                    //esto es para la requisición proveedor
+                    //VistaPreviaRequiProv obj = new VistaPreviaRequiProv();
+                    //string ClaveProveedor = ""; //falta de donde tomas la clave del proveedor
+                    //obj.ClaveProv = ClaveProveedor;
+                    //obj.ShowDialog();
+                }
+            }
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Estado = "";
+            if (cbEstado.Text != "TODAS") { Estado = cbEstado.Text; }
+            string[] Datos = { txtRequi.Text, Estado };
+            var datosRequi = new DataTable();
+            if (Proveedor == 1)
+            {
+                datosRequi = mancp.ObtenerRequisiciones(Datos);
+                DatosData(datosRequi);
+            }
+            else
+            {
+                datosRequi = mancp.ObtenerRequiProv(Datos);
+                DatosData(datosRequi);
+            }
         }
     }
 }

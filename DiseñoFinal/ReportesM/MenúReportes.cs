@@ -413,7 +413,7 @@ namespace DiseñoFinal
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(FabricarProducto))
+                    if (frm.GetType() == typeof(MenuContabilidad))
                     {
                         frm.Show();
                     }
@@ -423,7 +423,7 @@ namespace DiseñoFinal
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(FabricarProducto))
+                    if (frm.GetType() == typeof(Almacen))
                     {
                         frm.Show();
                     }

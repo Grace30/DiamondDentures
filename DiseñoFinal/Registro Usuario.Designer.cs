@@ -63,6 +63,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtColonia = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -77,6 +78,7 @@
             this.maskedCodigo = new System.Windows.Forms.MaskedTextBox();
             this.cBPais = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pBMostrar2 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pBSalir2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBGuardar)).BeginInit();
@@ -492,6 +492,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos personales";
             // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.Location = new System.Drawing.Point(13, 284);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
+            this.dtNacimiento.TabIndex = 208;
+            this.dtNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // txtColonia
             // 
             this.txtColonia.Location = new System.Drawing.Point(508, 82);
@@ -539,7 +547,8 @@
             this.cbDepartamento.Items.AddRange(new object[] {
             "Contabilidad",
             "Recepción",
-            "Laboratorio"});
+            "Laboratorio",
+            "Almacén"});
             this.cbDepartamento.Location = new System.Drawing.Point(510, 33);
             this.cbDepartamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cbDepartamento.Name = "cbDepartamento";
@@ -643,6 +652,15 @@
             this.label23.TabIndex = 148;
             this.label23.Text = "Departamento*";
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(11, 257);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 16);
+            this.label24.TabIndex = 140;
+            this.label24.Text = "Fecha de Nacimiento*";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pBMostrar2);
@@ -733,23 +751,6 @@
             this.panel1.Size = new System.Drawing.Size(703, 69);
             this.panel1.TabIndex = 165;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // dtNacimiento
-            // 
-            this.dtNacimiento.Location = new System.Drawing.Point(13, 284);
-            this.dtNacimiento.Name = "dtNacimiento";
-            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
-            this.dtNacimiento.TabIndex = 208;
-            this.dtNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(11, 257);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 16);
-            this.label24.TabIndex = 140;
-            this.label24.Text = "Fecha de Nacimiento*";
             // 
             // Registro_Usuario
             // 

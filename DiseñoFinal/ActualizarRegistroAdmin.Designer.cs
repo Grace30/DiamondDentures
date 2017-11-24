@@ -77,16 +77,16 @@
             this.label20 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbDepartamento = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pBMostrar2 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.pBMostrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.cbDepartamento = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
@@ -639,6 +639,46 @@
             this.groupBox1.Text = "Datos Personales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cbDepartamento
+            // 
+            this.cbDepartamento.FormattingEnabled = true;
+            this.cbDepartamento.Items.AddRange(new object[] {
+            "Contabilidad",
+            "Recepción",
+            "Laboratorio",
+            "Almacén"});
+            this.cbDepartamento.Location = new System.Drawing.Point(515, 44);
+            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbDepartamento.Name = "cbDepartamento";
+            this.cbDepartamento.Size = new System.Drawing.Size(157, 24);
+            this.cbDepartamento.TabIndex = 246;
+            this.cbDepartamento.Text = "-Elija un Departamento-";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(517, 23);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(95, 16);
+            this.label23.TabIndex = 247;
+            this.label23.Text = "Departamento*";
+            // 
+            // dtNacimiento
+            // 
+            this.dtNacimiento.Location = new System.Drawing.Point(10, 307);
+            this.dtNacimiento.Name = "dtNacimiento";
+            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
+            this.dtNacimiento.TabIndex = 245;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(8, 280);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 16);
+            this.label24.TabIndex = 244;
+            this.label24.Text = "Fecha de Nacimiento*";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pBMostrar2);
@@ -715,45 +755,6 @@
             this.panel1.Size = new System.Drawing.Size(693, 81);
             this.panel1.TabIndex = 249;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // dtNacimiento
-            // 
-            this.dtNacimiento.Location = new System.Drawing.Point(10, 307);
-            this.dtNacimiento.Name = "dtNacimiento";
-            this.dtNacimiento.Size = new System.Drawing.Size(234, 21);
-            this.dtNacimiento.TabIndex = 245;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(8, 280);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 16);
-            this.label24.TabIndex = 244;
-            this.label24.Text = "Fecha de Nacimiento*";
-            // 
-            // cbDepartamento
-            // 
-            this.cbDepartamento.FormattingEnabled = true;
-            this.cbDepartamento.Items.AddRange(new object[] {
-            "Contabilidad",
-            "Recepción",
-            "Laboratorio"});
-            this.cbDepartamento.Location = new System.Drawing.Point(515, 44);
-            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.cbDepartamento.Name = "cbDepartamento";
-            this.cbDepartamento.Size = new System.Drawing.Size(157, 24);
-            this.cbDepartamento.TabIndex = 246;
-            this.cbDepartamento.Text = "-Elija un Departamento-";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(517, 23);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 16);
-            this.label23.TabIndex = 247;
-            this.label23.Text = "Departamento*";
             // 
             // ActualizarRegistroAdmin
             // 

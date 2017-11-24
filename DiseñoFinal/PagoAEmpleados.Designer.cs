@@ -52,8 +52,11 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // data1
@@ -84,10 +87,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.data1.DefaultCellStyle = dataGridViewCellStyle1;
             this.data1.GridColor = System.Drawing.SystemColors.Window;
-            this.data1.Location = new System.Drawing.Point(2, 49);
+            this.data1.Location = new System.Drawing.Point(2, 70);
             this.data1.Name = "data1";
             this.data1.RowHeadersVisible = false;
-            this.data1.Size = new System.Drawing.Size(952, 350);
+            this.data1.Size = new System.Drawing.Size(952, 343);
             this.data1.TabIndex = 0;
             this.data1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.data1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.data1_CellMouseEnter);
@@ -160,7 +163,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 7);
+            this.button1.Location = new System.Drawing.Point(12, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -171,7 +174,7 @@
             // lbl_Mes
             // 
             this.lbl_Mes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Mes.Location = new System.Drawing.Point(93, 7);
+            this.lbl_Mes.Location = new System.Drawing.Point(93, 27);
             this.lbl_Mes.Name = "lbl_Mes";
             this.lbl_Mes.Size = new System.Drawing.Size(103, 20);
             this.lbl_Mes.TabIndex = 3;
@@ -180,7 +183,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(734, 20);
+            this.button2.Location = new System.Drawing.Point(734, 40);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 23);
             this.button2.TabIndex = 4;
@@ -190,7 +193,8 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(791, 405);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(791, 419);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 23);
             this.button3.TabIndex = 5;
@@ -218,7 +222,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(385, 18);
+            this.comboBox1.Location = new System.Drawing.Point(385, 38);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(152, 26);
             this.comboBox1.TabIndex = 6;
@@ -227,7 +231,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(847, 20);
+            this.button4.Location = new System.Drawing.Point(847, 40);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 23);
             this.button4.TabIndex = 7;
@@ -240,7 +244,7 @@
             this.statusStrip1.BackColor = System.Drawing.Color.White;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 432);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 446);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(966, 22);
             this.statusStrip1.TabIndex = 8;
@@ -258,7 +262,7 @@
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(534, 18);
+            this.button5.Location = new System.Drawing.Point(534, 38);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(35, 23);
             this.button5.TabIndex = 9;
@@ -271,7 +275,7 @@
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(352, 18);
+            this.button6.Location = new System.Drawing.Point(352, 38);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(36, 23);
             this.button6.TabIndex = 10;
@@ -281,7 +285,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(653, 21);
+            this.button7.Location = new System.Drawing.Point(653, 41);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 11;
@@ -291,17 +295,49 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(10, 5);
+            this.panel1.Location = new System.Drawing.Point(10, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 36);
             this.panel1.TabIndex = 12;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.button8);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(496, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(458, 30);
+            this.flowLayoutPanel1.TabIndex = 215;
+            // 
+            // button8
+            // 
+            this.button8.AutoSize = true;
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = global::DiseñoFinal.Properties.Resources.User_Male_10px;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.Location = new System.Drawing.Point(373, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 23);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "Usuario";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // PagoAEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(966, 454);
+            this.ClientSize = new System.Drawing.Size(966, 468);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.data1);
@@ -320,6 +356,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.data1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +388,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CuotaISR;
         private System.Windows.Forms.DataGridViewTextBoxColumn APagar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pagar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button8;
     }
 }

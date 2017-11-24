@@ -927,6 +927,12 @@
     <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesM\VistaPreviaRequiProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaRequiProv.Designer.cs">
+      <DependentUpon>VistaPreviaRequiProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportNominaIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1559,6 +1565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaRequiProv.resx">
+      <DependentUpon>VistaPreviaRequiProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNominaIndividual.resx">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>

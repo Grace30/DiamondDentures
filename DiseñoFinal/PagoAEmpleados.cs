@@ -17,7 +17,7 @@ namespace DiseñoFinal
 
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
         ManejadorBanco manejadorBanco = new ManejadorBanco();
-
+        InterfaceUsuario intusuario = new InterfaceUsuario(new Form());
 
         bool tablalista = false;
         bool marcarTodo = false;
@@ -29,6 +29,7 @@ namespace DiseñoFinal
 
         private void PagoAEmpleados_Load(object sender, EventArgs e)
         {
+            button8.Text = Program.Departamento + " - " + Program.Loginn;
             comboBox1.SelectedIndex = DateTime.Now.Month - 1;
             button1.PerformClick();
         }
@@ -308,6 +309,12 @@ namespace DiseñoFinal
             {
                 Cursor = Cursors.Hand;
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario", Datos);
         }
     }
 }
