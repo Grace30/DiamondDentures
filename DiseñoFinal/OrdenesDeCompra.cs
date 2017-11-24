@@ -16,6 +16,7 @@ namespace DiseñoFinal
     {
         ManejadorRequisicion manejadorRequisicion = new ManejadorRequisicion();
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+        InterfaceUsuario intusuario = new InterfaceUsuario(new Form());
 
         public OrdenesDeCompra()
         {
@@ -188,6 +189,12 @@ namespace DiseñoFinal
                 dataGridView1.ClearSelection();
                 dataGridView1.Rows[e.RowIndex].Selected = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario", Datos);
         }
     }
 }

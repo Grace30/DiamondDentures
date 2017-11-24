@@ -131,6 +131,11 @@ namespace DiseñoFinal
         {
             pBSalir2.Image = Properties.Resources.salir2;
         }
+
+        private void cheListUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -132,7 +132,7 @@ namespace DiseñoFinal
 
         private void MenuContabilidad_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = UsuarioEnCurso;
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
             GetSaldo();
             requests();
             getCajaConta();
@@ -159,9 +159,10 @@ namespace DiseñoFinal
 
         private void GetSaldo()
         {
-            double saldonuevo = new ManejadorBanco().GetSaldoEnBanco();
-            lbl_SaldoActual.Text = string.Format("Saldo en banco: {0} MXN", saldonuevo.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
+            saldonuevoBanc = new ManejadorBanco().GetSaldoEnBanco(saldonuevoBanc);
+            lbl_SaldoActual.Text = string.Format("Saldo en banco: {0} MXN", saldonuevoBanc.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")));
         }
+        double saldonuevoBanc = 0;
         double saldonuevo = 0;
         private void getCajaConta()
         {
@@ -175,7 +176,8 @@ namespace DiseñoFinal
             int countR = new ManejadorRequisicion().CountRequisicionesPendientes(countRAnt);
             if (countR != countRAnt)
             {
-                Notification();
+                if(countR > countRAnt)
+                    Notification();
                 switch (countR)
                 {
                     case 0:
@@ -272,6 +274,24 @@ namespace DiseñoFinal
         private void pictureBox1_Click_2(object sender, EventArgs e)
         {
             new PagoAEmpleados().ShowDialog();
+        }
+
+        private void pBReportes_Click(object sender, EventArgs e)
+        {
+            MenúReportes frm = new MenúReportes(this);
+            intusuario.desplegarPantalla(frm);
+            intusuario.cerrarPantalla(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario",Datos );
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new FirmarAsistencia().ShowDialog();
         }
     }
 }

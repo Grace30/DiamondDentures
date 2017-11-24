@@ -111,6 +111,7 @@
             this.cheListUsuarios.Size = new System.Drawing.Size(159, 112);
             this.cheListUsuarios.TabIndex = 167;
             this.cheListUsuarios.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cheListUsuarios_MouseClick);
+            this.cheListUsuarios.SelectedIndexChanged += new System.EventHandler(this.cheListUsuarios_SelectedIndexChanged);
             this.cheListUsuarios.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cheListUsuarios_MouseDoubleClick);
             // 
             // pBSalir2

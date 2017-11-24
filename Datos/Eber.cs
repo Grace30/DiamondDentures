@@ -50,6 +50,29 @@ namespace Datos
             return requi;
         }
 
+        public double GetSaldoEnBanco()
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion = new Conexion().getAzureConexion();
+            SqlDataReader cmdReader;
+            double saldo = 0;
+            try
+            {
+                conexion = new Conexion().getAzureConexion();
+                if (conexion.State != ConnectionState.Open) conexion.Open();
+                cmd = new SqlCommand("execute getSaldoBanco", conexion);
+
+                cmdReader = cmd.ExecuteReader();
+                while (cmdReader.Read())
+                    saldo = Convert.ToDouble(cmdReader[0]);
+                cmdReader.Close();
+                conexion.Close();
+            }
+            catch (Exception ms)
+            { return 0; }
+            return saldo;
+        }
+
         public DataTable getRequisicionesConFiltros(string idRequisicion, string estado, string surtido, string solicitante, string autorizante, string proveedor, DateTime fechaSoliIni, DateTime fechaSoliFin, DateTime fechaAutoIni, DateTime fechaAutoFin, DateTime fechaEntregaIni, DateTime fechaEntregaFin)
         {
             string[] Parametros = { "@IdRequisicion", "@Estado", "@Surtido","@Solicitante", "@Autorizante", "@Proveedor",
