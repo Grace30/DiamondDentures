@@ -34,7 +34,7 @@ namespace DiseñoFinal
             {
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(MenuPrincipal))
+                    if (frm.GetType() == typeof(Login))
                     {
                         frm.Show();
                     }
@@ -43,7 +43,7 @@ namespace DiseñoFinal
             else
                 foreach (Form frm in Application.OpenForms)
                 {
-                    if (frm.GetType() == typeof(MenuGeneral))
+                    if (frm.GetType() == typeof(Login))
                     {
                         frm.Show();
                     }

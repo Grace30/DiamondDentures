@@ -231,38 +231,40 @@ namespace DiseñoFinal
 
                     Program.Departamento = Dep.TrimEnd();
                     Program.Loginn = Datos[0].TrimEnd(); ;
-
-                    if (Datos[0] == "Admin")
+                    bool cerrar = true;
+                    switch (Program.Departamento)
                     {
-                        MenuGeneral menuge = new MenuGeneral();
-                        desplegarPantalla(menuge);
-                    }
-                    else
-                    {
-                        if (Dep == "Laboratorio                             ")
-                        {
+                        case "Administración":
+                            MenuGeneral menuge = new MenuGeneral();
+                            desplegarPantalla(menuge);
+                            break;
+                        case "Laboratorio":
                             MenuLaboratorio menulab = new MenuLaboratorio(Datos[0], llamada);
                             desplegarPantalla(menulab);
-                        }
-                        else
-                        {
-                            if (ReducirEspaciado(Dep) == "Almacén")
-                            {
-                                Almacen alm = new Almacen(llamada, Datos[0]);
-                                var datosAlm = new DataTable();
-                                string[] Datos1 = { "" };
-                                datosAlm = mancp.ObtenerDatosMateriales(Datos1);
-                                alm.DatosData(datosAlm);
-                                desplegarPantalla(alm);
-                            }
-                            else
-                            {
-                                MenuPrincipal menup = new MenuPrincipal(Datos[0]);
-                                desplegarPantalla(menup);
-                            }
-                        }
+                            break;
+                        case "Almacén":
+                            Almacen alm = new Almacen(llamada, Datos[0]);
+                            var datosAlm = new DataTable();
+                            string[] Datos1 = { "" };
+                            datosAlm = mancp.ObtenerDatosMateriales(Datos1);
+                            alm.DatosData(datosAlm);
+                            desplegarPantalla(alm);
+                            break;
+                        case "Contabilidad":
+                            MenuContabilidad Conta = new MenuContabilidad(llamada);
+                            desplegarPantalla(Conta);
+                            break;
+                        case "Recepcion":
+                            Recepcion rep = new Recepcion(Datos[0]);
+                            desplegarPantalla(rep);
+                            break;
+                        default:
+                            cerrar = false;
+                            MessageBox.Show("Departamento no identificado. Comuniquese con su administrador");
+                            break;
                     }
-                    cerrarPantalla(llamada);
+                    if(cerrar)
+                        cerrarPantalla(llamada);
                 }
                 else
                     MessageBox.Show("No se ha podido ingresar");
