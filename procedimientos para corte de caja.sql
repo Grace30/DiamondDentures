@@ -150,3 +150,5 @@ select * from Pedido
 select * from ProductosPedido
 
 select * from CorteCaja
+
+create proc [dbo].[getMateriales] as begin select * from Material where Material.Existencia > 0 end

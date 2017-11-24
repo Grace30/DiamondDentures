@@ -252,13 +252,7 @@ namespace DiseñoFinal
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            DateTime hoy = DateTime.Now;
-            hoy = dateTimePicker1.Value;
-            if (checkBox1.Checked)
-                hoy.AddDays(-3);
-            else
-                hoy.AddDays(3);
-            dateTimePicker1.Value = hoy;
+            CalculaFecha(dias);
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -286,13 +280,14 @@ namespace DiseñoFinal
             filaactual = e.RowIndex;
         }
 
+        float dias = 0;
         public void RellenarTODO()
         {
+            dias = 0;
             float Total = 0;            
             string[] Datos = new string[] { lblPedido.Text.Substring(1) };
             DataTable tabla = map.getDatosProductosPedido(Datos);
             dataGridView1.DataSource = tabla;
-            float dias = 0;
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 dias += float.Parse(tabla.Rows[i]["Tiempo"].ToString()) * float.Parse(tabla.Rows[i]["Cantidad"].ToString());
@@ -306,7 +301,7 @@ namespace DiseñoFinal
         {
             DateTime hoy = DateTime.Now;
             int z = 0;
-            if (checkBox1.Checked)
+            if (!checkBox1.Checked)
                 dias += 3;
             while (dias != z)
             {

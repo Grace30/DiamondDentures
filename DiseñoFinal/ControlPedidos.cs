@@ -1124,10 +1124,10 @@ namespace DiseñoFinal
                     {
                         Dent.Add(ReducirEspaciado(fila["IDDentista"].ToString()));
                         CodPed.Add(ReducirEspaciado(fila["IDPedido"].ToString()));
-                        Est.Add(ReducirEspaciado(fila["Estatus"].ToString()));
+                        Est.Add(ReducirEspaciado(fila["EstatusPedido"].ToString()));
                         FechaLle.Add(ReducirEspaciado(fila["FechaIngreso"].ToString()));
                         FechaEnt.Add(ReducirEspaciado(fila["FechaCalculada"].ToString()));
-                        Labor.Add(ReducirEspaciado(fila["Fabricante"].ToString()));
+                        Labor.Add(ReducirEspaciado(fila["Laboratorista"].ToString()));
                         Urg.Add(ReducirEspaciado(fila["Urgencia"].ToString()));
                     }
                     this.ControlPedidos_Load(sender, e);

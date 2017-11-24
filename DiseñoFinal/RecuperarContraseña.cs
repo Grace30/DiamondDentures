@@ -42,7 +42,7 @@ namespace DiseñoFinal
         {
             if (txtCorreo.Text != "" && txtRespuesta.Text != "" && cBPreguntaSeguridad.Text != "")
             {
-                string[] Datos = { txtCorreo.Text, cBPreguntaSeguridad.SelectedItem.ToString(), txtRespuesta.Text };
+                string[] Datos = { txtCorreo.Text, cBPreguntaSeguridad.Text.ToString(), txtRespuesta.Text };
                 intusuario.enviarEvento("HeOlvidadoMiContraseña", Datos);
             }
             else
