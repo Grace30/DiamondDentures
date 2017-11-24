@@ -15,6 +15,8 @@ namespace DiseñoFinal
     {
 		ManejadorBanco manejadorBanco = new ManejadorBanco();
         ManejadorRegistroUsuario manejadorUsuario = new ManejadorRegistroUsuario();
+        InterfaceUsuario intusuario = new InterfaceUsuario(new Form());
+
         public Balance()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace DiseñoFinal
 
         private void Balance_Load(object sender, EventArgs e)
         {
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
             cbox_Año.Items.Clear();
             cbox_Año.Items.AddRange(manejadorBanco.getAñoBalance());
             if (cbox_Año.Items.Count > 0)
@@ -66,6 +69,12 @@ namespace DiseñoFinal
             int dia = DateTime.DaysInMonth(año, mes+1);
             dateDesde.Value = new DateTime(año, mes+1, 1);
             dateHasta.Value = new DateTime(año, mes+1, dia);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario", Datos);
         }
     }
 }

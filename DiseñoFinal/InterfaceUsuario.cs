@@ -323,7 +323,7 @@ namespace DiseñoFinal
                 foreach (DataRow fila in datosRegistro.Rows)
                 {
                     perfil.Login = fila["Loginn"].ToString();
-                    perfil.Nombre = fila["Nombre"].ToString();
+                    perfil.Nombre = fila["Nombre"].ToString().TrimEnd() + " " + fila[1].ToString().TrimEnd();
                     perfil.Direccion = fila["Direccion"].ToString();
                     perfil.Colonia = fila["Colonia"].ToString();
                     perfil.Pais = fila["Pais"].ToString();
@@ -631,12 +631,12 @@ namespace DiseñoFinal
                 desplegarPantalla(fac);
                 cerrarPantalla(llamada);
             }
-            //if (Evento == "PantallaFacturas")
-            //{
-            //    Facturas fac = new Facturas();
-            //    desplegarPantalla(fac);
-            //    cerrarPantalla(llamada);
-            //}
+            if (Evento == "PantallaFacturas")
+            {
+                Facturas fac = new Facturas(llamada);
+                desplegarPantalla(fac);
+                cerrarPantalla(llamada);
+            }
 
 
             if (Evento == "PantallaElaborarFactura")
@@ -675,7 +675,7 @@ namespace DiseñoFinal
                         vfac.Pedido = fila["Pedido"].ToString();
                         vfac.Loginn = fila["Loginn"].ToString();
                         vfac.Nombre = fila["Nombre"].ToString();
-                        vfac.Apellido = fila["Apellidos"].ToString();
+                        vfac.Apellido = fila[5].ToString();
                         vfac.RFC = fila["RFC"].ToString();
                         vfac.Cedula = fila["Cedula"].ToString();
                         vfac.Direccion = fila["Direccion"].ToString();

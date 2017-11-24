@@ -15,8 +15,8 @@ namespace DiseñoFinal
 {
     public partial class Facturar : Form
     {
-        InterfaceUsuario intusuario;
-     string UsuarioEnCurso = " ";
+        InterfaceUsuario intusuario = new InterfaceUsuario(new Form());
+        string UsuarioEnCurso = " ";
         bool admin = false;
         ManejadorFacturas maf = new ManejadorFacturas();
         Validación v;
@@ -35,7 +35,7 @@ namespace DiseñoFinal
 
         private void CrearFactura_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = UsuarioEnCurso;
+            button3.Text = Program.Departamento + " - " + Program.Loginn;
             RellenarTODO();
             pBFacturar.Visible = false;
           
@@ -232,6 +232,12 @@ namespace DiseñoFinal
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string[] Datos = new string[] { Program.Loginn };
+            intusuario.enviarEvento("PerfilUsuario", Datos);
         }
     }
 }

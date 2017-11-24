@@ -32,12 +32,17 @@ namespace Entidad
             return IbaseDatos.getBalance(Desde, Hasta);
         }
 
+        public double GetSaldoEnBanco(double saldoAnt)
+        {
+            return IbaseDatos.GetSaldoEnBanco(saldoAnt);
+            
+        }
         public double GetSaldoEnBanco()
         {
-            saldoant = IbaseDatos.GetSaldoEnBanco(saldoant);
-            return saldoant;
+            return IbaseDatos.GetSaldoEnBanco();
+
         }
-        double saldoant = 0;
+
 
         public double[] getTotalesBalance(DateTime Desde, DateTime Hasta)
         {
