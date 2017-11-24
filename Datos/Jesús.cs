@@ -26,8 +26,13 @@ namespace Datos
 
         public DataTable ObtenerRequisiciones(string[] Datos)
         {
-            string[] Parametros = { "@IDRequi" };
-            return getDatosTabla("procRequisicion", Parametros, Datos[0]);
+            string[] Parametros = { "@IDRequi" , "@Estado"};
+            return getDatosTabla("procRequisicion", Parametros, Datos[0], Datos[1]);
+        }
+        public DataTable ObtenerRequiProv (string[] Datos)
+        {
+            string[] Parametros = { "@Prov", "@Estado" };
+            return getDatosTabla("RequiProv", Parametros, Datos[0], Datos[1]);
         }
         public DataTable TodasRequisiciones(string[] Datos)
         {
@@ -153,6 +158,12 @@ namespace Datos
         {
             string[] Parametros = { "@Cantidad", "@IDRequi", "@IDMat" };
             return Ejecutar("BorrarMatReq", Parametros, Convert.ToInt32(Datos[0]), Convert.ToInt32(Datos[1]), Datos[2]);
+        }
+
+        public int EnviarRequi(string[] Datos)
+        {
+            string[] Parametros = { "@Requi" };
+            return Ejecutar("EnviarRequi", Parametros, Convert.ToInt32(Datos[0]));
         }
     }
 }

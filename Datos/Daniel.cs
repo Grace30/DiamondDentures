@@ -142,8 +142,8 @@ namespace Datos
         }
         public int RegistrarDatosOficio(string[] Datos)
         {
-            string[] Parametros = { "@Pedido", "@Loginn", "@Fecha", "@FechaConfirmacion" };
-            return Ejecutar("Oficio", Parametros, Datos[0], Datos[1], Datos[2], Datos[3]);
+            string[] Parametros = { "@Pedido", "@Loginn", "@Fecha", "@FechaConfirmacion", "FechaCal" };
+            return Ejecutar("Oficio", Parametros, Datos[0], Datos[1], Datos[2], Datos[3], Datos[4]);
         }
 
         public DataTable UltimaVenta(string[] Datos)

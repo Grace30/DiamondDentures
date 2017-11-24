@@ -606,6 +606,12 @@
       <DependentUpon>ReporteEntrega.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportesM\Reportes\ReporteRequiProv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteRequiProv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesM\Reportes\ReporteRequisicion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -920,6 +926,12 @@
     </Compile>
     <Compile Include="ReportesM\VistaPreviaForma2.Designer.cs">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaRequiProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesM\VistaPreviaRequiProv.Designer.cs">
+      <DependentUpon>VistaPreviaRequiProv.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportNominaIndividual.cs">
       <SubType>Form</SubType>
@@ -1376,6 +1388,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteEntrega.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\Reportes\ReporteRequiProv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteRequiProv.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\Reportes\ReporteRequisicion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteRequisicion.cs</LastGenOutput>
@@ -1549,6 +1565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesM\VistaPreviaForma2.resx">
       <DependentUpon>VistaPreviaForma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesM\VistaPreviaRequiProv.resx">
+      <DependentUpon>VistaPreviaRequiProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportNominaIndividual.resx">
       <DependentUpon>ReportNominaIndividual.cs</DependentUpon>
@@ -2486,11 +2505,11 @@
   <ItemGroup>
     <Content Include="Logo dd.ico" />
     <None Include="Resources\paysheet.png" />
-    <None Include="Resources\3.png" />
-    <None Include="Resources\22.png" />
-    <None Include="Resources\11.png" />
-    <None Include="Resources\0.png" />
-    <None Include="Resources\+3.png" />
+    <None Include="Resources\el3.png" />
+    <None Include="Resources\el2.png" />
+    <None Include="Resources\el1.png" />
+    <None Include="Resources\el0.png" />
+    <None Include="Resources\elmas3.png" />
     <None Include="Resources\Time Card_40px.png" />
     <None Include="Resources\Balance.png" />
     <None Include="Resources\fact1.PNG" />

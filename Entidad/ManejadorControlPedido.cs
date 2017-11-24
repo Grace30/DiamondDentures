@@ -88,6 +88,10 @@ namespace Entidad
         {
             return IbaseDatos.ObtenerRequisiciones(Datos);
         }
+        public DataTable ObtenerRequiProv(string[] Datos)
+        {
+            return IbaseDatos.ObtenerRequiProv(Datos);
+        }
         public DataTable TodasRequisicion(string[] Datos)
         {
             return IbaseDatos.TodasRequisiciones(Datos);
@@ -266,6 +270,11 @@ namespace Entidad
         public int ActualizaBanco(string[] Datos)
         {
             return IbaseDatos.ActualizaBanco(Datos);
+        }
+
+        public int EnviarRequi(string[] Datos)
+        {
+            return IbaseDatos.EnviarRequi(Datos);
         }
     }
 }

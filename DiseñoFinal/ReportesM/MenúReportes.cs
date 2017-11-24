@@ -389,6 +389,46 @@ namespace DiseñoFinal
                     }
                 }
             }
+            else if (pantalla.GetType() == typeof(Recepcion))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(Recepcion))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+            else if (pantalla.GetType() == typeof(MenuLaboratorio))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuLaboratorio))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+            else if (pantalla.GetType() == typeof(MenuContabilidad))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(FabricarProducto))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+            else if (pantalla.GetType() == typeof(Almacen))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(FabricarProducto))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

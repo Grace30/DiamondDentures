@@ -246,8 +246,20 @@ namespace DiseñoFinal
                         }
                         else
                         {
-                            MenuPrincipal menup = new MenuPrincipal(Datos[0]);
-                            desplegarPantalla(menup);
+                            if (ReducirEspaciado(Dep) == "Almacén")
+                            {
+                                Almacen alm = new Almacen(llamada, Datos[0]);
+                                var datosAlm = new DataTable();
+                                string[] Datos1 = { "" };
+                                datosAlm = mancp.ObtenerDatosMateriales(Datos1);
+                                alm.DatosData(datosAlm);
+                                desplegarPantalla(alm);
+                            }
+                            else
+                            {
+                                MenuPrincipal menup = new MenuPrincipal(Datos[0]);
+                                desplegarPantalla(menup);
+                            }
                         }
                     }
                     cerrarPantalla(llamada);
@@ -756,7 +768,7 @@ namespace DiseñoFinal
                     notas.RFC = fila["RFC"].ToString();
                     notas.Direccion = fila["Direccion"].ToString();
                     notas.Telefono = fila["Telefono"].ToString();
-                    notas.Fecha = fila["FechaEntrega"].ToString();
+                    notas.Fecha = fila["FechaCalculada"].ToString();
 
                 }
                 desplegarPantalla(notas);
@@ -794,10 +806,18 @@ namespace DiseñoFinal
 
             if (Evento == "PantallaRequisiciones")
             {
-                Requisiciones requi = new Requisiciones(llamada, Datos[1]);
+                Requisiciones requi = new Requisiciones(llamada, Datos[1], Convert.ToInt32(Datos[2]));
                 var datosRequi = new DataTable();
-                datosRequi = mancp.ObtenerRequisiciones(Datos);
-                requi.DatosData(datosRequi);
+                if (Datos[2] == 1.ToString())
+                {
+                    datosRequi = mancp.ObtenerRequisiciones(new string[] { "", "" });
+                    requi.DatosData(datosRequi);
+                }
+                else
+                {
+                    datosRequi = mancp.ObtenerRequiProv(new string[] { "", "" });
+                    requi.DatosData(datosRequi);
+                }
                 desplegarPantalla(requi);
                 cerrarPantalla(llamada);
             }
@@ -885,6 +905,21 @@ namespace DiseñoFinal
         public void cerrarPantalla(Form Pantalla)
         {
             Pantalla.Hide();
+        }
+        public static string ReducirEspaciado(string Cadena)
+        {
+            while (Cadena.Contains("  "))
+            {
+                Cadena = Cadena.Replace("  ", "");
+            }
+            if (Cadena.Length > 0)
+            {
+                if (Cadena[Cadena.Length - 1] == ' ')
+                {
+                    Cadena = Cadena.Remove(Cadena.Length - 1, 1);
+                }
+            }
+            return Cadena;
         }
     }
 }

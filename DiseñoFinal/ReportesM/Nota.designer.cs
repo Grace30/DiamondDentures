@@ -51,7 +51,14 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblApellidos = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,13 +66,6 @@
             this.pBActualizar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSalir2)).BeginInit();
@@ -152,11 +152,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(440, 112);
+            this.label2.Location = new System.Drawing.Point(374, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 15);
+            this.label2.Size = new System.Drawing.Size(164, 15);
             this.label2.TabIndex = 212;
-            this.label2.Text = "Fecha Entrega";
+            this.label2.Text = "Fecha de Entrega Calculada:";
             // 
             // lblFecha
             // 
@@ -267,6 +267,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Dentista";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(78, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 223;
+            this.label9.Text = "label21";
+            // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.Location = new System.Drawing.Point(16, 37);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(63, 15);
+            this.lblApellidos.TabIndex = 222;
+            this.lblApellidos.Text = "Apellidos :";
+            // 
             // dgvProducto
             // 
             this.dgvProducto.AllowUserToAddRows = false;
@@ -315,6 +335,36 @@
             this.dgvProducto.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProducto.Size = new System.Drawing.Size(584, 117);
             this.dgvProducto.TabIndex = 224;
+            // 
+            // Cod
+            // 
+            this.Cod.HeaderText = "Código";
+            this.Cod.Name = "Cod";
+            this.Cod.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Producto y Materiales";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Precio Unitario";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Mat
+            // 
+            this.Mat.HeaderText = "Cantidad";
+            this.Mat.Name = "Mat";
+            this.Mat.ReadOnly = true;
+            // 
+            // Prec
+            // 
+            this.Prec.HeaderText = "SubTotal";
+            this.Prec.Name = "Prec";
+            this.Prec.ReadOnly = true;
             // 
             // label13
             // 
@@ -379,56 +429,6 @@
             this.panel1.Size = new System.Drawing.Size(630, 70);
             this.panel1.TabIndex = 244;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(16, 37);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(63, 15);
-            this.lblApellidos.TabIndex = 222;
-            this.lblApellidos.Text = "Apellidos :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(78, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 223;
-            this.label9.Text = "label21";
-            // 
-            // Cod
-            // 
-            this.Cod.HeaderText = "Código";
-            this.Cod.Name = "Cod";
-            this.Cod.ReadOnly = true;
-            // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Producto y Materiales";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Precio Unitario";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Mat
-            // 
-            this.Mat.HeaderText = "Cantidad";
-            this.Mat.Name = "Mat";
-            this.Mat.ReadOnly = true;
-            // 
-            // Prec
-            // 
-            this.Prec.HeaderText = "SubTotal";
-            this.Prec.Name = "Prec";
-            this.Prec.ReadOnly = true;
             // 
             // Nota
             // 

@@ -135,6 +135,27 @@ namespace DiseñoFinal
                     }
                 }
             }
+            if (pantalla.GetType() == typeof(MenuPrincipal))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(MenuPrincipal))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+            if (pantalla.GetType() == typeof(Login))
+            {
+                foreach (Form frm in Application.OpenForms)
+                {
+                    if (frm.GetType() == typeof(Login))
+                    {
+                        frm.Show();
+                    }
+                }
+            }
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -145,7 +166,7 @@ namespace DiseñoFinal
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string[] Datos = { "", lblUsuario.Text };
+            string[] Datos = { "", lblUsuario.Text, 1.ToString() };
             intusuario.enviarEvento("PantallaRequisiciones", Datos);
         }
         public static string ReducirEspaciado(string Cadena)
@@ -158,7 +179,7 @@ namespace DiseñoFinal
             {
                 if (Cadena[Cadena.Length - 1] == ' ')
                 {
-                    Cadena.Remove(Cadena.Length - 1, 1);
+                    Cadena = Cadena.Remove(Cadena.Length - 1, 1);
                 }
             }
             return Cadena;
@@ -191,41 +212,53 @@ namespace DiseñoFinal
             switch (req)
             {
                 case 0:
-                    pbReq.BackgroundImage = Properties.Resources._0;
+                    pbReq.BackgroundImage = Properties.Resources.el0;
                     break;
                 case 1:
-                    pbReq.BackgroundImage = Properties.Resources._11;
+                    pbReq.BackgroundImage = Properties.Resources.el1;
                     break;
                 case 2:
-                    pbReq.BackgroundImage = Properties.Resources._2;
+                    pbReq.BackgroundImage = Properties.Resources.el2;
                     break;
                 case 3:
+                    pbReq.BackgroundImage = Properties.Resources.el3;
                     break;
                 default:
-                    if (req > 5)
-                        pbReq.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    if (req > 3)
+                        pbReq.BackgroundImage = Properties.Resources.elmas3;
                     break;
             }
             switch (mat)
             {
                 case 0:
-                    pbMat.BackgroundImage = Properties.Resources._0;
+                    pbMat.BackgroundImage = Properties.Resources.el0;
                     break;
                 case 1:
-                    pbMat.BackgroundImage = Properties.Resources._11;
+                    pbMat.BackgroundImage = Properties.Resources.el1;
                     break;
                 case 2:
-                    pbMat.BackgroundImage = Properties.Resources._2;
+                    pbMat.BackgroundImage = Properties.Resources.el2;
                     break;
                 case 3:
-                    pbMat.BackgroundImage = Properties.Resources.Request3;
+                    pbMat.BackgroundImage = Properties.Resources.el3;
                     break;
                 default:
-                    if (mat > 5)
-                        pbMat.BackgroundImage = Properties.Resources.RequestMoreOf5;
+                    if (mat > 3)
+                        pbMat.BackgroundImage = Properties.Resources.elmas3;
                     break;
             }
             timer1.Start();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string[] Datos = { "", lblUsuario.Text, 0.ToString() };
+            intusuario.enviarEvento("PantallaRequisiciones", Datos);
         }
     }
 }
